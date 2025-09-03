@@ -1,0 +1,24 @@
+{
+  "name": "mycelia",
+  "version": "0.1.0",
+  "description": "A markdown-based engine for creating deeply-linked project websites (digital gardens)",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "bun run build:packages",
+    "build:packages": "bun --filter='@mycelia/*' run build",
+    "dev": "bun --filter='@mycelia/*' run dev",
+    "test": "bun test",
+    "clean": "bun --filter='@mycelia/*' run clean"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "author": "Tom",
+  "license": "MIT"
+}

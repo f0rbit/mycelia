@@ -1,0 +1,20 @@
+{
+  "name": "@mycelia/core",
+  "version": "0.1.0",
+  "description": "Core types and primitives for Mycelia",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "bun --watch src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}
