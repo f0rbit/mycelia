@@ -1,3 +1,5 @@
+'use client'
+
 import type { RenderableNode, RenderableTree } from '@mycelia/core';
 import type { ComponentRegistry } from '../shared/types';
 import { useRegistry } from '../shared/context';

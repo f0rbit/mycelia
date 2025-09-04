@@ -6,12 +6,16 @@
   "type": "module",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "build": "bun run build:packages",
     "build:packages": "bun --filter='@mycelia/*' run build",
     "dev": "bun --filter='@mycelia/*' run dev",
+    "demo:dev": "cd apps/demo && bun run dev",
+    "demo:build": "bun run build:packages && cd apps/demo && bun run build",
+    "demo:export": "bun run demo:build",
     "test": "bun test",
     "clean": "bun --filter='@mycelia/*' run clean"
   },
