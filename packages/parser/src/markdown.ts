@@ -72,15 +72,20 @@ export class MarkdownParser implements Parser {
       }
     }
 
-    // Build indexes
-    this.buildIndexes(graph);
-
     // Create renderable tree
     const renderTree = this.createRenderableTree(graph);
+
+    // Build indexes and update stats AFTER all processing is complete  
+    this.buildIndexes(graph);
 
     // Update stats
     graph.meta.stats.nodeCount = Object.keys(graph.nodes).length;
     graph.meta.stats.edgeCount = graph.edges.length;
+    
+    // Update type breakdown
+    for (const node of Object.values(graph.nodes)) {
+      graph.meta.stats.typeBreakdown[node.type] = (graph.meta.stats.typeBreakdown[node.type] || 0) + 1;
+    }
     
     return {
       graph,
@@ -218,6 +223,18 @@ export class MarkdownParser implements Parser {
 
     const renderTree = this.createRenderableTree(graph);
 
+    // Build indexes and update stats AFTER all processing is complete
+    this.buildIndexes(graph);
+    
+    // Update stats
+    graph.meta.stats.nodeCount = Object.keys(graph.nodes).length;
+    graph.meta.stats.edgeCount = graph.edges.length;
+    
+    // Update type breakdown
+    for (const node of Object.values(graph.nodes)) {
+      graph.meta.stats.typeBreakdown[node.type] = (graph.meta.stats.typeBreakdown[node.type] || 0) + 1;
+    }
+
     return {
       graph,
       renderTree,
@@ -258,7 +275,7 @@ export class MarkdownParser implements Parser {
   }
 
   private buildIndexes(graph: MyceliaGraph): void {
-    // Clear indexes
+    // Initialize indexes
     graph.indexes = {
       byType: {},
       byTag: {},
@@ -283,10 +300,11 @@ export class MarkdownParser implements Parser {
       graph.indexes.byPrimitive[node.primitive].push(nodeId);
 
       // By source file
-      if (!graph.indexes.bySource[node.source.file]) {
-        graph.indexes.bySource[node.source.file] = [];
+      const sourceFile = node.source.file;
+      if (!graph.indexes.bySource[sourceFile]) {
+        graph.indexes.bySource[sourceFile] = [];
       }
-      graph.indexes.bySource[node.source.file].push(nodeId);
+      graph.indexes.bySource[sourceFile].push(nodeId);
 
       // Initialize edge indexes
       graph.indexes.inbound[nodeId] = [];
@@ -295,8 +313,13 @@ export class MarkdownParser implements Parser {
 
     // Index edges
     for (const edge of graph.edges) {
-      graph.indexes.outbound[edge.from] = graph.indexes.outbound[edge.from] || [];
-      graph.indexes.inbound[edge.to] = graph.indexes.inbound[edge.to] || [];
+      // Ensure edge nodes exist in the indexes
+      if (!graph.indexes.outbound[edge.from]) {
+        graph.indexes.outbound[edge.from] = [];
+      }
+      if (!graph.indexes.inbound[edge.to]) {
+        graph.indexes.inbound[edge.to] = [];
+      }
       
       graph.indexes.outbound[edge.from].push(edge.id);
       graph.indexes.inbound[edge.to].push(edge.id);
