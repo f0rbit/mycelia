@@ -1,0 +1,538 @@
+# Developer Blog Collection
+
+<Person id="tom-materne-blogger" name="Tom Materne" role="technical-writer">
+  Software developer who enjoys sharing knowledge through technical writing,
+  documenting learning journeys, and contributing to the developer community
+  through blog posts and tutorials.
+</Person>
+
+<Project id="developer-blog" title="Technical Blog & Learning Documentation" 
+         status="active" category="technical-writing" owner="tom-materne-blogger">
+  
+  A collection of blog posts, tutorials, and learning documentation covering
+  web development, programming languages, tool setup, and developer insights.
+  These posts serve both as learning documentation and community resources.
+
+  ## Web Development & Stack Tutorials
+
+  <Essay id="nextjs-drizzle-cloudflare" title="Serverless NextJS with Drizzle-ORM for Cloudflare"
+         publishedDate="2024-01-10" category="tutorial" status="published">
+    
+    Tutorial for setting up a NextJS app router application with Drizzle ORM for deployment 
+    using cloudflare serverless functions. This comprehensive guide walks through the entire
+    setup process, from development environment to production deployment.
+    
+    <Research id="serverless-comparison" type="investigation" status="completed">
+      Compared different serverless platforms (Vercel, Netlify, Cloudflare) and their 
+      trade-offs for Next.js applications, ultimately choosing Cloudflare for its edge 
+      performance and cost efficiency.
+    </Research>
+    
+    <Task id="tutorial-structure" title="Tutorial Structure Planning" 
+          priority="high" status="completed">
+      Outlined step-by-step tutorial structure covering environment setup, database configuration,
+      ORM integration, and deployment process
+    </Task>
+    
+    <Task id="code-examples" title="Working Code Examples" 
+          priority="high" status="completed">
+      Created complete, tested code examples that readers can follow along with, including
+      a sample repository with working implementation
+    </Task>
+    
+    <Task id="deployment-verification" title="Deployment Testing" 
+          priority="medium" status="completed">
+      Verified the entire deployment process works end-to-end and documented any gotchas
+      or common issues readers might encounter
+    </Task>
+    
+    <Note title="Community Impact">
+      This tutorial has helped numerous developers set up modern web applications with
+      type-safe database operations and edge deployment capabilities.
+    </Note>
+    
+    <Skill name="Technical Writing" level="advanced" />
+    <Skill name="Next.js" level="advanced" />
+    <Skill name="Drizzle ORM" level="advanced" />
+    <Skill name="Cloudflare Pages" level="intermediate" />
+    
+    <Tag value="nextjs" />
+    <Tag value="serverless" />
+    <Tag value="cloudflare" />
+    <Tag value="tutorial" />
+  </Essay>
+
+  <Essay id="drizzle-postgres-container" title="Setting up Drizzle-ORM to work with Postgres Container"
+         publishedDate="2024-01-05" category="troubleshooting" status="published">
+    
+    In case you're having trouble getting drizzle migrations to talk to a postgres container 
+    via docker-compose.yml, I brain dumped my solution for that exact purpose.
+    
+    This post addresses a specific pain point many developers face when setting up local
+    development environments with containerized databases and ORM migrations.
+    
+    <Research id="docker-networking-study" type="troubleshooting" status="completed">
+      Deep dive into Docker networking, container communication, and common connection
+      issues between application containers and database containers.
+    </Research>
+    
+    <Task id="issue-reproduction" title="Issue Reproduction Setup" 
+          priority="high" status="completed">
+      Created minimal reproduction case demonstrating the common connection problems
+      developers encounter with this setup
+    </Task>
+    
+    <Task id="solution-documentation" title="Step-by-Step Solution" 
+          priority="high" status="completed">
+      Documented the exact configuration changes and troubleshooting steps needed
+      to resolve the connection issues
+    </Task>
+    
+    <Achievement title="Problem-Solving Resource">
+      This post has saved many developers hours of debugging Docker networking issues
+      and has been referenced in various developer communities.
+    </Achievement>
+    
+    <Skill name="Docker" level="intermediate" />
+    <Skill name="PostgreSQL" level="intermediate" />
+    <Skill name="Troubleshooting" level="advanced" />
+    <Skill name="DevOps" level="intermediate" />
+    
+    <Note title="Knowledge Sharing Philosophy">
+      Sometimes the most valuable blog posts are simple solutions to specific problems
+      that developers commonly encounter but struggle to find clear answers for.
+    </Note>
+    
+    <Tag value="docker" />
+    <Tag value="postgresql" />
+    <Tag value="drizzle-orm" />
+    <Tag value="troubleshooting" />
+  </Essay>
+
+  <Essay id="golang-api-stack" title="Stack setup for a golang API with bun testing, postgres database, and S3 storage"
+         publishedDate="2023-12-20" category="architecture" status="published">
+    
+    I've made an example stack for easy setup using golang, drizzle, minio, and bun for 
+    end-to-end testing. I walkthrough some of the decisions I made and the reasoning 
+    behind them in this post.
+    
+    This comprehensive guide goes beyond just showing how to set up the stack - it explains
+    the architectural decisions, trade-offs, and reasoning behind each technology choice.
+    
+    <Research id="go-ecosystem-analysis" type="investigation" status="completed">
+      Comprehensive analysis of the Go ecosystem for web APIs, comparing frameworks,
+      ORMs, testing tools, and deployment strategies to identify optimal combinations.
+    </Research>
+    
+    <Task id="stack-justification" title="Technology Choice Justification" 
+          priority="high" status="completed">
+      Documented the reasoning behind each technology choice, including alternatives
+      considered and trade-offs evaluated
+    </Task>
+    
+    <Task id="testing-strategy" title="End-to-End Testing Strategy" 
+          priority="high" status="completed">
+      Developed comprehensive testing approach using Bun for fast test execution
+      and reliable CI/CD integration
+    </Task>
+    
+    <Task id="production-readiness" title="Production Deployment Guide" 
+          priority="medium" status="completed">
+      Created guidance for taking the development stack to production, including
+      security considerations and performance optimizations
+    </Task>
+    
+    <Project id="example-repository" title="Complete Example Repository" 
+             status="completed" category="code-example">
+      Full working example with Docker setup, comprehensive tests, and deployment scripts
+      that developers can use as a starting point for their own projects.
+    </Project>
+    
+    <Skill name="Go Programming" level="advanced" />
+    <Skill name="System Architecture" level="intermediate" />
+    <Skill name="Testing Strategy" level="advanced" />
+    <Skill name="Technical Documentation" level="advanced" />
+    
+    <Note title="Teaching Through Example">
+      Providing complete, working examples is often more valuable than theoretical
+      explanations. Developers can learn by running, modifying, and extending real code.
+    </Note>
+    
+    <Tag value="golang" />
+    <Tag value="api-development" />
+    <Tag value="testing" />
+    <Tag value="architecture" />
+  </Essay>
+
+  ## Safari & Cross-Browser Compatibility
+
+  <Essay id="webkit-glossy-selects" title="How to fix glossy selects in webkit (Safari)"
+         publishedDate="2024-01-15" category="css-solutions" status="published"
+         originalUrl="https://dev.to/forbit/how-to-fix-glossy-selects-in-webkit-safari-3okh">
+    
+    Making sure your application works the same across all the different browser engines 
+    can be a major pain point in web development. This post tackles a specific Safari 
+    styling issue that many developers encounter.
+    
+    Safari's default styling for select elements includes a glossy appearance that can
+    clash with modern flat design aesthetics and break visual consistency across browsers.
+    
+    <Research id="webkit-rendering-differences" type="investigation" status="completed">
+      Investigated Safari's WebKit rendering engine differences compared to Chromium
+      and Firefox, specifically focusing on form element styling inconsistencies.
+    </Research>
+    
+    <Task id="problem-demonstration" title="Problem Demonstration" 
+          priority="high" status="completed">
+      Created visual examples showing the inconsistency between browsers and the
+      specific appearance issues with Safari's default select styling
+    </Task>
+    
+    <Task id="css-solution" title="CSS Solution Development" 
+          priority="high" status="completed">
+      Developed and tested CSS solutions that maintain functionality while achieving
+      consistent appearance across all major browsers
+    </Task>
+    
+    <Task id="accessibility-testing" title="Accessibility Verification" 
+          priority="medium" status="completed">
+      Ensured the solution maintains accessibility standards and doesn't break
+      keyboard navigation or screen reader compatibility
+    </Task>
+    
+    <Achievement title="Developer Community Impact">
+      This solution has been widely shared in developer communities and helped solve
+      a common frustration point for web developers dealing with Safari quirks.
+    </Achievement>
+    
+    <Skill name="Cross-Browser Compatibility" level="advanced" />
+    <Skill name="CSS Advanced Techniques" level="advanced" />
+    <Skill name="WebKit Quirks" level="intermediate" />
+    <Skill name="Accessibility" level="intermediate" />
+    
+    <Note title="Browser Compatibility Philosophy">
+      While it's tempting to ignore Safari given its smaller market share, providing
+      consistent experiences across all browsers is part of being a professional web developer.
+    </Note>
+    
+    <Tag value="safari" />
+    <Tag value="css" />
+    <Tag value="cross-browser" />
+    <Tag value="webkit" />
+  </Essay>
+
+  ## Developer Insights & Career Advice
+
+  <Essay id="lessons-for-past-self" title="5 Things I Would Teach Myself 10 Years Ago"
+         publishedDate="2024-01-25" category="career-advice" status="published"
+         originalUrl="https://dev.to/forbit/5-things-i-would-teach-myself-10-years-ago-3gn8">
+    
+    Lessons Show Off Your Work Force Yourself To Finish Stick to one stack Document your...
+    
+    A reflective piece looking back on my programming journey and identifying the key
+    insights that would have accelerated my growth if I had understood them earlier.
+    This post resonates with developers at all stages of their careers.
+    
+    <Research id="developer-growth-patterns" type="reflection" status="completed">
+      Analyzed common patterns in developer career progression, both from personal
+      experience and by observing other developers' journeys in the community.
+    </Research>
+    
+    <Essay id="lesson-show-your-work" title="Lesson 1: Show Off Your Work">
+      Early in my career, I built many projects but rarely shared them publicly.
+      This was a missed opportunity for feedback, networking, and career advancement.
+      Building in public and sharing your work is one of the fastest ways to grow
+      as a developer and connect with the community.
+    </Essay>
+    
+    <Essay id="lesson-finish-projects" title="Lesson 2: Force Yourself To Finish">
+      The temptation to jump to new, exciting projects before finishing the current
+      one is strong, but completing projects teaches crucial skills: dealing with
+      the "boring" parts, polishing details, and understanding what it really means
+      to ship software to users.
+    </Essay>
+    
+    <Essay id="lesson-stick-to-stack" title="Lesson 3: Stick to One Stack">
+      While it's valuable to be aware of different technologies, constantly switching
+      frameworks and languages prevents you from developing deep expertise. Pick
+      a stack and master it before exploring alternatives.
+    </Essay>
+    
+    <Essay id="lesson-document-everything" title="Lesson 4: Document Your Learning">
+      Writing about what you learn reinforces the knowledge and creates a valuable
+      resource for your future self and other developers. Blog posts, notes, and
+      tutorials help solidify understanding and build your reputation.
+    </Essay>
+    
+    <Essay id="lesson-community-engagement" title="Lesson 5: Engage with the Community">
+      Programming can feel isolating, but the developer community is incredibly
+      welcoming and helpful. Participating in forums, contributing to open source,
+      and attending events accelerates learning and creates opportunities.
+    </Essay>
+    
+    <Achievement title="Viral Developer Content">
+      This post gained significant traction in the developer community and sparked
+      discussions about career development strategies across multiple platforms.
+    </Achievement>
+    
+    <Skill name="Career Mentoring" level="intermediate" />
+    <Skill name="Reflective Writing" level="advanced" />
+    <Skill name="Community Engagement" level="intermediate" />
+    
+    <Note title="Sharing Experience">
+      Some of the most valuable content comes from honest reflection on mistakes
+      and lessons learned. Vulnerability in sharing struggles helps other developers
+      feel less alone in their journey.
+    </Note>
+    
+    <Tag value="career-advice" />
+    <Tag value="programming-journey" />
+    <Tag value="developer-community" />
+    <Tag value="reflection" />
+  </Essay>
+
+  ## Project Development Logs
+
+  <Project id="devpad-blog-series" title="DevPad Development Blog Series" 
+           status="ongoing" category="project-documentation">
+    
+    A multi-part blog series documenting the development, redesign, and evolution
+    of DevPad - a minimalistic project management tool for developers. This series
+    provides transparency into the development process and design decisions.
+    
+    <Essay id="devpad-redesign-6" title="devpad #6 - MVP Progress"
+           publishedDate="2024-02-01" status="published">
+      
+      Following on from my last update, the new redesign is coming along nicely, along 
+      with finally implementing some of the core functionality. Future plans to open 
+      source part of the application are described, and a roadmap for initial release 
+      is laid out.
+      
+      <Task id="core-functionality-implementation" title="Core Functionality Implementation" 
+            priority="high" status="completed">
+        Implemented the fundamental features: project creation, task management, and basic time tracking
+      </Task>
+      
+      <Task id="open-source-planning" title="Open Source Strategy Planning" 
+            priority="medium" status="in-progress">
+        Planning which parts of the application to open source and how to structure the codebase for community contributions
+      </Task>
+      
+      <Note title="Progress Transparency">
+        Regular development updates help maintain accountability and allow the community
+        to follow along with the design and implementation decisions.
+      </Note>
+    </Essay>
+    
+    <Essay id="devpad-redesign-5" title="devpad #5 - Visual Update"
+           publishedDate="2024-01-20" status="published">
+      
+      It's been a while since I've worked on devpad, and I've forgotten exactly how 
+      the system is setup. Trying to use this application has brought to life many 
+      limitations of the hyper-minimalist vanilla html feel.
+      
+      <Research id="minimalism-vs-usability" type="analysis" status="completed">
+        Explored the tension between minimalist design principles and practical usability,
+        finding the right balance between simplicity and functionality.
+      </Research>
+      
+      <Task id="ui-usability-improvements" title="UI Usability Improvements" 
+            priority="high" status="completed">
+        Enhanced the interface while maintaining the minimalist aesthetic, focusing on clarity and user experience
+      </Task>
+      
+      <Note title="Design Evolution">
+        Sometimes taking a break from a project provides valuable perspective on its
+        strengths and weaknesses. Fresh eyes often reveal obvious improvements.
+      </Note>
+    </Essay>
+    
+    <Essay id="devpad-tech-stack-issues" title="devpad #3 - Tech Stack Issues"
+           publishedDate="2023-12-10" status="published">
+      
+      After running into some issues synchronising the session across 2 different servers, 
+      I rethink why I have these servers split up in the first place.
+      
+      <Research id="architecture-complexity-analysis" type="investigation" status="completed">
+        Analyzed the complexity introduced by splitting the application across multiple
+        servers and evaluated whether the separation was providing real benefits.
+      </Research>
+      
+      <Task id="architecture-simplification" title="Architecture Simplification" 
+            priority="high" status="completed">
+        Consolidated the application architecture to reduce complexity and eliminate session synchronization issues
+      </Task>
+      
+      <Note title="Architecture Lessons">
+        Sometimes the simplest solution is the best solution. Premature optimization and
+        over-engineering can create problems that don't need to exist.
+      </Note>
+    </Essay>
+    
+    <Tag value="devpad" />
+    <Tag value="project-documentation" />
+    <Tag value="development-log" />
+    <Tag value="design-process" />
+  </Project>
+
+  ## Language & Framework Exploration
+
+  <Project id="todo-tracker-language-journey" title="Todo Tracker - Language Evolution" 
+           status="completed" category="learning-documentation">
+    
+    A two-part series documenting the transition of a project from JavaScript to TypeScript,
+    exploring the practical benefits and challenges of adopting static typing.
+    
+    <Essay id="todo-tracker-javascript" title="todo-tracker - JavaScript"
+           publishedDate="2023-11-15" status="published">
+      
+      In this log, I'll delve into specific coding challenges and solutions encountered 
+      while developing the todo-tracker in vanilla JavaScript.
+      
+      <Research id="vanilla-js-patterns" type="exploration" status="completed">
+        Explored modern JavaScript patterns, module systems, and state management
+        approaches without relying on frameworks or build tools.
+      </Research>
+      
+      <Task id="js-architecture-design" title="JavaScript Architecture Design" 
+            priority="high" status="completed">
+        Designed a clean, maintainable architecture using only JavaScript language features
+        and web APIs
+      </Task>
+      
+      <Note title="Framework-Free Development">
+        Building without frameworks forces you to understand the underlying web platform
+        and browser APIs, providing valuable insights into what frameworks do for you.
+      </Note>
+    </Essay>
+    
+    <Essay id="todo-tracker-typescript" title="todo-tracker - TypeScript"
+           publishedDate="2023-12-01" status="published">
+      
+      As part of the todo-tracker project, I transitioned the project from JavaScript 
+      to TypeScript, documenting the process, challenges, and benefits discovered along the way.
+      
+      <Research id="typescript-migration-strategies" type="exploration" status="completed">
+        Researched best practices for migrating existing JavaScript codebases to TypeScript,
+        including incremental adoption strategies and tooling setup.
+      </Research>
+      
+      <Task id="gradual-type-addition" title="Gradual Type System Integration" 
+            priority="high" status="completed">
+        Systematically added type annotations, interfaces, and type safety throughout
+        the codebase while maintaining functionality
+      </Task>
+      
+      <Achievement title="Type Safety Benefits">
+        The migration caught several potential bugs and made the codebase significantly
+        more maintainable and self-documenting.
+      </Achievement>
+      
+      <Note title="TypeScript Adoption">
+        The transition to TypeScript was smoother than expected and provided immediate
+        benefits in terms of code quality and developer experience.
+      </Note>
+    </Essay>
+    
+    <Tag value="javascript" />
+    <Tag value="typescript" />
+    <Tag value="code-migration" />
+    <Tag value="language-comparison" />
+  </Project>
+
+  ## Community Contributions & Open Source
+
+  <Essay id="rescoping-devpad" title="Rescoping devpad"
+         publishedDate="2023-10-15" status="published">
+    
+    A while ago I started a large-scale project that I intended to be able to use myself 
+    to manage both my coding projects & university assignments. This post documents the 
+    decision to significantly reduce scope and focus on core functionality.
+    
+    <Research id="feature-creep-analysis" type="reflection" status="completed">
+      Analyzed how feature creep and scope expansion had made the project unwieldy
+      and difficult to complete, leading to the decision to dramatically simplify.
+    </Research>
+    
+    <Task id="scope-reduction" title="Scope Reduction Planning" 
+          priority="high" status="completed">
+      Identified the core 20% of features that would provide 80% of the value
+      and eliminated everything else from the initial release
+    </Task>
+    
+    <Note title="Scope Management">
+      Learning to say "no" to features and focus on the essential functionality
+      is one of the most important skills for completing projects successfully.
+    </Note>
+    
+    <Tag value="project-management" />
+    <Tag value="scope-creep" />
+    <Tag value="product-development" />
+  </Essay>
+
+  ## Writing & Documentation Philosophy
+
+  <Essay id="blogging-philosophy" title="Writing as Learning & Teaching">
+    
+    My approach to technical writing is rooted in the belief that writing about something
+    is one of the best ways to truly understand it. When you have to explain a concept
+    clearly to others, you're forced to examine your own understanding and fill in any gaps.
+    
+    <Research id="writing-learning-connection" type="reflection" status="ongoing">
+      Exploring the connection between writing and learning, and how the process of
+      articulating ideas helps solidify understanding and reveal knowledge gaps.
+    </Research>
+    
+    <Note title="Documentation as Code">
+      Good documentation should be treated with the same care and attention as code.
+      It should be clear, maintainable, up-to-date, and provide real value to users.
+    </Note>
+    
+    <Note title="Community Value">
+      The most satisfying blog posts are those that solve real problems for other
+      developers. Seeing comments from people who were helped by a tutorial or
+      troubleshooting guide is incredibly rewarding.
+    </Note>
+    
+    <Skill name="Technical Writing" level="advanced" />
+    <Skill name="Documentation Strategy" level="advanced" />
+    <Skill name="Knowledge Sharing" level="advanced" />
+    <Skill name="Community Building" level="intermediate" />
+  </Essay>
+
+  <Project id="future-content-plans" title="Future Content Plans" status="planning">
+    
+    <Task id="ai-development-workflow" title="AI Tools in Development Workflow" 
+          priority="medium" status="planned">
+      Explore how AI coding assistants are changing the development process and
+      document best practices for integrating them effectively
+    </Task>
+    
+    <Task id="performance-optimization-series" title="Web Performance Optimization Series" 
+          priority="medium" status="planned">
+      Create a comprehensive series on web performance, from measurement to optimization
+      techniques across different aspects of web applications
+    </Task>
+    
+    <Task id="developer-wellness" title="Developer Wellness & Sustainability" 
+          priority="low" status="planned">
+      Write about maintaining mental health, avoiding burnout, and creating sustainable
+      practices in a demanding field like software development
+    </Task>
+    
+    <Note title="Content Direction">
+      Future content will continue to focus on practical solutions to real problems,
+      combined with honest reflection on the development process and career growth.
+    </Note>
+  </Project>
+
+  <Tag value="technical-writing" />
+  <Tag value="developer-community" />
+  <Tag value="knowledge-sharing" />
+  <Tag value="tutorials" />
+  <Tag value="programming-insights" />
+  
+  <Date value="2024-02-10" duration="240">
+    Time spent organizing and documenting blog content and writing philosophy
+  </Date>
+</Project>
