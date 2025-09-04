@@ -115,8 +115,11 @@ export class MarkdownParser implements Parser {
 
     try {
       const ast = this.processor.parse(content);
-      const nodeStack: string[] = []; // Track parent relationships
       
+      // Map AST nodes to their semantic node IDs for hierarchy building
+      const astNodeToSemanticId = new Map();
+      
+      // First pass: Create all nodes without relationships
       visit(ast, (node) => {
         if (node.type === 'mdxJsxFlowElement' || node.type === 'mdxJsxTextElement') {
           const tagName = node.name;
@@ -161,30 +164,9 @@ export class MarkdownParser implements Parser {
           }
 
           graph.nodes[nodeId] = myceliaNode;
-
-          // Handle parent-child relationships
-          if (nodeStack.length > 0) {
-            const parentId = nodeStack[nodeStack.length - 1];
-            const parentNode = graph.nodes[parentId];
-            
-            if (parentNode && ('children' in parentNode)) {
-              parentNode.children.push(nodeId);
-              
-              // Add containment edge
-              const edgeId = `${parentId}-contains-${nodeId}`;
-              graph.edges.push({
-                id: edgeId,
-                from: parentId,
-                to: nodeId,
-                type: 'contains'
-              });
-            }
-          }
-
-          // Add to stack if this node can contain children
-          if (mapping.primitive === 'Branch' || mapping.primitive === 'Trunk') {
-            nodeStack.push(nodeId);
-          }
+          
+          // Map AST node to semantic node ID for hierarchy building
+          astNodeToSemanticId.set(node, nodeId);
 
           // Handle special attributes that create edges
           if (attributes.parent) {
@@ -209,6 +191,46 @@ export class MarkdownParser implements Parser {
           }
         }
       });
+
+      // Second pass: Build containment relationships using manual traversal to track parents
+      const buildHierarchy = (node: any, semanticParentId?: string) => {
+        const nodeId = astNodeToSemanticId.get(node);
+        let currentSemanticParent = semanticParentId;
+
+        // If this node is a semantic node and has a semantic parent, create containment
+        if (nodeId && currentSemanticParent) {
+          const parentNode = graph.nodes[currentSemanticParent];
+          const childNode = graph.nodes[nodeId];
+          
+          if (parentNode && childNode && ('children' in parentNode)) {
+            parentNode.children.push(nodeId);
+            
+            // Add containment edge
+            const edgeId = `${currentSemanticParent}-contains-${nodeId}`;
+            graph.edges.push({
+              id: edgeId,
+              from: currentSemanticParent,
+              to: nodeId,
+              type: 'contains'
+            });
+          }
+        }
+
+        // If this node is semantic, it becomes the parent for its children
+        if (nodeId) {
+          currentSemanticParent = nodeId;
+        }
+
+        // Recursively process children
+        if (node.children) {
+          for (const child of node.children) {
+            buildHierarchy(child, currentSemanticParent);
+          }
+        }
+      };
+
+      // Start hierarchy building from root
+      buildHierarchy(ast);
 
       // Post-processing: create reference edges based on content
       this.createReferenceEdges(graph, errors, warnings);
