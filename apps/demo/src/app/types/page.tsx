@@ -1,22 +1,31 @@
 import Link from 'next/link'
 import { getNodeTypes } from '@/lib/content'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { ArrowRight } from 'lucide-react'
 
 export default async function TypesOverviewPage() {
   const nodeTypes = await getNodeTypes()
+  const totalNodes = nodeTypes.reduce((sum, { count }) => sum + count, 0)
+  const avgPerType = Math.round(totalNodes / nodeTypes.length)
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Content Types</h1>
-        <p className="text-muted-foreground mt-2">
+    <div className="max-w-4xl mx-auto py-8 px-6">
+      <div className="space-y-4 pb-6 border-b">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Content Types</h1>
+          <p className="text-sm text-muted-foreground mt-1">node-types</p>
+        </div>
+        
+        <p className="text-lg text-muted-foreground">
           Explore the knowledge graph by semantic content type
         </p>
+
+        <div className="flex items-center gap-6 text-sm text-muted-foreground">
+          <span><strong>{totalNodes}</strong> total nodes</span>
+          <span><strong>{nodeTypes.length}</strong> content types</span>
+          <span><strong>{avgPerType}</strong> avg per type</span>
+        </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 space-y-4">
         {nodeTypes.map(({ type, count }) => {
           const typeDisplayName = type.charAt(0).toUpperCase() + type.slice(1) + 's'
           
@@ -39,55 +48,20 @@ export default async function TypesOverviewPage() {
           const description = descriptions[type] || `${typeDisplayName} in the knowledge graph`
           
           return (
-            <Link key={type} href={`/types/${type}`}>
-              <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <CardTitle className="flex items-center gap-2">
-                        {typeDisplayName}
-                        <Badge variant="secondary">{count}</Badge>
-                      </CardTitle>
-                      <CardDescription className="mt-2">
-                        {description}
-                      </CardDescription>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-                  </div>
-                </CardHeader>
-              </Card>
-            </Link>
+            <div key={type} className="border-l-4 border-blue-200 pl-4 py-2 hover:border-blue-300 transition-colors">
+              <h3 className="text-lg font-medium mb-1">
+                <Link href={`/types/${type}`} className="text-blue-600 hover:text-blue-800 hover:underline">
+                  {typeDisplayName}
+                </Link>
+                <span className="ml-2 text-sm text-muted-foreground font-normal">({count})</span>
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                {description}
+              </p>
+            </div>
           )
         })}
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Knowledge Graph Overview</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">
-                {nodeTypes.reduce((sum, { count }) => sum + count, 0)}
-              </div>
-              <div className="text-sm text-muted-foreground">Total Nodes</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">{nodeTypes.length}</div>
-              <div className="text-sm text-muted-foreground">Content Types</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600">
-                {Math.round(nodeTypes.reduce((sum, { count }) => sum + count, 0) / nodeTypes.length)}
-              </div>
-              <div className="text-sm text-muted-foreground">Avg per Type</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   )
 }

@@ -1,9 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getNodeTypes, loadNodesByType } from '@/lib/content'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react'
+import { Calendar, MapPin, Clock } from 'lucide-react'
 
 // Generate static params for all node types
 export async function generateStaticParams() {
@@ -32,109 +30,83 @@ export default async function TypePage({ params }: TypePageProps) {
   }
 
   const typeDisplayName = nodeType.charAt(0).toUpperCase() + nodeType.slice(1) + 's'
+  const activeCount = nodes.filter(n => n.attributes?.status === 'active').length
+  const completedCount = nodes.filter(n => n.attributes?.status === 'completed').length
+  const withDatesCount = nodes.filter(n => n.attributes?.startDate).length
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">{typeDisplayName}</h1>
-        <p className="text-muted-foreground mt-2">
-          All {nodeType} nodes in the knowledge graph ({nodes.length} items)
+    <div className="max-w-4xl mx-auto py-8 px-6">
+      <div className="space-y-4 pb-6 border-b">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">{typeDisplayName}</h1>
+          <p className="text-sm text-muted-foreground mt-1">{nodeType}-list</p>
+        </div>
+        
+        <p className="text-lg text-muted-foreground">
+          All {nodeType} nodes in the knowledge graph
         </p>
+
+        <div className="flex items-center gap-6 text-sm text-muted-foreground">
+          <span><strong>{nodes.length}</strong> total</span>
+          {activeCount > 0 && <span><strong>{activeCount}</strong> active</span>}
+          {completedCount > 0 && <span><strong>{completedCount}</strong> completed</span>}
+          {withDatesCount > 0 && <span><strong>{withDatesCount}</strong> with dates</span>}
+        </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 space-y-4">
         {nodes.map(node => {
           const title = node.attributes?.title || node.attributes?.name || node.id
-          const description = 'value' in node ? node.value?.substring(0, 120) : 
-                             'content' in node ? node.content?.substring(0, 120) : 
-                             `A ${node.type} in the knowledge graph`
+          const description = 'value' in node ? node.value?.substring(0, 150) : 
+                             'content' in node ? node.content?.substring(0, 150) : 
+                             undefined
           
           return (
-            <Link key={node.id} href={`/${node.id}`}>
-              <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
-                <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="text-lg">{title}</CardTitle>
-                      <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
-                        {node.attributes?.status && (
-                          <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
-                            node.attributes.status === 'active' ? 'bg-green-100 text-green-800' :
-                            node.attributes.status === 'completed' ? 'bg-blue-100 text-blue-800' :
-                            node.attributes.status === 'archived' ? 'bg-gray-100 text-gray-800' :
-                            'bg-yellow-100 text-yellow-800'
-                          }`}>
-                            <Clock className="w-3 h-3" />
-                            {node.attributes.status}
-                          </span>
-                        )}
-                        
-                        {node.attributes?.startDate && (
-                          <span className="inline-flex items-center gap-1">
-                            <Calendar className="w-3 h-3" />
-                            {new Date(node.attributes.startDate).getFullYear()}
-                          </span>
-                        )}
-                        
-                        {node.attributes?.location && (
-                          <span className="inline-flex items-center gap-1">
-                            <MapPin className="w-3 h-3" />
-                            {node.attributes.location}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground ml-2 flex-shrink-0" />
-                  </div>
-                </CardHeader>
-                {description && (
-                  <CardContent className="pt-0">
-                    <CardDescription className="line-clamp-3">
-                      {description}
-                    </CardDescription>
-                  </CardContent>
+            <div key={node.id} className="border-l-4 border-blue-200 pl-4 py-2 hover:border-blue-300 transition-colors">
+              <h3 className="text-lg font-medium mb-1">
+                <Link href={`/${node.id}`} className="text-blue-600 hover:text-blue-800 hover:underline">
+                  {title}
+                </Link>
+              </h3>
+              
+              <div className="flex items-center gap-4 mb-2 text-sm text-muted-foreground">
+                {node.attributes?.status && (
+                  <span className={`inline-flex items-center gap-1 px-2 py-1 border rounded-full text-xs font-medium ${
+                    node.attributes.status === 'active' ? 'text-green-700 border-green-200' :
+                    node.attributes.status === 'completed' ? 'text-blue-700 border-blue-200' :
+                    node.attributes.status === 'archived' ? 'text-gray-700 border-gray-200' :
+                    'text-yellow-700 border-yellow-200'
+                  }`}>
+                    <Clock className="w-3 h-3" />
+                    {node.attributes.status}
+                  </span>
                 )}
-              </Card>
-            </Link>
+                
+                {node.attributes?.startDate && (
+                  <span className="inline-flex items-center gap-1">
+                    <Calendar className="w-3 h-3" />
+                    {new Date(node.attributes.startDate).getFullYear()}
+                  </span>
+                )}
+                
+                {node.attributes?.location && (
+                  <span className="inline-flex items-center gap-1">
+                    <MapPin className="w-3 h-3" />
+                    {node.attributes.location}
+                  </span>
+                )}
+              </div>
+
+              {description && (
+                <p className="text-sm text-muted-foreground">
+                  {description.trim()}
+                  {description.length >= 150 && '...'}
+                </p>
+              )}
+            </div>
           )
         })}
       </div>
-
-      {/* Show statistics */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Statistics</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-4 md:grid-cols-4">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">{nodes.length}</div>
-              <div className="text-sm text-muted-foreground">Total {typeDisplayName}</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">
-                {nodes.filter(n => n.attributes?.status === 'active').length}
-              </div>
-              <div className="text-sm text-muted-foreground">Active</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">
-                {nodes.filter(n => n.attributes?.status === 'completed').length}
-              </div>
-              <div className="text-sm text-muted-foreground">Completed</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-2xl font-bold text-gray-600">
-                {nodes.filter(n => n.attributes?.startDate).length}
-              </div>
-              <div className="text-sm text-muted-foreground">With Dates</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   )
 }

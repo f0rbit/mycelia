@@ -111,7 +111,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <div className="border-l-4 border-blue-200 pl-4 py-2 bg-blue-50/30">
+        <div className="border-l-4 border-blue-200 pl-4 py-2">
           <p className="text-sm text-muted-foreground">
             <strong>How it works:</strong> This demo transforms markdown files with semantic tags into an interconnected knowledge base. 
             Each <code>&lt;Project&gt;</code>, <code>&lt;Skill&gt;</code>, or <code>&lt;Essay&gt;</code> tag becomes a dedicated page 

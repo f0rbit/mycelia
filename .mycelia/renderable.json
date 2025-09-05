@@ -21,10 +21,10 @@
       },
       {
         "id": "portfolio-showcase",
-        "type": "project",
-        "primitive": "Branch",
+        "type": "portfolio",
+        "primitive": "List",
         "props": {
-          "type": "project",
+          "type": "portfolio",
           "id": "portfolio-showcase",
           "title": "Tom's Project Portfolio",
           "status": "active",
@@ -106,7 +106,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-adee7217",
+                "id": "skill-16c3ade1",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -119,7 +119,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-2f30656a",
+                "id": "skill-dc2395cb",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -132,7 +132,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-1a93af1d",
+                "id": "skill-7fae8c78",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -145,7 +145,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-039c3c1e",
+                "id": "skill-79824f1e",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -158,7 +158,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-31bea3db",
+                "id": "skill-f30817ac",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -171,7 +171,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-56055ff1",
+                "id": "skill-228b3685",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -184,7 +184,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-project-represents-my-belief-that-technology-1604e886",
+                "id": "this-project-represents-my-belief-that-technology-d9486abe",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -196,7 +196,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "collaborator-0632e170",
+                "id": "collaborator-84f9cede",
                 "type": "collaborator",
                 "primitive": "Link",
                 "props": {
@@ -216,7 +216,7 @@
                 ]
               },
               {
-                "id": "tag-c4b897e0",
+                "id": "tag-a8860d85",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -228,7 +228,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-a51cf7cd",
+                "id": "tag-4ca7ab6a",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -240,7 +240,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-9e275b23",
+                "id": "tag-d3170190",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -325,7 +325,7 @@
                 },
                 "children": [
                   {
-                    "id": "just-like-coding-painting-is-about-iteration-lea-bee053ab",
+                    "id": "just-like-coding-painting-is-about-iteration-lea-efc63153",
                     "type": "note",
                     "primitive": "Leaf",
                     "props": {
@@ -341,7 +341,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-302a12c1",
+                "id": "skill-d9cfe77d",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -354,7 +354,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-e521c96a",
+                "id": "skill-2f994cf6",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -367,7 +367,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-3d0d4a31",
+                "id": "skill-0d08e68d",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -380,7 +380,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-0e07ed47",
+                "id": "skill-0962f9f9",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -393,7 +393,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-cc0ab091",
+                "id": "tag-b9646a93",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -405,7 +405,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-008ca394",
+                "id": "tag-e6423b38",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -417,7 +417,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-a8b1fbc6",
+                "id": "tag-a84be93e",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -503,7 +503,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "building-multiplayer-games-presents-unique-challen-4bf8ab00",
+                "id": "building-multiplayer-games-presents-unique-challen-d289ee14",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -515,7 +515,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-c0741dc6",
+                "id": "skill-07da874a",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -528,7 +528,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-092222c5",
+                "id": "skill-43d1f407",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -541,7 +541,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-05088a60",
+                "id": "skill-9ee92c42",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -554,7 +554,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-a4666bf1",
+                "id": "skill-de476e78",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -567,7 +567,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-df8a19e1",
+                "id": "tag-1a4d7de9",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -579,7 +579,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-b54be0b7",
+                "id": "tag-a76bf13f",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -591,7 +591,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-01dd9d3f",
+                "id": "tag-534a859f",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -678,7 +678,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "the-library-has-been-adopted-by-multiple-independe-23a77dbe",
+                "id": "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
                 "type": "achievement",
                 "primitive": "Leaf",
                 "props": {
@@ -690,7 +690,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-3ff3979f",
+                "id": "skill-22c19654",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -703,7 +703,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-43677f7c",
+                "id": "skill-4a7ac3d3",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -716,7 +716,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-5ba5d130",
+                "id": "skill-0d11b4e9",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -729,7 +729,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-48db937b",
+                "id": "skill-6173c5a4",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -742,7 +742,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-project-taught-me-valuable-lessons-about-api-68513ef2",
+                "id": "this-project-taught-me-valuable-lessons-about-api-735f28a8",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -754,7 +754,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-c0f2cd44",
+                "id": "tag-6954c236",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -766,7 +766,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-1e505b33",
+                "id": "tag-c81ac582",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -778,7 +778,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-8a491836",
+                "id": "tag-5a2ddd8a",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -790,7 +790,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-5bf4a350",
+                "id": "tag-68f6ab33",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -889,7 +889,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
+                "id": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -901,7 +901,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-9d400dd9",
+                "id": "skill-ce82db49",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -914,7 +914,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-fffb0009",
+                "id": "skill-d4d2b68f",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -927,7 +927,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-ec9a15ea",
+                "id": "skill-57b8db17",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -940,7 +940,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-487152b1",
+                "id": "tag-ba6dd4b1",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -952,7 +952,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-b57c64ab",
+                "id": "tag-294445d7",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -964,7 +964,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-ef7a4536",
+                "id": "tag-d7b6fa57",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1066,7 +1066,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "the-repository-has-helped-several-developers-boots-a87649db",
+                "id": "the-repository-has-helped-several-developers-boots-b649393a",
                 "type": "achievement",
                 "primitive": "Leaf",
                 "props": {
@@ -1078,7 +1078,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-db65d5b7",
+                "id": "skill-6c03f795",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1091,7 +1091,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-b9153dde",
+                "id": "skill-3326505e",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1104,7 +1104,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-e88b75b5",
+                "id": "skill-5d64f1d1",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1117,7 +1117,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-d6f55880",
+                "id": "skill-5deadf5f",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1130,7 +1130,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-1429cefe",
+                "id": "skill-ea3ad0df",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1143,7 +1143,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-project-demonstrates-current-best-practices-i-c978b423",
+                "id": "this-project-demonstrates-current-best-practices-i-dfbed54b",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -1155,7 +1155,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-bc3576f6",
+                "id": "tag-df0cf54c",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1167,7 +1167,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-84bbe3f1",
+                "id": "tag-67497d32",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1179,7 +1179,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-abe6c6b1",
+                "id": "tag-86a74ab2",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1191,7 +1191,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-fe4b3b62",
+                "id": "tag-49eecbb9",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1290,7 +1290,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-1be0ac90",
+                "id": "skill-b0466ce8",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1303,7 +1303,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-b7f042ac",
+                "id": "skill-5e01cbce",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1316,7 +1316,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-f98d2254",
+                "id": "skill-77c82a04",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1329,7 +1329,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-project-solidified-my-understanding-of-typesc-9f9d4823",
+                "id": "this-project-solidified-my-understanding-of-typesc-6137dbd9",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -1341,7 +1341,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-13ae0421",
+                "id": "tag-b4e90b0b",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1353,7 +1353,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-10bb18be",
+                "id": "tag-c19256ef",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1365,7 +1365,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-a3a1a399",
+                "id": "tag-f085aa08",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1418,7 +1418,7 @@
                 },
                 "children": [
                   {
-                    "id": "underwater-photography-presents-unique-challenges:-426f3dc6",
+                    "id": "underwater-photography-presents-unique-challenges:-4107da1a",
                     "type": "note",
                     "primitive": "Leaf",
                     "props": {
@@ -1430,7 +1430,7 @@
                     "resolvedRefs": []
                   },
                   {
-                    "id": "skill-efbc3ddc",
+                    "id": "skill-865e2515",
                     "type": "skill",
                     "primitive": "Meta",
                     "props": {
@@ -1443,7 +1443,7 @@
                     "resolvedRefs": []
                   },
                   {
-                    "id": "skill-55962975",
+                    "id": "skill-46f4dfa2",
                     "type": "skill",
                     "primitive": "Meta",
                     "props": {
@@ -1490,7 +1490,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-19285489",
+                "id": "skill-43ff3315",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1503,7 +1503,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-55a0290b",
+                "id": "skill-7c454d6b",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1516,7 +1516,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-4d6b9ade",
+                "id": "skill-78f32ff3",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1529,7 +1529,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-8e041d91",
+                "id": "skill-9d1a70fa",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1542,7 +1542,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-723952aa",
+                "id": "tag-b51e6fc3",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1554,7 +1554,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-068ce481",
+                "id": "tag-fe25725b",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1566,7 +1566,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-d96f8e16",
+                "id": "tag-93ef5385",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1578,7 +1578,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-b3607842",
+                "id": "tag-c0910f33",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1664,7 +1664,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "led-teams-to-compete-successfully-at-the-highest-l-1069756e",
+                "id": "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
                 "type": "achievement",
                 "primitive": "Leaf",
                 "props": {
@@ -1676,7 +1676,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-71bb7a81",
+                "id": "skill-56e36869",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1689,7 +1689,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-70ad63ef",
+                "id": "skill-9ead72d6",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1702,7 +1702,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-ed5658f5",
+                "id": "skill-32f296e2",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1715,7 +1715,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-c69ea190",
+                "id": "skill-fc1512b5",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -1728,7 +1728,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "the-leadership-and-analytical-skills-developed-in-67f91346",
+                "id": "the-leadership-and-analytical-skills-developed-in-f01c6596",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -1740,7 +1740,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-7043b70a",
+                "id": "tag-b6e476a2",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1752,7 +1752,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-f3f59f7e",
+                "id": "tag-c993bcdd",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1764,7 +1764,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-3d5c7181",
+                "id": "tag-afa53553",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1776,7 +1776,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-ce495ad1",
+                "id": "tag-dd5d020a",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -1861,7 +1861,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "future-projects-will-prioritize:-meaningful-impact-8033c44c",
+                "id": "future-projects-will-prioritize:-meaningful-impact-476a2cad",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -1877,7 +1877,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-be4f279c",
+            "id": "tag-0f0b2e9d",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -1889,7 +1889,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-33fe0e0b",
+            "id": "tag-7fdc1bb8",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -1901,7 +1901,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-2268b6e2",
+            "id": "tag-188ed460",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -1913,7 +1913,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-6c5e6b04",
+            "id": "tag-1553c5b4",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -1925,7 +1925,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-6f6748dd",
+            "id": "tag-5fc3eeaf",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -1937,7 +1937,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-f6146fde",
+            "id": "tag-d63eb94f",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -1949,7 +1949,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "time-spent-curating-and-documenting-this-comprehen-f612855a",
+            "id": "time-spent-curating-and-documenting-this-comprehen-f00e4b7f",
             "type": "date",
             "primitive": "Meta",
             "props": {

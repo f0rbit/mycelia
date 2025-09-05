@@ -27,8 +27,8 @@
     },
     "portfolio-showcase": {
       "id": "portfolio-showcase",
-      "type": "project",
-      "primitive": "Branch",
+      "type": "portfolio",
+      "primitive": "List",
       "source": {
         "file": "examples/project-portfolio.mdx",
         "start": {
@@ -38,12 +38,12 @@
         },
         "end": {
           "line": 513,
-          "column": 11,
-          "offset": 23229
+          "column": 13,
+          "offset": 23236
         }
       },
       "attributes": {
-        "type": "project",
+        "type": "portfolio",
         "id": "portfolio-showcase",
         "title": "Tom's Project Portfolio",
         "status": "active",
@@ -51,7 +51,7 @@
         "category": "portfolio"
       },
       "title": "Tom's Project Portfolio",
-      "content": "A comprehensive showcase of projects spanning game development, web applications,\ndeveloper tools, and creative platforms. Each project represents a milestone in\nmy programming journey and demonstrates different aspects of software development.Active ProjectsGenerate daily & weekly reports of political sittings and distribute them to a user base\nvia a website experience & optional emails.Chamber aims to make political information more accessible by automatically generating\ndigestible reports from parliamentary proceedings and delivering them directly to citizens\nwho want to stay informed about their government's activities.Researched various sources for parliamentary data, including official government APIs,\nweb scraping opportunities, and data availability across different jurisdictions.Build the core system that processes parliamentary data and generates human-readable reportsImplement email subscription system with personalized report deliveryCreate user-friendly web interface for browsing reports and managing subscriptionsThis project represents my belief that technology should be used to increase civic\nengagement and make democracy more accessible to everyday people.Blog site for all things on my creative side - a platform where I explore photography,\npainting, music, and other artistic endeavors alongside my technical work.This project serves as a creative outlet and demonstrates my ability to build content\nmanagement systems while exploring the intersection of technology and art.Exploring how programming and artistic expression can complement and enhance each other.\nMany of the same principles that make good code also make good art: composition,\nbalance, iteration, and attention to detail.Built a responsive gallery system for showcasing photography work with metadata and taggingIntegrate music player for original compositions and coversDocumenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually\nbuilding more complex skills on top of fundamental techniques.Game Development ProjectsA fast-paced multiplayer 1v1 capture the flag game built with GameMaker and Java backend.\nThis project combines my game development roots with my backend programming skills to\ncreate a competitive multiplayer experience.Studied various multiplayer game architectures, latency compensation techniques,\nand anti-cheat systems to inform the design decisions.Built the game client in GameMaker with smooth movement, responsive controls, and network communicationImplemented authoritative game server in Java with player synchronization and match managementDesign and implement skill-based matchmaking for balanced competitive matchesBuilding multiplayer games presents unique challenges around network synchronization,\nlatency compensation, and maintaining game state consistency across clients.Developer Tools & LibrariesAn open-source framework for interfacing between Java servers and GameMaker: Studio game clients.\nThis project solved a real problem I faced when building multiplayer games and has helped\nother developers in the GameMaker community.Deep dive into GameMaker's networking capabilities, socket implementations, and\ncommunication protocols to design an optimal interface layer.Built the foundational library with robust client-server communication protocolsCreated comprehensive documentation with code examples and getting-started guidesProvide ongoing support to developers using the library and maintain compatibilityThe library has been adopted by multiple independent game developers and has received\npositive feedback from the GameMaker community.This project taught me valuable lessons about API design, documentation, backwards\ncompatibility, and maintaining open source projects.Web Applications & PlatformsA hyper-minimalistic project and task management tool designed specifically for developers.\nAfter multiple iterations and redesigns, I'm currently working on a streamlined version\nthat focuses on simplicity and developer workflow integration.Researching how developers currently manage projects and tasks, what tools they use,\nand where existing solutions fall short of their needs.Exploring why developers often prefer simple, focused tools over feature-heavy alternatives.\nSometimes the best tool is the one that gets out of your way and lets you focus on the work.Narrowed down to core features: project creation, task management, and simple time trackingBuilding a clean, distraction-free interface that prioritizes function over formIntegrate with git repositories, development tools, and common developer workflowsThe goal is to create a tool so simple and intuitive that it becomes invisible -\nhelping developers stay organized without adding cognitive overhead.Backend & Infrastructure ProjectsStack setup for a golang API with bun testing, postgres database, and S3 storage for\nlocal & production environments. This project serves as a template and learning resource\nfor other developers looking to set up similar infrastructure.Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and\ndeployment strategies to identify best practices and optimal tool combinations.Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)Integrated Drizzle ORM for type-safe database operations with migrations and schema managementConfigured end-to-end testing pipeline using Bun for fast, reliable test executionCreated comprehensive documentation for deploying the stack to production environmentsThe repository has helped several developers bootstrap their Go API projects and serves\nas a reference for modern Go development practices.This project demonstrates current best practices in API development, including\ncontainerization, type safety, comprehensive testing, and clear documentation.Experimental & Learning ProjectsA project specifically designed to explore the transition from JavaScript to TypeScript\nand experiment with different approaches to state management and task organization.Documented the process of migrating a JavaScript project to TypeScript, including\nchallenges faced, benefits realized, and lessons learned about type safety.Reflecting on the transition from dynamic to static typing, the initial resistance,\nthe gradual appreciation, and ultimately the realization that TypeScript makes\nJavaScript development more enjoyable and productive.Built initial version in vanilla JavaScript to establish baseline functionalitySystematically migrated codebase to TypeScript, adding type definitions and improving code qualityCompared performance, developer experience, and code maintainability between JS and TS versionsThis project solidified my understanding of TypeScript's benefits and gave me practical\nexperience in migrating existing codebases to adopt type safety.Creative & Artistic ProjectsA curated collection of photography work spanning landscapes, street photography,\nand experimental compositions. This creative pursuit complements my technical work\nand provides a different lens for seeing and documenting the world.Continuous learning about composition, lighting, post-processing, and different\nphotographic styles to improve technical and artistic skills.Specialized focus on underwater photography while snorkeling, capturing marine life\nand underwater landscapes. This challenging environment requires special techniques\nand equipment considerations.Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!Select and organize best photographs into cohesive collections for online portfolioShare photography work on Instagram and other platforms to build an audience and get feedbackProfessional DevelopmentLed coaching for 8 different badminton teams at competitive city level, developing\nleadership skills, teaching abilities, and team management experience that directly\ntranslates to software development team dynamics.Studied effective coaching and teaching methodologies, sports psychology, and\nteam motivation techniques to become a more effective leader.Successfully managed and coordinated practice schedules, competitions, and development plans for 8 teamsCreated personalized training programs for players at different skill levels and tracked progressDeveloped game strategies, analyzed opponent patterns, and prepared teams for high-level competitionLed teams to compete successfully at the highest level in local city competitions,\nwith several teams achieving top placements.The leadership and analytical skills developed in sports coaching directly apply to\nsoftware development team leadership and code review processes.Reflection & Future DirectionsLooking across this portfolio of projects, several themes emerge that have shaped my\napproach to software development and creative work:Iteration and Learning: Nearly every project has gone through multiple versions,\nredesigns, or pivots. This isn't failure - it's the natural process of learning and\nimproving. Each iteration teaches something new about the problem space, user needs,\nor technical constraints.Cross-Pollination: Skills learned in one domain consistently apply to others.\nLeadership from coaching translates to software team dynamics. Visual composition\nfrom photography improves UI design. Game development networking knowledge applies\nto web API design.Community and Open Source: The projects that have had the most impact are those\nthat solve problems for others, not just myself. Open source contributions and\ncommunity resources create value that extends far beyond the initial effort.Balance of Technical and Creative: The most fulfilling projects combine technical\nchallenges with creative expression or meaningful impact. Pure technical exercises\nare valuable for learning, but projects with purpose and personality are what I\nremember and continue to develop.Explore how AI tools can enhance development workflows and create new possibilities\nfor creative and productivity applicationsDevelop projects that have positive environmental impact or help others make more\nsustainable technology choicesCreate resources and tools that help other developers learn and grow, building on\nmy experience with documentation and teachingFuture projects will prioritize: meaningful impact, technical excellence, community value,\nand personal growth. The goal is to build things that matter, not just things that work.Time spent curating and documenting this comprehensive project portfolio",
+      "description": "A comprehensive showcase of projects spanning game development, web applications,\ndeveloper tools, and creative platforms. Each project represents a milestone in\nmy programming journey and demonstrates different aspects of software development.Active ProjectsGenerate daily & weekly reports of political sittings and distribute them to a user base\nvia a website experience & optional emails.Chamber aims to make political information more accessible by automatically generating\ndigestible reports from parliamentary proceedings and delivering them directly to citizens\nwho want to stay informed about their government's activities.Researched various sources for parliamentary data, including official government APIs,\nweb scraping opportunities, and data availability across different jurisdictions.Build the core system that processes parliamentary data and generates human-readable reportsImplement email subscription system with personalized report deliveryCreate user-friendly web interface for browsing reports and managing subscriptionsThis project represents my belief that technology should be used to increase civic\nengagement and make democracy more accessible to everyday people.Blog site for all things on my creative side - a platform where I explore photography,\npainting, music, and other artistic endeavors alongside my technical work.This project serves as a creative outlet and demonstrates my ability to build content\nmanagement systems while exploring the intersection of technology and art.Exploring how programming and artistic expression can complement and enhance each other.\nMany of the same principles that make good code also make good art: composition,\nbalance, iteration, and attention to detail.Built a responsive gallery system for showcasing photography work with metadata and taggingIntegrate music player for original compositions and coversDocumenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually\nbuilding more complex skills on top of fundamental techniques.Game Development ProjectsA fast-paced multiplayer 1v1 capture the flag game built with GameMaker and Java backend.\nThis project combines my game development roots with my backend programming skills to\ncreate a competitive multiplayer experience.Studied various multiplayer game architectures, latency compensation techniques,\nand anti-cheat systems to inform the design decisions.Built the game client in GameMaker with smooth movement, responsive controls, and network communicationImplemented authoritative game server in Java with player synchronization and match managementDesign and implement skill-based matchmaking for balanced competitive matchesBuilding multiplayer games presents unique challenges around network synchronization,\nlatency compensation, and maintaining game state consistency across clients.Developer Tools & LibrariesAn open-source framework for interfacing between Java servers and GameMaker: Studio game clients.\nThis project solved a real problem I faced when building multiplayer games and has helped\nother developers in the GameMaker community.Deep dive into GameMaker's networking capabilities, socket implementations, and\ncommunication protocols to design an optimal interface layer.Built the foundational library with robust client-server communication protocolsCreated comprehensive documentation with code examples and getting-started guidesProvide ongoing support to developers using the library and maintain compatibilityThe library has been adopted by multiple independent game developers and has received\npositive feedback from the GameMaker community.This project taught me valuable lessons about API design, documentation, backwards\ncompatibility, and maintaining open source projects.Web Applications & PlatformsA hyper-minimalistic project and task management tool designed specifically for developers.\nAfter multiple iterations and redesigns, I'm currently working on a streamlined version\nthat focuses on simplicity and developer workflow integration.Researching how developers currently manage projects and tasks, what tools they use,\nand where existing solutions fall short of their needs.Exploring why developers often prefer simple, focused tools over feature-heavy alternatives.\nSometimes the best tool is the one that gets out of your way and lets you focus on the work.Narrowed down to core features: project creation, task management, and simple time trackingBuilding a clean, distraction-free interface that prioritizes function over formIntegrate with git repositories, development tools, and common developer workflowsThe goal is to create a tool so simple and intuitive that it becomes invisible -\nhelping developers stay organized without adding cognitive overhead.Backend & Infrastructure ProjectsStack setup for a golang API with bun testing, postgres database, and S3 storage for\nlocal & production environments. This project serves as a template and learning resource\nfor other developers looking to set up similar infrastructure.Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and\ndeployment strategies to identify best practices and optimal tool combinations.Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)Integrated Drizzle ORM for type-safe database operations with migrations and schema managementConfigured end-to-end testing pipeline using Bun for fast, reliable test executionCreated comprehensive documentation for deploying the stack to production environmentsThe repository has helped several developers bootstrap their Go API projects and serves\nas a reference for modern Go development practices.This project demonstrates current best practices in API development, including\ncontainerization, type safety, comprehensive testing, and clear documentation.Experimental & Learning ProjectsA project specifically designed to explore the transition from JavaScript to TypeScript\nand experiment with different approaches to state management and task organization.Documented the process of migrating a JavaScript project to TypeScript, including\nchallenges faced, benefits realized, and lessons learned about type safety.Reflecting on the transition from dynamic to static typing, the initial resistance,\nthe gradual appreciation, and ultimately the realization that TypeScript makes\nJavaScript development more enjoyable and productive.Built initial version in vanilla JavaScript to establish baseline functionalitySystematically migrated codebase to TypeScript, adding type definitions and improving code qualityCompared performance, developer experience, and code maintainability between JS and TS versionsThis project solidified my understanding of TypeScript's benefits and gave me practical\nexperience in migrating existing codebases to adopt type safety.Creative & Artistic ProjectsA curated collection of photography work spanning landscapes, street photography,\nand experimental compositions. This creative pursuit complements my technical work\nand provides a different lens for seeing and documenting the world.Continuous learning about composition, lighting, post-processing, and different\nphotographic styles to improve technical and artistic skills.Specialized focus on underwater photography while snorkeling, capturing marine life\nand underwater landscapes. This challenging environment requires special techniques\nand equipment considerations.Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!Select and organize best photographs into cohesive collections for online portfolioShare photography work on Instagram and other platforms to build an audience and get feedbackProfessional DevelopmentLed coaching for 8 different badminton teams at competitive city level, developing\nleadership skills, teaching abilities, and team management experience that directly\ntranslates to software development team dynamics.Studied effective coaching and teaching methodologies, sports psychology, and\nteam motivation techniques to become a more effective leader.Successfully managed and coordinated practice schedules, competitions, and development plans for 8 teamsCreated personalized training programs for players at different skill levels and tracked progressDeveloped game strategies, analyzed opponent patterns, and prepared teams for high-level competitionLed teams to compete successfully at the highest level in local city competitions,\nwith several teams achieving top placements.The leadership and analytical skills developed in sports coaching directly apply to\nsoftware development team leadership and code review processes.Reflection & Future DirectionsLooking across this portfolio of projects, several themes emerge that have shaped my\napproach to software development and creative work:Iteration and Learning: Nearly every project has gone through multiple versions,\nredesigns, or pivots. This isn't failure - it's the natural process of learning and\nimproving. Each iteration teaches something new about the problem space, user needs,\nor technical constraints.Cross-Pollination: Skills learned in one domain consistently apply to others.\nLeadership from coaching translates to software team dynamics. Visual composition\nfrom photography improves UI design. Game development networking knowledge applies\nto web API design.Community and Open Source: The projects that have had the most impact are those\nthat solve problems for others, not just myself. Open source contributions and\ncommunity resources create value that extends far beyond the initial effort.Balance of Technical and Creative: The most fulfilling projects combine technical\nchallenges with creative expression or meaningful impact. Pure technical exercises\nare valuable for learning, but projects with purpose and personality are what I\nremember and continue to develop.Explore how AI tools can enhance development workflows and create new possibilities\nfor creative and productivity applicationsDevelop projects that have positive environmental impact or help others make more\nsustainable technology choicesCreate resources and tools that help other developers learn and grow, building on\nmy experience with documentation and teachingFuture projects will prioritize: meaningful impact, technical excellence, community value,\nand personal growth. The goal is to build things that matter, not just things that work.Time spent curating and documenting this comprehensive project portfolio",
       "children": [
         "chamber-project",
         "burning-blends",
@@ -64,13 +64,13 @@
         "badminton-coaching",
         "portfolio-reflection",
         "future-directions",
-        "tag-be4f279c",
-        "tag-33fe0e0b",
-        "tag-2268b6e2",
-        "tag-6c5e6b04",
-        "tag-6f6748dd",
-        "tag-f6146fde",
-        "time-spent-curating-and-documenting-this-comprehen-f612855a"
+        "tag-0f0b2e9d",
+        "tag-7fdc1bb8",
+        "tag-188ed460",
+        "tag-1553c5b4",
+        "tag-5fc3eeaf",
+        "tag-d63eb94f",
+        "time-spent-curating-and-documenting-this-comprehen-f00e4b7f"
       ]
     },
     "chamber-project": {
@@ -82,12 +82,12 @@
         "start": {
           "line": 17,
           "column": 3,
-          "offset": 708
+          "offset": 713
         },
         "end": {
           "line": 66,
           "column": 13,
-          "offset": 2983
+          "offset": 2988
         }
       },
       "attributes": {
@@ -107,17 +107,17 @@
         "report-generation-system",
         "email-distribution",
         "web-interface",
-        "skill-adee7217",
-        "skill-2f30656a",
-        "skill-1a93af1d",
-        "skill-039c3c1e",
-        "skill-31bea3db",
-        "skill-56055ff1",
-        "this-project-represents-my-belief-that-technology-1604e886",
-        "collaborator-0632e170",
-        "tag-c4b897e0",
-        "tag-a51cf7cd",
-        "tag-9e275b23"
+        "skill-16c3ade1",
+        "skill-dc2395cb",
+        "skill-7fae8c78",
+        "skill-79824f1e",
+        "skill-f30817ac",
+        "skill-228b3685",
+        "this-project-represents-my-belief-that-technology-d9486abe",
+        "collaborator-84f9cede",
+        "tag-a8860d85",
+        "tag-4ca7ab6a",
+        "tag-d3170190"
       ]
     },
     "political-data-sources": {
@@ -129,12 +129,12 @@
         "start": {
           "line": 29,
           "column": 5,
-          "offset": 1348
+          "offset": 1353
         },
         "end": {
           "line": 32,
           "column": 16,
-          "offset": 1623
+          "offset": 1628
         }
       },
       "attributes": {
@@ -155,12 +155,12 @@
         "start": {
           "line": 34,
           "column": 5,
-          "offset": 1633
+          "offset": 1638
         },
         "end": {
           "line": 37,
           "column": 12,
-          "offset": 1861
+          "offset": 1866
         }
       },
       "attributes": {
@@ -181,12 +181,12 @@
         "start": {
           "line": 39,
           "column": 5,
-          "offset": 1871
+          "offset": 1876
         },
         "end": {
           "line": 42,
           "column": 12,
-          "offset": 2069
+          "offset": 2074
         }
       },
       "attributes": {
@@ -207,12 +207,12 @@
         "start": {
           "line": 44,
           "column": 5,
-          "offset": 2079
+          "offset": 2084
         },
         "end": {
           "line": 47,
           "column": 12,
-          "offset": 2275
+          "offset": 2280
         }
       },
       "attributes": {
@@ -224,8 +224,8 @@
       },
       "value": "Create user-friendly web interface for browsing reports and managing subscriptions"
     },
-    "skill-adee7217": {
-      "id": "skill-adee7217",
+    "skill-16c3ade1": {
+      "id": "skill-16c3ade1",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -233,12 +233,12 @@
         "start": {
           "line": 49,
           "column": 5,
-          "offset": 2285
+          "offset": 2290
         },
         "end": {
           "line": 49,
           "column": 46,
-          "offset": 2326
+          "offset": 2331
         }
       },
       "metaType": "skill",
@@ -249,8 +249,8 @@
       },
       "value": ""
     },
-    "skill-2f30656a": {
-      "id": "skill-2f30656a",
+    "skill-dc2395cb": {
+      "id": "skill-dc2395cb",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -258,12 +258,12 @@
         "start": {
           "line": 50,
           "column": 5,
-          "offset": 2331
+          "offset": 2336
         },
         "end": {
           "line": 50,
           "column": 45,
-          "offset": 2371
+          "offset": 2376
         }
       },
       "metaType": "skill",
@@ -274,8 +274,8 @@
       },
       "value": ""
     },
-    "skill-1a93af1d": {
-      "id": "skill-1a93af1d",
+    "skill-7fae8c78": {
+      "id": "skill-7fae8c78",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -283,12 +283,12 @@
         "start": {
           "line": 51,
           "column": 5,
-          "offset": 2376
+          "offset": 2381
         },
         "end": {
           "line": 51,
           "column": 49,
-          "offset": 2420
+          "offset": 2425
         }
       },
       "metaType": "skill",
@@ -299,8 +299,8 @@
       },
       "value": ""
     },
-    "skill-039c3c1e": {
-      "id": "skill-039c3c1e",
+    "skill-79824f1e": {
+      "id": "skill-79824f1e",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -308,12 +308,12 @@
         "start": {
           "line": 52,
           "column": 5,
-          "offset": 2425
+          "offset": 2430
         },
         "end": {
           "line": 52,
           "column": 49,
-          "offset": 2469
+          "offset": 2474
         }
       },
       "metaType": "skill",
@@ -324,8 +324,8 @@
       },
       "value": ""
     },
-    "skill-31bea3db": {
-      "id": "skill-31bea3db",
+    "skill-f30817ac": {
+      "id": "skill-f30817ac",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -333,12 +333,12 @@
         "start": {
           "line": 53,
           "column": 5,
-          "offset": 2474
+          "offset": 2479
         },
         "end": {
           "line": 53,
           "column": 58,
-          "offset": 2527
+          "offset": 2532
         }
       },
       "metaType": "skill",
@@ -349,8 +349,8 @@
       },
       "value": ""
     },
-    "skill-56055ff1": {
-      "id": "skill-56055ff1",
+    "skill-228b3685": {
+      "id": "skill-228b3685",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -358,12 +358,12 @@
         "start": {
           "line": 54,
           "column": 5,
-          "offset": 2532
+          "offset": 2537
         },
         "end": {
           "line": 54,
           "column": 59,
-          "offset": 2586
+          "offset": 2591
         }
       },
       "metaType": "skill",
@@ -374,8 +374,8 @@
       },
       "value": ""
     },
-    "this-project-represents-my-belief-that-technology-1604e886": {
-      "id": "this-project-represents-my-belief-that-technology-1604e886",
+    "this-project-represents-my-belief-that-technology-d9486abe": {
+      "id": "this-project-represents-my-belief-that-technology-d9486abe",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -383,12 +383,12 @@
         "start": {
           "line": 56,
           "column": 5,
-          "offset": 2596
+          "offset": 2601
         },
         "end": {
           "line": 59,
           "column": 12,
-          "offset": 2798
+          "offset": 2803
         }
       },
       "attributes": {
@@ -397,8 +397,8 @@
       },
       "value": "This project represents my belief that technology should be used to increase civic\nengagement and make democracy more accessible to everyday people."
     },
-    "collaborator-0632e170": {
-      "id": "collaborator-0632e170",
+    "collaborator-84f9cede": {
+      "id": "collaborator-84f9cede",
       "type": "collaborator",
       "primitive": "Link",
       "source": {
@@ -406,12 +406,12 @@
         "start": {
           "line": 61,
           "column": 5,
-          "offset": 2808
+          "offset": 2813
         },
         "end": {
           "line": 61,
           "column": 60,
-          "offset": 2863
+          "offset": 2868
         }
       },
       "linkType": "collaborates",
@@ -422,8 +422,8 @@
       },
       "target": "tom-materne"
     },
-    "tag-c4b897e0": {
-      "id": "tag-c4b897e0",
+    "tag-a8860d85": {
+      "id": "tag-a8860d85",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -431,12 +431,12 @@
         "start": {
           "line": 63,
           "column": 5,
-          "offset": 2873
+          "offset": 2878
         },
         "end": {
           "line": 63,
           "column": 31,
-          "offset": 2899
+          "offset": 2904
         }
       },
       "metaType": "tag",
@@ -446,8 +446,8 @@
       },
       "value": "civic-tech"
     },
-    "tag-a51cf7cd": {
-      "id": "tag-a51cf7cd",
+    "tag-4ca7ab6a": {
+      "id": "tag-4ca7ab6a",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -455,12 +455,12 @@
         "start": {
           "line": 64,
           "column": 5,
-          "offset": 2904
+          "offset": 2909
         },
         "end": {
           "line": 64,
           "column": 36,
-          "offset": 2935
+          "offset": 2940
         }
       },
       "metaType": "tag",
@@ -470,8 +470,8 @@
       },
       "value": "government-data"
     },
-    "tag-9e275b23": {
-      "id": "tag-9e275b23",
+    "tag-d3170190": {
+      "id": "tag-d3170190",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -479,12 +479,12 @@
         "start": {
           "line": 65,
           "column": 5,
-          "offset": 2940
+          "offset": 2945
         },
         "end": {
           "line": 65,
           "column": 35,
-          "offset": 2970
+          "offset": 2975
         }
       },
       "metaType": "tag",
@@ -503,12 +503,12 @@
         "start": {
           "line": 68,
           "column": 3,
-          "offset": 2987
+          "offset": 2992
         },
         "end": {
           "line": 113,
           "column": 13,
-          "offset": 5131
+          "offset": 5136
         }
       },
       "attributes": {
@@ -527,13 +527,13 @@
         "photography-gallery",
         "music-integration",
         "painting-documentation",
-        "skill-302a12c1",
-        "skill-e521c96a",
-        "skill-3d0d4a31",
-        "skill-0e07ed47",
-        "tag-cc0ab091",
-        "tag-008ca394",
-        "tag-a8b1fbc6"
+        "skill-d9cfe77d",
+        "skill-2f994cf6",
+        "skill-0d08e68d",
+        "skill-0962f9f9",
+        "tag-b9646a93",
+        "tag-e6423b38",
+        "tag-a84be93e"
       ]
     },
     "creative-tech-intersection": {
@@ -545,12 +545,12 @@
         "start": {
           "line": 79,
           "column": 5,
-          "offset": 3563
+          "offset": 3568
         },
         "end": {
           "line": 83,
           "column": 13,
-          "offset": 3885
+          "offset": 3890
         }
       },
       "attributes": {
@@ -571,12 +571,12 @@
         "start": {
           "line": 85,
           "column": 5,
-          "offset": 3895
+          "offset": 3900
         },
         "end": {
           "line": 88,
           "column": 12,
-          "offset": 4119
+          "offset": 4124
         }
       },
       "attributes": {
@@ -597,12 +597,12 @@
         "start": {
           "line": 90,
           "column": 5,
-          "offset": 4129
+          "offset": 4134
         },
         "end": {
           "line": 93,
           "column": 12,
-          "offset": 4312
+          "offset": 4317
         }
       },
       "attributes": {
@@ -623,12 +623,12 @@
         "start": {
           "line": 95,
           "column": 5,
-          "offset": 4322
+          "offset": 4327
         },
         "end": {
           "line": 103,
           "column": 15,
-          "offset": 4783
+          "offset": 4788
         }
       },
       "attributes": {
@@ -641,11 +641,11 @@
       "title": "Painting Progress Documentation",
       "content": "Documenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually\nbuilding more complex skills on top of fundamental techniques.",
       "children": [
-        "just-like-coding-painting-is-about-iteration-lea-bee053ab"
+        "just-like-coding-painting-is-about-iteration-lea-efc63153"
       ]
     },
-    "just-like-coding-painting-is-about-iteration-lea-bee053ab": {
-      "id": "just-like-coding-painting-is-about-iteration-lea-bee053ab",
+    "just-like-coding-painting-is-about-iteration-lea-efc63153": {
+      "id": "just-like-coding-painting-is-about-iteration-lea-efc63153",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -653,12 +653,12 @@
         "start": {
           "line": 99,
           "column": 7,
-          "offset": 4559
+          "offset": 4564
         },
         "end": {
           "line": 102,
           "column": 14,
-          "offset": 4768
+          "offset": 4773
         }
       },
       "attributes": {
@@ -667,8 +667,8 @@
       },
       "value": "Just like coding, painting is about iteration, learning from mistakes, and gradually\nbuilding more complex skills on top of fundamental techniques."
     },
-    "skill-302a12c1": {
-      "id": "skill-302a12c1",
+    "skill-d9cfe77d": {
+      "id": "skill-d9cfe77d",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -676,12 +676,12 @@
         "start": {
           "line": 105,
           "column": 5,
-          "offset": 4793
+          "offset": 4798
         },
         "end": {
           "line": 105,
           "column": 61,
-          "offset": 4849
+          "offset": 4854
         }
       },
       "metaType": "skill",
@@ -692,8 +692,8 @@
       },
       "value": ""
     },
-    "skill-e521c96a": {
-      "id": "skill-e521c96a",
+    "skill-2f994cf6": {
+      "id": "skill-2f994cf6",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -701,12 +701,12 @@
         "start": {
           "line": 106,
           "column": 5,
-          "offset": 4854
+          "offset": 4859
         },
         "end": {
           "line": 106,
           "column": 54,
-          "offset": 4903
+          "offset": 4908
         }
       },
       "metaType": "skill",
@@ -717,8 +717,8 @@
       },
       "value": ""
     },
-    "skill-3d0d4a31": {
-      "id": "skill-3d0d4a31",
+    "skill-0d08e68d": {
+      "id": "skill-0d08e68d",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -726,12 +726,12 @@
         "start": {
           "line": 107,
           "column": 5,
-          "offset": 4908
+          "offset": 4913
         },
         "end": {
           "line": 107,
           "column": 56,
-          "offset": 4959
+          "offset": 4964
         }
       },
       "metaType": "skill",
@@ -742,8 +742,8 @@
       },
       "value": ""
     },
-    "skill-0e07ed47": {
-      "id": "skill-0e07ed47",
+    "skill-0962f9f9": {
+      "id": "skill-0962f9f9",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -751,12 +751,12 @@
         "start": {
           "line": 108,
           "column": 5,
-          "offset": 4964
+          "offset": 4969
         },
         "end": {
           "line": 108,
           "column": 59,
-          "offset": 5018
+          "offset": 5023
         }
       },
       "metaType": "skill",
@@ -767,8 +767,8 @@
       },
       "value": ""
     },
-    "tag-cc0ab091": {
-      "id": "tag-cc0ab091",
+    "tag-b9646a93": {
+      "id": "tag-b9646a93",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -776,12 +776,12 @@
         "start": {
           "line": 110,
           "column": 5,
-          "offset": 5028
+          "offset": 5033
         },
         "end": {
           "line": 110,
           "column": 31,
-          "offset": 5054
+          "offset": 5059
         }
       },
       "metaType": "tag",
@@ -791,8 +791,8 @@
       },
       "value": "creativity"
     },
-    "tag-008ca394": {
-      "id": "tag-008ca394",
+    "tag-e6423b38": {
+      "id": "tag-e6423b38",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -800,12 +800,12 @@
         "start": {
           "line": 111,
           "column": 5,
-          "offset": 5059
+          "offset": 5064
         },
         "end": {
           "line": 111,
           "column": 24,
-          "offset": 5078
+          "offset": 5083
         }
       },
       "metaType": "tag",
@@ -815,8 +815,8 @@
       },
       "value": "art"
     },
-    "tag-a8b1fbc6": {
-      "id": "tag-a8b1fbc6",
+    "tag-a84be93e": {
+      "id": "tag-a84be93e",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -824,12 +824,12 @@
         "start": {
           "line": 112,
           "column": 5,
-          "offset": 5083
+          "offset": 5088
         },
         "end": {
           "line": 112,
           "column": 40,
-          "offset": 5118
+          "offset": 5123
         }
       },
       "metaType": "tag",
@@ -848,12 +848,12 @@
         "start": {
           "line": 117,
           "column": 3,
-          "offset": 5167
+          "offset": 5172
         },
         "end": {
           "line": 153,
           "column": 13,
-          "offset": 6927
+          "offset": 6932
         }
       },
       "attributes": {
@@ -870,14 +870,14 @@
         "game-client",
         "java-server",
         "matchmaking-system",
-        "building-multiplayer-games-presents-unique-challen-4bf8ab00",
-        "skill-c0741dc6",
-        "skill-092222c5",
-        "skill-05088a60",
-        "skill-a4666bf1",
-        "tag-df8a19e1",
-        "tag-b54be0b7",
-        "tag-01dd9d3f"
+        "building-multiplayer-games-presents-unique-challen-d289ee14",
+        "skill-07da874a",
+        "skill-43d1f407",
+        "skill-9ee92c42",
+        "skill-de476e78",
+        "tag-1a4d7de9",
+        "tag-a76bf13f",
+        "tag-534a859f"
       ]
     },
     "multiplayer-architecture": {
@@ -889,12 +889,12 @@
         "start": {
           "line": 123,
           "column": 5,
-          "offset": 5499
+          "offset": 5504
         },
         "end": {
           "line": 126,
           "column": 16,
-          "offset": 5735
+          "offset": 5740
         }
       },
       "attributes": {
@@ -915,12 +915,12 @@
         "start": {
           "line": 128,
           "column": 5,
-          "offset": 5745
+          "offset": 5750
         },
         "end": {
           "line": 130,
           "column": 12,
-          "offset": 5950
+          "offset": 5955
         }
       },
       "attributes": {
@@ -941,12 +941,12 @@
         "start": {
           "line": 132,
           "column": 5,
-          "offset": 5960
+          "offset": 5965
         },
         "end": {
           "line": 134,
           "column": 12,
-          "offset": 6156
+          "offset": 6161
         }
       },
       "attributes": {
@@ -967,12 +967,12 @@
         "start": {
           "line": 136,
           "column": 5,
-          "offset": 6166
+          "offset": 6171
         },
         "end": {
           "line": 138,
           "column": 12,
-          "offset": 6353
+          "offset": 6358
         }
       },
       "attributes": {
@@ -984,8 +984,8 @@
       },
       "value": "Design and implement skill-based matchmaking for balanced competitive matches"
     },
-    "building-multiplayer-games-presents-unique-challen-4bf8ab00": {
-      "id": "building-multiplayer-games-presents-unique-challen-4bf8ab00",
+    "building-multiplayer-games-presents-unique-challen-d289ee14": {
+      "id": "building-multiplayer-games-presents-unique-challen-d289ee14",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -993,12 +993,12 @@
         "start": {
           "line": 140,
           "column": 5,
-          "offset": 6363
+          "offset": 6368
         },
         "end": {
           "line": 143,
           "column": 12,
-          "offset": 6585
+          "offset": 6590
         }
       },
       "attributes": {
@@ -1007,8 +1007,8 @@
       },
       "value": "Building multiplayer games presents unique challenges around network synchronization,\nlatency compensation, and maintaining game state consistency across clients."
     },
-    "skill-c0741dc6": {
-      "id": "skill-c0741dc6",
+    "skill-07da874a": {
+      "id": "skill-07da874a",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1016,12 +1016,12 @@
         "start": {
           "line": 145,
           "column": 5,
-          "offset": 6595
+          "offset": 6600
         },
         "end": {
           "line": 145,
           "column": 48,
-          "offset": 6638
+          "offset": 6643
         }
       },
       "metaType": "skill",
@@ -1032,8 +1032,8 @@
       },
       "value": ""
     },
-    "skill-092222c5": {
-      "id": "skill-092222c5",
+    "skill-43d1f407": {
+      "id": "skill-43d1f407",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1041,12 +1041,12 @@
         "start": {
           "line": 146,
           "column": 5,
-          "offset": 6643
+          "offset": 6648
         },
         "end": {
           "line": 146,
           "column": 43,
-          "offset": 6681
+          "offset": 6686
         }
       },
       "metaType": "skill",
@@ -1057,8 +1057,8 @@
       },
       "value": ""
     },
-    "skill-05088a60": {
-      "id": "skill-05088a60",
+    "skill-9ee92c42": {
+      "id": "skill-9ee92c42",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1066,12 +1066,12 @@
         "start": {
           "line": 147,
           "column": 5,
-          "offset": 6686
+          "offset": 6691
         },
         "end": {
           "line": 147,
           "column": 62,
-          "offset": 6743
+          "offset": 6748
         }
       },
       "metaType": "skill",
@@ -1082,8 +1082,8 @@
       },
       "value": ""
     },
-    "skill-a4666bf1": {
-      "id": "skill-a4666bf1",
+    "skill-de476e78": {
+      "id": "skill-de476e78",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1091,12 +1091,12 @@
         "start": {
           "line": 148,
           "column": 5,
-          "offset": 6748
+          "offset": 6753
         },
         "end": {
           "line": 148,
           "column": 54,
-          "offset": 6797
+          "offset": 6802
         }
       },
       "metaType": "skill",
@@ -1107,8 +1107,8 @@
       },
       "value": ""
     },
-    "tag-df8a19e1": {
-      "id": "tag-df8a19e1",
+    "tag-1a4d7de9": {
+      "id": "tag-1a4d7de9",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1116,12 +1116,12 @@
         "start": {
           "line": 150,
           "column": 5,
-          "offset": 6807
+          "offset": 6812
         },
         "end": {
           "line": 150,
           "column": 32,
-          "offset": 6834
+          "offset": 6839
         }
       },
       "metaType": "tag",
@@ -1131,8 +1131,8 @@
       },
       "value": "multiplayer"
     },
-    "tag-b54be0b7": {
-      "id": "tag-b54be0b7",
+    "tag-a76bf13f": {
+      "id": "tag-a76bf13f",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1140,12 +1140,12 @@
         "start": {
           "line": 151,
           "column": 5,
-          "offset": 6839
+          "offset": 6844
         },
         "end": {
           "line": 151,
           "column": 39,
-          "offset": 6873
+          "offset": 6878
         }
       },
       "metaType": "tag",
@@ -1155,8 +1155,8 @@
       },
       "value": "competitive-gaming"
     },
-    "tag-01dd9d3f": {
-      "id": "tag-01dd9d3f",
+    "tag-534a859f": {
+      "id": "tag-534a859f",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1164,12 +1164,12 @@
         "start": {
           "line": 152,
           "column": 5,
-          "offset": 6878
+          "offset": 6883
         },
         "end": {
           "line": 152,
           "column": 41,
-          "offset": 6914
+          "offset": 6919
         }
       },
       "metaType": "tag",
@@ -1188,12 +1188,12 @@
         "start": {
           "line": 157,
           "column": 3,
-          "offset": 6965
+          "offset": 6970
         },
         "end": {
           "line": 200,
           "column": 13,
-          "offset": 9038
+          "offset": 9043
         }
       },
       "attributes": {
@@ -1211,16 +1211,16 @@
         "core-library",
         "documentation-site",
         "community-support",
-        "the-library-has-been-adopted-by-multiple-independe-23a77dbe",
-        "skill-3ff3979f",
-        "skill-43677f7c",
-        "skill-5ba5d130",
-        "skill-48db937b",
-        "this-project-taught-me-valuable-lessons-about-api-68513ef2",
-        "tag-c0f2cd44",
-        "tag-1e505b33",
-        "tag-8a491836",
-        "tag-5bf4a350"
+        "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+        "skill-22c19654",
+        "skill-4a7ac3d3",
+        "skill-0d11b4e9",
+        "skill-6173c5a4",
+        "this-project-taught-me-valuable-lessons-about-api-735f28a8",
+        "tag-6954c236",
+        "tag-c81ac582",
+        "tag-5a2ddd8a",
+        "tag-68f6ab33"
       ]
     },
     "gamemaker-networking": {
@@ -1232,12 +1232,12 @@
         "start": {
           "line": 164,
           "column": 5,
-          "offset": 7364
+          "offset": 7369
         },
         "end": {
           "line": 167,
           "column": 16,
-          "offset": 7608
+          "offset": 7613
         }
       },
       "attributes": {
@@ -1258,12 +1258,12 @@
         "start": {
           "line": 169,
           "column": 5,
-          "offset": 7618
+          "offset": 7623
         },
         "end": {
           "line": 171,
           "column": 12,
-          "offset": 7809
+          "offset": 7814
         }
       },
       "attributes": {
@@ -1284,12 +1284,12 @@
         "start": {
           "line": 173,
           "column": 5,
-          "offset": 7819
+          "offset": 7824
         },
         "end": {
           "line": 175,
           "column": 12,
-          "offset": 8017
+          "offset": 8022
         }
       },
       "attributes": {
@@ -1310,12 +1310,12 @@
         "start": {
           "line": 177,
           "column": 5,
-          "offset": 8027
+          "offset": 8032
         },
         "end": {
           "line": 179,
           "column": 12,
-          "offset": 8232
+          "offset": 8237
         }
       },
       "attributes": {
@@ -1327,8 +1327,8 @@
       },
       "value": "Provide ongoing support to developers using the library and maintain compatibility"
     },
-    "the-library-has-been-adopted-by-multiple-independe-23a77dbe": {
-      "id": "the-library-has-been-adopted-by-multiple-independe-23a77dbe",
+    "the-library-has-been-adopted-by-multiple-independe-baba2f8f": {
+      "id": "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
       "type": "achievement",
       "primitive": "Leaf",
       "source": {
@@ -1336,12 +1336,12 @@
         "start": {
           "line": 181,
           "column": 5,
-          "offset": 8242
+          "offset": 8247
         },
         "end": {
           "line": 184,
           "column": 19,
-          "offset": 8449
+          "offset": 8454
         }
       },
       "attributes": {
@@ -1350,8 +1350,8 @@
       },
       "value": "The library has been adopted by multiple independent game developers and has received\npositive feedback from the GameMaker community."
     },
-    "skill-3ff3979f": {
-      "id": "skill-3ff3979f",
+    "skill-22c19654": {
+      "id": "skill-22c19654",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1359,12 +1359,12 @@
         "start": {
           "line": 186,
           "column": 5,
-          "offset": 8459
+          "offset": 8464
         },
         "end": {
           "line": 186,
           "column": 53,
-          "offset": 8507
+          "offset": 8512
         }
       },
       "metaType": "skill",
@@ -1375,8 +1375,8 @@
       },
       "value": ""
     },
-    "skill-43677f7c": {
-      "id": "skill-43677f7c",
+    "skill-4a7ac3d3": {
+      "id": "skill-4a7ac3d3",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1384,12 +1384,12 @@
         "start": {
           "line": 187,
           "column": 5,
-          "offset": 8512
+          "offset": 8517
         },
         "end": {
           "line": 187,
           "column": 54,
-          "offset": 8561
+          "offset": 8566
         }
       },
       "metaType": "skill",
@@ -1400,8 +1400,8 @@
       },
       "value": ""
     },
-    "skill-5ba5d130": {
-      "id": "skill-5ba5d130",
+    "skill-0d11b4e9": {
+      "id": "skill-0d11b4e9",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1409,12 +1409,12 @@
         "start": {
           "line": 188,
           "column": 5,
-          "offset": 8566
+          "offset": 8571
         },
         "end": {
           "line": 188,
           "column": 62,
-          "offset": 8623
+          "offset": 8628
         }
       },
       "metaType": "skill",
@@ -1425,8 +1425,8 @@
       },
       "value": ""
     },
-    "skill-48db937b": {
-      "id": "skill-48db937b",
+    "skill-6173c5a4": {
+      "id": "skill-6173c5a4",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1434,12 +1434,12 @@
         "start": {
           "line": 189,
           "column": 5,
-          "offset": 8628
+          "offset": 8633
         },
         "end": {
           "line": 189,
           "column": 63,
-          "offset": 8686
+          "offset": 8691
         }
       },
       "metaType": "skill",
@@ -1450,8 +1450,8 @@
       },
       "value": ""
     },
-    "this-project-taught-me-valuable-lessons-about-api-68513ef2": {
-      "id": "this-project-taught-me-valuable-lessons-about-api-68513ef2",
+    "this-project-taught-me-valuable-lessons-about-api-735f28a8": {
+      "id": "this-project-taught-me-valuable-lessons-about-api-735f28a8",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -1459,12 +1459,12 @@
         "start": {
           "line": 191,
           "column": 5,
-          "offset": 8696
+          "offset": 8701
         },
         "end": {
           "line": 194,
           "column": 12,
-          "offset": 8891
+          "offset": 8896
         }
       },
       "attributes": {
@@ -1473,8 +1473,8 @@
       },
       "value": "This project taught me valuable lessons about API design, documentation, backwards\ncompatibility, and maintaining open source projects."
     },
-    "tag-c0f2cd44": {
-      "id": "tag-c0f2cd44",
+    "tag-6954c236": {
+      "id": "tag-6954c236",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1482,12 +1482,12 @@
         "start": {
           "line": 196,
           "column": 5,
-          "offset": 8901
+          "offset": 8906
         },
         "end": {
           "line": 196,
           "column": 32,
-          "offset": 8928
+          "offset": 8933
         }
       },
       "metaType": "tag",
@@ -1497,8 +1497,8 @@
       },
       "value": "open-source"
     },
-    "tag-1e505b33": {
-      "id": "tag-1e505b33",
+    "tag-c81ac582": {
+      "id": "tag-c81ac582",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1506,12 +1506,12 @@
         "start": {
           "line": 197,
           "column": 5,
-          "offset": 8933
+          "offset": 8938
         },
         "end": {
           "line": 197,
           "column": 30,
-          "offset": 8958
+          "offset": 8963
         }
       },
       "metaType": "tag",
@@ -1521,8 +1521,8 @@
       },
       "value": "gamemaker"
     },
-    "tag-8a491836": {
-      "id": "tag-8a491836",
+    "tag-5a2ddd8a": {
+      "id": "tag-5a2ddd8a",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1530,12 +1530,12 @@
         "start": {
           "line": 198,
           "column": 5,
-          "offset": 8963
+          "offset": 8968
         },
         "end": {
           "line": 198,
           "column": 31,
-          "offset": 8989
+          "offset": 8994
         }
       },
       "metaType": "tag",
@@ -1545,8 +1545,8 @@
       },
       "value": "networking"
     },
-    "tag-5bf4a350": {
-      "id": "tag-5bf4a350",
+    "tag-68f6ab33": {
+      "id": "tag-68f6ab33",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1554,12 +1554,12 @@
         "start": {
           "line": 199,
           "column": 5,
-          "offset": 8994
+          "offset": 8999
         },
         "end": {
           "line": 199,
           "column": 36,
-          "offset": 9025
+          "offset": 9030
         }
       },
       "metaType": "tag",
@@ -1578,12 +1578,12 @@
         "start": {
           "line": 204,
           "column": 3,
-          "offset": 9077
+          "offset": 9082
         },
         "end": {
           "line": 244,
           "column": 13,
-          "offset": 11122
+          "offset": 11127
         }
       },
       "attributes": {
@@ -1601,13 +1601,13 @@
         "mvp-definition",
         "ui-redesign",
         "developer-workflow-integration",
-        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
-        "skill-9d400dd9",
-        "skill-fffb0009",
-        "skill-ec9a15ea",
-        "tag-487152b1",
-        "tag-b57c64ab",
-        "tag-ef7a4536"
+        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+        "skill-ce82db49",
+        "skill-d4d2b68f",
+        "skill-57b8db17",
+        "tag-ba6dd4b1",
+        "tag-294445d7",
+        "tag-d7b6fa57"
       ]
     },
     "developer-productivity": {
@@ -1619,12 +1619,12 @@
         "start": {
           "line": 210,
           "column": 5,
-          "offset": 9441
+          "offset": 9446
         },
         "end": {
           "line": 213,
           "column": 16,
-          "offset": 9678
+          "offset": 9683
         }
       },
       "attributes": {
@@ -1645,12 +1645,12 @@
         "start": {
           "line": 215,
           "column": 5,
-          "offset": 9688
+          "offset": 9693
         },
         "end": {
           "line": 218,
           "column": 13,
-          "offset": 9983
+          "offset": 9988
         }
       },
       "attributes": {
@@ -1671,12 +1671,12 @@
         "start": {
           "line": 220,
           "column": 5,
-          "offset": 9993
+          "offset": 9998
         },
         "end": {
           "line": 222,
           "column": 12,
-          "offset": 10192
+          "offset": 10197
         }
       },
       "attributes": {
@@ -1697,12 +1697,12 @@
         "start": {
           "line": 224,
           "column": 5,
-          "offset": 10202
+          "offset": 10207
         },
         "end": {
           "line": 226,
           "column": 12,
-          "offset": 10395
+          "offset": 10400
         }
       },
       "attributes": {
@@ -1723,12 +1723,12 @@
         "start": {
           "line": 228,
           "column": 5,
-          "offset": 10405
+          "offset": 10410
         },
         "end": {
           "line": 230,
           "column": 12,
-          "offset": 10612
+          "offset": 10617
         }
       },
       "attributes": {
@@ -1740,8 +1740,8 @@
       },
       "value": "Integrate with git repositories, development tools, and common developer workflows"
     },
-    "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa": {
-      "id": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
+    "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3": {
+      "id": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -1749,12 +1749,12 @@
         "start": {
           "line": 232,
           "column": 5,
-          "offset": 10622
+          "offset": 10627
         },
         "end": {
           "line": 235,
           "column": 12,
-          "offset": 10828
+          "offset": 10833
         }
       },
       "attributes": {
@@ -1763,8 +1763,8 @@
       },
       "value": "The goal is to create a tool so simple and intuitive that it becomes invisible -\nhelping developers stay organized without adding cognitive overhead."
     },
-    "skill-9d400dd9": {
-      "id": "skill-9d400dd9",
+    "skill-ce82db49": {
+      "id": "skill-ce82db49",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1772,12 +1772,12 @@
         "start": {
           "line": 237,
           "column": 5,
-          "offset": 10838
+          "offset": 10843
         },
         "end": {
           "line": 237,
           "column": 57,
-          "offset": 10890
+          "offset": 10895
         }
       },
       "metaType": "skill",
@@ -1788,8 +1788,8 @@
       },
       "value": ""
     },
-    "skill-fffb0009": {
-      "id": "skill-fffb0009",
+    "skill-d4d2b68f": {
+      "id": "skill-d4d2b68f",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1797,12 +1797,12 @@
         "start": {
           "line": 238,
           "column": 5,
-          "offset": 10895
+          "offset": 10900
         },
         "end": {
           "line": 238,
           "column": 58,
-          "offset": 10948
+          "offset": 10953
         }
       },
       "metaType": "skill",
@@ -1813,8 +1813,8 @@
       },
       "value": ""
     },
-    "skill-ec9a15ea": {
-      "id": "skill-ec9a15ea",
+    "skill-57b8db17": {
+      "id": "skill-57b8db17",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -1822,12 +1822,12 @@
         "start": {
           "line": 239,
           "column": 5,
-          "offset": 10953
+          "offset": 10958
         },
         "end": {
           "line": 239,
           "column": 56,
-          "offset": 11004
+          "offset": 11009
         }
       },
       "metaType": "skill",
@@ -1838,8 +1838,8 @@
       },
       "value": ""
     },
-    "tag-487152b1": {
-      "id": "tag-487152b1",
+    "tag-ba6dd4b1": {
+      "id": "tag-ba6dd4b1",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1847,12 +1847,12 @@
         "start": {
           "line": 241,
           "column": 5,
-          "offset": 11014
+          "offset": 11019
         },
         "end": {
           "line": 241,
           "column": 33,
-          "offset": 11042
+          "offset": 11047
         }
       },
       "metaType": "tag",
@@ -1862,8 +1862,8 @@
       },
       "value": "productivity"
     },
-    "tag-b57c64ab": {
-      "id": "tag-b57c64ab",
+    "tag-294445d7": {
+      "id": "tag-294445d7",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1871,12 +1871,12 @@
         "start": {
           "line": 242,
           "column": 5,
-          "offset": 11047
+          "offset": 11052
         },
         "end": {
           "line": 242,
           "column": 36,
-          "offset": 11078
+          "offset": 11083
         }
       },
       "metaType": "tag",
@@ -1886,8 +1886,8 @@
       },
       "value": "developer-tools"
     },
-    "tag-ef7a4536": {
-      "id": "tag-ef7a4536",
+    "tag-d7b6fa57": {
+      "id": "tag-d7b6fa57",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -1895,12 +1895,12 @@
         "start": {
           "line": 243,
           "column": 5,
-          "offset": 11083
+          "offset": 11088
         },
         "end": {
           "line": 243,
           "column": 31,
-          "offset": 11109
+          "offset": 11114
         }
       },
       "metaType": "tag",
@@ -1919,12 +1919,12 @@
         "start": {
           "line": 248,
           "column": 3,
-          "offset": 11166
+          "offset": 11171
         },
         "end": {
           "line": 301,
           "column": 13,
-          "offset": 13711
+          "offset": 13716
         }
       },
       "attributes": {
@@ -1943,17 +1943,17 @@
         "database-integration",
         "testing-framework",
         "deployment-guide",
-        "the-repository-has-helped-several-developers-boots-a87649db",
-        "skill-db65d5b7",
-        "skill-b9153dde",
-        "skill-e88b75b5",
-        "skill-d6f55880",
-        "skill-1429cefe",
-        "this-project-demonstrates-current-best-practices-i-c978b423",
-        "tag-bc3576f6",
-        "tag-84bbe3f1",
-        "tag-abe6c6b1",
-        "tag-fe4b3b62"
+        "the-repository-has-helped-several-developers-boots-b649393a",
+        "skill-6c03f795",
+        "skill-3326505e",
+        "skill-5d64f1d1",
+        "skill-5deadf5f",
+        "skill-ea3ad0df",
+        "this-project-demonstrates-current-best-practices-i-dfbed54b",
+        "tag-df0cf54c",
+        "tag-67497d32",
+        "tag-86a74ab2",
+        "tag-49eecbb9"
       ]
     },
     "go-ecosystem-study": {
@@ -1965,12 +1965,12 @@
         "start": {
           "line": 256,
           "column": 5,
-          "offset": 11623
+          "offset": 11628
         },
         "end": {
           "line": 259,
           "column": 16,
-          "offset": 11889
+          "offset": 11894
         }
       },
       "attributes": {
@@ -1991,12 +1991,12 @@
         "start": {
           "line": 261,
           "column": 5,
-          "offset": 11899
+          "offset": 11904
         },
         "end": {
           "line": 264,
           "column": 12,
-          "offset": 12139
+          "offset": 12144
         }
       },
       "attributes": {
@@ -2017,12 +2017,12 @@
         "start": {
           "line": 266,
           "column": 5,
-          "offset": 12149
+          "offset": 12154
         },
         "end": {
           "line": 269,
           "column": 12,
-          "offset": 12372
+          "offset": 12377
         }
       },
       "attributes": {
@@ -2043,12 +2043,12 @@
         "start": {
           "line": 271,
           "column": 5,
-          "offset": 12382
+          "offset": 12387
         },
         "end": {
           "line": 274,
           "column": 12,
-          "offset": 12591
+          "offset": 12596
         }
       },
       "attributes": {
@@ -2069,12 +2069,12 @@
         "start": {
           "line": 276,
           "column": 5,
-          "offset": 12601
+          "offset": 12606
         },
         "end": {
           "line": 279,
           "column": 12,
-          "offset": 12818
+          "offset": 12823
         }
       },
       "attributes": {
@@ -2086,8 +2086,8 @@
       },
       "value": "Created comprehensive documentation for deploying the stack to production environments"
     },
-    "the-repository-has-helped-several-developers-boots-a87649db": {
-      "id": "the-repository-has-helped-several-developers-boots-a87649db",
+    "the-repository-has-helped-several-developers-boots-b649393a": {
+      "id": "the-repository-has-helped-several-developers-boots-b649393a",
       "type": "achievement",
       "primitive": "Leaf",
       "source": {
@@ -2095,12 +2095,12 @@
         "start": {
           "line": 281,
           "column": 5,
-          "offset": 12828
+          "offset": 12833
         },
         "end": {
           "line": 284,
           "column": 19,
-          "offset": 13039
+          "offset": 13044
         }
       },
       "attributes": {
@@ -2109,8 +2109,8 @@
       },
       "value": "The repository has helped several developers bootstrap their Go API projects and serves\nas a reference for modern Go development practices."
     },
-    "skill-db65d5b7": {
-      "id": "skill-db65d5b7",
+    "skill-6c03f795": {
+      "id": "skill-6c03f795",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2118,12 +2118,12 @@
         "start": {
           "line": 286,
           "column": 5,
-          "offset": 13049
+          "offset": 13054
         },
         "end": {
           "line": 286,
           "column": 53,
-          "offset": 13097
+          "offset": 13102
         }
       },
       "metaType": "skill",
@@ -2134,8 +2134,8 @@
       },
       "value": ""
     },
-    "skill-b9153dde": {
-      "id": "skill-b9153dde",
+    "skill-3326505e": {
+      "id": "skill-3326505e",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2143,12 +2143,12 @@
         "start": {
           "line": 287,
           "column": 5,
-          "offset": 13102
+          "offset": 13107
         },
         "end": {
           "line": 287,
           "column": 49,
-          "offset": 13146
+          "offset": 13151
         }
       },
       "metaType": "skill",
@@ -2159,8 +2159,8 @@
       },
       "value": ""
     },
-    "skill-e88b75b5": {
-      "id": "skill-e88b75b5",
+    "skill-5d64f1d1": {
+      "id": "skill-5d64f1d1",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2168,12 +2168,12 @@
         "start": {
           "line": 288,
           "column": 5,
-          "offset": 13151
+          "offset": 13156
         },
         "end": {
           "line": 288,
           "column": 53,
-          "offset": 13199
+          "offset": 13204
         }
       },
       "metaType": "skill",
@@ -2184,8 +2184,8 @@
       },
       "value": ""
     },
-    "skill-d6f55880": {
-      "id": "skill-d6f55880",
+    "skill-5deadf5f": {
+      "id": "skill-5deadf5f",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2193,12 +2193,12 @@
         "start": {
           "line": 289,
           "column": 5,
-          "offset": 13204
+          "offset": 13209
         },
         "end": {
           "line": 289,
           "column": 65,
-          "offset": 13264
+          "offset": 13269
         }
       },
       "metaType": "skill",
@@ -2209,8 +2209,8 @@
       },
       "value": ""
     },
-    "skill-1429cefe": {
-      "id": "skill-1429cefe",
+    "skill-ea3ad0df": {
+      "id": "skill-ea3ad0df",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2218,12 +2218,12 @@
         "start": {
           "line": 290,
           "column": 5,
-          "offset": 13269
+          "offset": 13274
         },
         "end": {
           "line": 290,
           "column": 56,
-          "offset": 13320
+          "offset": 13325
         }
       },
       "metaType": "skill",
@@ -2234,8 +2234,8 @@
       },
       "value": ""
     },
-    "this-project-demonstrates-current-best-practices-i-c978b423": {
-      "id": "this-project-demonstrates-current-best-practices-i-c978b423",
+    "this-project-demonstrates-current-best-practices-i-dfbed54b": {
+      "id": "this-project-demonstrates-current-best-practices-i-dfbed54b",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -2243,12 +2243,12 @@
         "start": {
           "line": 292,
           "column": 5,
-          "offset": 13330
+          "offset": 13335
         },
         "end": {
           "line": 295,
           "column": 12,
-          "offset": 13555
+          "offset": 13560
         }
       },
       "attributes": {
@@ -2257,8 +2257,8 @@
       },
       "value": "This project demonstrates current best practices in API development, including\ncontainerization, type safety, comprehensive testing, and clear documentation."
     },
-    "tag-bc3576f6": {
-      "id": "tag-bc3576f6",
+    "tag-df0cf54c": {
+      "id": "tag-df0cf54c",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -2266,12 +2266,12 @@
         "start": {
           "line": 297,
           "column": 5,
-          "offset": 13565
+          "offset": 13570
         },
         "end": {
           "line": 297,
           "column": 27,
-          "offset": 13587
+          "offset": 13592
         }
       },
       "metaType": "tag",
@@ -2281,8 +2281,8 @@
       },
       "value": "golang"
     },
-    "tag-84bbe3f1": {
-      "id": "tag-84bbe3f1",
+    "tag-67497d32": {
+      "id": "tag-67497d32",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -2290,12 +2290,12 @@
         "start": {
           "line": 298,
           "column": 5,
-          "offset": 13592
+          "offset": 13597
         },
         "end": {
           "line": 298,
           "column": 36,
-          "offset": 13623
+          "offset": 13628
         }
       },
       "metaType": "tag",
@@ -2305,8 +2305,8 @@
       },
       "value": "api-development"
     },
-    "tag-abe6c6b1": {
-      "id": "tag-abe6c6b1",
+    "tag-86a74ab2": {
+      "id": "tag-86a74ab2",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -2314,12 +2314,12 @@
         "start": {
           "line": 299,
           "column": 5,
-          "offset": 13628
+          "offset": 13633
         },
         "end": {
           "line": 299,
           "column": 40,
-          "offset": 13663
+          "offset": 13668
         }
       },
       "metaType": "tag",
@@ -2329,8 +2329,8 @@
       },
       "value": "developer-resources"
     },
-    "tag-fe4b3b62": {
-      "id": "tag-fe4b3b62",
+    "tag-49eecbb9": {
+      "id": "tag-49eecbb9",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -2338,12 +2338,12 @@
         "start": {
           "line": 300,
           "column": 5,
-          "offset": 13668
+          "offset": 13673
         },
         "end": {
           "line": 300,
           "column": 35,
-          "offset": 13698
+          "offset": 13703
         }
       },
       "metaType": "tag",
@@ -2362,12 +2362,12 @@
         "start": {
           "line": 305,
           "column": 3,
-          "offset": 13754
+          "offset": 13759
         },
         "end": {
           "line": 349,
           "column": 13,
-          "offset": 15896
+          "offset": 15901
         }
       },
       "attributes": {
@@ -2385,13 +2385,13 @@
         "js-implementation",
         "typescript-migration",
         "performance-comparison",
-        "skill-1be0ac90",
-        "skill-b7f042ac",
-        "skill-f98d2254",
-        "this-project-solidified-my-understanding-of-typesc-9f9d4823",
-        "tag-13ae0421",
-        "tag-10bb18be",
-        "tag-a3a1a399"
+        "skill-b0466ce8",
+        "skill-5e01cbce",
+        "skill-77c82a04",
+        "this-project-solidified-my-understanding-of-typesc-6137dbd9",
+        "tag-b4e90b0b",
+        "tag-c19256ef",
+        "tag-f085aa08"
       ]
     },
     "js-to-ts-transition": {
@@ -2403,12 +2403,12 @@
         "start": {
           "line": 311,
           "column": 5,
-          "offset": 14075
+          "offset": 14080
         },
         "end": {
           "line": 314,
           "column": 16,
-          "offset": 14333
+          "offset": 14338
         }
       },
       "attributes": {
@@ -2429,12 +2429,12 @@
         "start": {
           "line": 316,
           "column": 5,
-          "offset": 14343
+          "offset": 14348
         },
         "end": {
           "line": 320,
           "column": 13,
-          "offset": 14692
+          "offset": 14697
         }
       },
       "attributes": {
@@ -2455,12 +2455,12 @@
         "start": {
           "line": 322,
           "column": 5,
-          "offset": 14702
+          "offset": 14707
         },
         "end": {
           "line": 325,
           "column": 12,
-          "offset": 14909
+          "offset": 14914
         }
       },
       "attributes": {
@@ -2481,12 +2481,12 @@
         "start": {
           "line": 327,
           "column": 5,
-          "offset": 14919
+          "offset": 14924
         },
         "end": {
           "line": 330,
           "column": 12,
-          "offset": 15143
+          "offset": 15148
         }
       },
       "attributes": {
@@ -2507,12 +2507,12 @@
         "start": {
           "line": 332,
           "column": 5,
-          "offset": 15153
+          "offset": 15158
         },
         "end": {
           "line": 335,
           "column": 12,
-          "offset": 15375
+          "offset": 15380
         }
       },
       "attributes": {
@@ -2524,8 +2524,8 @@
       },
       "value": "Compared performance, developer experience, and code maintainability between JS and TS versions"
     },
-    "skill-1be0ac90": {
-      "id": "skill-1be0ac90",
+    "skill-b0466ce8": {
+      "id": "skill-b0466ce8",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2533,12 +2533,12 @@
         "start": {
           "line": 337,
           "column": 5,
-          "offset": 15385
+          "offset": 15390
         },
         "end": {
           "line": 337,
           "column": 59,
-          "offset": 15439
+          "offset": 15444
         }
       },
       "metaType": "skill",
@@ -2549,8 +2549,8 @@
       },
       "value": ""
     },
-    "skill-b7f042ac": {
-      "id": "skill-b7f042ac",
+    "skill-5e01cbce": {
+      "id": "skill-5e01cbce",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2558,12 +2558,12 @@
         "start": {
           "line": 338,
           "column": 5,
-          "offset": 15444
+          "offset": 15449
         },
         "end": {
           "line": 338,
           "column": 55,
-          "offset": 15494
+          "offset": 15499
         }
       },
       "metaType": "skill",
@@ -2574,8 +2574,8 @@
       },
       "value": ""
     },
-    "skill-f98d2254": {
-      "id": "skill-f98d2254",
+    "skill-77c82a04": {
+      "id": "skill-77c82a04",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2583,12 +2583,12 @@
         "start": {
           "line": 339,
           "column": 5,
-          "offset": 15499
+          "offset": 15504
         },
         "end": {
           "line": 339,
           "column": 63,
-          "offset": 15557
+          "offset": 15562
         }
       },
       "metaType": "skill",
@@ -2599,8 +2599,8 @@
       },
       "value": ""
     },
-    "this-project-solidified-my-understanding-of-typesc-9f9d4823": {
-      "id": "this-project-solidified-my-understanding-of-typesc-9f9d4823",
+    "this-project-solidified-my-understanding-of-typesc-6137dbd9": {
+      "id": "this-project-solidified-my-understanding-of-typesc-6137dbd9",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -2608,12 +2608,12 @@
         "start": {
           "line": 341,
           "column": 5,
-          "offset": 15567
+          "offset": 15572
         },
         "end": {
           "line": 344,
           "column": 12,
-          "offset": 15775
+          "offset": 15780
         }
       },
       "attributes": {
@@ -2622,8 +2622,8 @@
       },
       "value": "This project solidified my understanding of TypeScript's benefits and gave me practical\nexperience in migrating existing codebases to adopt type safety."
     },
-    "tag-13ae0421": {
-      "id": "tag-13ae0421",
+    "tag-b4e90b0b": {
+      "id": "tag-b4e90b0b",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -2631,12 +2631,12 @@
         "start": {
           "line": 346,
           "column": 5,
-          "offset": 15785
+          "offset": 15790
         },
         "end": {
           "line": 346,
           "column": 31,
-          "offset": 15811
+          "offset": 15816
         }
       },
       "metaType": "tag",
@@ -2646,8 +2646,8 @@
       },
       "value": "typescript"
     },
-    "tag-10bb18be": {
-      "id": "tag-10bb18be",
+    "tag-c19256ef": {
+      "id": "tag-c19256ef",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -2655,12 +2655,12 @@
         "start": {
           "line": 347,
           "column": 5,
-          "offset": 15816
+          "offset": 15821
         },
         "end": {
           "line": 347,
           "column": 35,
-          "offset": 15846
+          "offset": 15851
         }
       },
       "metaType": "tag",
@@ -2670,8 +2670,8 @@
       },
       "value": "code-migration"
     },
-    "tag-a3a1a399": {
-      "id": "tag-a3a1a399",
+    "tag-f085aa08": {
+      "id": "tag-f085aa08",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -2679,12 +2679,12 @@
         "start": {
           "line": 348,
           "column": 5,
-          "offset": 15851
+          "offset": 15856
         },
         "end": {
           "line": 348,
           "column": 37,
-          "offset": 15883
+          "offset": 15888
         }
       },
       "metaType": "tag",
@@ -2703,12 +2703,12 @@
         "start": {
           "line": 353,
           "column": 3,
-          "offset": 15935
+          "offset": 15940
         },
         "end": {
           "line": 399,
           "column": 13,
-          "offset": 18146
+          "offset": 18151
         }
       },
       "attributes": {
@@ -2725,14 +2725,14 @@
         "snorkeling-photography",
         "portfolio-curation",
         "social-media-presence",
-        "skill-19285489",
-        "skill-55a0290b",
-        "skill-4d6b9ade",
-        "skill-8e041d91",
-        "tag-723952aa",
-        "tag-068ce481",
-        "tag-d96f8e16",
-        "tag-b3607842"
+        "skill-43ff3315",
+        "skill-7c454d6b",
+        "skill-78f32ff3",
+        "skill-9d1a70fa",
+        "tag-b51e6fc3",
+        "tag-fe25725b",
+        "tag-93ef5385",
+        "tag-c0910f33"
       ]
     },
     "photography-techniques": {
@@ -2744,12 +2744,12 @@
         "start": {
           "line": 360,
           "column": 5,
-          "offset": 16315
+          "offset": 16320
         },
         "end": {
           "line": 363,
           "column": 16,
-          "offset": 16553
+          "offset": 16558
         }
       },
       "attributes": {
@@ -2770,12 +2770,12 @@
         "start": {
           "line": 365,
           "column": 5,
-          "offset": 16563
+          "offset": 16568
         },
         "end": {
           "line": 378,
           "column": 15,
-          "offset": 17315
+          "offset": 17320
         }
       },
       "attributes": {
@@ -2788,13 +2788,13 @@
       "title": "Underwater Photography",
       "content": "Specialized focus on underwater photography while snorkeling, capturing marine life\nand underwater landscapes. This challenging environment requires special techniques\nand equipment considerations.Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!",
       "children": [
-        "underwater-photography-presents-unique-challenges:-426f3dc6",
-        "skill-efbc3ddc",
-        "skill-55962975"
+        "underwater-photography-presents-unique-challenges:-4107da1a",
+        "skill-865e2515",
+        "skill-46f4dfa2"
       ]
     },
-    "underwater-photography-presents-unique-challenges:-426f3dc6": {
-      "id": "underwater-photography-presents-unique-challenges:-426f3dc6",
+    "underwater-photography-presents-unique-challenges:-4107da1a": {
+      "id": "underwater-photography-presents-unique-challenges:-4107da1a",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -2802,12 +2802,12 @@
         "start": {
           "line": 371,
           "column": 7,
-          "offset": 16924
+          "offset": 16929
         },
         "end": {
           "line": 374,
           "column": 14,
-          "offset": 17160
+          "offset": 17165
         }
       },
       "attributes": {
@@ -2816,8 +2816,8 @@
       },
       "value": "Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!"
     },
-    "skill-efbc3ddc": {
-      "id": "skill-efbc3ddc",
+    "skill-865e2515": {
+      "id": "skill-865e2515",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2825,12 +2825,12 @@
         "start": {
           "line": 376,
           "column": 7,
-          "offset": 17174
+          "offset": 17179
         },
         "end": {
           "line": 376,
           "column": 67,
-          "offset": 17234
+          "offset": 17239
         }
       },
       "metaType": "skill",
@@ -2841,8 +2841,8 @@
       },
       "value": ""
     },
-    "skill-55962975": {
-      "id": "skill-55962975",
+    "skill-46f4dfa2": {
+      "id": "skill-46f4dfa2",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2850,12 +2850,12 @@
         "start": {
           "line": 377,
           "column": 7,
-          "offset": 17241
+          "offset": 17246
         },
         "end": {
           "line": 377,
           "column": 66,
-          "offset": 17300
+          "offset": 17305
         }
       },
       "metaType": "skill",
@@ -2875,12 +2875,12 @@
         "start": {
           "line": 380,
           "column": 5,
-          "offset": 17325
+          "offset": 17330
         },
         "end": {
           "line": 383,
           "column": 12,
-          "offset": 17530
+          "offset": 17535
         }
       },
       "attributes": {
@@ -2901,12 +2901,12 @@
         "start": {
           "line": 385,
           "column": 5,
-          "offset": 17540
+          "offset": 17545
         },
         "end": {
           "line": 388,
           "column": 12,
-          "offset": 17760
+          "offset": 17765
         }
       },
       "attributes": {
@@ -2918,8 +2918,8 @@
       },
       "value": "Share photography work on Instagram and other platforms to build an audience and get feedback"
     },
-    "skill-19285489": {
-      "id": "skill-19285489",
+    "skill-43ff3315": {
+      "id": "skill-43ff3315",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2927,12 +2927,12 @@
         "start": {
           "line": 390,
           "column": 5,
-          "offset": 17770
+          "offset": 17775
         },
         "end": {
           "line": 390,
           "column": 54,
-          "offset": 17819
+          "offset": 17824
         }
       },
       "metaType": "skill",
@@ -2943,8 +2943,8 @@
       },
       "value": ""
     },
-    "skill-55a0290b": {
-      "id": "skill-55a0290b",
+    "skill-7c454d6b": {
+      "id": "skill-7c454d6b",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2952,12 +2952,12 @@
         "start": {
           "line": 391,
           "column": 5,
-          "offset": 17824
+          "offset": 17829
         },
         "end": {
           "line": 391,
           "column": 56,
-          "offset": 17875
+          "offset": 17880
         }
       },
       "metaType": "skill",
@@ -2968,8 +2968,8 @@
       },
       "value": ""
     },
-    "skill-4d6b9ade": {
-      "id": "skill-4d6b9ade",
+    "skill-78f32ff3": {
+      "id": "skill-78f32ff3",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -2977,12 +2977,12 @@
         "start": {
           "line": 392,
           "column": 5,
-          "offset": 17880
+          "offset": 17885
         },
         "end": {
           "line": 392,
           "column": 61,
-          "offset": 17936
+          "offset": 17941
         }
       },
       "metaType": "skill",
@@ -2993,8 +2993,8 @@
       },
       "value": ""
     },
-    "skill-8e041d91": {
-      "id": "skill-8e041d91",
+    "skill-9d1a70fa": {
+      "id": "skill-9d1a70fa",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -3002,12 +3002,12 @@
         "start": {
           "line": 393,
           "column": 5,
-          "offset": 17941
+          "offset": 17946
         },
         "end": {
           "line": 393,
           "column": 61,
-          "offset": 17997
+          "offset": 18002
         }
       },
       "metaType": "skill",
@@ -3018,8 +3018,8 @@
       },
       "value": ""
     },
-    "tag-723952aa": {
-      "id": "tag-723952aa",
+    "tag-b51e6fc3": {
+      "id": "tag-b51e6fc3",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3027,12 +3027,12 @@
         "start": {
           "line": 395,
           "column": 5,
-          "offset": 18007
+          "offset": 18012
         },
         "end": {
           "line": 395,
           "column": 32,
-          "offset": 18034
+          "offset": 18039
         }
       },
       "metaType": "tag",
@@ -3042,8 +3042,8 @@
       },
       "value": "photography"
     },
-    "tag-068ce481": {
-      "id": "tag-068ce481",
+    "tag-fe25725b": {
+      "id": "tag-fe25725b",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3051,12 +3051,12 @@
         "start": {
           "line": 396,
           "column": 5,
-          "offset": 18039
+          "offset": 18044
         },
         "end": {
           "line": 396,
           "column": 40,
-          "offset": 18074
+          "offset": 18079
         }
       },
       "metaType": "tag",
@@ -3066,8 +3066,8 @@
       },
       "value": "creative-expression"
     },
-    "tag-d96f8e16": {
-      "id": "tag-d96f8e16",
+    "tag-93ef5385": {
+      "id": "tag-93ef5385",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3075,12 +3075,12 @@
         "start": {
           "line": 397,
           "column": 5,
-          "offset": 18079
+          "offset": 18084
         },
         "end": {
           "line": 397,
           "column": 32,
-          "offset": 18106
+          "offset": 18111
         }
       },
       "metaType": "tag",
@@ -3090,8 +3090,8 @@
       },
       "value": "visual-arts"
     },
-    "tag-b3607842": {
-      "id": "tag-b3607842",
+    "tag-c0910f33": {
+      "id": "tag-c0910f33",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3099,12 +3099,12 @@
         "start": {
           "line": 398,
           "column": 5,
-          "offset": 18111
+          "offset": 18116
         },
         "end": {
           "line": 398,
           "column": 27,
-          "offset": 18133
+          "offset": 18138
         }
       },
       "metaType": "tag",
@@ -3123,12 +3123,12 @@
         "start": {
           "line": 403,
           "column": 3,
-          "offset": 18181
+          "offset": 18186
         },
         "end": {
           "line": 449,
           "column": 13,
-          "offset": 20340
+          "offset": 20345
         }
       },
       "attributes": {
@@ -3145,16 +3145,16 @@
         "team-management",
         "skill-development-programs",
         "competitive-strategy",
-        "led-teams-to-compete-successfully-at-the-highest-l-1069756e",
-        "skill-71bb7a81",
-        "skill-70ad63ef",
-        "skill-ed5658f5",
-        "skill-c69ea190",
-        "the-leadership-and-analytical-skills-developed-in-67f91346",
-        "tag-7043b70a",
-        "tag-f3f59f7e",
-        "tag-3d5c7181",
-        "tag-ce495ad1"
+        "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
+        "skill-56e36869",
+        "skill-9ead72d6",
+        "skill-32f296e2",
+        "skill-fc1512b5",
+        "the-leadership-and-analytical-skills-developed-in-f01c6596",
+        "tag-b6e476a2",
+        "tag-c993bcdd",
+        "tag-afa53553",
+        "tag-dd5d020a"
       ]
     },
     "coaching-methodologies": {
@@ -3166,12 +3166,12 @@
         "start": {
           "line": 410,
           "column": 5,
-          "offset": 18561
+          "offset": 18566
         },
         "end": {
           "line": 413,
           "column": 16,
-          "offset": 18800
+          "offset": 18805
         }
       },
       "attributes": {
@@ -3192,12 +3192,12 @@
         "start": {
           "line": 415,
           "column": 5,
-          "offset": 18810
+          "offset": 18815
         },
         "end": {
           "line": 418,
           "column": 12,
-          "offset": 19039
+          "offset": 19044
         }
       },
       "attributes": {
@@ -3218,12 +3218,12 @@
         "start": {
           "line": 420,
           "column": 5,
-          "offset": 19049
+          "offset": 19054
         },
         "end": {
           "line": 423,
           "column": 12,
-          "offset": 19286
+          "offset": 19291
         }
       },
       "attributes": {
@@ -3244,12 +3244,12 @@
         "start": {
           "line": 425,
           "column": 5,
-          "offset": 19296
+          "offset": 19301
         },
         "end": {
           "line": 428,
           "column": 12,
-          "offset": 19536
+          "offset": 19541
         }
       },
       "attributes": {
@@ -3261,8 +3261,8 @@
       },
       "value": "Developed game strategies, analyzed opponent patterns, and prepared teams for high-level competition"
     },
-    "led-teams-to-compete-successfully-at-the-highest-l-1069756e": {
-      "id": "led-teams-to-compete-successfully-at-the-highest-l-1069756e",
+    "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a": {
+      "id": "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
       "type": "achievement",
       "primitive": "Leaf",
       "source": {
@@ -3270,12 +3270,12 @@
         "start": {
           "line": 430,
           "column": 5,
-          "offset": 19546
+          "offset": 19551
         },
         "end": {
           "line": 433,
           "column": 19,
-          "offset": 19757
+          "offset": 19762
         }
       },
       "attributes": {
@@ -3284,8 +3284,8 @@
       },
       "value": "Led teams to compete successfully at the highest level in local city competitions,\nwith several teams achieving top placements."
     },
-    "skill-71bb7a81": {
-      "id": "skill-71bb7a81",
+    "skill-56e36869": {
+      "id": "skill-56e36869",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -3293,12 +3293,12 @@
         "start": {
           "line": 435,
           "column": 5,
-          "offset": 19767
+          "offset": 19772
         },
         "end": {
           "line": 435,
           "column": 49,
-          "offset": 19811
+          "offset": 19816
         }
       },
       "metaType": "skill",
@@ -3309,8 +3309,8 @@
       },
       "value": ""
     },
-    "skill-70ad63ef": {
-      "id": "skill-70ad63ef",
+    "skill-9ead72d6": {
+      "id": "skill-9ead72d6",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -3318,12 +3318,12 @@
         "start": {
           "line": 436,
           "column": 5,
-          "offset": 19816
+          "offset": 19821
         },
         "end": {
           "line": 436,
           "column": 54,
-          "offset": 19865
+          "offset": 19870
         }
       },
       "metaType": "skill",
@@ -3334,8 +3334,8 @@
       },
       "value": ""
     },
-    "skill-ed5658f5": {
-      "id": "skill-ed5658f5",
+    "skill-32f296e2": {
+      "id": "skill-32f296e2",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -3343,12 +3343,12 @@
         "start": {
           "line": 437,
           "column": 5,
-          "offset": 19870
+          "offset": 19875
         },
         "end": {
           "line": 437,
           "column": 63,
-          "offset": 19928
+          "offset": 19933
         }
       },
       "metaType": "skill",
@@ -3359,8 +3359,8 @@
       },
       "value": ""
     },
-    "skill-c69ea190": {
-      "id": "skill-c69ea190",
+    "skill-fc1512b5": {
+      "id": "skill-fc1512b5",
       "type": "skill",
       "primitive": "Meta",
       "source": {
@@ -3368,12 +3368,12 @@
         "start": {
           "line": 438,
           "column": 5,
-          "offset": 19933
+          "offset": 19938
         },
         "end": {
           "line": 438,
           "column": 48,
-          "offset": 19976
+          "offset": 19981
         }
       },
       "metaType": "skill",
@@ -3384,8 +3384,8 @@
       },
       "value": ""
     },
-    "the-leadership-and-analytical-skills-developed-in-67f91346": {
-      "id": "the-leadership-and-analytical-skills-developed-in-67f91346",
+    "the-leadership-and-analytical-skills-developed-in-f01c6596": {
+      "id": "the-leadership-and-analytical-skills-developed-in-f01c6596",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -3393,12 +3393,12 @@
         "start": {
           "line": 440,
           "column": 5,
-          "offset": 19986
+          "offset": 19991
         },
         "end": {
           "line": 443,
           "column": 12,
-          "offset": 20198
+          "offset": 20203
         }
       },
       "attributes": {
@@ -3407,8 +3407,8 @@
       },
       "value": "The leadership and analytical skills developed in sports coaching directly apply to\nsoftware development team leadership and code review processes."
     },
-    "tag-7043b70a": {
-      "id": "tag-7043b70a",
+    "tag-b6e476a2": {
+      "id": "tag-b6e476a2",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3416,12 +3416,12 @@
         "start": {
           "line": 445,
           "column": 5,
-          "offset": 20208
+          "offset": 20213
         },
         "end": {
           "line": 445,
           "column": 31,
-          "offset": 20234
+          "offset": 20239
         }
       },
       "metaType": "tag",
@@ -3431,8 +3431,8 @@
       },
       "value": "leadership"
     },
-    "tag-f3f59f7e": {
-      "id": "tag-f3f59f7e",
+    "tag-c993bcdd": {
+      "id": "tag-c993bcdd",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3440,12 +3440,12 @@
         "start": {
           "line": 446,
           "column": 5,
-          "offset": 20239
+          "offset": 20244
         },
         "end": {
           "line": 446,
           "column": 29,
-          "offset": 20263
+          "offset": 20268
         }
       },
       "metaType": "tag",
@@ -3455,8 +3455,8 @@
       },
       "value": "coaching"
     },
-    "tag-3d5c7181": {
-      "id": "tag-3d5c7181",
+    "tag-afa53553": {
+      "id": "tag-afa53553",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3464,12 +3464,12 @@
         "start": {
           "line": 447,
           "column": 5,
-          "offset": 20268
+          "offset": 20273
         },
         "end": {
           "line": 447,
           "column": 37,
-          "offset": 20300
+          "offset": 20305
         }
       },
       "metaType": "tag",
@@ -3479,8 +3479,8 @@
       },
       "value": "team-development"
     },
-    "tag-ce495ad1": {
-      "id": "tag-ce495ad1",
+    "tag-dd5d020a": {
+      "id": "tag-dd5d020a",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3488,12 +3488,12 @@
         "start": {
           "line": 448,
           "column": 5,
-          "offset": 20305
+          "offset": 20310
         },
         "end": {
           "line": 448,
           "column": 27,
-          "offset": 20327
+          "offset": 20332
         }
       },
       "metaType": "tag",
@@ -3512,12 +3512,12 @@
         "start": {
           "line": 453,
           "column": 3,
-          "offset": 20381
+          "offset": 20386
         },
         "end": {
           "line": 475,
           "column": 11,
-          "offset": 21749
+          "offset": 21754
         }
       },
       "attributes": {
@@ -3538,12 +3538,12 @@
         "start": {
           "line": 477,
           "column": 3,
-          "offset": 21753
+          "offset": 21758
         },
         "end": {
           "line": 501,
           "column": 13,
-          "offset": 22900
+          "offset": 22905
         }
       },
       "attributes": {
@@ -3558,7 +3558,7 @@
         "ai-integration-exploration",
         "sustainable-tech",
         "education-tools",
-        "future-projects-will-prioritize:-meaningful-impact-8033c44c"
+        "future-projects-will-prioritize:-meaningful-impact-476a2cad"
       ]
     },
     "ai-integration-exploration": {
@@ -3570,12 +3570,12 @@
         "start": {
           "line": 479,
           "column": 5,
-          "offset": 21847
+          "offset": 21852
         },
         "end": {
           "line": 483,
           "column": 12,
-          "offset": 22114
+          "offset": 22119
         }
       },
       "attributes": {
@@ -3596,12 +3596,12 @@
         "start": {
           "line": 485,
           "column": 5,
-          "offset": 22124
+          "offset": 22129
         },
         "end": {
           "line": 489,
           "column": 12,
-          "offset": 22373
+          "offset": 22378
         }
       },
       "attributes": {
@@ -3622,12 +3622,12 @@
         "start": {
           "line": 491,
           "column": 5,
-          "offset": 22383
+          "offset": 22388
         },
         "end": {
           "line": 495,
           "column": 12,
-          "offset": 22640
+          "offset": 22645
         }
       },
       "attributes": {
@@ -3639,8 +3639,8 @@
       },
       "value": "Create resources and tools that help other developers learn and grow, building on\nmy experience with documentation and teaching"
     },
-    "future-projects-will-prioritize:-meaningful-impact-8033c44c": {
-      "id": "future-projects-will-prioritize:-meaningful-impact-8033c44c",
+    "future-projects-will-prioritize:-meaningful-impact-476a2cad": {
+      "id": "future-projects-will-prioritize:-meaningful-impact-476a2cad",
       "type": "note",
       "primitive": "Leaf",
       "source": {
@@ -3648,12 +3648,12 @@
         "start": {
           "line": 497,
           "column": 5,
-          "offset": 22650
+          "offset": 22655
         },
         "end": {
           "line": 500,
           "column": 12,
-          "offset": 22887
+          "offset": 22892
         }
       },
       "attributes": {
@@ -3662,8 +3662,8 @@
       },
       "value": "Future projects will prioritize: meaningful impact, technical excellence, community value,\nand personal growth. The goal is to build things that matter, not just things that work."
     },
-    "tag-be4f279c": {
-      "id": "tag-be4f279c",
+    "tag-0f0b2e9d": {
+      "id": "tag-0f0b2e9d",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3671,12 +3671,12 @@
         "start": {
           "line": 503,
           "column": 3,
-          "offset": 22904
+          "offset": 22909
         },
         "end": {
           "line": 503,
           "column": 28,
-          "offset": 22929
+          "offset": 22934
         }
       },
       "metaType": "tag",
@@ -3686,8 +3686,8 @@
       },
       "value": "portfolio"
     },
-    "tag-33fe0e0b": {
-      "id": "tag-33fe0e0b",
+    "tag-7fdc1bb8": {
+      "id": "tag-7fdc1bb8",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3695,12 +3695,12 @@
         "start": {
           "line": 504,
           "column": 3,
-          "offset": 22932
+          "offset": 22937
         },
         "end": {
           "line": 504,
           "column": 39,
-          "offset": 22968
+          "offset": 22973
         }
       },
       "metaType": "tag",
@@ -3710,8 +3710,8 @@
       },
       "value": "software-development"
     },
-    "tag-2268b6e2": {
-      "id": "tag-2268b6e2",
+    "tag-188ed460": {
+      "id": "tag-188ed460",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3719,12 +3719,12 @@
         "start": {
           "line": 505,
           "column": 3,
-          "offset": 22971
+          "offset": 22976
         },
         "end": {
           "line": 505,
           "column": 29,
-          "offset": 22997
+          "offset": 23002
         }
       },
       "metaType": "tag",
@@ -3734,8 +3734,8 @@
       },
       "value": "full-stack"
     },
-    "tag-6c5e6b04": {
-      "id": "tag-6c5e6b04",
+    "tag-1553c5b4": {
+      "id": "tag-1553c5b4",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3743,12 +3743,12 @@
         "start": {
           "line": 506,
           "column": 3,
-          "offset": 23000
+          "offset": 23005
         },
         "end": {
           "line": 506,
           "column": 30,
-          "offset": 23027
+          "offset": 23032
         }
       },
       "metaType": "tag",
@@ -3758,8 +3758,8 @@
       },
       "value": "open-source"
     },
-    "tag-6f6748dd": {
-      "id": "tag-6f6748dd",
+    "tag-5fc3eeaf": {
+      "id": "tag-5fc3eeaf",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3767,12 +3767,12 @@
         "start": {
           "line": 507,
           "column": 3,
-          "offset": 23030
+          "offset": 23035
         },
         "end": {
           "line": 507,
           "column": 29,
-          "offset": 23056
+          "offset": 23061
         }
       },
       "metaType": "tag",
@@ -3782,8 +3782,8 @@
       },
       "value": "creativity"
     },
-    "tag-f6146fde": {
-      "id": "tag-f6146fde",
+    "tag-d63eb94f": {
+      "id": "tag-d63eb94f",
       "type": "tag",
       "primitive": "Meta",
       "source": {
@@ -3791,12 +3791,12 @@
         "start": {
           "line": 508,
           "column": 3,
-          "offset": 23059
+          "offset": 23064
         },
         "end": {
           "line": 508,
           "column": 29,
-          "offset": 23085
+          "offset": 23090
         }
       },
       "metaType": "tag",
@@ -3806,8 +3806,8 @@
       },
       "value": "leadership"
     },
-    "time-spent-curating-and-documenting-this-comprehen-f612855a": {
-      "id": "time-spent-curating-and-documenting-this-comprehen-f612855a",
+    "time-spent-curating-and-documenting-this-comprehen-f00e4b7f": {
+      "id": "time-spent-curating-and-documenting-this-comprehen-f00e4b7f",
       "type": "date",
       "primitive": "Meta",
       "source": {
@@ -3815,12 +3815,12 @@
         "start": {
           "line": 510,
           "column": 3,
-          "offset": 23091
+          "offset": 23096
         },
         "end": {
           "line": 512,
           "column": 10,
-          "offset": 23218
+          "offset": 23223
         }
       },
       "metaType": "date",
@@ -3834,8 +3834,8 @@
   },
   "edges": [
     {
-      "id": "collaborator-0632e170-references-tom-materne",
-      "from": "collaborator-0632e170",
+      "id": "collaborator-84f9cede-references-tom-materne",
+      "from": "collaborator-84f9cede",
       "to": "tom-materne",
       "type": "references"
     },
@@ -3870,69 +3870,69 @@
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-skill-adee7217",
+      "id": "chamber-project-contains-skill-16c3ade1",
       "from": "chamber-project",
-      "to": "skill-adee7217",
+      "to": "skill-16c3ade1",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-skill-2f30656a",
+      "id": "chamber-project-contains-skill-dc2395cb",
       "from": "chamber-project",
-      "to": "skill-2f30656a",
+      "to": "skill-dc2395cb",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-skill-1a93af1d",
+      "id": "chamber-project-contains-skill-7fae8c78",
       "from": "chamber-project",
-      "to": "skill-1a93af1d",
+      "to": "skill-7fae8c78",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-skill-039c3c1e",
+      "id": "chamber-project-contains-skill-79824f1e",
       "from": "chamber-project",
-      "to": "skill-039c3c1e",
+      "to": "skill-79824f1e",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-skill-31bea3db",
+      "id": "chamber-project-contains-skill-f30817ac",
       "from": "chamber-project",
-      "to": "skill-31bea3db",
+      "to": "skill-f30817ac",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-skill-56055ff1",
+      "id": "chamber-project-contains-skill-228b3685",
       "from": "chamber-project",
-      "to": "skill-56055ff1",
+      "to": "skill-228b3685",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-this-project-represents-my-belief-that-technology-1604e886",
+      "id": "chamber-project-contains-this-project-represents-my-belief-that-technology-d9486abe",
       "from": "chamber-project",
-      "to": "this-project-represents-my-belief-that-technology-1604e886",
+      "to": "this-project-represents-my-belief-that-technology-d9486abe",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-collaborator-0632e170",
+      "id": "chamber-project-contains-collaborator-84f9cede",
       "from": "chamber-project",
-      "to": "collaborator-0632e170",
+      "to": "collaborator-84f9cede",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-tag-c4b897e0",
+      "id": "chamber-project-contains-tag-a8860d85",
       "from": "chamber-project",
-      "to": "tag-c4b897e0",
+      "to": "tag-a8860d85",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-tag-a51cf7cd",
+      "id": "chamber-project-contains-tag-4ca7ab6a",
       "from": "chamber-project",
-      "to": "tag-a51cf7cd",
+      "to": "tag-4ca7ab6a",
       "type": "contains"
     },
     {
-      "id": "chamber-project-contains-tag-9e275b23",
+      "id": "chamber-project-contains-tag-d3170190",
       "from": "chamber-project",
-      "to": "tag-9e275b23",
+      "to": "tag-d3170190",
       "type": "contains"
     },
     {
@@ -3966,51 +3966,51 @@
       "type": "contains"
     },
     {
-      "id": "painting-documentation-contains-just-like-coding-painting-is-about-iteration-lea-bee053ab",
+      "id": "painting-documentation-contains-just-like-coding-painting-is-about-iteration-lea-efc63153",
       "from": "painting-documentation",
-      "to": "just-like-coding-painting-is-about-iteration-lea-bee053ab",
+      "to": "just-like-coding-painting-is-about-iteration-lea-efc63153",
       "type": "contains"
     },
     {
-      "id": "burning-blends-contains-skill-302a12c1",
+      "id": "burning-blends-contains-skill-d9cfe77d",
       "from": "burning-blends",
-      "to": "skill-302a12c1",
+      "to": "skill-d9cfe77d",
       "type": "contains"
     },
     {
-      "id": "burning-blends-contains-skill-e521c96a",
+      "id": "burning-blends-contains-skill-2f994cf6",
       "from": "burning-blends",
-      "to": "skill-e521c96a",
+      "to": "skill-2f994cf6",
       "type": "contains"
     },
     {
-      "id": "burning-blends-contains-skill-3d0d4a31",
+      "id": "burning-blends-contains-skill-0d08e68d",
       "from": "burning-blends",
-      "to": "skill-3d0d4a31",
+      "to": "skill-0d08e68d",
       "type": "contains"
     },
     {
-      "id": "burning-blends-contains-skill-0e07ed47",
+      "id": "burning-blends-contains-skill-0962f9f9",
       "from": "burning-blends",
-      "to": "skill-0e07ed47",
+      "to": "skill-0962f9f9",
       "type": "contains"
     },
     {
-      "id": "burning-blends-contains-tag-cc0ab091",
+      "id": "burning-blends-contains-tag-b9646a93",
       "from": "burning-blends",
-      "to": "tag-cc0ab091",
+      "to": "tag-b9646a93",
       "type": "contains"
     },
     {
-      "id": "burning-blends-contains-tag-008ca394",
+      "id": "burning-blends-contains-tag-e6423b38",
       "from": "burning-blends",
-      "to": "tag-008ca394",
+      "to": "tag-e6423b38",
       "type": "contains"
     },
     {
-      "id": "burning-blends-contains-tag-a8b1fbc6",
+      "id": "burning-blends-contains-tag-a84be93e",
       "from": "burning-blends",
-      "to": "tag-a8b1fbc6",
+      "to": "tag-a84be93e",
       "type": "contains"
     },
     {
@@ -4044,51 +4044,51 @@
       "type": "contains"
     },
     {
-      "id": "arena-game-contains-building-multiplayer-games-presents-unique-challen-4bf8ab00",
+      "id": "arena-game-contains-building-multiplayer-games-presents-unique-challen-d289ee14",
       "from": "arena-game",
-      "to": "building-multiplayer-games-presents-unique-challen-4bf8ab00",
+      "to": "building-multiplayer-games-presents-unique-challen-d289ee14",
       "type": "contains"
     },
     {
-      "id": "arena-game-contains-skill-c0741dc6",
+      "id": "arena-game-contains-skill-07da874a",
       "from": "arena-game",
-      "to": "skill-c0741dc6",
+      "to": "skill-07da874a",
       "type": "contains"
     },
     {
-      "id": "arena-game-contains-skill-092222c5",
+      "id": "arena-game-contains-skill-43d1f407",
       "from": "arena-game",
-      "to": "skill-092222c5",
+      "to": "skill-43d1f407",
       "type": "contains"
     },
     {
-      "id": "arena-game-contains-skill-05088a60",
+      "id": "arena-game-contains-skill-9ee92c42",
       "from": "arena-game",
-      "to": "skill-05088a60",
+      "to": "skill-9ee92c42",
       "type": "contains"
     },
     {
-      "id": "arena-game-contains-skill-a4666bf1",
+      "id": "arena-game-contains-skill-de476e78",
       "from": "arena-game",
-      "to": "skill-a4666bf1",
+      "to": "skill-de476e78",
       "type": "contains"
     },
     {
-      "id": "arena-game-contains-tag-df8a19e1",
+      "id": "arena-game-contains-tag-1a4d7de9",
       "from": "arena-game",
-      "to": "tag-df8a19e1",
+      "to": "tag-1a4d7de9",
       "type": "contains"
     },
     {
-      "id": "arena-game-contains-tag-b54be0b7",
+      "id": "arena-game-contains-tag-a76bf13f",
       "from": "arena-game",
-      "to": "tag-b54be0b7",
+      "to": "tag-a76bf13f",
       "type": "contains"
     },
     {
-      "id": "arena-game-contains-tag-01dd9d3f",
+      "id": "arena-game-contains-tag-534a859f",
       "from": "arena-game",
-      "to": "tag-01dd9d3f",
+      "to": "tag-534a859f",
       "type": "contains"
     },
     {
@@ -4122,63 +4122,63 @@
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-the-library-has-been-adopted-by-multiple-independe-23a77dbe",
+      "id": "gm-server-framework-contains-the-library-has-been-adopted-by-multiple-independe-baba2f8f",
       "from": "gm-server-framework",
-      "to": "the-library-has-been-adopted-by-multiple-independe-23a77dbe",
+      "to": "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-skill-3ff3979f",
+      "id": "gm-server-framework-contains-skill-22c19654",
       "from": "gm-server-framework",
-      "to": "skill-3ff3979f",
+      "to": "skill-22c19654",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-skill-43677f7c",
+      "id": "gm-server-framework-contains-skill-4a7ac3d3",
       "from": "gm-server-framework",
-      "to": "skill-43677f7c",
+      "to": "skill-4a7ac3d3",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-skill-5ba5d130",
+      "id": "gm-server-framework-contains-skill-0d11b4e9",
       "from": "gm-server-framework",
-      "to": "skill-5ba5d130",
+      "to": "skill-0d11b4e9",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-skill-48db937b",
+      "id": "gm-server-framework-contains-skill-6173c5a4",
       "from": "gm-server-framework",
-      "to": "skill-48db937b",
+      "to": "skill-6173c5a4",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-this-project-taught-me-valuable-lessons-about-api-68513ef2",
+      "id": "gm-server-framework-contains-this-project-taught-me-valuable-lessons-about-api-735f28a8",
       "from": "gm-server-framework",
-      "to": "this-project-taught-me-valuable-lessons-about-api-68513ef2",
+      "to": "this-project-taught-me-valuable-lessons-about-api-735f28a8",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-tag-c0f2cd44",
+      "id": "gm-server-framework-contains-tag-6954c236",
       "from": "gm-server-framework",
-      "to": "tag-c0f2cd44",
+      "to": "tag-6954c236",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-tag-1e505b33",
+      "id": "gm-server-framework-contains-tag-c81ac582",
       "from": "gm-server-framework",
-      "to": "tag-1e505b33",
+      "to": "tag-c81ac582",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-tag-8a491836",
+      "id": "gm-server-framework-contains-tag-5a2ddd8a",
       "from": "gm-server-framework",
-      "to": "tag-8a491836",
+      "to": "tag-5a2ddd8a",
       "type": "contains"
     },
     {
-      "id": "gm-server-framework-contains-tag-5bf4a350",
+      "id": "gm-server-framework-contains-tag-68f6ab33",
       "from": "gm-server-framework",
-      "to": "tag-5bf4a350",
+      "to": "tag-68f6ab33",
       "type": "contains"
     },
     {
@@ -4218,45 +4218,45 @@
       "type": "contains"
     },
     {
-      "id": "devpad-project-contains-the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
+      "id": "devpad-project-contains-the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
       "from": "devpad-project",
-      "to": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
+      "to": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
       "type": "contains"
     },
     {
-      "id": "devpad-project-contains-skill-9d400dd9",
+      "id": "devpad-project-contains-skill-ce82db49",
       "from": "devpad-project",
-      "to": "skill-9d400dd9",
+      "to": "skill-ce82db49",
       "type": "contains"
     },
     {
-      "id": "devpad-project-contains-skill-fffb0009",
+      "id": "devpad-project-contains-skill-d4d2b68f",
       "from": "devpad-project",
-      "to": "skill-fffb0009",
+      "to": "skill-d4d2b68f",
       "type": "contains"
     },
     {
-      "id": "devpad-project-contains-skill-ec9a15ea",
+      "id": "devpad-project-contains-skill-57b8db17",
       "from": "devpad-project",
-      "to": "skill-ec9a15ea",
+      "to": "skill-57b8db17",
       "type": "contains"
     },
     {
-      "id": "devpad-project-contains-tag-487152b1",
+      "id": "devpad-project-contains-tag-ba6dd4b1",
       "from": "devpad-project",
-      "to": "tag-487152b1",
+      "to": "tag-ba6dd4b1",
       "type": "contains"
     },
     {
-      "id": "devpad-project-contains-tag-b57c64ab",
+      "id": "devpad-project-contains-tag-294445d7",
       "from": "devpad-project",
-      "to": "tag-b57c64ab",
+      "to": "tag-294445d7",
       "type": "contains"
     },
     {
-      "id": "devpad-project-contains-tag-ef7a4536",
+      "id": "devpad-project-contains-tag-d7b6fa57",
       "from": "devpad-project",
-      "to": "tag-ef7a4536",
+      "to": "tag-d7b6fa57",
       "type": "contains"
     },
     {
@@ -4296,69 +4296,69 @@
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-the-repository-has-helped-several-developers-boots-a87649db",
+      "id": "golang-api-stack-contains-the-repository-has-helped-several-developers-boots-b649393a",
       "from": "golang-api-stack",
-      "to": "the-repository-has-helped-several-developers-boots-a87649db",
+      "to": "the-repository-has-helped-several-developers-boots-b649393a",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-skill-db65d5b7",
+      "id": "golang-api-stack-contains-skill-6c03f795",
       "from": "golang-api-stack",
-      "to": "skill-db65d5b7",
+      "to": "skill-6c03f795",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-skill-b9153dde",
+      "id": "golang-api-stack-contains-skill-3326505e",
       "from": "golang-api-stack",
-      "to": "skill-b9153dde",
+      "to": "skill-3326505e",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-skill-e88b75b5",
+      "id": "golang-api-stack-contains-skill-5d64f1d1",
       "from": "golang-api-stack",
-      "to": "skill-e88b75b5",
+      "to": "skill-5d64f1d1",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-skill-d6f55880",
+      "id": "golang-api-stack-contains-skill-5deadf5f",
       "from": "golang-api-stack",
-      "to": "skill-d6f55880",
+      "to": "skill-5deadf5f",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-skill-1429cefe",
+      "id": "golang-api-stack-contains-skill-ea3ad0df",
       "from": "golang-api-stack",
-      "to": "skill-1429cefe",
+      "to": "skill-ea3ad0df",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-this-project-demonstrates-current-best-practices-i-c978b423",
+      "id": "golang-api-stack-contains-this-project-demonstrates-current-best-practices-i-dfbed54b",
       "from": "golang-api-stack",
-      "to": "this-project-demonstrates-current-best-practices-i-c978b423",
+      "to": "this-project-demonstrates-current-best-practices-i-dfbed54b",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-tag-bc3576f6",
+      "id": "golang-api-stack-contains-tag-df0cf54c",
       "from": "golang-api-stack",
-      "to": "tag-bc3576f6",
+      "to": "tag-df0cf54c",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-tag-84bbe3f1",
+      "id": "golang-api-stack-contains-tag-67497d32",
       "from": "golang-api-stack",
-      "to": "tag-84bbe3f1",
+      "to": "tag-67497d32",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-tag-abe6c6b1",
+      "id": "golang-api-stack-contains-tag-86a74ab2",
       "from": "golang-api-stack",
-      "to": "tag-abe6c6b1",
+      "to": "tag-86a74ab2",
       "type": "contains"
     },
     {
-      "id": "golang-api-stack-contains-tag-fe4b3b62",
+      "id": "golang-api-stack-contains-tag-49eecbb9",
       "from": "golang-api-stack",
-      "to": "tag-fe4b3b62",
+      "to": "tag-49eecbb9",
       "type": "contains"
     },
     {
@@ -4398,45 +4398,45 @@
       "type": "contains"
     },
     {
-      "id": "todo-tracker-evolution-contains-skill-1be0ac90",
+      "id": "todo-tracker-evolution-contains-skill-b0466ce8",
       "from": "todo-tracker-evolution",
-      "to": "skill-1be0ac90",
+      "to": "skill-b0466ce8",
       "type": "contains"
     },
     {
-      "id": "todo-tracker-evolution-contains-skill-b7f042ac",
+      "id": "todo-tracker-evolution-contains-skill-5e01cbce",
       "from": "todo-tracker-evolution",
-      "to": "skill-b7f042ac",
+      "to": "skill-5e01cbce",
       "type": "contains"
     },
     {
-      "id": "todo-tracker-evolution-contains-skill-f98d2254",
+      "id": "todo-tracker-evolution-contains-skill-77c82a04",
       "from": "todo-tracker-evolution",
-      "to": "skill-f98d2254",
+      "to": "skill-77c82a04",
       "type": "contains"
     },
     {
-      "id": "todo-tracker-evolution-contains-this-project-solidified-my-understanding-of-typesc-9f9d4823",
+      "id": "todo-tracker-evolution-contains-this-project-solidified-my-understanding-of-typesc-6137dbd9",
       "from": "todo-tracker-evolution",
-      "to": "this-project-solidified-my-understanding-of-typesc-9f9d4823",
+      "to": "this-project-solidified-my-understanding-of-typesc-6137dbd9",
       "type": "contains"
     },
     {
-      "id": "todo-tracker-evolution-contains-tag-13ae0421",
+      "id": "todo-tracker-evolution-contains-tag-b4e90b0b",
       "from": "todo-tracker-evolution",
-      "to": "tag-13ae0421",
+      "to": "tag-b4e90b0b",
       "type": "contains"
     },
     {
-      "id": "todo-tracker-evolution-contains-tag-10bb18be",
+      "id": "todo-tracker-evolution-contains-tag-c19256ef",
       "from": "todo-tracker-evolution",
-      "to": "tag-10bb18be",
+      "to": "tag-c19256ef",
       "type": "contains"
     },
     {
-      "id": "todo-tracker-evolution-contains-tag-a3a1a399",
+      "id": "todo-tracker-evolution-contains-tag-f085aa08",
       "from": "todo-tracker-evolution",
-      "to": "tag-a3a1a399",
+      "to": "tag-f085aa08",
       "type": "contains"
     },
     {
@@ -4458,21 +4458,21 @@
       "type": "contains"
     },
     {
-      "id": "snorkeling-photography-contains-underwater-photography-presents-unique-challenges:-426f3dc6",
+      "id": "snorkeling-photography-contains-underwater-photography-presents-unique-challenges:-4107da1a",
       "from": "snorkeling-photography",
-      "to": "underwater-photography-presents-unique-challenges:-426f3dc6",
+      "to": "underwater-photography-presents-unique-challenges:-4107da1a",
       "type": "contains"
     },
     {
-      "id": "snorkeling-photography-contains-skill-efbc3ddc",
+      "id": "snorkeling-photography-contains-skill-865e2515",
       "from": "snorkeling-photography",
-      "to": "skill-efbc3ddc",
+      "to": "skill-865e2515",
       "type": "contains"
     },
     {
-      "id": "snorkeling-photography-contains-skill-55962975",
+      "id": "snorkeling-photography-contains-skill-46f4dfa2",
       "from": "snorkeling-photography",
-      "to": "skill-55962975",
+      "to": "skill-46f4dfa2",
       "type": "contains"
     },
     {
@@ -4488,51 +4488,51 @@
       "type": "contains"
     },
     {
-      "id": "photography-portfolio-contains-skill-19285489",
+      "id": "photography-portfolio-contains-skill-43ff3315",
       "from": "photography-portfolio",
-      "to": "skill-19285489",
+      "to": "skill-43ff3315",
       "type": "contains"
     },
     {
-      "id": "photography-portfolio-contains-skill-55a0290b",
+      "id": "photography-portfolio-contains-skill-7c454d6b",
       "from": "photography-portfolio",
-      "to": "skill-55a0290b",
+      "to": "skill-7c454d6b",
       "type": "contains"
     },
     {
-      "id": "photography-portfolio-contains-skill-4d6b9ade",
+      "id": "photography-portfolio-contains-skill-78f32ff3",
       "from": "photography-portfolio",
-      "to": "skill-4d6b9ade",
+      "to": "skill-78f32ff3",
       "type": "contains"
     },
     {
-      "id": "photography-portfolio-contains-skill-8e041d91",
+      "id": "photography-portfolio-contains-skill-9d1a70fa",
       "from": "photography-portfolio",
-      "to": "skill-8e041d91",
+      "to": "skill-9d1a70fa",
       "type": "contains"
     },
     {
-      "id": "photography-portfolio-contains-tag-723952aa",
+      "id": "photography-portfolio-contains-tag-b51e6fc3",
       "from": "photography-portfolio",
-      "to": "tag-723952aa",
+      "to": "tag-b51e6fc3",
       "type": "contains"
     },
     {
-      "id": "photography-portfolio-contains-tag-068ce481",
+      "id": "photography-portfolio-contains-tag-fe25725b",
       "from": "photography-portfolio",
-      "to": "tag-068ce481",
+      "to": "tag-fe25725b",
       "type": "contains"
     },
     {
-      "id": "photography-portfolio-contains-tag-d96f8e16",
+      "id": "photography-portfolio-contains-tag-93ef5385",
       "from": "photography-portfolio",
-      "to": "tag-d96f8e16",
+      "to": "tag-93ef5385",
       "type": "contains"
     },
     {
-      "id": "photography-portfolio-contains-tag-b3607842",
+      "id": "photography-portfolio-contains-tag-c0910f33",
       "from": "photography-portfolio",
-      "to": "tag-b3607842",
+      "to": "tag-c0910f33",
       "type": "contains"
     },
     {
@@ -4566,63 +4566,63 @@
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-led-teams-to-compete-successfully-at-the-highest-l-1069756e",
+      "id": "badminton-coaching-contains-led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
       "from": "badminton-coaching",
-      "to": "led-teams-to-compete-successfully-at-the-highest-l-1069756e",
+      "to": "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-skill-71bb7a81",
+      "id": "badminton-coaching-contains-skill-56e36869",
       "from": "badminton-coaching",
-      "to": "skill-71bb7a81",
+      "to": "skill-56e36869",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-skill-70ad63ef",
+      "id": "badminton-coaching-contains-skill-9ead72d6",
       "from": "badminton-coaching",
-      "to": "skill-70ad63ef",
+      "to": "skill-9ead72d6",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-skill-ed5658f5",
+      "id": "badminton-coaching-contains-skill-32f296e2",
       "from": "badminton-coaching",
-      "to": "skill-ed5658f5",
+      "to": "skill-32f296e2",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-skill-c69ea190",
+      "id": "badminton-coaching-contains-skill-fc1512b5",
       "from": "badminton-coaching",
-      "to": "skill-c69ea190",
+      "to": "skill-fc1512b5",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-the-leadership-and-analytical-skills-developed-in-67f91346",
+      "id": "badminton-coaching-contains-the-leadership-and-analytical-skills-developed-in-f01c6596",
       "from": "badminton-coaching",
-      "to": "the-leadership-and-analytical-skills-developed-in-67f91346",
+      "to": "the-leadership-and-analytical-skills-developed-in-f01c6596",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-tag-7043b70a",
+      "id": "badminton-coaching-contains-tag-b6e476a2",
       "from": "badminton-coaching",
-      "to": "tag-7043b70a",
+      "to": "tag-b6e476a2",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-tag-f3f59f7e",
+      "id": "badminton-coaching-contains-tag-c993bcdd",
       "from": "badminton-coaching",
-      "to": "tag-f3f59f7e",
+      "to": "tag-c993bcdd",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-tag-3d5c7181",
+      "id": "badminton-coaching-contains-tag-afa53553",
       "from": "badminton-coaching",
-      "to": "tag-3d5c7181",
+      "to": "tag-afa53553",
       "type": "contains"
     },
     {
-      "id": "badminton-coaching-contains-tag-ce495ad1",
+      "id": "badminton-coaching-contains-tag-dd5d020a",
       "from": "badminton-coaching",
-      "to": "tag-ce495ad1",
+      "to": "tag-dd5d020a",
       "type": "contains"
     },
     {
@@ -4656,51 +4656,51 @@
       "type": "contains"
     },
     {
-      "id": "future-directions-contains-future-projects-will-prioritize:-meaningful-impact-8033c44c",
+      "id": "future-directions-contains-future-projects-will-prioritize:-meaningful-impact-476a2cad",
       "from": "future-directions",
-      "to": "future-projects-will-prioritize:-meaningful-impact-8033c44c",
+      "to": "future-projects-will-prioritize:-meaningful-impact-476a2cad",
       "type": "contains"
     },
     {
-      "id": "portfolio-showcase-contains-tag-be4f279c",
+      "id": "portfolio-showcase-contains-tag-0f0b2e9d",
       "from": "portfolio-showcase",
-      "to": "tag-be4f279c",
+      "to": "tag-0f0b2e9d",
       "type": "contains"
     },
     {
-      "id": "portfolio-showcase-contains-tag-33fe0e0b",
+      "id": "portfolio-showcase-contains-tag-7fdc1bb8",
       "from": "portfolio-showcase",
-      "to": "tag-33fe0e0b",
+      "to": "tag-7fdc1bb8",
       "type": "contains"
     },
     {
-      "id": "portfolio-showcase-contains-tag-2268b6e2",
+      "id": "portfolio-showcase-contains-tag-188ed460",
       "from": "portfolio-showcase",
-      "to": "tag-2268b6e2",
+      "to": "tag-188ed460",
       "type": "contains"
     },
     {
-      "id": "portfolio-showcase-contains-tag-6c5e6b04",
+      "id": "portfolio-showcase-contains-tag-1553c5b4",
       "from": "portfolio-showcase",
-      "to": "tag-6c5e6b04",
+      "to": "tag-1553c5b4",
       "type": "contains"
     },
     {
-      "id": "portfolio-showcase-contains-tag-6f6748dd",
+      "id": "portfolio-showcase-contains-tag-5fc3eeaf",
       "from": "portfolio-showcase",
-      "to": "tag-6f6748dd",
+      "to": "tag-5fc3eeaf",
       "type": "contains"
     },
     {
-      "id": "portfolio-showcase-contains-tag-f6146fde",
+      "id": "portfolio-showcase-contains-tag-d63eb94f",
       "from": "portfolio-showcase",
-      "to": "tag-f6146fde",
+      "to": "tag-d63eb94f",
       "type": "contains"
     },
     {
-      "id": "portfolio-showcase-contains-time-spent-curating-and-documenting-this-comprehen-f612855a",
+      "id": "portfolio-showcase-contains-time-spent-curating-and-documenting-this-comprehen-f00e4b7f",
       "from": "portfolio-showcase",
-      "to": "time-spent-curating-and-documenting-this-comprehen-f612855a",
+      "to": "time-spent-curating-and-documenting-this-comprehen-f00e4b7f",
       "type": "contains"
     }
   ],
@@ -4709,8 +4709,10 @@
       "person": [
         "tom-materne"
       ],
+      "portfolio": [
+        "portfolio-showcase"
+      ],
       "project": [
-        "portfolio-showcase",
         "chamber-project",
         "burning-blends",
         "painting-documentation",
@@ -4766,99 +4768,99 @@
         "education-tools"
       ],
       "skill": [
-        "skill-adee7217",
-        "skill-2f30656a",
-        "skill-1a93af1d",
-        "skill-039c3c1e",
-        "skill-31bea3db",
-        "skill-56055ff1",
-        "skill-302a12c1",
-        "skill-e521c96a",
-        "skill-3d0d4a31",
-        "skill-0e07ed47",
-        "skill-c0741dc6",
-        "skill-092222c5",
-        "skill-05088a60",
-        "skill-a4666bf1",
-        "skill-3ff3979f",
-        "skill-43677f7c",
-        "skill-5ba5d130",
-        "skill-48db937b",
-        "skill-9d400dd9",
-        "skill-fffb0009",
-        "skill-ec9a15ea",
-        "skill-db65d5b7",
-        "skill-b9153dde",
-        "skill-e88b75b5",
-        "skill-d6f55880",
-        "skill-1429cefe",
-        "skill-1be0ac90",
-        "skill-b7f042ac",
-        "skill-f98d2254",
-        "skill-efbc3ddc",
-        "skill-55962975",
-        "skill-19285489",
-        "skill-55a0290b",
-        "skill-4d6b9ade",
-        "skill-8e041d91",
-        "skill-71bb7a81",
-        "skill-70ad63ef",
-        "skill-ed5658f5",
-        "skill-c69ea190"
+        "skill-16c3ade1",
+        "skill-dc2395cb",
+        "skill-7fae8c78",
+        "skill-79824f1e",
+        "skill-f30817ac",
+        "skill-228b3685",
+        "skill-d9cfe77d",
+        "skill-2f994cf6",
+        "skill-0d08e68d",
+        "skill-0962f9f9",
+        "skill-07da874a",
+        "skill-43d1f407",
+        "skill-9ee92c42",
+        "skill-de476e78",
+        "skill-22c19654",
+        "skill-4a7ac3d3",
+        "skill-0d11b4e9",
+        "skill-6173c5a4",
+        "skill-ce82db49",
+        "skill-d4d2b68f",
+        "skill-57b8db17",
+        "skill-6c03f795",
+        "skill-3326505e",
+        "skill-5d64f1d1",
+        "skill-5deadf5f",
+        "skill-ea3ad0df",
+        "skill-b0466ce8",
+        "skill-5e01cbce",
+        "skill-77c82a04",
+        "skill-865e2515",
+        "skill-46f4dfa2",
+        "skill-43ff3315",
+        "skill-7c454d6b",
+        "skill-78f32ff3",
+        "skill-9d1a70fa",
+        "skill-56e36869",
+        "skill-9ead72d6",
+        "skill-32f296e2",
+        "skill-fc1512b5"
       ],
       "note": [
-        "this-project-represents-my-belief-that-technology-1604e886",
-        "just-like-coding-painting-is-about-iteration-lea-bee053ab",
-        "building-multiplayer-games-presents-unique-challen-4bf8ab00",
-        "this-project-taught-me-valuable-lessons-about-api-68513ef2",
-        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
-        "this-project-demonstrates-current-best-practices-i-c978b423",
-        "this-project-solidified-my-understanding-of-typesc-9f9d4823",
-        "underwater-photography-presents-unique-challenges:-426f3dc6",
-        "the-leadership-and-analytical-skills-developed-in-67f91346",
-        "future-projects-will-prioritize:-meaningful-impact-8033c44c"
+        "this-project-represents-my-belief-that-technology-d9486abe",
+        "just-like-coding-painting-is-about-iteration-lea-efc63153",
+        "building-multiplayer-games-presents-unique-challen-d289ee14",
+        "this-project-taught-me-valuable-lessons-about-api-735f28a8",
+        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+        "this-project-demonstrates-current-best-practices-i-dfbed54b",
+        "this-project-solidified-my-understanding-of-typesc-6137dbd9",
+        "underwater-photography-presents-unique-challenges:-4107da1a",
+        "the-leadership-and-analytical-skills-developed-in-f01c6596",
+        "future-projects-will-prioritize:-meaningful-impact-476a2cad"
       ],
       "collaborator": [
-        "collaborator-0632e170"
+        "collaborator-84f9cede"
       ],
       "tag": [
-        "tag-c4b897e0",
-        "tag-a51cf7cd",
-        "tag-9e275b23",
-        "tag-cc0ab091",
-        "tag-008ca394",
-        "tag-a8b1fbc6",
-        "tag-df8a19e1",
-        "tag-b54be0b7",
-        "tag-01dd9d3f",
-        "tag-c0f2cd44",
-        "tag-1e505b33",
-        "tag-8a491836",
-        "tag-5bf4a350",
-        "tag-487152b1",
-        "tag-b57c64ab",
-        "tag-ef7a4536",
-        "tag-bc3576f6",
-        "tag-84bbe3f1",
-        "tag-abe6c6b1",
-        "tag-fe4b3b62",
-        "tag-13ae0421",
-        "tag-10bb18be",
-        "tag-a3a1a399",
-        "tag-723952aa",
-        "tag-068ce481",
-        "tag-d96f8e16",
-        "tag-b3607842",
-        "tag-7043b70a",
-        "tag-f3f59f7e",
-        "tag-3d5c7181",
-        "tag-ce495ad1",
-        "tag-be4f279c",
-        "tag-33fe0e0b",
-        "tag-2268b6e2",
-        "tag-6c5e6b04",
-        "tag-6f6748dd",
-        "tag-f6146fde"
+        "tag-a8860d85",
+        "tag-4ca7ab6a",
+        "tag-d3170190",
+        "tag-b9646a93",
+        "tag-e6423b38",
+        "tag-a84be93e",
+        "tag-1a4d7de9",
+        "tag-a76bf13f",
+        "tag-534a859f",
+        "tag-6954c236",
+        "tag-c81ac582",
+        "tag-5a2ddd8a",
+        "tag-68f6ab33",
+        "tag-ba6dd4b1",
+        "tag-294445d7",
+        "tag-d7b6fa57",
+        "tag-df0cf54c",
+        "tag-67497d32",
+        "tag-86a74ab2",
+        "tag-49eecbb9",
+        "tag-b4e90b0b",
+        "tag-c19256ef",
+        "tag-f085aa08",
+        "tag-b51e6fc3",
+        "tag-fe25725b",
+        "tag-93ef5385",
+        "tag-c0910f33",
+        "tag-b6e476a2",
+        "tag-c993bcdd",
+        "tag-afa53553",
+        "tag-dd5d020a",
+        "tag-0f0b2e9d",
+        "tag-7fdc1bb8",
+        "tag-188ed460",
+        "tag-1553c5b4",
+        "tag-5fc3eeaf",
+        "tag-d63eb94f"
       ],
       "essay": [
         "creative-tech-intersection",
@@ -4867,12 +4869,12 @@
         "portfolio-reflection"
       ],
       "achievement": [
-        "the-library-has-been-adopted-by-multiple-independe-23a77dbe",
-        "the-repository-has-helped-several-developers-boots-a87649db",
-        "led-teams-to-compete-successfully-at-the-highest-l-1069756e"
+        "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+        "the-repository-has-helped-several-developers-boots-b649393a",
+        "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a"
       ],
       "date": [
-        "time-spent-curating-and-documenting-this-comprehen-f612855a"
+        "time-spent-curating-and-documenting-this-comprehen-f00e4b7f"
       ]
     },
     "byTag": {},
@@ -4882,48 +4884,50 @@
         "report-generation-system",
         "email-distribution",
         "web-interface",
-        "this-project-represents-my-belief-that-technology-1604e886",
+        "this-project-represents-my-belief-that-technology-d9486abe",
         "photography-gallery",
         "music-integration",
-        "just-like-coding-painting-is-about-iteration-lea-bee053ab",
+        "just-like-coding-painting-is-about-iteration-lea-efc63153",
         "game-client",
         "java-server",
         "matchmaking-system",
-        "building-multiplayer-games-presents-unique-challen-4bf8ab00",
+        "building-multiplayer-games-presents-unique-challen-d289ee14",
         "core-library",
         "documentation-site",
         "community-support",
-        "the-library-has-been-adopted-by-multiple-independe-23a77dbe",
-        "this-project-taught-me-valuable-lessons-about-api-68513ef2",
+        "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+        "this-project-taught-me-valuable-lessons-about-api-735f28a8",
         "mvp-definition",
         "ui-redesign",
         "developer-workflow-integration",
-        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
+        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
         "docker-containerization",
         "database-integration",
         "testing-framework",
         "deployment-guide",
-        "the-repository-has-helped-several-developers-boots-a87649db",
-        "this-project-demonstrates-current-best-practices-i-c978b423",
+        "the-repository-has-helped-several-developers-boots-b649393a",
+        "this-project-demonstrates-current-best-practices-i-dfbed54b",
         "js-implementation",
         "typescript-migration",
         "performance-comparison",
-        "this-project-solidified-my-understanding-of-typesc-9f9d4823",
-        "underwater-photography-presents-unique-challenges:-426f3dc6",
+        "this-project-solidified-my-understanding-of-typesc-6137dbd9",
+        "underwater-photography-presents-unique-challenges:-4107da1a",
         "portfolio-curation",
         "social-media-presence",
         "team-management",
         "skill-development-programs",
         "competitive-strategy",
-        "led-teams-to-compete-successfully-at-the-highest-l-1069756e",
-        "the-leadership-and-analytical-skills-developed-in-67f91346",
+        "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
+        "the-leadership-and-analytical-skills-developed-in-f01c6596",
         "ai-integration-exploration",
         "sustainable-tech",
         "education-tools",
-        "future-projects-will-prioritize:-meaningful-impact-8033c44c"
+        "future-projects-will-prioritize:-meaningful-impact-476a2cad"
+      ],
+      "List": [
+        "portfolio-showcase"
       ],
       "Branch": [
-        "portfolio-showcase",
         "chamber-project",
         "political-data-sources",
         "burning-blends",
@@ -4950,86 +4954,86 @@
         "future-directions"
       ],
       "Meta": [
-        "skill-adee7217",
-        "skill-2f30656a",
-        "skill-1a93af1d",
-        "skill-039c3c1e",
-        "skill-31bea3db",
-        "skill-56055ff1",
-        "tag-c4b897e0",
-        "tag-a51cf7cd",
-        "tag-9e275b23",
-        "skill-302a12c1",
-        "skill-e521c96a",
-        "skill-3d0d4a31",
-        "skill-0e07ed47",
-        "tag-cc0ab091",
-        "tag-008ca394",
-        "tag-a8b1fbc6",
-        "skill-c0741dc6",
-        "skill-092222c5",
-        "skill-05088a60",
-        "skill-a4666bf1",
-        "tag-df8a19e1",
-        "tag-b54be0b7",
-        "tag-01dd9d3f",
-        "skill-3ff3979f",
-        "skill-43677f7c",
-        "skill-5ba5d130",
-        "skill-48db937b",
-        "tag-c0f2cd44",
-        "tag-1e505b33",
-        "tag-8a491836",
-        "tag-5bf4a350",
-        "skill-9d400dd9",
-        "skill-fffb0009",
-        "skill-ec9a15ea",
-        "tag-487152b1",
-        "tag-b57c64ab",
-        "tag-ef7a4536",
-        "skill-db65d5b7",
-        "skill-b9153dde",
-        "skill-e88b75b5",
-        "skill-d6f55880",
-        "skill-1429cefe",
-        "tag-bc3576f6",
-        "tag-84bbe3f1",
-        "tag-abe6c6b1",
-        "tag-fe4b3b62",
-        "skill-1be0ac90",
-        "skill-b7f042ac",
-        "skill-f98d2254",
-        "tag-13ae0421",
-        "tag-10bb18be",
-        "tag-a3a1a399",
-        "skill-efbc3ddc",
-        "skill-55962975",
-        "skill-19285489",
-        "skill-55a0290b",
-        "skill-4d6b9ade",
-        "skill-8e041d91",
-        "tag-723952aa",
-        "tag-068ce481",
-        "tag-d96f8e16",
-        "tag-b3607842",
-        "skill-71bb7a81",
-        "skill-70ad63ef",
-        "skill-ed5658f5",
-        "skill-c69ea190",
-        "tag-7043b70a",
-        "tag-f3f59f7e",
-        "tag-3d5c7181",
-        "tag-ce495ad1",
-        "tag-be4f279c",
-        "tag-33fe0e0b",
-        "tag-2268b6e2",
-        "tag-6c5e6b04",
-        "tag-6f6748dd",
-        "tag-f6146fde",
-        "time-spent-curating-and-documenting-this-comprehen-f612855a"
+        "skill-16c3ade1",
+        "skill-dc2395cb",
+        "skill-7fae8c78",
+        "skill-79824f1e",
+        "skill-f30817ac",
+        "skill-228b3685",
+        "tag-a8860d85",
+        "tag-4ca7ab6a",
+        "tag-d3170190",
+        "skill-d9cfe77d",
+        "skill-2f994cf6",
+        "skill-0d08e68d",
+        "skill-0962f9f9",
+        "tag-b9646a93",
+        "tag-e6423b38",
+        "tag-a84be93e",
+        "skill-07da874a",
+        "skill-43d1f407",
+        "skill-9ee92c42",
+        "skill-de476e78",
+        "tag-1a4d7de9",
+        "tag-a76bf13f",
+        "tag-534a859f",
+        "skill-22c19654",
+        "skill-4a7ac3d3",
+        "skill-0d11b4e9",
+        "skill-6173c5a4",
+        "tag-6954c236",
+        "tag-c81ac582",
+        "tag-5a2ddd8a",
+        "tag-68f6ab33",
+        "skill-ce82db49",
+        "skill-d4d2b68f",
+        "skill-57b8db17",
+        "tag-ba6dd4b1",
+        "tag-294445d7",
+        "tag-d7b6fa57",
+        "skill-6c03f795",
+        "skill-3326505e",
+        "skill-5d64f1d1",
+        "skill-5deadf5f",
+        "skill-ea3ad0df",
+        "tag-df0cf54c",
+        "tag-67497d32",
+        "tag-86a74ab2",
+        "tag-49eecbb9",
+        "skill-b0466ce8",
+        "skill-5e01cbce",
+        "skill-77c82a04",
+        "tag-b4e90b0b",
+        "tag-c19256ef",
+        "tag-f085aa08",
+        "skill-865e2515",
+        "skill-46f4dfa2",
+        "skill-43ff3315",
+        "skill-7c454d6b",
+        "skill-78f32ff3",
+        "skill-9d1a70fa",
+        "tag-b51e6fc3",
+        "tag-fe25725b",
+        "tag-93ef5385",
+        "tag-c0910f33",
+        "skill-56e36869",
+        "skill-9ead72d6",
+        "skill-32f296e2",
+        "skill-fc1512b5",
+        "tag-b6e476a2",
+        "tag-c993bcdd",
+        "tag-afa53553",
+        "tag-dd5d020a",
+        "tag-0f0b2e9d",
+        "tag-7fdc1bb8",
+        "tag-188ed460",
+        "tag-1553c5b4",
+        "tag-5fc3eeaf",
+        "tag-d63eb94f",
+        "time-spent-curating-and-documenting-this-comprehen-f00e4b7f"
       ],
       "Link": [
-        "collaborator-0632e170"
+        "collaborator-84f9cede"
       ]
     },
     "bySource": {
@@ -5041,150 +5045,150 @@
         "report-generation-system",
         "email-distribution",
         "web-interface",
-        "skill-adee7217",
-        "skill-2f30656a",
-        "skill-1a93af1d",
-        "skill-039c3c1e",
-        "skill-31bea3db",
-        "skill-56055ff1",
-        "this-project-represents-my-belief-that-technology-1604e886",
-        "collaborator-0632e170",
-        "tag-c4b897e0",
-        "tag-a51cf7cd",
-        "tag-9e275b23",
+        "skill-16c3ade1",
+        "skill-dc2395cb",
+        "skill-7fae8c78",
+        "skill-79824f1e",
+        "skill-f30817ac",
+        "skill-228b3685",
+        "this-project-represents-my-belief-that-technology-d9486abe",
+        "collaborator-84f9cede",
+        "tag-a8860d85",
+        "tag-4ca7ab6a",
+        "tag-d3170190",
         "burning-blends",
         "creative-tech-intersection",
         "photography-gallery",
         "music-integration",
         "painting-documentation",
-        "just-like-coding-painting-is-about-iteration-lea-bee053ab",
-        "skill-302a12c1",
-        "skill-e521c96a",
-        "skill-3d0d4a31",
-        "skill-0e07ed47",
-        "tag-cc0ab091",
-        "tag-008ca394",
-        "tag-a8b1fbc6",
+        "just-like-coding-painting-is-about-iteration-lea-efc63153",
+        "skill-d9cfe77d",
+        "skill-2f994cf6",
+        "skill-0d08e68d",
+        "skill-0962f9f9",
+        "tag-b9646a93",
+        "tag-e6423b38",
+        "tag-a84be93e",
         "arena-game",
         "multiplayer-architecture",
         "game-client",
         "java-server",
         "matchmaking-system",
-        "building-multiplayer-games-presents-unique-challen-4bf8ab00",
-        "skill-c0741dc6",
-        "skill-092222c5",
-        "skill-05088a60",
-        "skill-a4666bf1",
-        "tag-df8a19e1",
-        "tag-b54be0b7",
-        "tag-01dd9d3f",
+        "building-multiplayer-games-presents-unique-challen-d289ee14",
+        "skill-07da874a",
+        "skill-43d1f407",
+        "skill-9ee92c42",
+        "skill-de476e78",
+        "tag-1a4d7de9",
+        "tag-a76bf13f",
+        "tag-534a859f",
         "gm-server-framework",
         "gamemaker-networking",
         "core-library",
         "documentation-site",
         "community-support",
-        "the-library-has-been-adopted-by-multiple-independe-23a77dbe",
-        "skill-3ff3979f",
-        "skill-43677f7c",
-        "skill-5ba5d130",
-        "skill-48db937b",
-        "this-project-taught-me-valuable-lessons-about-api-68513ef2",
-        "tag-c0f2cd44",
-        "tag-1e505b33",
-        "tag-8a491836",
-        "tag-5bf4a350",
+        "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+        "skill-22c19654",
+        "skill-4a7ac3d3",
+        "skill-0d11b4e9",
+        "skill-6173c5a4",
+        "this-project-taught-me-valuable-lessons-about-api-735f28a8",
+        "tag-6954c236",
+        "tag-c81ac582",
+        "tag-5a2ddd8a",
+        "tag-68f6ab33",
         "devpad-project",
         "developer-productivity",
         "minimalism-in-tools",
         "mvp-definition",
         "ui-redesign",
         "developer-workflow-integration",
-        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
-        "skill-9d400dd9",
-        "skill-fffb0009",
-        "skill-ec9a15ea",
-        "tag-487152b1",
-        "tag-b57c64ab",
-        "tag-ef7a4536",
+        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+        "skill-ce82db49",
+        "skill-d4d2b68f",
+        "skill-57b8db17",
+        "tag-ba6dd4b1",
+        "tag-294445d7",
+        "tag-d7b6fa57",
         "golang-api-stack",
         "go-ecosystem-study",
         "docker-containerization",
         "database-integration",
         "testing-framework",
         "deployment-guide",
-        "the-repository-has-helped-several-developers-boots-a87649db",
-        "skill-db65d5b7",
-        "skill-b9153dde",
-        "skill-e88b75b5",
-        "skill-d6f55880",
-        "skill-1429cefe",
-        "this-project-demonstrates-current-best-practices-i-c978b423",
-        "tag-bc3576f6",
-        "tag-84bbe3f1",
-        "tag-abe6c6b1",
-        "tag-fe4b3b62",
+        "the-repository-has-helped-several-developers-boots-b649393a",
+        "skill-6c03f795",
+        "skill-3326505e",
+        "skill-5d64f1d1",
+        "skill-5deadf5f",
+        "skill-ea3ad0df",
+        "this-project-demonstrates-current-best-practices-i-dfbed54b",
+        "tag-df0cf54c",
+        "tag-67497d32",
+        "tag-86a74ab2",
+        "tag-49eecbb9",
         "todo-tracker-evolution",
         "js-to-ts-transition",
         "typescript-adoption-journey",
         "js-implementation",
         "typescript-migration",
         "performance-comparison",
-        "skill-1be0ac90",
-        "skill-b7f042ac",
-        "skill-f98d2254",
-        "this-project-solidified-my-understanding-of-typesc-9f9d4823",
-        "tag-13ae0421",
-        "tag-10bb18be",
-        "tag-a3a1a399",
+        "skill-b0466ce8",
+        "skill-5e01cbce",
+        "skill-77c82a04",
+        "this-project-solidified-my-understanding-of-typesc-6137dbd9",
+        "tag-b4e90b0b",
+        "tag-c19256ef",
+        "tag-f085aa08",
         "photography-portfolio",
         "photography-techniques",
         "snorkeling-photography",
-        "underwater-photography-presents-unique-challenges:-426f3dc6",
-        "skill-efbc3ddc",
-        "skill-55962975",
+        "underwater-photography-presents-unique-challenges:-4107da1a",
+        "skill-865e2515",
+        "skill-46f4dfa2",
         "portfolio-curation",
         "social-media-presence",
-        "skill-19285489",
-        "skill-55a0290b",
-        "skill-4d6b9ade",
-        "skill-8e041d91",
-        "tag-723952aa",
-        "tag-068ce481",
-        "tag-d96f8e16",
-        "tag-b3607842",
+        "skill-43ff3315",
+        "skill-7c454d6b",
+        "skill-78f32ff3",
+        "skill-9d1a70fa",
+        "tag-b51e6fc3",
+        "tag-fe25725b",
+        "tag-93ef5385",
+        "tag-c0910f33",
         "badminton-coaching",
         "coaching-methodologies",
         "team-management",
         "skill-development-programs",
         "competitive-strategy",
-        "led-teams-to-compete-successfully-at-the-highest-l-1069756e",
-        "skill-71bb7a81",
-        "skill-70ad63ef",
-        "skill-ed5658f5",
-        "skill-c69ea190",
-        "the-leadership-and-analytical-skills-developed-in-67f91346",
-        "tag-7043b70a",
-        "tag-f3f59f7e",
-        "tag-3d5c7181",
-        "tag-ce495ad1",
+        "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
+        "skill-56e36869",
+        "skill-9ead72d6",
+        "skill-32f296e2",
+        "skill-fc1512b5",
+        "the-leadership-and-analytical-skills-developed-in-f01c6596",
+        "tag-b6e476a2",
+        "tag-c993bcdd",
+        "tag-afa53553",
+        "tag-dd5d020a",
         "portfolio-reflection",
         "future-directions",
         "ai-integration-exploration",
         "sustainable-tech",
         "education-tools",
-        "future-projects-will-prioritize:-meaningful-impact-8033c44c",
-        "tag-be4f279c",
-        "tag-33fe0e0b",
-        "tag-2268b6e2",
-        "tag-6c5e6b04",
-        "tag-6f6748dd",
-        "tag-f6146fde",
-        "time-spent-curating-and-documenting-this-comprehen-f612855a"
+        "future-projects-will-prioritize:-meaningful-impact-476a2cad",
+        "tag-0f0b2e9d",
+        "tag-7fdc1bb8",
+        "tag-188ed460",
+        "tag-1553c5b4",
+        "tag-5fc3eeaf",
+        "tag-d63eb94f",
+        "time-spent-curating-and-documenting-this-comprehen-f00e4b7f"
       ]
     },
     "inbound": {
       "tom-materne": [
-        "collaborator-0632e170-references-tom-materne"
+        "collaborator-84f9cede-references-tom-materne"
       ],
       "portfolio-showcase": [],
       "chamber-project": [
@@ -5202,38 +5206,38 @@
       "web-interface": [
         "chamber-project-contains-web-interface"
       ],
-      "skill-adee7217": [
-        "chamber-project-contains-skill-adee7217"
+      "skill-16c3ade1": [
+        "chamber-project-contains-skill-16c3ade1"
       ],
-      "skill-2f30656a": [
-        "chamber-project-contains-skill-2f30656a"
+      "skill-dc2395cb": [
+        "chamber-project-contains-skill-dc2395cb"
       ],
-      "skill-1a93af1d": [
-        "chamber-project-contains-skill-1a93af1d"
+      "skill-7fae8c78": [
+        "chamber-project-contains-skill-7fae8c78"
       ],
-      "skill-039c3c1e": [
-        "chamber-project-contains-skill-039c3c1e"
+      "skill-79824f1e": [
+        "chamber-project-contains-skill-79824f1e"
       ],
-      "skill-31bea3db": [
-        "chamber-project-contains-skill-31bea3db"
+      "skill-f30817ac": [
+        "chamber-project-contains-skill-f30817ac"
       ],
-      "skill-56055ff1": [
-        "chamber-project-contains-skill-56055ff1"
+      "skill-228b3685": [
+        "chamber-project-contains-skill-228b3685"
       ],
-      "this-project-represents-my-belief-that-technology-1604e886": [
-        "chamber-project-contains-this-project-represents-my-belief-that-technology-1604e886"
+      "this-project-represents-my-belief-that-technology-d9486abe": [
+        "chamber-project-contains-this-project-represents-my-belief-that-technology-d9486abe"
       ],
-      "collaborator-0632e170": [
-        "chamber-project-contains-collaborator-0632e170"
+      "collaborator-84f9cede": [
+        "chamber-project-contains-collaborator-84f9cede"
       ],
-      "tag-c4b897e0": [
-        "chamber-project-contains-tag-c4b897e0"
+      "tag-a8860d85": [
+        "chamber-project-contains-tag-a8860d85"
       ],
-      "tag-a51cf7cd": [
-        "chamber-project-contains-tag-a51cf7cd"
+      "tag-4ca7ab6a": [
+        "chamber-project-contains-tag-4ca7ab6a"
       ],
-      "tag-9e275b23": [
-        "chamber-project-contains-tag-9e275b23"
+      "tag-d3170190": [
+        "chamber-project-contains-tag-d3170190"
       ],
       "burning-blends": [
         "portfolio-showcase-contains-burning-blends"
@@ -5250,29 +5254,29 @@
       "painting-documentation": [
         "burning-blends-contains-painting-documentation"
       ],
-      "just-like-coding-painting-is-about-iteration-lea-bee053ab": [
-        "painting-documentation-contains-just-like-coding-painting-is-about-iteration-lea-bee053ab"
+      "just-like-coding-painting-is-about-iteration-lea-efc63153": [
+        "painting-documentation-contains-just-like-coding-painting-is-about-iteration-lea-efc63153"
       ],
-      "skill-302a12c1": [
-        "burning-blends-contains-skill-302a12c1"
+      "skill-d9cfe77d": [
+        "burning-blends-contains-skill-d9cfe77d"
       ],
-      "skill-e521c96a": [
-        "burning-blends-contains-skill-e521c96a"
+      "skill-2f994cf6": [
+        "burning-blends-contains-skill-2f994cf6"
       ],
-      "skill-3d0d4a31": [
-        "burning-blends-contains-skill-3d0d4a31"
+      "skill-0d08e68d": [
+        "burning-blends-contains-skill-0d08e68d"
       ],
-      "skill-0e07ed47": [
-        "burning-blends-contains-skill-0e07ed47"
+      "skill-0962f9f9": [
+        "burning-blends-contains-skill-0962f9f9"
       ],
-      "tag-cc0ab091": [
-        "burning-blends-contains-tag-cc0ab091"
+      "tag-b9646a93": [
+        "burning-blends-contains-tag-b9646a93"
       ],
-      "tag-008ca394": [
-        "burning-blends-contains-tag-008ca394"
+      "tag-e6423b38": [
+        "burning-blends-contains-tag-e6423b38"
       ],
-      "tag-a8b1fbc6": [
-        "burning-blends-contains-tag-a8b1fbc6"
+      "tag-a84be93e": [
+        "burning-blends-contains-tag-a84be93e"
       ],
       "arena-game": [
         "portfolio-showcase-contains-arena-game"
@@ -5289,29 +5293,29 @@
       "matchmaking-system": [
         "arena-game-contains-matchmaking-system"
       ],
-      "building-multiplayer-games-presents-unique-challen-4bf8ab00": [
-        "arena-game-contains-building-multiplayer-games-presents-unique-challen-4bf8ab00"
+      "building-multiplayer-games-presents-unique-challen-d289ee14": [
+        "arena-game-contains-building-multiplayer-games-presents-unique-challen-d289ee14"
       ],
-      "skill-c0741dc6": [
-        "arena-game-contains-skill-c0741dc6"
+      "skill-07da874a": [
+        "arena-game-contains-skill-07da874a"
       ],
-      "skill-092222c5": [
-        "arena-game-contains-skill-092222c5"
+      "skill-43d1f407": [
+        "arena-game-contains-skill-43d1f407"
       ],
-      "skill-05088a60": [
-        "arena-game-contains-skill-05088a60"
+      "skill-9ee92c42": [
+        "arena-game-contains-skill-9ee92c42"
       ],
-      "skill-a4666bf1": [
-        "arena-game-contains-skill-a4666bf1"
+      "skill-de476e78": [
+        "arena-game-contains-skill-de476e78"
       ],
-      "tag-df8a19e1": [
-        "arena-game-contains-tag-df8a19e1"
+      "tag-1a4d7de9": [
+        "arena-game-contains-tag-1a4d7de9"
       ],
-      "tag-b54be0b7": [
-        "arena-game-contains-tag-b54be0b7"
+      "tag-a76bf13f": [
+        "arena-game-contains-tag-a76bf13f"
       ],
-      "tag-01dd9d3f": [
-        "arena-game-contains-tag-01dd9d3f"
+      "tag-534a859f": [
+        "arena-game-contains-tag-534a859f"
       ],
       "gm-server-framework": [
         "portfolio-showcase-contains-gm-server-framework"
@@ -5328,35 +5332,35 @@
       "community-support": [
         "gm-server-framework-contains-community-support"
       ],
-      "the-library-has-been-adopted-by-multiple-independe-23a77dbe": [
-        "gm-server-framework-contains-the-library-has-been-adopted-by-multiple-independe-23a77dbe"
+      "the-library-has-been-adopted-by-multiple-independe-baba2f8f": [
+        "gm-server-framework-contains-the-library-has-been-adopted-by-multiple-independe-baba2f8f"
       ],
-      "skill-3ff3979f": [
-        "gm-server-framework-contains-skill-3ff3979f"
+      "skill-22c19654": [
+        "gm-server-framework-contains-skill-22c19654"
       ],
-      "skill-43677f7c": [
-        "gm-server-framework-contains-skill-43677f7c"
+      "skill-4a7ac3d3": [
+        "gm-server-framework-contains-skill-4a7ac3d3"
       ],
-      "skill-5ba5d130": [
-        "gm-server-framework-contains-skill-5ba5d130"
+      "skill-0d11b4e9": [
+        "gm-server-framework-contains-skill-0d11b4e9"
       ],
-      "skill-48db937b": [
-        "gm-server-framework-contains-skill-48db937b"
+      "skill-6173c5a4": [
+        "gm-server-framework-contains-skill-6173c5a4"
       ],
-      "this-project-taught-me-valuable-lessons-about-api-68513ef2": [
-        "gm-server-framework-contains-this-project-taught-me-valuable-lessons-about-api-68513ef2"
+      "this-project-taught-me-valuable-lessons-about-api-735f28a8": [
+        "gm-server-framework-contains-this-project-taught-me-valuable-lessons-about-api-735f28a8"
       ],
-      "tag-c0f2cd44": [
-        "gm-server-framework-contains-tag-c0f2cd44"
+      "tag-6954c236": [
+        "gm-server-framework-contains-tag-6954c236"
       ],
-      "tag-1e505b33": [
-        "gm-server-framework-contains-tag-1e505b33"
+      "tag-c81ac582": [
+        "gm-server-framework-contains-tag-c81ac582"
       ],
-      "tag-8a491836": [
-        "gm-server-framework-contains-tag-8a491836"
+      "tag-5a2ddd8a": [
+        "gm-server-framework-contains-tag-5a2ddd8a"
       ],
-      "tag-5bf4a350": [
-        "gm-server-framework-contains-tag-5bf4a350"
+      "tag-68f6ab33": [
+        "gm-server-framework-contains-tag-68f6ab33"
       ],
       "devpad-project": [
         "portfolio-showcase-contains-devpad-project"
@@ -5376,26 +5380,26 @@
       "developer-workflow-integration": [
         "devpad-project-contains-developer-workflow-integration"
       ],
-      "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa": [
-        "devpad-project-contains-the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa"
+      "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3": [
+        "devpad-project-contains-the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3"
       ],
-      "skill-9d400dd9": [
-        "devpad-project-contains-skill-9d400dd9"
+      "skill-ce82db49": [
+        "devpad-project-contains-skill-ce82db49"
       ],
-      "skill-fffb0009": [
-        "devpad-project-contains-skill-fffb0009"
+      "skill-d4d2b68f": [
+        "devpad-project-contains-skill-d4d2b68f"
       ],
-      "skill-ec9a15ea": [
-        "devpad-project-contains-skill-ec9a15ea"
+      "skill-57b8db17": [
+        "devpad-project-contains-skill-57b8db17"
       ],
-      "tag-487152b1": [
-        "devpad-project-contains-tag-487152b1"
+      "tag-ba6dd4b1": [
+        "devpad-project-contains-tag-ba6dd4b1"
       ],
-      "tag-b57c64ab": [
-        "devpad-project-contains-tag-b57c64ab"
+      "tag-294445d7": [
+        "devpad-project-contains-tag-294445d7"
       ],
-      "tag-ef7a4536": [
-        "devpad-project-contains-tag-ef7a4536"
+      "tag-d7b6fa57": [
+        "devpad-project-contains-tag-d7b6fa57"
       ],
       "golang-api-stack": [
         "portfolio-showcase-contains-golang-api-stack"
@@ -5415,38 +5419,38 @@
       "deployment-guide": [
         "golang-api-stack-contains-deployment-guide"
       ],
-      "the-repository-has-helped-several-developers-boots-a87649db": [
-        "golang-api-stack-contains-the-repository-has-helped-several-developers-boots-a87649db"
+      "the-repository-has-helped-several-developers-boots-b649393a": [
+        "golang-api-stack-contains-the-repository-has-helped-several-developers-boots-b649393a"
       ],
-      "skill-db65d5b7": [
-        "golang-api-stack-contains-skill-db65d5b7"
+      "skill-6c03f795": [
+        "golang-api-stack-contains-skill-6c03f795"
       ],
-      "skill-b9153dde": [
-        "golang-api-stack-contains-skill-b9153dde"
+      "skill-3326505e": [
+        "golang-api-stack-contains-skill-3326505e"
       ],
-      "skill-e88b75b5": [
-        "golang-api-stack-contains-skill-e88b75b5"
+      "skill-5d64f1d1": [
+        "golang-api-stack-contains-skill-5d64f1d1"
       ],
-      "skill-d6f55880": [
-        "golang-api-stack-contains-skill-d6f55880"
+      "skill-5deadf5f": [
+        "golang-api-stack-contains-skill-5deadf5f"
       ],
-      "skill-1429cefe": [
-        "golang-api-stack-contains-skill-1429cefe"
+      "skill-ea3ad0df": [
+        "golang-api-stack-contains-skill-ea3ad0df"
       ],
-      "this-project-demonstrates-current-best-practices-i-c978b423": [
-        "golang-api-stack-contains-this-project-demonstrates-current-best-practices-i-c978b423"
+      "this-project-demonstrates-current-best-practices-i-dfbed54b": [
+        "golang-api-stack-contains-this-project-demonstrates-current-best-practices-i-dfbed54b"
       ],
-      "tag-bc3576f6": [
-        "golang-api-stack-contains-tag-bc3576f6"
+      "tag-df0cf54c": [
+        "golang-api-stack-contains-tag-df0cf54c"
       ],
-      "tag-84bbe3f1": [
-        "golang-api-stack-contains-tag-84bbe3f1"
+      "tag-67497d32": [
+        "golang-api-stack-contains-tag-67497d32"
       ],
-      "tag-abe6c6b1": [
-        "golang-api-stack-contains-tag-abe6c6b1"
+      "tag-86a74ab2": [
+        "golang-api-stack-contains-tag-86a74ab2"
       ],
-      "tag-fe4b3b62": [
-        "golang-api-stack-contains-tag-fe4b3b62"
+      "tag-49eecbb9": [
+        "golang-api-stack-contains-tag-49eecbb9"
       ],
       "todo-tracker-evolution": [
         "portfolio-showcase-contains-todo-tracker-evolution"
@@ -5466,26 +5470,26 @@
       "performance-comparison": [
         "todo-tracker-evolution-contains-performance-comparison"
       ],
-      "skill-1be0ac90": [
-        "todo-tracker-evolution-contains-skill-1be0ac90"
+      "skill-b0466ce8": [
+        "todo-tracker-evolution-contains-skill-b0466ce8"
       ],
-      "skill-b7f042ac": [
-        "todo-tracker-evolution-contains-skill-b7f042ac"
+      "skill-5e01cbce": [
+        "todo-tracker-evolution-contains-skill-5e01cbce"
       ],
-      "skill-f98d2254": [
-        "todo-tracker-evolution-contains-skill-f98d2254"
+      "skill-77c82a04": [
+        "todo-tracker-evolution-contains-skill-77c82a04"
       ],
-      "this-project-solidified-my-understanding-of-typesc-9f9d4823": [
-        "todo-tracker-evolution-contains-this-project-solidified-my-understanding-of-typesc-9f9d4823"
+      "this-project-solidified-my-understanding-of-typesc-6137dbd9": [
+        "todo-tracker-evolution-contains-this-project-solidified-my-understanding-of-typesc-6137dbd9"
       ],
-      "tag-13ae0421": [
-        "todo-tracker-evolution-contains-tag-13ae0421"
+      "tag-b4e90b0b": [
+        "todo-tracker-evolution-contains-tag-b4e90b0b"
       ],
-      "tag-10bb18be": [
-        "todo-tracker-evolution-contains-tag-10bb18be"
+      "tag-c19256ef": [
+        "todo-tracker-evolution-contains-tag-c19256ef"
       ],
-      "tag-a3a1a399": [
-        "todo-tracker-evolution-contains-tag-a3a1a399"
+      "tag-f085aa08": [
+        "todo-tracker-evolution-contains-tag-f085aa08"
       ],
       "photography-portfolio": [
         "portfolio-showcase-contains-photography-portfolio"
@@ -5496,14 +5500,14 @@
       "snorkeling-photography": [
         "photography-portfolio-contains-snorkeling-photography"
       ],
-      "underwater-photography-presents-unique-challenges:-426f3dc6": [
-        "snorkeling-photography-contains-underwater-photography-presents-unique-challenges:-426f3dc6"
+      "underwater-photography-presents-unique-challenges:-4107da1a": [
+        "snorkeling-photography-contains-underwater-photography-presents-unique-challenges:-4107da1a"
       ],
-      "skill-efbc3ddc": [
-        "snorkeling-photography-contains-skill-efbc3ddc"
+      "skill-865e2515": [
+        "snorkeling-photography-contains-skill-865e2515"
       ],
-      "skill-55962975": [
-        "snorkeling-photography-contains-skill-55962975"
+      "skill-46f4dfa2": [
+        "snorkeling-photography-contains-skill-46f4dfa2"
       ],
       "portfolio-curation": [
         "photography-portfolio-contains-portfolio-curation"
@@ -5511,29 +5515,29 @@
       "social-media-presence": [
         "photography-portfolio-contains-social-media-presence"
       ],
-      "skill-19285489": [
-        "photography-portfolio-contains-skill-19285489"
+      "skill-43ff3315": [
+        "photography-portfolio-contains-skill-43ff3315"
       ],
-      "skill-55a0290b": [
-        "photography-portfolio-contains-skill-55a0290b"
+      "skill-7c454d6b": [
+        "photography-portfolio-contains-skill-7c454d6b"
       ],
-      "skill-4d6b9ade": [
-        "photography-portfolio-contains-skill-4d6b9ade"
+      "skill-78f32ff3": [
+        "photography-portfolio-contains-skill-78f32ff3"
       ],
-      "skill-8e041d91": [
-        "photography-portfolio-contains-skill-8e041d91"
+      "skill-9d1a70fa": [
+        "photography-portfolio-contains-skill-9d1a70fa"
       ],
-      "tag-723952aa": [
-        "photography-portfolio-contains-tag-723952aa"
+      "tag-b51e6fc3": [
+        "photography-portfolio-contains-tag-b51e6fc3"
       ],
-      "tag-068ce481": [
-        "photography-portfolio-contains-tag-068ce481"
+      "tag-fe25725b": [
+        "photography-portfolio-contains-tag-fe25725b"
       ],
-      "tag-d96f8e16": [
-        "photography-portfolio-contains-tag-d96f8e16"
+      "tag-93ef5385": [
+        "photography-portfolio-contains-tag-93ef5385"
       ],
-      "tag-b3607842": [
-        "photography-portfolio-contains-tag-b3607842"
+      "tag-c0910f33": [
+        "photography-portfolio-contains-tag-c0910f33"
       ],
       "badminton-coaching": [
         "portfolio-showcase-contains-badminton-coaching"
@@ -5550,35 +5554,35 @@
       "competitive-strategy": [
         "badminton-coaching-contains-competitive-strategy"
       ],
-      "led-teams-to-compete-successfully-at-the-highest-l-1069756e": [
-        "badminton-coaching-contains-led-teams-to-compete-successfully-at-the-highest-l-1069756e"
+      "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a": [
+        "badminton-coaching-contains-led-teams-to-compete-successfully-at-the-highest-l-0ff9016a"
       ],
-      "skill-71bb7a81": [
-        "badminton-coaching-contains-skill-71bb7a81"
+      "skill-56e36869": [
+        "badminton-coaching-contains-skill-56e36869"
       ],
-      "skill-70ad63ef": [
-        "badminton-coaching-contains-skill-70ad63ef"
+      "skill-9ead72d6": [
+        "badminton-coaching-contains-skill-9ead72d6"
       ],
-      "skill-ed5658f5": [
-        "badminton-coaching-contains-skill-ed5658f5"
+      "skill-32f296e2": [
+        "badminton-coaching-contains-skill-32f296e2"
       ],
-      "skill-c69ea190": [
-        "badminton-coaching-contains-skill-c69ea190"
+      "skill-fc1512b5": [
+        "badminton-coaching-contains-skill-fc1512b5"
       ],
-      "the-leadership-and-analytical-skills-developed-in-67f91346": [
-        "badminton-coaching-contains-the-leadership-and-analytical-skills-developed-in-67f91346"
+      "the-leadership-and-analytical-skills-developed-in-f01c6596": [
+        "badminton-coaching-contains-the-leadership-and-analytical-skills-developed-in-f01c6596"
       ],
-      "tag-7043b70a": [
-        "badminton-coaching-contains-tag-7043b70a"
+      "tag-b6e476a2": [
+        "badminton-coaching-contains-tag-b6e476a2"
       ],
-      "tag-f3f59f7e": [
-        "badminton-coaching-contains-tag-f3f59f7e"
+      "tag-c993bcdd": [
+        "badminton-coaching-contains-tag-c993bcdd"
       ],
-      "tag-3d5c7181": [
-        "badminton-coaching-contains-tag-3d5c7181"
+      "tag-afa53553": [
+        "badminton-coaching-contains-tag-afa53553"
       ],
-      "tag-ce495ad1": [
-        "badminton-coaching-contains-tag-ce495ad1"
+      "tag-dd5d020a": [
+        "badminton-coaching-contains-tag-dd5d020a"
       ],
       "portfolio-reflection": [
         "portfolio-showcase-contains-portfolio-reflection"
@@ -5595,29 +5599,29 @@
       "education-tools": [
         "future-directions-contains-education-tools"
       ],
-      "future-projects-will-prioritize:-meaningful-impact-8033c44c": [
-        "future-directions-contains-future-projects-will-prioritize:-meaningful-impact-8033c44c"
+      "future-projects-will-prioritize:-meaningful-impact-476a2cad": [
+        "future-directions-contains-future-projects-will-prioritize:-meaningful-impact-476a2cad"
       ],
-      "tag-be4f279c": [
-        "portfolio-showcase-contains-tag-be4f279c"
+      "tag-0f0b2e9d": [
+        "portfolio-showcase-contains-tag-0f0b2e9d"
       ],
-      "tag-33fe0e0b": [
-        "portfolio-showcase-contains-tag-33fe0e0b"
+      "tag-7fdc1bb8": [
+        "portfolio-showcase-contains-tag-7fdc1bb8"
       ],
-      "tag-2268b6e2": [
-        "portfolio-showcase-contains-tag-2268b6e2"
+      "tag-188ed460": [
+        "portfolio-showcase-contains-tag-188ed460"
       ],
-      "tag-6c5e6b04": [
-        "portfolio-showcase-contains-tag-6c5e6b04"
+      "tag-1553c5b4": [
+        "portfolio-showcase-contains-tag-1553c5b4"
       ],
-      "tag-6f6748dd": [
-        "portfolio-showcase-contains-tag-6f6748dd"
+      "tag-5fc3eeaf": [
+        "portfolio-showcase-contains-tag-5fc3eeaf"
       ],
-      "tag-f6146fde": [
-        "portfolio-showcase-contains-tag-f6146fde"
+      "tag-d63eb94f": [
+        "portfolio-showcase-contains-tag-d63eb94f"
       ],
-      "time-spent-curating-and-documenting-this-comprehen-f612855a": [
-        "portfolio-showcase-contains-time-spent-curating-and-documenting-this-comprehen-f612855a"
+      "time-spent-curating-and-documenting-this-comprehen-f00e4b7f": [
+        "portfolio-showcase-contains-time-spent-curating-and-documenting-this-comprehen-f00e4b7f"
       ]
     },
     "outbound": {
@@ -5634,302 +5638,302 @@
         "portfolio-showcase-contains-badminton-coaching",
         "portfolio-showcase-contains-portfolio-reflection",
         "portfolio-showcase-contains-future-directions",
-        "portfolio-showcase-contains-tag-be4f279c",
-        "portfolio-showcase-contains-tag-33fe0e0b",
-        "portfolio-showcase-contains-tag-2268b6e2",
-        "portfolio-showcase-contains-tag-6c5e6b04",
-        "portfolio-showcase-contains-tag-6f6748dd",
-        "portfolio-showcase-contains-tag-f6146fde",
-        "portfolio-showcase-contains-time-spent-curating-and-documenting-this-comprehen-f612855a"
+        "portfolio-showcase-contains-tag-0f0b2e9d",
+        "portfolio-showcase-contains-tag-7fdc1bb8",
+        "portfolio-showcase-contains-tag-188ed460",
+        "portfolio-showcase-contains-tag-1553c5b4",
+        "portfolio-showcase-contains-tag-5fc3eeaf",
+        "portfolio-showcase-contains-tag-d63eb94f",
+        "portfolio-showcase-contains-time-spent-curating-and-documenting-this-comprehen-f00e4b7f"
       ],
       "chamber-project": [
         "chamber-project-contains-political-data-sources",
         "chamber-project-contains-report-generation-system",
         "chamber-project-contains-email-distribution",
         "chamber-project-contains-web-interface",
-        "chamber-project-contains-skill-adee7217",
-        "chamber-project-contains-skill-2f30656a",
-        "chamber-project-contains-skill-1a93af1d",
-        "chamber-project-contains-skill-039c3c1e",
-        "chamber-project-contains-skill-31bea3db",
-        "chamber-project-contains-skill-56055ff1",
-        "chamber-project-contains-this-project-represents-my-belief-that-technology-1604e886",
-        "chamber-project-contains-collaborator-0632e170",
-        "chamber-project-contains-tag-c4b897e0",
-        "chamber-project-contains-tag-a51cf7cd",
-        "chamber-project-contains-tag-9e275b23"
+        "chamber-project-contains-skill-16c3ade1",
+        "chamber-project-contains-skill-dc2395cb",
+        "chamber-project-contains-skill-7fae8c78",
+        "chamber-project-contains-skill-79824f1e",
+        "chamber-project-contains-skill-f30817ac",
+        "chamber-project-contains-skill-228b3685",
+        "chamber-project-contains-this-project-represents-my-belief-that-technology-d9486abe",
+        "chamber-project-contains-collaborator-84f9cede",
+        "chamber-project-contains-tag-a8860d85",
+        "chamber-project-contains-tag-4ca7ab6a",
+        "chamber-project-contains-tag-d3170190"
       ],
       "political-data-sources": [],
       "report-generation-system": [],
       "email-distribution": [],
       "web-interface": [],
-      "skill-adee7217": [],
-      "skill-2f30656a": [],
-      "skill-1a93af1d": [],
-      "skill-039c3c1e": [],
-      "skill-31bea3db": [],
-      "skill-56055ff1": [],
-      "this-project-represents-my-belief-that-technology-1604e886": [],
-      "collaborator-0632e170": [
-        "collaborator-0632e170-references-tom-materne"
+      "skill-16c3ade1": [],
+      "skill-dc2395cb": [],
+      "skill-7fae8c78": [],
+      "skill-79824f1e": [],
+      "skill-f30817ac": [],
+      "skill-228b3685": [],
+      "this-project-represents-my-belief-that-technology-d9486abe": [],
+      "collaborator-84f9cede": [
+        "collaborator-84f9cede-references-tom-materne"
       ],
-      "tag-c4b897e0": [],
-      "tag-a51cf7cd": [],
-      "tag-9e275b23": [],
+      "tag-a8860d85": [],
+      "tag-4ca7ab6a": [],
+      "tag-d3170190": [],
       "burning-blends": [
         "burning-blends-contains-creative-tech-intersection",
         "burning-blends-contains-photography-gallery",
         "burning-blends-contains-music-integration",
         "burning-blends-contains-painting-documentation",
-        "burning-blends-contains-skill-302a12c1",
-        "burning-blends-contains-skill-e521c96a",
-        "burning-blends-contains-skill-3d0d4a31",
-        "burning-blends-contains-skill-0e07ed47",
-        "burning-blends-contains-tag-cc0ab091",
-        "burning-blends-contains-tag-008ca394",
-        "burning-blends-contains-tag-a8b1fbc6"
+        "burning-blends-contains-skill-d9cfe77d",
+        "burning-blends-contains-skill-2f994cf6",
+        "burning-blends-contains-skill-0d08e68d",
+        "burning-blends-contains-skill-0962f9f9",
+        "burning-blends-contains-tag-b9646a93",
+        "burning-blends-contains-tag-e6423b38",
+        "burning-blends-contains-tag-a84be93e"
       ],
       "creative-tech-intersection": [],
       "photography-gallery": [],
       "music-integration": [],
       "painting-documentation": [
-        "painting-documentation-contains-just-like-coding-painting-is-about-iteration-lea-bee053ab"
+        "painting-documentation-contains-just-like-coding-painting-is-about-iteration-lea-efc63153"
       ],
-      "just-like-coding-painting-is-about-iteration-lea-bee053ab": [],
-      "skill-302a12c1": [],
-      "skill-e521c96a": [],
-      "skill-3d0d4a31": [],
-      "skill-0e07ed47": [],
-      "tag-cc0ab091": [],
-      "tag-008ca394": [],
-      "tag-a8b1fbc6": [],
+      "just-like-coding-painting-is-about-iteration-lea-efc63153": [],
+      "skill-d9cfe77d": [],
+      "skill-2f994cf6": [],
+      "skill-0d08e68d": [],
+      "skill-0962f9f9": [],
+      "tag-b9646a93": [],
+      "tag-e6423b38": [],
+      "tag-a84be93e": [],
       "arena-game": [
         "arena-game-contains-multiplayer-architecture",
         "arena-game-contains-game-client",
         "arena-game-contains-java-server",
         "arena-game-contains-matchmaking-system",
-        "arena-game-contains-building-multiplayer-games-presents-unique-challen-4bf8ab00",
-        "arena-game-contains-skill-c0741dc6",
-        "arena-game-contains-skill-092222c5",
-        "arena-game-contains-skill-05088a60",
-        "arena-game-contains-skill-a4666bf1",
-        "arena-game-contains-tag-df8a19e1",
-        "arena-game-contains-tag-b54be0b7",
-        "arena-game-contains-tag-01dd9d3f"
+        "arena-game-contains-building-multiplayer-games-presents-unique-challen-d289ee14",
+        "arena-game-contains-skill-07da874a",
+        "arena-game-contains-skill-43d1f407",
+        "arena-game-contains-skill-9ee92c42",
+        "arena-game-contains-skill-de476e78",
+        "arena-game-contains-tag-1a4d7de9",
+        "arena-game-contains-tag-a76bf13f",
+        "arena-game-contains-tag-534a859f"
       ],
       "multiplayer-architecture": [],
       "game-client": [],
       "java-server": [],
       "matchmaking-system": [],
-      "building-multiplayer-games-presents-unique-challen-4bf8ab00": [],
-      "skill-c0741dc6": [],
-      "skill-092222c5": [],
-      "skill-05088a60": [],
-      "skill-a4666bf1": [],
-      "tag-df8a19e1": [],
-      "tag-b54be0b7": [],
-      "tag-01dd9d3f": [],
+      "building-multiplayer-games-presents-unique-challen-d289ee14": [],
+      "skill-07da874a": [],
+      "skill-43d1f407": [],
+      "skill-9ee92c42": [],
+      "skill-de476e78": [],
+      "tag-1a4d7de9": [],
+      "tag-a76bf13f": [],
+      "tag-534a859f": [],
       "gm-server-framework": [
         "gm-server-framework-contains-gamemaker-networking",
         "gm-server-framework-contains-core-library",
         "gm-server-framework-contains-documentation-site",
         "gm-server-framework-contains-community-support",
-        "gm-server-framework-contains-the-library-has-been-adopted-by-multiple-independe-23a77dbe",
-        "gm-server-framework-contains-skill-3ff3979f",
-        "gm-server-framework-contains-skill-43677f7c",
-        "gm-server-framework-contains-skill-5ba5d130",
-        "gm-server-framework-contains-skill-48db937b",
-        "gm-server-framework-contains-this-project-taught-me-valuable-lessons-about-api-68513ef2",
-        "gm-server-framework-contains-tag-c0f2cd44",
-        "gm-server-framework-contains-tag-1e505b33",
-        "gm-server-framework-contains-tag-8a491836",
-        "gm-server-framework-contains-tag-5bf4a350"
+        "gm-server-framework-contains-the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+        "gm-server-framework-contains-skill-22c19654",
+        "gm-server-framework-contains-skill-4a7ac3d3",
+        "gm-server-framework-contains-skill-0d11b4e9",
+        "gm-server-framework-contains-skill-6173c5a4",
+        "gm-server-framework-contains-this-project-taught-me-valuable-lessons-about-api-735f28a8",
+        "gm-server-framework-contains-tag-6954c236",
+        "gm-server-framework-contains-tag-c81ac582",
+        "gm-server-framework-contains-tag-5a2ddd8a",
+        "gm-server-framework-contains-tag-68f6ab33"
       ],
       "gamemaker-networking": [],
       "core-library": [],
       "documentation-site": [],
       "community-support": [],
-      "the-library-has-been-adopted-by-multiple-independe-23a77dbe": [],
-      "skill-3ff3979f": [],
-      "skill-43677f7c": [],
-      "skill-5ba5d130": [],
-      "skill-48db937b": [],
-      "this-project-taught-me-valuable-lessons-about-api-68513ef2": [],
-      "tag-c0f2cd44": [],
-      "tag-1e505b33": [],
-      "tag-8a491836": [],
-      "tag-5bf4a350": [],
+      "the-library-has-been-adopted-by-multiple-independe-baba2f8f": [],
+      "skill-22c19654": [],
+      "skill-4a7ac3d3": [],
+      "skill-0d11b4e9": [],
+      "skill-6173c5a4": [],
+      "this-project-taught-me-valuable-lessons-about-api-735f28a8": [],
+      "tag-6954c236": [],
+      "tag-c81ac582": [],
+      "tag-5a2ddd8a": [],
+      "tag-68f6ab33": [],
       "devpad-project": [
         "devpad-project-contains-developer-productivity",
         "devpad-project-contains-minimalism-in-tools",
         "devpad-project-contains-mvp-definition",
         "devpad-project-contains-ui-redesign",
         "devpad-project-contains-developer-workflow-integration",
-        "devpad-project-contains-the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa",
-        "devpad-project-contains-skill-9d400dd9",
-        "devpad-project-contains-skill-fffb0009",
-        "devpad-project-contains-skill-ec9a15ea",
-        "devpad-project-contains-tag-487152b1",
-        "devpad-project-contains-tag-b57c64ab",
-        "devpad-project-contains-tag-ef7a4536"
+        "devpad-project-contains-the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+        "devpad-project-contains-skill-ce82db49",
+        "devpad-project-contains-skill-d4d2b68f",
+        "devpad-project-contains-skill-57b8db17",
+        "devpad-project-contains-tag-ba6dd4b1",
+        "devpad-project-contains-tag-294445d7",
+        "devpad-project-contains-tag-d7b6fa57"
       ],
       "developer-productivity": [],
       "minimalism-in-tools": [],
       "mvp-definition": [],
       "ui-redesign": [],
       "developer-workflow-integration": [],
-      "the-goal-is-to-create-a-tool-so-simple-and-intuiti-44449faa": [],
-      "skill-9d400dd9": [],
-      "skill-fffb0009": [],
-      "skill-ec9a15ea": [],
-      "tag-487152b1": [],
-      "tag-b57c64ab": [],
-      "tag-ef7a4536": [],
+      "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3": [],
+      "skill-ce82db49": [],
+      "skill-d4d2b68f": [],
+      "skill-57b8db17": [],
+      "tag-ba6dd4b1": [],
+      "tag-294445d7": [],
+      "tag-d7b6fa57": [],
       "golang-api-stack": [
         "golang-api-stack-contains-go-ecosystem-study",
         "golang-api-stack-contains-docker-containerization",
         "golang-api-stack-contains-database-integration",
         "golang-api-stack-contains-testing-framework",
         "golang-api-stack-contains-deployment-guide",
-        "golang-api-stack-contains-the-repository-has-helped-several-developers-boots-a87649db",
-        "golang-api-stack-contains-skill-db65d5b7",
-        "golang-api-stack-contains-skill-b9153dde",
-        "golang-api-stack-contains-skill-e88b75b5",
-        "golang-api-stack-contains-skill-d6f55880",
-        "golang-api-stack-contains-skill-1429cefe",
-        "golang-api-stack-contains-this-project-demonstrates-current-best-practices-i-c978b423",
-        "golang-api-stack-contains-tag-bc3576f6",
-        "golang-api-stack-contains-tag-84bbe3f1",
-        "golang-api-stack-contains-tag-abe6c6b1",
-        "golang-api-stack-contains-tag-fe4b3b62"
+        "golang-api-stack-contains-the-repository-has-helped-several-developers-boots-b649393a",
+        "golang-api-stack-contains-skill-6c03f795",
+        "golang-api-stack-contains-skill-3326505e",
+        "golang-api-stack-contains-skill-5d64f1d1",
+        "golang-api-stack-contains-skill-5deadf5f",
+        "golang-api-stack-contains-skill-ea3ad0df",
+        "golang-api-stack-contains-this-project-demonstrates-current-best-practices-i-dfbed54b",
+        "golang-api-stack-contains-tag-df0cf54c",
+        "golang-api-stack-contains-tag-67497d32",
+        "golang-api-stack-contains-tag-86a74ab2",
+        "golang-api-stack-contains-tag-49eecbb9"
       ],
       "go-ecosystem-study": [],
       "docker-containerization": [],
       "database-integration": [],
       "testing-framework": [],
       "deployment-guide": [],
-      "the-repository-has-helped-several-developers-boots-a87649db": [],
-      "skill-db65d5b7": [],
-      "skill-b9153dde": [],
-      "skill-e88b75b5": [],
-      "skill-d6f55880": [],
-      "skill-1429cefe": [],
-      "this-project-demonstrates-current-best-practices-i-c978b423": [],
-      "tag-bc3576f6": [],
-      "tag-84bbe3f1": [],
-      "tag-abe6c6b1": [],
-      "tag-fe4b3b62": [],
+      "the-repository-has-helped-several-developers-boots-b649393a": [],
+      "skill-6c03f795": [],
+      "skill-3326505e": [],
+      "skill-5d64f1d1": [],
+      "skill-5deadf5f": [],
+      "skill-ea3ad0df": [],
+      "this-project-demonstrates-current-best-practices-i-dfbed54b": [],
+      "tag-df0cf54c": [],
+      "tag-67497d32": [],
+      "tag-86a74ab2": [],
+      "tag-49eecbb9": [],
       "todo-tracker-evolution": [
         "todo-tracker-evolution-contains-js-to-ts-transition",
         "todo-tracker-evolution-contains-typescript-adoption-journey",
         "todo-tracker-evolution-contains-js-implementation",
         "todo-tracker-evolution-contains-typescript-migration",
         "todo-tracker-evolution-contains-performance-comparison",
-        "todo-tracker-evolution-contains-skill-1be0ac90",
-        "todo-tracker-evolution-contains-skill-b7f042ac",
-        "todo-tracker-evolution-contains-skill-f98d2254",
-        "todo-tracker-evolution-contains-this-project-solidified-my-understanding-of-typesc-9f9d4823",
-        "todo-tracker-evolution-contains-tag-13ae0421",
-        "todo-tracker-evolution-contains-tag-10bb18be",
-        "todo-tracker-evolution-contains-tag-a3a1a399"
+        "todo-tracker-evolution-contains-skill-b0466ce8",
+        "todo-tracker-evolution-contains-skill-5e01cbce",
+        "todo-tracker-evolution-contains-skill-77c82a04",
+        "todo-tracker-evolution-contains-this-project-solidified-my-understanding-of-typesc-6137dbd9",
+        "todo-tracker-evolution-contains-tag-b4e90b0b",
+        "todo-tracker-evolution-contains-tag-c19256ef",
+        "todo-tracker-evolution-contains-tag-f085aa08"
       ],
       "js-to-ts-transition": [],
       "typescript-adoption-journey": [],
       "js-implementation": [],
       "typescript-migration": [],
       "performance-comparison": [],
-      "skill-1be0ac90": [],
-      "skill-b7f042ac": [],
-      "skill-f98d2254": [],
-      "this-project-solidified-my-understanding-of-typesc-9f9d4823": [],
-      "tag-13ae0421": [],
-      "tag-10bb18be": [],
-      "tag-a3a1a399": [],
+      "skill-b0466ce8": [],
+      "skill-5e01cbce": [],
+      "skill-77c82a04": [],
+      "this-project-solidified-my-understanding-of-typesc-6137dbd9": [],
+      "tag-b4e90b0b": [],
+      "tag-c19256ef": [],
+      "tag-f085aa08": [],
       "photography-portfolio": [
         "photography-portfolio-contains-photography-techniques",
         "photography-portfolio-contains-snorkeling-photography",
         "photography-portfolio-contains-portfolio-curation",
         "photography-portfolio-contains-social-media-presence",
-        "photography-portfolio-contains-skill-19285489",
-        "photography-portfolio-contains-skill-55a0290b",
-        "photography-portfolio-contains-skill-4d6b9ade",
-        "photography-portfolio-contains-skill-8e041d91",
-        "photography-portfolio-contains-tag-723952aa",
-        "photography-portfolio-contains-tag-068ce481",
-        "photography-portfolio-contains-tag-d96f8e16",
-        "photography-portfolio-contains-tag-b3607842"
+        "photography-portfolio-contains-skill-43ff3315",
+        "photography-portfolio-contains-skill-7c454d6b",
+        "photography-portfolio-contains-skill-78f32ff3",
+        "photography-portfolio-contains-skill-9d1a70fa",
+        "photography-portfolio-contains-tag-b51e6fc3",
+        "photography-portfolio-contains-tag-fe25725b",
+        "photography-portfolio-contains-tag-93ef5385",
+        "photography-portfolio-contains-tag-c0910f33"
       ],
       "photography-techniques": [],
       "snorkeling-photography": [
-        "snorkeling-photography-contains-underwater-photography-presents-unique-challenges:-426f3dc6",
-        "snorkeling-photography-contains-skill-efbc3ddc",
-        "snorkeling-photography-contains-skill-55962975"
+        "snorkeling-photography-contains-underwater-photography-presents-unique-challenges:-4107da1a",
+        "snorkeling-photography-contains-skill-865e2515",
+        "snorkeling-photography-contains-skill-46f4dfa2"
       ],
-      "underwater-photography-presents-unique-challenges:-426f3dc6": [],
-      "skill-efbc3ddc": [],
-      "skill-55962975": [],
+      "underwater-photography-presents-unique-challenges:-4107da1a": [],
+      "skill-865e2515": [],
+      "skill-46f4dfa2": [],
       "portfolio-curation": [],
       "social-media-presence": [],
-      "skill-19285489": [],
-      "skill-55a0290b": [],
-      "skill-4d6b9ade": [],
-      "skill-8e041d91": [],
-      "tag-723952aa": [],
-      "tag-068ce481": [],
-      "tag-d96f8e16": [],
-      "tag-b3607842": [],
+      "skill-43ff3315": [],
+      "skill-7c454d6b": [],
+      "skill-78f32ff3": [],
+      "skill-9d1a70fa": [],
+      "tag-b51e6fc3": [],
+      "tag-fe25725b": [],
+      "tag-93ef5385": [],
+      "tag-c0910f33": [],
       "badminton-coaching": [
         "badminton-coaching-contains-coaching-methodologies",
         "badminton-coaching-contains-team-management",
         "badminton-coaching-contains-skill-development-programs",
         "badminton-coaching-contains-competitive-strategy",
-        "badminton-coaching-contains-led-teams-to-compete-successfully-at-the-highest-l-1069756e",
-        "badminton-coaching-contains-skill-71bb7a81",
-        "badminton-coaching-contains-skill-70ad63ef",
-        "badminton-coaching-contains-skill-ed5658f5",
-        "badminton-coaching-contains-skill-c69ea190",
-        "badminton-coaching-contains-the-leadership-and-analytical-skills-developed-in-67f91346",
-        "badminton-coaching-contains-tag-7043b70a",
-        "badminton-coaching-contains-tag-f3f59f7e",
-        "badminton-coaching-contains-tag-3d5c7181",
-        "badminton-coaching-contains-tag-ce495ad1"
+        "badminton-coaching-contains-led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
+        "badminton-coaching-contains-skill-56e36869",
+        "badminton-coaching-contains-skill-9ead72d6",
+        "badminton-coaching-contains-skill-32f296e2",
+        "badminton-coaching-contains-skill-fc1512b5",
+        "badminton-coaching-contains-the-leadership-and-analytical-skills-developed-in-f01c6596",
+        "badminton-coaching-contains-tag-b6e476a2",
+        "badminton-coaching-contains-tag-c993bcdd",
+        "badminton-coaching-contains-tag-afa53553",
+        "badminton-coaching-contains-tag-dd5d020a"
       ],
       "coaching-methodologies": [],
       "team-management": [],
       "skill-development-programs": [],
       "competitive-strategy": [],
-      "led-teams-to-compete-successfully-at-the-highest-l-1069756e": [],
-      "skill-71bb7a81": [],
-      "skill-70ad63ef": [],
-      "skill-ed5658f5": [],
-      "skill-c69ea190": [],
-      "the-leadership-and-analytical-skills-developed-in-67f91346": [],
-      "tag-7043b70a": [],
-      "tag-f3f59f7e": [],
-      "tag-3d5c7181": [],
-      "tag-ce495ad1": [],
+      "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a": [],
+      "skill-56e36869": [],
+      "skill-9ead72d6": [],
+      "skill-32f296e2": [],
+      "skill-fc1512b5": [],
+      "the-leadership-and-analytical-skills-developed-in-f01c6596": [],
+      "tag-b6e476a2": [],
+      "tag-c993bcdd": [],
+      "tag-afa53553": [],
+      "tag-dd5d020a": [],
       "portfolio-reflection": [],
       "future-directions": [
         "future-directions-contains-ai-integration-exploration",
         "future-directions-contains-sustainable-tech",
         "future-directions-contains-education-tools",
-        "future-directions-contains-future-projects-will-prioritize:-meaningful-impact-8033c44c"
+        "future-directions-contains-future-projects-will-prioritize:-meaningful-impact-476a2cad"
       ],
       "ai-integration-exploration": [],
       "sustainable-tech": [],
       "education-tools": [],
-      "future-projects-will-prioritize:-meaningful-impact-8033c44c": [],
-      "tag-be4f279c": [],
-      "tag-33fe0e0b": [],
-      "tag-2268b6e2": [],
-      "tag-6c5e6b04": [],
-      "tag-6f6748dd": [],
-      "tag-f6146fde": [],
-      "time-spent-curating-and-documenting-this-comprehen-f612855a": []
+      "future-projects-will-prioritize:-meaningful-impact-476a2cad": [],
+      "tag-0f0b2e9d": [],
+      "tag-7fdc1bb8": [],
+      "tag-188ed460": [],
+      "tag-1553c5b4": [],
+      "tag-5fc3eeaf": [],
+      "tag-d63eb94f": [],
+      "time-spent-curating-and-documenting-this-comprehen-f00e4b7f": []
     }
   },
   "meta": {
-    "generatedAt": "2025-09-04T21:58:28.395Z",
+    "generatedAt": "2025-09-05T12:42:24.528Z",
     "version": "0.1.0",
     "files": 1,
     "sources": [
@@ -5940,7 +5944,8 @@
       "edgeCount": 145,
       "typeBreakdown": {
         "person": 1,
-        "project": 13,
+        "portfolio": 1,
+        "project": 12,
         "research": 8,
         "task": 29,
         "skill": 39,

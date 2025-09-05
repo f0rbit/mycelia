@@ -64,11 +64,11 @@ export function PageHeader({ node, breadcrumbs }: Pick<NodePageProps, 'node' | '
         )}
 
         {node.attributes?.status && (
-          <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium ${
-            node.attributes.status === 'active' ? 'bg-green-100 text-green-800' :
-            node.attributes.status === 'completed' ? 'bg-blue-100 text-blue-800' :
-            node.attributes.status === 'archived' ? 'bg-gray-100 text-gray-800' :
-            'bg-yellow-100 text-yellow-800'
+          <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium border ${
+            node.attributes.status === 'active' ? 'border-green-200 text-green-700' :
+            node.attributes.status === 'completed' ? 'border-blue-200 text-blue-700' :
+            node.attributes.status === 'archived' ? 'border-gray-200 text-gray-600' :
+            'border-yellow-200 text-yellow-700'
           }`}>
             {node.attributes.status}
           </span>
@@ -102,7 +102,7 @@ export function RelatedNodes({ relatedNodes, title = "Related" }: { relatedNodes
           const nodeTitle = relatedNode.attributes?.title || relatedNode.attributes?.name || relatedNode.id
           return (
             <Link key={relatedNode.id} href={`/${relatedNode.id}`}>
-              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-colors">
+              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm border border-gray-200 hover:border-gray-400 transition-colors">
                 <span className="font-medium">{nodeTitle}</span>
                 <span className="text-xs text-muted-foreground">• {relatedNode.type}</span>
               </span>

@@ -4,12 +4,12 @@ import type { RenderableNode, RenderableTree } from '@mycelia/core';
 import type { ComponentRegistry } from '../shared/types';
 import { useRegistry } from '../shared/context';
 import {
-  LeafRenderer,
-  BranchRenderer,
-  TrunkRenderer,
   LinkRenderer,
   MetaRenderer,
 } from './primitives/index';
+import { MinimalLeafRenderer } from './primitives/MinimalLeafRenderer';
+import { MinimalBranchRenderer } from './primitives/MinimalBranchRenderer';
+import { MinimalTrunkRenderer } from './primitives/MinimalTrunkRenderer';
 
 /**
  * Props for the renderable tree renderer
@@ -30,12 +30,12 @@ export interface NodeRendererProps {
 }
 
 /**
- * Default component registry mapping primitives to renderers
+ * Default component registry mapping primitives to minimal renderers
  */
 export const DEFAULT_PRIMITIVE_REGISTRY: ComponentRegistry = {
-  'Leaf': LeafRenderer,
-  'Branch': BranchRenderer,
-  'Trunk': TrunkRenderer,
+  'Leaf': MinimalLeafRenderer,
+  'Branch': MinimalBranchRenderer,
+  'Trunk': MinimalTrunkRenderer,
   'Link': LinkRenderer,
   'Meta': MetaRenderer,
 };
@@ -59,22 +59,33 @@ export function RenderableTreeRenderer({
     >
       <NodeRenderer node={tree.root} />
       
-      {/* Tree metadata (optional debug info) */}
+      {/* Tree metadata - minimal warning display */}
       {tree.meta.unresolvedRefs.length > 0 && (
-        <div className="mycelia-tree__warnings" style={{
-          marginTop: '2rem',
-          padding: '1rem',
-          backgroundColor: '#fef3c7',
-          border: '1px solid #f59e0b',
-          borderRadius: '0.5rem',
-          fontSize: '0.875rem',
-        }}>
-          <h4 style={{ margin: '0 0 0.5rem 0', color: '#92400e' }}>
-            ⚠️ Unresolved References
+        <div 
+          className="mycelia-tree__warnings" 
+          style={{
+            marginTop: '2rem',
+            borderLeft: '4px solid #f59e0b',
+            paddingLeft: '1rem',
+            fontSize: '0.875rem',
+          }}
+        >
+          <h4 style={{ 
+            margin: '0 0 0.5rem 0', 
+            fontSize: '0.875rem',
+            fontWeight: '600',
+            color: '#92400e' 
+          }}>
+            Unresolved References
           </h4>
-          <ul style={{ margin: 0, paddingLeft: '1.5rem' }}>
+          <ul style={{ 
+            margin: 0, 
+            paddingLeft: '1rem',
+            listStyle: 'disc',
+            color: '#6b7280'
+          }}>
             {tree.meta.unresolvedRefs.map((ref, index) => (
-              <li key={index} style={{ color: '#92400e' }}>
+              <li key={index}>
                 {ref.sourceNodeId} → {ref.targetId}: {ref.reason}
               </li>
             ))}
@@ -110,17 +121,16 @@ export function NodeRenderer({ node, className = '', style }: NodeRendererProps)
   const Component = getComponent();
 
   if (!Component) {
-    // Fallback renderer for unknown primitives
+    // Fallback renderer for unknown primitives - minimal style
     return (
       <div 
         className={`mycelia-unknown ${className}`}
         style={{
-          padding: '0.5rem',
-          backgroundColor: '#fee2e2',
-          border: '1px solid #fecaca',
-          borderRadius: '0.25rem',
+          borderLeft: '4px solid #dc2626',
+          paddingLeft: '0.5rem',
           fontSize: '0.875rem',
           color: '#991b1b',
+          marginBottom: '0.5rem',
           ...style,
         }}
       >
