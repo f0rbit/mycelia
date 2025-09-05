@@ -2,15 +2,15 @@ import { PageHeader, NodeContent, RelatedNodes, ChildNodes } from './shared'
 import type { NodePageProps } from './shared'
 
 export function DefaultNodePage(props: NodePageProps) {
-  const { node, relatedNodes, childNodes } = props
+  const { relatedNodes, childNodes } = props
 
   return (
-    <div className="space-y-8">
+    <div className="max-w-4xl mx-auto py-8 px-6">
       <PageHeader {...props} />
       
-      <NodeContent {...props} />
+      <div className="mt-8 space-y-8">
+        <NodeContent {...props} />
 
-      <div className="grid gap-6 lg:grid-cols-2">
         {childNodes.length > 0 && (
           <ChildNodes {...props} />
         )}

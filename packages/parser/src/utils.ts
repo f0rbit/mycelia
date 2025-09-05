@@ -110,6 +110,16 @@ export function createNodeFromMapping(
         target: attributes.target,
         attributes: baseProps.attributes
       };
+
+    case 'List':
+      return {
+        ...baseProps,
+        primitive: 'List',
+        title: attributes.title || attributes.name || content.split('\n')[0] || id,
+        description: content,
+        children: [],
+        attributes: baseProps.attributes
+      };
       
     default:
       throw new Error(`Unknown primitive: ${mapping.primitive}`);

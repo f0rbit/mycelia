@@ -6,30 +6,34 @@ export default async function Home() {
   const totalNodes = nodeTypes.reduce((sum, { count }) => sum + count, 0)
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-      <header className="mb-16 text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Mycelia Knowledge Graph</h1>
-        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+    <div className="max-w-4xl mx-auto py-8 px-6">
+      <div className="space-y-4 pb-6 border-b">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Mycelia Knowledge Graph</h1>
+          <p className="text-sm text-muted-foreground mt-1">knowledge-base</p>
+        </div>
+        
+        <p className="text-lg text-muted-foreground">
           A dynamic knowledge base with <strong>{totalNodes} interconnected nodes</strong> across {nodeTypes.length} content types. 
           Every concept, project, and idea becomes a discoverable page with contextual links.
         </p>
-      </header>
+      </div>
 
-      <main className="prose prose-lg max-w-none">
-        <section className="mb-12">
-          <h2>Browse by Content Type</h2>
-          <p>Explore the knowledge graph through different semantic lenses:</p>
+      <main className="mt-8 space-y-8">
+        <section>
+          <h2 className="text-xl font-semibold mb-4">Browse by Content Type</h2>
+          <p className="text-muted-foreground mb-6">Explore the knowledge graph through different semantic lenses:</p>
           
-          <div className="grid gap-6 md:grid-cols-2 not-prose">
+          <div className="grid gap-4 md:grid-cols-2">
             {nodeTypes.slice(0, 6).map(({ type, count }) => (
-              <div key={type} className="border-l-4 border-blue-200 pl-4">
-                <h3 className="text-lg font-semibold mb-2">
-                  <Link href={`/types/${type}`} className="text-blue-700 hover:text-blue-900 no-underline hover:underline">
+              <div key={type} className="border-l-4 border-blue-200 pl-4 py-2">
+                <h3 className="text-lg font-medium mb-1">
+                  <Link href={`/types/${type}`} className="text-blue-600 hover:text-blue-800 hover:underline">
                     {type.charAt(0).toUpperCase() + type.slice(1)}s
                   </Link>
-                  <span className="ml-2 text-sm text-gray-500 font-normal">({count})</span>
+                  <span className="ml-2 text-sm text-muted-foreground font-normal">({count})</span>
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-muted-foreground">
                   {type === 'project' && 'Software projects, applications, and development initiatives'}
                   {type === 'skill' && 'Technical skills, programming languages, and competencies'}
                   {type === 'essay' && 'Written articles, blog posts, and long-form content'}
@@ -43,47 +47,77 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="mb-12">
-          <h2>How It Works</h2>
-          <p>
-            This demo transforms markdown files with semantic tags into an interconnected knowledge base. 
-            Each <code>&lt;Project&gt;</code>, <code>&lt;Skill&gt;</code>, or <code>&lt;Essay&gt;</code> tag becomes a dedicated page 
-            with contextual links to related content.
+        <section>
+          <h2 className="text-xl font-semibold mb-4">Core Examples</h2>
+          <p className="text-muted-foreground mb-6">
+            Main content collections that showcase the system's capabilities:
           </p>
           
-          <div className="border-l-4 border-gray-200 pl-4 text-sm text-gray-700 not-prose">
-            <p className="mb-2"><strong>Original Examples:</strong></p>
-            <ul className="space-y-1">
-              <li><Link href="/developer-journey" className="text-blue-600 hover:underline">Developer Journey</Link> - Programming evolution from Scratch to professional development</li>
-              <li><Link href="/project-portfolio" className="text-blue-600 hover:underline">Project Portfolio</Link> - Software projects like Chamber, Burning Blends, Arena</li>
-              <li><Link href="/blog-content" className="text-blue-600 hover:underline">Blog Content</Link> - Technical articles and development insights</li>
-              <li><Link href="/learning-resources" className="text-blue-600 hover:underline">Learning Resources</Link> - Books, skills, and methodology documentation</li>
-            </ul>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3 p-3 rounded-lg border hover:bg-accent/50 transition-colors">
+              <div className="flex-1">
+                <Link href="/developer-journey" className="text-blue-600 hover:text-blue-800 font-medium hover:underline">
+                  Developer Journey
+                </Link>
+                <p className="text-sm text-muted-foreground mt-1">Programming evolution from Scratch to professional development</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 rounded-lg border hover:bg-accent/50 transition-colors">
+              <div className="flex-1">
+                <Link href="/portfolio-showcase" className="text-blue-600 hover:text-blue-800 font-medium hover:underline">
+                  Portfolio Showcase
+                </Link>
+                <p className="text-sm text-muted-foreground mt-1">Software projects like Chamber, Burning Blends, Arena</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 rounded-lg border hover:bg-accent/50 transition-colors">
+              <div className="flex-1">
+                <Link href="/blog-content" className="text-blue-600 hover:text-blue-800 font-medium hover:underline">
+                  Blog Content
+                </Link>
+                <p className="text-sm text-muted-foreground mt-1">Technical articles and development insights</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 rounded-lg border hover:bg-accent/50 transition-colors">
+              <div className="flex-1">
+                <Link href="/learning-resources" className="text-blue-600 hover:text-blue-800 font-medium hover:underline">
+                  Learning Resources
+                </Link>
+                <p className="text-sm text-muted-foreground mt-1">Books, skills, and methodology documentation</p>
+              </div>
+            </div>
           </div>
         </section>
 
         <section>
-          <h2>Explore the Graph</h2>
-          <p>
-            Start anywhere and follow the links. Each page shows its content plus references to where it's mentioned elsewhere. 
-            Try these entry points:
+          <h2 className="text-xl font-semibold mb-4">Popular Entry Points</h2>
+          <p className="text-muted-foreground mb-6">
+            Start exploring from these interconnected nodes:
           </p>
           
-          <div className="grid gap-4 md:grid-cols-3 not-prose text-sm">
-            <div>
-              <Link href="/tom-materne" className="text-blue-600 hover:underline font-medium">Tom Materne</Link>
-              <p className="text-gray-600">Person • Software engineer profile and journey</p>
+          <div className="grid gap-3 md:grid-cols-3">
+            <div className="p-3 rounded-lg border hover:bg-accent/50 transition-colors">
+              <Link href="/tom-materne" className="text-blue-600 hover:text-blue-800 font-medium hover:underline">Tom Materne</Link>
+              <p className="text-sm text-muted-foreground mt-1">Person • Software engineer profile</p>
             </div>
-            <div>
-              <Link href="/developer-blog" className="text-blue-600 hover:underline font-medium">Developer Blog</Link>
-              <p className="text-gray-600">Project • Technical blog and documentation</p>
+            <div className="p-3 rounded-lg border hover:bg-accent/50 transition-colors">
+              <Link href="/developer-blog" className="text-blue-600 hover:text-blue-800 font-medium hover:underline">Developer Blog</Link>
+              <p className="text-sm text-muted-foreground mt-1">Project • Technical documentation</p>
             </div>
-            <div>
-              <Link href="/accessibility-testing" className="text-blue-600 hover:underline font-medium">Accessibility Testing</Link>
-              <p className="text-gray-600">Research • Web accessibility methodology</p>
+            <div className="p-3 rounded-lg border hover:bg-accent/50 transition-colors">
+              <Link href="/accessibility-testing" className="text-blue-600 hover:text-blue-800 font-medium hover:underline">Accessibility Testing</Link>
+              <p className="text-sm text-muted-foreground mt-1">Research • Web accessibility</p>
             </div>
           </div>
         </section>
+
+        <div className="border-l-4 border-blue-200 pl-4 py-2 bg-blue-50/30">
+          <p className="text-sm text-muted-foreground">
+            <strong>How it works:</strong> This demo transforms markdown files with semantic tags into an interconnected knowledge base. 
+            Each <code>&lt;Project&gt;</code>, <code>&lt;Skill&gt;</code>, or <code>&lt;Essay&gt;</code> tag becomes a dedicated page 
+            with contextual links to related content.
+          </p>
+        </div>
       </main>
     </div>
   )

@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import { Calendar, MapPin, Tag as TagIcon, ArrowRight, Clock } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Calendar, MapPin, ArrowRight } from 'lucide-react'
 import type { MyceliaNode, MyceliaEdge } from '@mycelia/core'
 
 export interface NodePageProps {
@@ -41,17 +39,14 @@ export function PageHeader({ node, breadcrumbs }: Pick<NodePageProps, 'node' | '
       {/* Main title */}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
-        {subtitle && (
+        {subtitle && subtitle !== node.type && (
           <p className="text-lg text-muted-foreground mt-2">{subtitle}</p>
         )}
+        <p className="text-sm text-muted-foreground mt-1">{node.type}</p>
       </div>
 
       {/* Metadata row */}
-      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-        <span className="inline-flex items-center gap-1 bg-secondary px-2 py-1 rounded-full">
-          <TagIcon className="w-3 h-3" />
-          {node.type}
-        </span>
+      <div className="flex items-center gap-3 text-sm text-muted-foreground">
         
         {node.attributes?.startDate && (
           <span className="inline-flex items-center gap-1">
@@ -69,13 +64,12 @@ export function PageHeader({ node, breadcrumbs }: Pick<NodePageProps, 'node' | '
         )}
 
         {node.attributes?.status && (
-          <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${
+          <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium ${
             node.attributes.status === 'active' ? 'bg-green-100 text-green-800' :
             node.attributes.status === 'completed' ? 'bg-blue-100 text-blue-800' :
             node.attributes.status === 'archived' ? 'bg-gray-100 text-gray-800' :
             'bg-yellow-100 text-yellow-800'
           }`}>
-            <Clock className="w-3 h-3" />
             {node.attributes.status}
           </span>
         )}
@@ -100,29 +94,23 @@ export function RelatedNodes({ relatedNodes, title = "Related" }: { relatedNodes
   if (!relatedNodes.length) return null
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>Connected nodes in the knowledge graph</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="grid gap-2 md:grid-cols-2">
-          {relatedNodes.slice(0, 8).map(relatedNode => {
-            const title = relatedNode.attributes?.title || relatedNode.attributes?.name || relatedNode.id
-            return (
-              <Link key={relatedNode.id} href={`/${relatedNode.id}`}>
-                <Button variant="outline" className="w-full justify-start h-auto p-3">
-                  <div className="text-left">
-                    <div className="font-medium">{title}</div>
-                    <div className="text-xs text-muted-foreground">{relatedNode.type}</div>
-                  </div>
-                </Button>
-              </Link>
-            )
-          })}
-        </div>
-      </CardContent>
-    </Card>
+    <div className="space-y-4">
+      <h2 className="text-xl font-semibold">{title}</h2>
+      <p className="text-sm text-muted-foreground">Connected nodes in the knowledge graph</p>
+      <div className="flex flex-wrap gap-2">
+        {relatedNodes.slice(0, 12).map(relatedNode => {
+          const nodeTitle = relatedNode.attributes?.title || relatedNode.attributes?.name || relatedNode.id
+          return (
+            <Link key={relatedNode.id} href={`/${relatedNode.id}`}>
+              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-colors">
+                <span className="font-medium">{nodeTitle}</span>
+                <span className="text-xs text-muted-foreground">• {relatedNode.type}</span>
+              </span>
+            </Link>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 
@@ -130,29 +118,39 @@ export function ChildNodes({ childNodes }: Pick<NodePageProps, 'childNodes'>) {
   if (!childNodes.length) return null
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Contents</CardTitle>
-        <CardDescription>Child nodes contained within this node</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-2">
-          {childNodes.map(child => {
-            const title = child.attributes?.title || child.attributes?.name || child.id
-            return (
-              <Link key={child.id} href={`/${child.id}`}>
-                <div className="flex items-center justify-between p-3 rounded-lg border hover:bg-accent transition-colors">
-                  <div>
-                    <div className="font-medium">{title}</div>
-                    <div className="text-sm text-muted-foreground">{child.type}</div>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                </div>
-              </Link>
-            )
-          })}
-        </div>
-      </CardContent>
-    </Card>
+    <div className="space-y-6">
+      <h2 className="text-xl font-semibold">Contents</h2>
+      <div className="space-y-6">
+        {childNodes.map(child => {
+          const title = child.attributes?.title || child.attributes?.name || child.id
+          const content = 'value' in child ? child.value : 'content' in child ? child.content : ''
+          const truncatedContent = content && content.length > 200 ? content.substring(0, 200) + '...' : content
+          
+          return (
+            <div key={child.id} className="border-l-4 border-blue-200 pl-4 py-2">
+              <h3 className="text-lg font-medium mb-2">
+                <Link href={`/${child.id}`} className="text-blue-600 hover:text-blue-800 hover:underline">
+                  {title}
+                </Link>
+                <span className="ml-2 text-sm text-muted-foreground font-normal">{child.type}</span>
+              </h3>
+              {truncatedContent && (
+                <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                  {truncatedContent}
+                </p>
+              )}
+              {content && content.length > 200 && (
+                <Link 
+                  href={`/${child.id}`} 
+                  className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  Read more →
+                </Link>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </div>
   )
 }

@@ -3,7 +3,7 @@
  * All user-facing tags map to these primitives
  */
 
-export type NodePrimitive = 'Leaf' | 'Branch' | 'Trunk' | 'Link' | 'Meta';
+export type NodePrimitive = 'Leaf' | 'Branch' | 'Trunk' | 'Link' | 'Meta' | 'List';
 
 /**
  * Base interface for all nodes in the Mycelia system
@@ -85,6 +85,17 @@ export interface MetaNode extends BaseNode {
 }
 
 /**
+ * List - Curated collection of items (e.g. Portfolio, Reading List)
+ */
+export interface ListNode extends BaseNode {
+  primitive: 'List';
+  title?: string;
+  description?: string;
+  children: string[]; // IDs of child nodes
+  attributes: Record<string, any>;
+}
+
+/**
  * Union type for all node types
  */
-export type MyceliaNode = LeafNode | BranchNode | TrunkNode | LinkNode | MetaNode;
+export type MyceliaNode = LeafNode | BranchNode | TrunkNode | LinkNode | MetaNode | ListNode;

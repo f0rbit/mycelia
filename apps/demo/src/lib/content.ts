@@ -27,7 +27,7 @@ export async function loadCompleteGraph(): Promise<MyceliaGraph> {
   // Fallback: parse all examples
   const exampleFiles = [
     'developer-journey.mdx',
-    'project-portfolio.mdx', 
+    'portfolio-showcase.mdx', 
     'blog-content.mdx',
     'learning-resources.mdx'
   ].map(f => path.join(EXAMPLES_DIR, f))
@@ -68,9 +68,55 @@ export async function loadNode(nodeId: string) {
   const allBacklinks = [...backlinks, ...mentionBacklinks]
     .filter((node, index, arr) => arr.findIndex(n => n.id === node.id) === index) // Dedupe
 
+  // Find child nodes (nodes contained by this one)
+  const childEdges = graph.edges.filter(edge => edge.from === nodeId && edge.type === 'contains')
+  const childNodes = childEdges.map(edge => graph.nodes[edge.to]).filter(Boolean)
+  
+  // For portfolio pages, we also want all descendant nodes (children of children)
+  const allDescendants = [...childNodes]
+  if (node.id === 'portfolio-showcase' || node.type === 'portfolio') {
+    const visited = new Set([nodeId])
+    const queue = [...childNodes]
+    
+    while (queue.length > 0) {
+      const current = queue.shift()!
+      if (visited.has(current.id)) continue
+      visited.add(current.id)
+      
+      // Get children of this node
+      const grandchildEdges = graph.edges.filter(edge => edge.from === current.id && edge.type === 'contains')
+      const grandchildren = grandchildEdges.map(edge => graph.nodes[edge.to]).filter(Boolean)
+      
+      allDescendants.push(...grandchildren)
+      queue.push(...grandchildren)
+    }
+  }
+  
+  const finalChildNodes = node.id === 'portfolio-showcase' || node.type === 'portfolio' ? allDescendants : childNodes
+  
+  // Find parent node (node that contains this one)
+  const parentEdge = inboundEdges.find(edge => edge.type === 'contains')
+  const parentNode = parentEdge ? graph.nodes[parentEdge.from] : null
+  
+  // Find all outbound edges
+  const outboundEdges = graph.edges.filter(edge => edge.from === nodeId)
+  
+  // Find related nodes (nodes referenced by this one, plus backlinks)
+  const referencedNodes = outboundEdges
+    .filter(edge => edge.type === 'references')
+    .map(edge => graph.nodes[edge.to])
+    .filter(Boolean)
+  
+  const relatedNodes = [...referencedNodes, ...allBacklinks]
+    .filter((node, index, arr) => arr.findIndex(n => n.id === node.id) === index) // Dedupe
+
   return {
     node,
-    backlinks: allBacklinks,
+    relatedNodes,
+    childNodes: finalChildNodes,
+    parentNode,
+    inboundEdges,
+    outboundEdges,
     breadcrumbs: await buildBreadcrumbs(nodeId, graph)
   }
 }
@@ -91,7 +137,7 @@ async function loadRenderTree() {
   // Fallback: parse all examples
   const exampleFiles = [
     'developer-journey.mdx',
-    'project-portfolio.mdx', 
+    'portfolio-showcase.mdx', 
     'blog-content.mdx',
     'learning-resources.mdx'
   ].map(f => path.join(EXAMPLES_DIR, f))
@@ -230,8 +276,8 @@ export function getExamplesList() {
       description: 'Complete programming journey from Scratch to professional development'
     },
     {
-      id: 'project-portfolio',
-      title: 'Project Portfolio',
+      id: 'portfolio-showcase',
+      title: 'Portfolio Showcase',
       description: 'Projects like Chamber, Burning Blends, Arena, and GM-Server'
     },
     {

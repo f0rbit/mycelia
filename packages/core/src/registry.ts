@@ -21,8 +21,9 @@ export interface TagRegistry {
  * Default tag mappings for common content types
  */
 export const DEFAULT_TAG_MAPPINGS: TagRegistry = {
-  // Project management
+  // Project management  
   'Project': { primitive: 'Branch', defaultProps: { type: 'project' } },
+  'Portfolio': { primitive: 'List', defaultProps: { type: 'portfolio' } },
   'Task': { primitive: 'Leaf', defaultProps: { type: 'task' } },
   
   // Content types
@@ -40,6 +41,10 @@ export const DEFAULT_TAG_MAPPINGS: TagRegistry = {
   // People and relationships
   'Person': { primitive: 'Leaf', defaultProps: { type: 'person' } },
   'Collaborator': { primitive: 'Link', defaultProps: { linkType: 'collaborates' } },
+  
+  // Skills and achievements
+  'Skill': { primitive: 'Meta', defaultProps: { metaType: 'skill' } },
+  'Achievement': { primitive: 'Leaf', defaultProps: { type: 'achievement' } },
   
   // Metadata
   'Tag': { primitive: 'Meta', defaultProps: { metaType: 'tag' } },
