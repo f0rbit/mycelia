@@ -72,10 +72,13 @@ export function BranchRenderer({ node, children, className = '', style }: Contai
   // Get node icon
   const getNodeIcon = () => {
     switch (node.type) {
-      case 'project': return '📁';
+      case 'project': return '🚀';
+      case 'portfolio': return '💼';
       case 'essay': return '📄';
       case 'research': return '🔬';
+      case 'investigation': return '🕵️';
       case 'collection': return '📚';
+      case 'experience': return '⚡';
       default: return '📦';
     }
   };

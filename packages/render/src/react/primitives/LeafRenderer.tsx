@@ -41,12 +41,15 @@ export function LeafRenderer({ node, className = '', style }: BaseRenderProps) {
   const getNodeIcon = () => {
     switch (node.type) {
       case 'person': return '👤';
+      case 'collaborator': return '🤝';
       case 'song': return '🎵';
       case 'track': return '🎶';
-      case 'task': return '✓';
+      case 'task': return '✅';
       case 'note': return '📝';
       case 'book': return '📖';
       case 'film': return '🎬';
+      case 'skill': return '🔧';
+      case 'tag': return '🏷️';
       default: return '•';
     }
   };

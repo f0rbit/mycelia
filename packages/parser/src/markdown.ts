@@ -132,7 +132,7 @@ export class MarkdownParser implements Parser {
           }
 
           const attributes = extractAttributes(node.attributes);
-          const textContent = toString(node);
+          const textContent = this.extractDirectTextContent(node, createRegistry());
           const nodeId = generateNodeId(
             tagName.toLowerCase(), 
             attributes.id, 
@@ -432,5 +432,40 @@ export class MarkdownParser implements Parser {
     if ('name' in node.attributes && node.attributes.name) return node.attributes.name;
     
     return node.id;
+  }
+
+  /**
+   * Extract only the direct text content of a node, excluding text from nested semantic tags
+   */
+  private extractDirectTextContent(node: any, registry: any): string {
+    if (!node.children) return '';
+
+    const textParts: string[] = [];
+
+    const collectDirectText = (currentNode: any) => {
+      if (currentNode.type === 'text') {
+        textParts.push(currentNode.value);
+      } else if (currentNode.type === 'mdxJsxTextElement') {
+        // Skip semantic tags - don't include their text content
+        const tagName = currentNode.name;
+        if (registry.has(tagName)) {
+          return; // Skip this entire subtree
+        }
+        // For non-semantic tags, continue processing children
+        if (currentNode.children) {
+          currentNode.children.forEach(collectDirectText);
+        }
+      } else if (currentNode.children) {
+        // For other node types (paragraphs, emphasis, etc.), process children
+        currentNode.children.forEach(collectDirectText);
+      }
+    };
+
+    node.children.forEach(collectDirectText);
+    
+    return textParts
+      .join('')
+      .replace(/\s+/g, ' ') // Normalize whitespace
+      .trim();
   }
 }

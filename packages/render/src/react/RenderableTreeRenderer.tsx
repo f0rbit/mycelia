@@ -4,12 +4,12 @@ import type { RenderableNode, RenderableTree } from '@mycelia/core';
 import type { ComponentRegistry } from '../shared/types';
 import { useRegistry } from '../shared/context';
 import {
+  LeafRenderer,
+  BranchRenderer,
+  TrunkRenderer,
   LinkRenderer,
   MetaRenderer,
 } from './primitives/index';
-import { MinimalLeafRenderer } from './primitives/MinimalLeafRenderer';
-import { MinimalBranchRenderer } from './primitives/MinimalBranchRenderer';
-import { MinimalTrunkRenderer } from './primitives/MinimalTrunkRenderer';
 
 /**
  * Props for the renderable tree renderer
@@ -33,9 +33,10 @@ export interface NodeRendererProps {
  * Default component registry mapping primitives to minimal renderers
  */
 export const DEFAULT_PRIMITIVE_REGISTRY: ComponentRegistry = {
-  'Leaf': MinimalLeafRenderer,
-  'Branch': MinimalBranchRenderer,
-  'Trunk': MinimalTrunkRenderer,
+  'Leaf': LeafRenderer,
+  'Branch': BranchRenderer,
+  'Trunk': TrunkRenderer,
+  'List': BranchRenderer, // Lists render like branches with children
   'Link': LinkRenderer,
   'Meta': MetaRenderer,
 };
@@ -144,8 +145,8 @@ export function NodeRenderer({ node, className = '', style }: NodeRendererProps)
     <NodeRenderer key={child.id} node={child} />
   ));
 
-  // For container types (Branch, Trunk), pass children as prop
-  if (node.primitive === 'Branch' || node.primitive === 'Trunk') {
+  // For container types (Branch, Trunk, List), pass children as prop
+  if (node.primitive === 'Branch' || node.primitive === 'Trunk' || node.primitive === 'List') {
     // Cast to ContainerRenderProps component type
     const ContainerComponent = Component as React.ComponentType<any>;
     return (

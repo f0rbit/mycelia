@@ -22,11 +22,14 @@ export function MetaRenderer({ node, className = '', style }: BaseRenderProps) {
     ...style,
   };
 
-  // Get display content
-  const displayContent = node.props.value || 
+  // Get display content - handle skill names and levels
+  const displayContent = node.props.name || 
+                        node.props.value || 
                         node.content || 
                         node.props.title || 
                         node.id;
+  
+  const skillLevel = node.props.level;
 
   // Get meta icon
   const getMetaIcon = () => {
@@ -38,6 +41,7 @@ export function MetaRenderer({ node, className = '', style }: BaseRenderProps) {
       case 'note': return '📝';
       case 'comment': return '💬';
       case 'category': return '📂';
+      case 'skill': return '🔧';
       default: return '💭';
     }
   };
@@ -59,10 +63,22 @@ export function MetaRenderer({ node, className = '', style }: BaseRenderProps) {
     <span
       className={`mycelia-meta mycelia-meta--${metaType} ${className}`}
       style={baseStyles}
-      title={`${metaType}: ${displayContent}`}
+      title={`${metaType}: ${displayContent}${skillLevel ? ` (${skillLevel})` : ''}`}
     >
       <span className="mycelia-meta__icon">{getMetaIcon()}</span>
       <span className="mycelia-meta__content">{formatContent()}</span>
+      {skillLevel && metaType === 'skill' && (
+        <span 
+          className="mycelia-meta__level"
+          style={{
+            fontSize: '0.7rem',
+            opacity: 0.7,
+            marginLeft: '4px',
+          }}
+        >
+          ({skillLevel})
+        </span>
+      )}
     </span>
   );
 }
@@ -106,6 +122,12 @@ function getMetaTypeStyles(metaType: string, theme: any): React.CSSProperties {
     case 'category':
       return {
         backgroundColor: '#8b5cf6',
+        color: '#ffffff',
+        border: 'none',
+      };
+    case 'skill':
+      return {
+        backgroundColor: '#059669',
         color: '#ffffff',
         border: 'none',
       };
