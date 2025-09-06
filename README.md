@@ -1,83 +1,58 @@
-# Mycelia
+Mycelia is a project to support deeply-linked & cross-referential digital gardens.
 
-A markdown-based engine for creating deeply-linked project websites (digital gardens).
+#### Site Structure
+"posts" are called leafs, these are things like blog posts, thought ideas, etc
+"projects" which contain a set of leafs attached to them, these would be called branches
+A "person" (the author, people they've worked with), internally these are called trunks
+Trunks & Branches have inherit hierarchy - we can have projects & sub-projects recursively, leafs can be attached at any point. Everything connects together to form a "forest", this is a forest of ideas.
 
-## Overview
+#### Package Structure
+- @mycelia/site -> unified CRM portal (built last)
+- @mycelia/engine -> contains classes to represent links
+- @mycelia/graph -> creates a node-based graph from the links
+- @mycelia/api -> from a static json representation of the links, exposes different parts via api
+- @mycelia/render -> renderer of our custom tags in a markdown page
 
-Mycelia is a TypeScript framework that parses markdown files with semantic tags and generates both a comprehensive graph representation and optimized renderable trees. It's designed for building interconnected content systems like digital gardens, project documentation, and creative portfolios.
+#### Markdown format
+We're making heavy use of `<Tags>` inside of markdown to represent relationships between objects.
 
-## Architecture
-
-### Core Packages
-
-- **@mycelia/core** - Foundational types and primitives (Leaf, Branch, Trunk, Link, Meta)
-- **@mycelia/parser** - Unified parser with markdown and future typst support
-- **@mycelia/cli** - Command line tools for parsing and building
-
-### Key Features
-
-- **Primitive-based Architecture**: All content maps to core structural primitives
-- **Dual Parser Output**: 
-  - JSON graph representation for storage/API
-  - Renderable trees for component frameworks
-- **Bi-directional Links**: Automatic forward and backward relationship tracking
-- **Extensible Tag Registry**: Custom semantic tags map to primitives
-
-## Quick Start
-
-### Installation
-
-```bash
-bun install
+Example:
 ```
-
-### Build Packages
-
-```bash
-bun run build
-```
-
-### Parse Content
-
-```bash
-# Parse example files
-node packages/cli/dist/cli.js parse "examples/*.md"
-
-# Parse your own content
-node packages/cli/dist/cli.js parse "content/**/*.md"
-```
-
-## Content Format
-
-Use semantic tags in markdown to create structured content:
-
-```markdown
-<Project name="My Project" id="my-project" status="wip">
-  <Date of="2025-01-01" duration="120">
-    Started working on the new feature.
+<Project name="Dream Machines" status="wip">
+  <Date of="2025-08-31 10:20" duration="120">
+    Began outlining the concept of blending surrealist film imagery with modular synth textures.
   </Date>
 
-  <Research id="background-research">
-    Researched existing solutions and found <Book id="design-patterns">Design Patterns</Book>.
+  <Research type="study">
+    <Book id="freud-dreams">Sigmund Freud - The Interpretation of Dreams</Book>
+    <Film id="lynch-mulholland">David Lynch - Mulholland Drive</Film>
+    Notes: layering disorientation through sonic motifs.
   </Research>
 
-  <Person id="collaborator">Jane Smith</Person>
-  <Tag>web-development</Tag>
+  <Research type="experiment">
+    Tried running <Track id="synth-loop-01">Synth Loop 01</Track> through tape delay.
+    Outcome: created warped “breathing” effect, will reuse in <Song id="nightmare-suite"/>.
+  </Research>
+
+  <Essay title="Surrealism in Sound: How Dreams Inform Recording Practices">
+    Draft section written on <Date of="2025-09-01" duration="45"/>.
+    Connected with earlier <Research type="logs">notes on Lynchian soundscapes</Research>.
+  </Essay>
+
+  <Person id="cblackwell">Cameron Blackwell</Person> suggested the <Concept id="tape-saturation">tape saturation</Concept> experiment.
+
+  <Tag>surrealism</Tag>
+  <Tag>sound-design</Tag>
 </Project>
 ```
 
-## Output
+This will need to build up a tree of interlinked leafs, branches, and trunks, which can then be visualised using a node-based visualiser like the one in obsidian. The other important thing is that at build-time, the code knows how to link everything together consistently.
 
-The parser generates:
-
-- **`.mycelia/graph.json`** - Complete graph with nodes, edges, and indexes
-- **`.mycelia/renderable.json`** - Optimized tree for rendering components
-
-## Development
-
-Built with:
-- **Runtime**: Bun
-- **Language**: TypeScript
-- **Parsing**: unified/remark/MDX ecosystem
-
-See `plan.md` for detailed architecture and roadmap.
+#### Goals
+1. Get the markdown parsing working & generating
+    - needs to generate consistent links based on tag id's
+    - needs to generate a json artifact blob of the whole graph
+2. Generate site pages based on markdown parsing & json blob -> React components
+3. Expose via json blob via api functions, be able to query the json blob for different parts
+4. Add Typst support, expand beyond markdown.
+5. Node-graph based visualisation
