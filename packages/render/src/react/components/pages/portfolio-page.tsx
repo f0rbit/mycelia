@@ -5,7 +5,7 @@ import type { NodePageProps } from './shared'
 
 
 export function PortfolioPage(props: NodePageProps) {
-  const { node, childNodes, relatedNodes } = props
+  const { node, childNodes = [], relatedNodes = [] } = props
   
   // Get the portfolio's own description (not including all the project content)
   const portfolioValue = 'value' in node ? node.value || '' : ''
@@ -17,7 +17,7 @@ export function PortfolioPage(props: NodePageProps) {
     portfolioContent.split('\n\n').slice(0, 3).join('\n\n') // fallback to first few paragraphs
   
   // Split content into sections by finding project nodes
-  const projectNodes = childNodes.filter(child => child.type === 'project')
+  const projectNodes = childNodes.filter((child: any) => child.type === 'project')
   
   return (
     <div className="max-w-4xl mx-auto py-8 px-6">

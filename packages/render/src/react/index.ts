@@ -4,6 +4,9 @@ export { RenderableTreeRenderer, NodeRenderer } from './RenderableTreeRenderer';
 // Primitive components
 export * from './primitives/index';
 
+// High-level components
+export * from './components/index';
+
 // Registry system
 export {
   createComponentRegistry,
