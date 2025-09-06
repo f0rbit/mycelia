@@ -14,6 +14,7 @@
     "@mycelia/core": "workspace:*",
     "@mycelia/graph": "workspace:*",
     "@mycelia/render": "workspace:*",
+    "@mycelia/ssr": "workspace:*",
     "@radix-ui/react-navigation-menu": "^1.2.2",
     "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
