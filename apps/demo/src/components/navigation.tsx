@@ -13,7 +13,7 @@ export function Navigation() {
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 hover:underline">
               Blog
             </Link>
-            <Link href="/projects" className="text-gray-600 hover:text-gray-900 hover:underline">
+            <Link href="/project" className="text-gray-600 hover:text-gray-900 hover:underline">
               Projects
             </Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 hover:underline">

@@ -13,17 +13,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const provider = getMyceliaProvider();
-  const nodesByType = await provider.getNodesByType?.();
-  
-  if (!nodesByType || !nodesByType.skill) {
-    return [];
-  }
-  
-  return nodesByType.skill.map((node: any) => {
-    const cleanId = node.hierarchicalPath?.replace('/skill/', '') || node.id.replace('skill-', '');
-    return { id: cleanId };
-  });
+  return [];
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

@@ -13,19 +13,11 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const provider = getMyceliaProvider();
-  const nodesByType = await provider.getNodesByType?.();
-  
-  if (!nodesByType || !nodesByType.tag) {
-    return [];
-  }
-  
-  return nodesByType.tag.map((node: any) => {
-    const cleanId = node.hierarchicalPath?.replace('/tag/', '') || node.id.replace('tag-', '');
-    return { id: cleanId };
-  });
+  // Simple fallback to prevent build issues
+  return [];
 }
 
+// Generate metadata for each page
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const content = await getMyceliaContent([`tag`, id]);
@@ -39,6 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return generateContentMetadata(content);
 }
 
+// The page component
 export default async function TagPage({ params }: PageProps) {
   const { id } = await params;
   

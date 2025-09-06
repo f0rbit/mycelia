@@ -17,7 +17,7 @@ function slugify(text: string): string {
 }
 
 /**
- * Transform a node ID to a hierarchical URL path
+ * Transform a node ID to a hierarchical URL path with intelligent nesting
  */
 function nodeIdToPath(nodeId: string, node?: any): string {
   if (!node) return nodeId;
@@ -31,16 +31,176 @@ function nodeIdToPath(nodeId: string, node?: any): string {
     cleanId = nodeId.substring(type.length + 1);
   }
 
-  // For tags/skills, try to use the value/name for better URLs
+  // For tags/skills/projects, try to use the value/name/title for better URLs
   if (type === 'tag' && node.attributes?.value) {
     cleanId = slugify(String(node.attributes.value));
   } else if (type === 'skill' && node.attributes?.name) {
     cleanId = slugify(String(node.attributes.name));
-  } else if (type === 'project' && node.attributes?.title) {
+  } else if ((type === 'project' || type === 'essay') && node.attributes?.title) {
     cleanId = slugify(String(node.attributes.title));
   }
 
   return `/${type}/${cleanId}`;
+}
+
+/**
+ * Build deep hierarchical path for a node based on its containment relationships
+ */
+function buildDeepNodePath(nodeId: string, allContent: ParsedContent[]): string {
+  // Find the node and build its containment chain
+  let targetNode = null;
+  for (const content of allContent) {
+    if (content.graph.nodes[nodeId]) {
+      targetNode = content.graph.nodes[nodeId];
+      break;
+    }
+  }
+  
+  if (!targetNode) return nodeId;
+
+  // Build the hierarchy path
+  const pathSegments: Array<{ type: string; cleanId: string; originalId: string }> = [];
+  let currentId = nodeId;
+  const visited = new Set<string>();
+  
+  // Walk up the containment chain
+  while (currentId && !visited.has(currentId)) {
+    visited.add(currentId);
+    
+    // Find current node
+    let currentNode = null;
+    for (const content of allContent) {
+      if (content.graph.nodes[currentId]) {
+        currentNode = content.graph.nodes[currentId];
+        break;
+      }
+    }
+    
+    if (!currentNode) break;
+    
+    // Extract clean ID for current node
+    let cleanId = currentId;
+    const type = currentNode.type;
+    
+    if (currentId.startsWith(`${type}-`)) {
+      cleanId = currentId.substring(type.length + 1);
+    }
+
+    // Use better identifiers when available
+    if (type === 'tag' && currentNode.attributes?.value) {
+      cleanId = slugify(String(currentNode.attributes.value));
+    } else if (type === 'skill' && currentNode.attributes?.name) {
+      cleanId = slugify(String(currentNode.attributes.name));
+    } else if ((type === 'project' || type === 'essay') && currentNode.attributes?.title) {
+      cleanId = slugify(String(currentNode.attributes.title));
+    }
+
+    // Add to path segments (we'll reverse later)
+    pathSegments.unshift({ type, cleanId, originalId: currentId });
+    
+    // Find parent
+    let parentId = '';
+    for (const content of allContent) {
+      if (content.graph.edges) {
+        const parentEdge = content.graph.edges.find(edge => 
+          edge.to === currentId && edge.type === 'contains'
+        );
+        if (parentEdge) {
+          parentId = parentEdge.from;
+          break;
+        }
+      }
+    }
+    
+    currentId = parentId;
+  }
+
+  // Build intelligent nested path
+  return buildIntelligentNestedPath(pathSegments);
+}
+
+/**
+ * Build intelligent nested path with logical groupings
+ */
+function buildIntelligentNestedPath(pathSegments: Array<{ type: string; cleanId: string; originalId: string }>): string {
+  if (pathSegments.length === 0) return '/';
+  if (pathSegments.length === 1 && pathSegments[0]) {
+    return `/${pathSegments[0].type}/${pathSegments[0].cleanId}`;
+  }
+  
+  const result: string[] = [];
+  
+  for (let i = 0; i < pathSegments.length; i++) {
+    const segment = pathSegments[i];
+    const parent = i > 0 ? pathSegments[i - 1] : null;
+    
+    if (!segment) continue; // Safety check
+    
+    if (i === 0) {
+      // Root segment - always include type
+      result.push(segment.type, segment.cleanId);
+    } else if (parent && shouldNestUnderParent(segment, parent)) {
+      // Nested segment - use logical grouping
+      const groupName = getLogicalGrouping(segment, parent);
+      result.push(groupName, segment.cleanId);
+    } else {
+      // Independent segment
+      result.push(segment.type, segment.cleanId);
+    }
+  }
+  
+  return '/' + result.join('/');
+}
+
+/**
+ * Determine if content should be nested under parent
+ */
+function shouldNestUnderParent(segment: { type: string; cleanId: string; originalId: string }, parent: { type: string; cleanId: string; originalId: string }): boolean {
+  if (!segment || !parent) return false;
+  
+  // Blog/essay content under projects
+  if (parent.type === 'project' && segment.type === 'essay') {
+    return true;
+  }
+  
+  // Project blog series under projects  
+  if (parent.type === 'project' && segment.type === 'project' && segment.cleanId.includes('blog')) {
+    return true;
+  }
+  
+  // Tasks under projects
+  if (parent.type === 'project' && segment.type === 'task') {
+    return true;
+  }
+  
+  return false;
+}
+
+/**
+ * Get logical group name for nested content
+ */
+function getLogicalGrouping(segment: { type: string; cleanId: string; originalId: string }, parent: { type: string; cleanId: string; originalId: string }): string {
+  if (!segment || !parent) return 'unknown';
+  
+  // DevPad blog series becomes "blog"
+  if (parent.type === 'project' && segment.originalId === 'devpad-blog-series') {
+    return 'blog';
+  }
+  
+  // General essay under project becomes "articles"
+  if (parent.type === 'project' && segment.type === 'essay') {
+    if (segment.cleanId.includes('blog') || segment.cleanId.includes('series')) {
+      return 'blog';
+    }
+    return 'articles';
+  }
+  
+  // Tasks under project
+  if (parent.type === 'project' && segment.type === 'task') {
+    return 'tasks';
+  }
+  
+  return segment.type;
 }
 
 /**
@@ -228,7 +388,7 @@ export class MyceliaContentProvider implements ContentProvider {
       routes.push(`/${type}`);
     }
 
-    // Add individual node routes (e.g., /project/devpad, /tag/civic-tech)
+    // Add individual node routes with deep nesting (e.g., /project/devpad, /project/devpad/blog/series)
     for (const [type, nodes] of Object.entries(nodesByType)) {
       for (const node of nodes) {
         if (node.hierarchicalPath) {
@@ -241,97 +401,47 @@ export class MyceliaContentProvider implements ContentProvider {
   }
 
   /**
-   * Get breadcrumb trail for a node by walking up containment edges
+   * Get breadcrumb trail for a node by walking up containment edges (simplified)
    */
   async getBreadcrumbs(nodeId: string): Promise<Array<{ id: string; title: string; path: string }>> {
     const allContent = await this.getAllContent();
     const breadcrumbs: Array<{ id: string; title: string; path: string }> = [];
-    
-    // Find all containment edges that point to this node
-    const findParents = (currentNodeId: string, visited = new Set<string>()): string[] => {
-      if (visited.has(currentNodeId)) return []; // Prevent cycles
-      visited.add(currentNodeId);
-      
-      const parents: string[] = [];
-      
+    let currentId = nodeId;
+
+    // Walk up the containment hierarchy
+    while (currentId) {
+      // Find the current node
+      let currentNode = null;
       for (const content of allContent) {
-        for (const edge of content.graph.edges) {
-          if (edge.to === currentNodeId && edge.type === 'contains') {
-            parents.push(edge.from);
-            // Recursively find parents of parents
-            parents.push(...findParents(edge.from, visited));
-          }
+        if (content.graph.nodes[currentId]) {
+          currentNode = content.graph.nodes[currentId];
+          break;
         }
       }
       
-      return parents;
-    };
+      if (!currentNode) break;
 
-    // Get all parent nodes
-    const parentIds = findParents(nodeId);
-    const allNodeIds = [nodeId, ...parentIds];
-    
-    // Get node details and build breadcrumb trail
-    const nodeDetails: Record<string, { title: string; path: string; type: string }> = {};
-    
-    for (const content of allContent) {
-      for (const currentNodeId of allNodeIds) {
-        if (content.graph.nodes[currentNodeId]) {
-          const node = content.graph.nodes[currentNodeId];
-          const title = node.attributes?.title || node.attributes?.name || currentNodeId;
-          const path = nodeIdToPath(currentNodeId, node);
-          
-          nodeDetails[currentNodeId] = {
-            title: String(title),
-            path,
-            type: node.type || 'unknown'
-          };
-        }
-      }
-    }
+      breadcrumbs.unshift({
+        id: currentId,
+        title: String(currentNode.attributes?.title || currentNode.attributes?.name || currentId),
+        path: buildDeepNodePath(currentId, allContent)
+      });
 
-    // Build breadcrumb trail (from root to current)
-    const visited = new Set<string>();
-    const buildTrail = (currentId: string): void => {
-      if (visited.has(currentId) || !nodeDetails[currentId]) return;
-      visited.add(currentId);
-      
-      // Find immediate parent
-      let immediateParent: string | null = null;
+      // Find parent (node that contains this one)
+      let parentId = '';
       for (const content of allContent) {
         if (content.graph.edges) {
-          for (const edge of content.graph.edges) {
-            if (edge.to === currentId && edge.type === 'contains') {
-              immediateParent = edge.from;
-              break;
-            }
+          const parentEdge = content.graph.edges.find(edge => 
+            edge.to === currentId && edge.type === 'contains'
+          );
+          if (parentEdge) {
+            parentId = parentEdge.from;
+            break;
           }
         }
-        if (immediateParent) break;
       }
       
-      // Recursively build parent trail first
-      if (immediateParent && nodeDetails[immediateParent]) {
-        buildTrail(immediateParent);
-      }
-      
-      // Add current node to breadcrumbs
-      breadcrumbs.push({
-        id: currentId,
-        title: nodeDetails[currentId].title,
-        path: nodeDetails[currentId].path
-      });
-    };
-
-    buildTrail(nodeId);
-
-    // Add home breadcrumb if we're not already there
-    if (breadcrumbs.length > 0 && breadcrumbs[0] && breadcrumbs[0].path !== '/') {
-      breadcrumbs.unshift({
-        id: 'home',
-        title: 'Home',
-        path: '/'
-      });
+      currentId = parentId;
     }
 
     return breadcrumbs;
@@ -360,7 +470,7 @@ export class MyceliaContentProvider implements ContentProvider {
             
             if (sourceNode) {
               const title = sourceNode.attributes?.title || sourceNode.attributes?.name || edge.from;
-              const path = nodeIdToPath(edge.from, sourceNode);
+              const path = buildDeepNodePath(edge.from, allContent);
               
               backlinks.push({
                 id: edge.from,
@@ -521,7 +631,7 @@ export class MyceliaContentProvider implements ContentProvider {
         if (nodeArray) {
           nodeArray.push({
             ...node,
-            hierarchicalPath: nodeIdToPath(nodeId, node)
+            hierarchicalPath: buildDeepNodePath(nodeId, allContent)
           });
         }
       }

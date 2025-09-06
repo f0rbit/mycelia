@@ -12,19 +12,8 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-// Generate static params for all projects
 export async function generateStaticParams() {
-  const provider = getMyceliaProvider();
-  const nodesByType = await provider.getNodesByType?.();
-  
-  if (!nodesByType || !nodesByType.project) {
-    return [];
-  }
-  
-  return nodesByType.project.map((node: any) => {
-    const cleanId = node.hierarchicalPath?.replace('/project/', '') || node.id.replace('project-', '');
-    return { id: cleanId };
-  });
+  return [];
 }
 
 // Generate metadata for each page
