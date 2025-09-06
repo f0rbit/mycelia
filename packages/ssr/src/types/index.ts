@@ -54,6 +54,16 @@ export interface ContentProvider {
   getContentBySlug(slug: string): Promise<ParsedContent | null>;
   /** Get all available slugs */
   getAllSlugs(): Promise<string[]>;
+  /** Get content by node ID (supports hierarchical paths) */
+  getContentByNodeId?(nodeId: string): Promise<ParsedContent | null>;
+  /** Get all nodes grouped by type */
+  getNodesByType?(): Promise<Record<string, any[]>>;
+  /** Get all hierarchical routes for static generation */
+  getAllHierarchicalRoutes?(): Promise<string[]>;
+  /** Get breadcrumb trail for a node */
+  getBreadcrumbs?(nodeId: string): Promise<Array<{ id: string; title: string; path: string }>>;
+  /** Find all nodes that reference this node */
+  getBacklinks?(nodeId: string): Promise<Array<{ id: string; title: string; path: string; type: string; relation: string }>>;
   /** Watch for content changes (development mode) */
   watch?(callback: (changed: ParsedContent[]) => void): () => void;
 }

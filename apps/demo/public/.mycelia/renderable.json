@@ -13,1956 +13,23 @@
           "type": "person",
           "id": "tom-materne",
           "name": "Tom Materne",
-          "role": "full-stack-developer"
+          "role": "software-engineer",
+          "location": "Adelaide"
         },
         "children": [],
-        "content": "Full-stack developer with expertise in web development, game development, and system design. Passionate about building tools that solve real problems and make developers' lives easier.",
+        "content": "Software Engineer currently studying Computer Science at the University of Adelaide. Passionate about web development, game development, and building tools that solve real problems.Started programming at age 10 with Scratch and have been on an incredible journey of learning and building ever since. Currently working as a Software Developer while completing my degree.",
         "resolvedRefs": []
       },
       {
         "id": "portfolio-showcase",
-        "type": "portfolio",
-        "primitive": "List",
+        "type": "essay",
+        "primitive": "Branch",
         "props": {
-          "type": "portfolio",
-          "id": "portfolio-showcase",
-          "title": "Tom's Project Portfolio",
-          "status": "active",
-          "owner": "tom-materne",
-          "category": "portfolio"
+          "type": "essay",
+          "id": "portfolio-showcase"
         },
-        "children": [
-          {
-            "id": "chamber-project",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "chamber-project",
-              "title": "Chamber",
-              "status": "development",
-              "category": "web-application",
-              "priority": "high",
-              "githubUrl": "https://github.com/f0rbit/chamber",
-              "liveUrl": "https://chamber.net.au"
-            },
-            "children": [
-              {
-                "id": "political-data-sources",
-                "type": "research",
-                "primitive": "Branch",
-                "props": {
-                  "type": "investigation",
-                  "id": "political-data-sources",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Researched various sources for parliamentary data, including official government APIs, web scraping opportunities, and data availability across different jurisdictions.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "report-generation-system",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "report-generation-system",
-                  "title": "Report Generation Engine",
-                  "priority": "high",
-                  "status": "in-progress"
-                },
-                "children": [],
-                "content": "Build the core system that processes parliamentary data and generates human-readable reports",
-                "resolvedRefs": []
-              },
-              {
-                "id": "email-distribution",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "email-distribution",
-                  "title": "Email Distribution System",
-                  "priority": "medium",
-                  "status": "planned"
-                },
-                "children": [],
-                "content": "Implement email subscription system with personalized report delivery",
-                "resolvedRefs": []
-              },
-              {
-                "id": "web-interface",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "web-interface",
-                  "title": "Web Interface",
-                  "priority": "high",
-                  "status": "in-progress"
-                },
-                "children": [],
-                "content": "Create user-friendly web interface for browsing reports and managing subscriptions",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-8c8eb717",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Next.js",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-ffbe7f89",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Go",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-720d4d24",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Python",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-7bc909dd",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "TypeScript",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-dcacfefd",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Data Processing",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-cd45a060",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Email Automation",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "this-project-represents-my-belief-that-technology-84ed03a7",
-                "type": "note",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "note",
-                  "title": "Social Impact"
-                },
-                "children": [],
-                "content": "This project represents my belief that technology should be used to increase civic engagement and make democracy more accessible to everyday people.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "collaborator-d2181723",
-                "type": "collaborator",
-                "primitive": "Link",
-                "props": {
-                  "linkType": "collaborates",
-                  "to": "tom-materne",
-                  "role": "lead-developer"
-                },
-                "children": [],
-                "resolvedRefs": [
-                  {
-                    "id": "tom-materne",
-                    "type": "person",
-                    "primitive": "Leaf",
-                    "title": "Full-stack developer with expertise in web development, game development, and system design. Passionate about building tools that solve real problems and make developers' lives easier.",
-                    "exists": true
-                  }
-                ]
-              },
-              {
-                "id": "tag-b313aa0a",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "civic-tech"
-                },
-                "children": [],
-                "content": "civic-tech",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-c9cd0789",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "government-data"
-                },
-                "children": [],
-                "content": "government-data",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-407b67a3",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "public-service"
-                },
-                "children": [],
-                "content": "public-service",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "Generate daily & weekly reports of political sittings and distribute them to a user base via a website experience & optional emails.Chamber aims to make political information more accessible by automatically generating digestible reports from parliamentary proceedings and delivering them directly to citizens who want to stay informed about their government's activities.Researched various sources for parliamentary data, including official government APIs, web scraping opportunities, and data availability across different jurisdictions.Build the core system that processes parliamentary data and generates human-readable reportsImplement email subscription system with personalized report deliveryCreate user-friendly web interface for browsing reports and managing subscriptionsThis project represents my belief that technology should be used to increase civic engagement and make democracy more accessible to everyday people.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "burning-blends",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "burning-blends",
-              "title": "Burning Blends",
-              "status": "development",
-              "category": "blog-platform",
-              "githubUrl": "https://github.com/f0rbit/burning-blends",
-              "liveUrl": "https://blends.blog"
-            },
-            "children": [
-              {
-                "id": "creative-tech-intersection",
-                "type": "essay",
-                "primitive": "Branch",
-                "props": {
-                  "type": "essay",
-                  "id": "creative-tech-intersection",
-                  "title": "Where Creativity Meets Code"
-                },
-                "children": [],
-                "content": "Exploring how programming and artistic expression can complement and enhance each other. Many of the same principles that make good code also make good art: composition, balance, iteration, and attention to detail.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "photography-gallery",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "photography-gallery",
-                  "title": "Photography Gallery System",
-                  "priority": "medium",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Built a responsive gallery system for showcasing photography work with metadata and tagging",
-                "resolvedRefs": []
-              },
-              {
-                "id": "music-integration",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "music-integration",
-                  "title": "Music Player Integration",
-                  "priority": "low",
-                  "status": "planned"
-                },
-                "children": [],
-                "content": "Integrate music player for original compositions and covers",
-                "resolvedRefs": []
-              },
-              {
-                "id": "painting-documentation",
-                "type": "project",
-                "primitive": "Branch",
-                "props": {
-                  "type": "project",
-                  "id": "painting-documentation",
-                  "title": "Painting Progress Documentation",
-                  "status": "active",
-                  "category": "art-project"
-                },
-                "children": [
-                  {
-                    "id": "just-like-coding-painting-is-about-iteration-lea-30867f57",
-                    "type": "note",
-                    "primitive": "Leaf",
-                    "props": {
-                      "type": "note",
-                      "title": "Learning Process"
-                    },
-                    "children": [],
-                    "content": "Just like coding, painting is about iteration, learning from mistakes, and gradually building more complex skills on top of fundamental techniques.",
-                    "resolvedRefs": []
-                  }
-                ],
-                "content": "Documenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually building more complex skills on top of fundamental techniques.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-42a7b44f",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Content Management",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-59c36cef",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Photography",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-07ad3e23",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Visual Design",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-5755b70d",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Creative Writing",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-33405143",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "creativity"
-                },
-                "children": [],
-                "content": "creativity",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-1ded2cd9",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "art"
-                },
-                "children": [],
-                "content": "art",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-e0a2397b",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "personal-expression"
-                },
-                "children": [],
-                "content": "personal-expression",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "Blog site for all things on my creative side - a platform where I explore photography, painting, music, and other artistic endeavors alongside my technical work.This project serves as a creative outlet and demonstrates my ability to build content management systems while exploring the intersection of technology and art.Exploring how programming and artistic expression can complement and enhance each other. Many of the same principles that make good code also make good art: composition, balance, iteration, and attention to detail.Built a responsive gallery system for showcasing photography work with metadata and taggingIntegrate music player for original compositions and coversDocumenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually building more complex skills on top of fundamental techniques.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "arena-game",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "arena-game",
-              "title": "Arena",
-              "status": "paused",
-              "category": "multiplayer-game"
-            },
-            "children": [
-              {
-                "id": "multiplayer-architecture",
-                "type": "research",
-                "primitive": "Branch",
-                "props": {
-                  "type": "study",
-                  "id": "multiplayer-architecture",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Studied various multiplayer game architectures, latency compensation techniques, and anti-cheat systems to inform the design decisions.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "game-client",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "game-client",
-                  "title": "GameMaker Client",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Built the game client in GameMaker with smooth movement, responsive controls, and network communication",
-                "resolvedRefs": []
-              },
-              {
-                "id": "java-server",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "java-server",
-                  "title": "Java Game Server",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Implemented authoritative game server in Java with player synchronization and match management",
-                "resolvedRefs": []
-              },
-              {
-                "id": "matchmaking-system",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "matchmaking-system",
-                  "title": "Matchmaking System",
-                  "priority": "medium",
-                  "status": "paused"
-                },
-                "children": [],
-                "content": "Design and implement skill-based matchmaking for balanced competitive matches",
-                "resolvedRefs": []
-              },
-              {
-                "id": "building-multiplayer-games-presents-unique-challen-cf0f4ffe",
-                "type": "note",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "note",
-                  "title": "Technical Challenges"
-                },
-                "children": [],
-                "content": "Building multiplayer games presents unique challenges around network synchronization, latency compensation, and maintaining game state consistency across clients.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-094bc255",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "GameMaker",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-15ea2492",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Java",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-07b3dfe9",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Network Programming",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-b798614a",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Game Design",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-015accb1",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "multiplayer"
-                },
-                "children": [],
-                "content": "multiplayer",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-b34c5744",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "competitive-gaming"
-                },
-                "children": [],
-                "content": "competitive-gaming",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-53f2c399",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "real-time-networking"
-                },
-                "children": [],
-                "content": "real-time-networking",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "A fast-paced multiplayer 1v1 capture the flag game built with GameMaker and Java backend. This project combines my game development roots with my backend programming skills to create a competitive multiplayer experience.Studied various multiplayer game architectures, latency compensation techniques, and anti-cheat systems to inform the design decisions.Built the game client in GameMaker with smooth movement, responsive controls, and network communicationImplemented authoritative game server in Java with player synchronization and match managementDesign and implement skill-based matchmaking for balanced competitive matchesBuilding multiplayer games presents unique challenges around network synchronization, latency compensation, and maintaining game state consistency across clients.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "gm-server-framework",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "gm-server-framework",
-              "title": "GM-Server Framework",
-              "status": "completed",
-              "category": "open-source-library",
-              "language": "java"
-            },
-            "children": [
-              {
-                "id": "gamemaker-networking",
-                "type": "research",
-                "primitive": "Branch",
-                "props": {
-                  "type": "experiment",
-                  "id": "gamemaker-networking",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Deep dive into GameMaker's networking capabilities, socket implementations, and communication protocols to design an optimal interface layer.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "core-library",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "core-library",
-                  "title": "Core Library Development",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Built the foundational library with robust client-server communication protocols",
-                "resolvedRefs": []
-              },
-              {
-                "id": "documentation-site",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "documentation-site",
-                  "title": "Documentation & Examples",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Created comprehensive documentation with code examples and getting-started guides",
-                "resolvedRefs": []
-              },
-              {
-                "id": "community-support",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "community-support",
-                  "title": "Community Support & Maintenance",
-                  "priority": "medium",
-                  "status": "ongoing"
-                },
-                "children": [],
-                "content": "Provide ongoing support to developers using the library and maintain compatibility",
-                "resolvedRefs": []
-              },
-              {
-                "id": "the-library-has-been-adopted-by-multiple-independe-e486e86a",
-                "type": "achievement",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "achievement",
-                  "title": "Open Source Adoption"
-                },
-                "children": [],
-                "content": "The library has been adopted by multiple independent game developers and has received positive feedback from the GameMaker community.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-e393bdc8",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Library Design",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-439a021b",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "API Development",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-a436fe1a",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Technical Documentation",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-a4773b0d",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Community Management",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "this-project-taught-me-valuable-lessons-about-api-3ed3380a",
-                "type": "note",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "note",
-                  "title": "Open Source Learning"
-                },
-                "children": [],
-                "content": "This project taught me valuable lessons about API design, documentation, backwards compatibility, and maintaining open source projects.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-edd6f4b8",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "open-source"
-                },
-                "children": [],
-                "content": "open-source",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-06ff0c61",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "gamemaker"
-                },
-                "children": [],
-                "content": "gamemaker",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-852f3b8f",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "networking"
-                },
-                "children": [],
-                "content": "networking",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-5d5a0433",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "developer-tools"
-                },
-                "children": [],
-                "content": "developer-tools",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "An open-source framework for interfacing between Java servers and GameMaker: Studio game clients. This project solved a real problem I faced when building multiplayer games and has helped other developers in the GameMaker community.Deep dive into GameMaker's networking capabilities, socket implementations, and communication protocols to design an optimal interface layer.Built the foundational library with robust client-server communication protocolsCreated comprehensive documentation with code examples and getting-started guidesProvide ongoing support to developers using the library and maintain compatibilityThe library has been adopted by multiple independent game developers and has received positive feedback from the GameMaker community.This project taught me valuable lessons about API design, documentation, backwards compatibility, and maintaining open source projects.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "devpad-project",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "devpad-project",
-              "title": "DevPad",
-              "status": "redesigning",
-              "category": "productivity-tool"
-            },
-            "children": [
-              {
-                "id": "developer-productivity",
-                "type": "research",
-                "primitive": "Branch",
-                "props": {
-                  "type": "study",
-                  "id": "developer-productivity",
-                  "status": "ongoing"
-                },
-                "children": [],
-                "content": "Researching how developers currently manage projects and tasks, what tools they use, and where existing solutions fall short of their needs.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "minimalism-in-tools",
-                "type": "essay",
-                "primitive": "Branch",
-                "props": {
-                  "type": "essay",
-                  "id": "minimalism-in-tools",
-                  "title": "The Case for Minimalistic Development Tools"
-                },
-                "children": [],
-                "content": "Exploring why developers often prefer simple, focused tools over feature-heavy alternatives. Sometimes the best tool is the one that gets out of your way and lets you focus on the work.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "mvp-definition",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "mvp-definition",
-                  "title": "Define MVP Features",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Narrowed down to core features: project creation, task management, and simple time tracking",
-                "resolvedRefs": []
-              },
-              {
-                "id": "ui-redesign",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "ui-redesign",
-                  "title": "Minimal UI Implementation",
-                  "priority": "high",
-                  "status": "in-progress"
-                },
-                "children": [],
-                "content": "Building a clean, distraction-free interface that prioritizes function over form",
-                "resolvedRefs": []
-              },
-              {
-                "id": "developer-workflow-integration",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "developer-workflow-integration",
-                  "title": "Workflow Integration",
-                  "priority": "medium",
-                  "status": "planned"
-                },
-                "children": [],
-                "content": "Integrate with git repositories, development tools, and common developer workflows",
-                "resolvedRefs": []
-              },
-              {
-                "id": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-8c78ac7a",
-                "type": "note",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "note",
-                  "title": "Design Philosophy"
-                },
-                "children": [],
-                "content": "The goal is to create a tool so simple and intuitive that it becomes invisible - helping developers stay organized without adding cognitive overhead.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-641baf50",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Product Design",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-9ad796b0",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "User Experience",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-4e4b9869",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Minimalist Design",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-53fb3560",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "productivity"
-                },
-                "children": [],
-                "content": "productivity",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-beced665",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "developer-tools"
-                },
-                "children": [],
-                "content": "developer-tools",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-783e9881",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "minimalism"
-                },
-                "children": [],
-                "content": "minimalism",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "A hyper-minimalistic project and task management tool designed specifically for developers. After multiple iterations and redesigns, I'm currently working on a streamlined version that focuses on simplicity and developer workflow integration.Researching how developers currently manage projects and tasks, what tools they use, and where existing solutions fall short of their needs.Exploring why developers often prefer simple, focused tools over feature-heavy alternatives. Sometimes the best tool is the one that gets out of your way and lets you focus on the work.Narrowed down to core features: project creation, task management, and simple time trackingBuilding a clean, distraction-free interface that prioritizes function over formIntegrate with git repositories, development tools, and common developer workflowsThe goal is to create a tool so simple and intuitive that it becomes invisible - helping developers stay organized without adding cognitive overhead.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "golang-api-stack",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "golang-api-stack",
-              "title": "Go API Stack Example",
-              "status": "completed",
-              "category": "development-template",
-              "githubUrl": "https://github.com/f0rbit/golang-stack-example"
-            },
-            "children": [
-              {
-                "id": "go-ecosystem-study",
-                "type": "research",
-                "primitive": "Branch",
-                "props": {
-                  "type": "investigation",
-                  "id": "go-ecosystem-study",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and deployment strategies to identify best practices and optimal tool combinations.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "docker-containerization",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "docker-containerization",
-                  "title": "Docker Development Environment",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)",
-                "resolvedRefs": []
-              },
-              {
-                "id": "database-integration",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "database-integration",
-                  "title": "Drizzle ORM Integration",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Integrated Drizzle ORM for type-safe database operations with migrations and schema management",
-                "resolvedRefs": []
-              },
-              {
-                "id": "testing-framework",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "testing-framework",
-                  "title": "Testing Setup with Bun",
-                  "priority": "medium",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Configured end-to-end testing pipeline using Bun for fast, reliable test execution",
-                "resolvedRefs": []
-              },
-              {
-                "id": "deployment-guide",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "deployment-guide",
-                  "title": "Production Deployment Guide",
-                  "priority": "medium",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Created comprehensive documentation for deploying the stack to production environments",
-                "resolvedRefs": []
-              },
-              {
-                "id": "the-repository-has-helped-several-developers-boots-6079f1d2",
-                "type": "achievement",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "achievement",
-                  "title": "Community Resource"
-                },
-                "children": [],
-                "content": "The repository has helped several developers bootstrap their Go API projects and serves as a reference for modern Go development practices.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-588aaf33",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Go Programming",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-df4268ec",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Docker",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-e6195840",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "PostgreSQL",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-ea8597d0",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Infrastructure as Code",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-955e9eae",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Technical Writing",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "this-project-demonstrates-current-best-practices-i-7ffcb6d8",
-                "type": "note",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "note",
-                  "title": "Modern Development Practices"
-                },
-                "children": [],
-                "content": "This project demonstrates current best practices in API development, including containerization, type safety, comprehensive testing, and clear documentation.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-21a3ad26",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "golang"
-                },
-                "children": [],
-                "content": "golang",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-241df8ff",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "api-development"
-                },
-                "children": [],
-                "content": "api-development",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-b837db81",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "developer-resources"
-                },
-                "children": [],
-                "content": "developer-resources",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-e7fc7712",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "best-practices"
-                },
-                "children": [],
-                "content": "best-practices",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "Stack setup for a golang API with bun testing, postgres database, and S3 storage for local & production environments. This project serves as a template and learning resource for other developers looking to set up similar infrastructure.Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and deployment strategies to identify best practices and optimal tool combinations.Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)Integrated Drizzle ORM for type-safe database operations with migrations and schema managementConfigured end-to-end testing pipeline using Bun for fast, reliable test executionCreated comprehensive documentation for deploying the stack to production environmentsThe repository has helped several developers bootstrap their Go API projects and serves as a reference for modern Go development practices.This project demonstrates current best practices in API development, including containerization, type safety, comprehensive testing, and clear documentation.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "todo-tracker-evolution",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "todo-tracker-evolution",
-              "title": "Todo Tracker Evolution",
-              "status": "completed",
-              "category": "learning-project"
-            },
-            "children": [
-              {
-                "id": "js-to-ts-transition",
-                "type": "research",
-                "primitive": "Branch",
-                "props": {
-                  "type": "experiment",
-                  "id": "js-to-ts-transition",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Documented the process of migrating a JavaScript project to TypeScript, including challenges faced, benefits realized, and lessons learned about type safety.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "typescript-adoption-journey",
-                "type": "essay",
-                "primitive": "Branch",
-                "props": {
-                  "type": "essay",
-                  "id": "typescript-adoption-journey",
-                  "title": "From JavaScript to TypeScript: A Developer's Journey"
-                },
-                "children": [],
-                "content": "Reflecting on the transition from dynamic to static typing, the initial resistance, the gradual appreciation, and ultimately the realization that TypeScript makes JavaScript development more enjoyable and productive.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "js-implementation",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "js-implementation",
-                  "title": "JavaScript Implementation",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Built initial version in vanilla JavaScript to establish baseline functionality",
-                "resolvedRefs": []
-              },
-              {
-                "id": "typescript-migration",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "typescript-migration",
-                  "title": "TypeScript Migration",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Systematically migrated codebase to TypeScript, adding type definitions and improving code quality",
-                "resolvedRefs": []
-              },
-              {
-                "id": "performance-comparison",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "performance-comparison",
-                  "title": "Performance Analysis",
-                  "priority": "low",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Compared performance, developer experience, and code maintainability between JS and TS versions",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-3f60871e",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "TypeScript Migration",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-981ee6bb",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Code Refactoring",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-3a317c64",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Performance Analysis",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "this-project-solidified-my-understanding-of-typesc-f805bb73",
-                "type": "note",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "note",
-                  "title": "Learning Outcome"
-                },
-                "children": [],
-                "content": "This project solidified my understanding of TypeScript's benefits and gave me practical experience in migrating existing codebases to adopt type safety.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-cc9b1fd9",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "typescript"
-                },
-                "children": [],
-                "content": "typescript",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-9fc5262a",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "code-migration"
-                },
-                "children": [],
-                "content": "code-migration",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-559150fc",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "learning-project"
-                },
-                "children": [],
-                "content": "learning-project",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "A project specifically designed to explore the transition from JavaScript to TypeScript and experiment with different approaches to state management and task organization.Documented the process of migrating a JavaScript project to TypeScript, including challenges faced, benefits realized, and lessons learned about type safety.Reflecting on the transition from dynamic to static typing, the initial resistance, the gradual appreciation, and ultimately the realization that TypeScript makes JavaScript development more enjoyable and productive.Built initial version in vanilla JavaScript to establish baseline functionalitySystematically migrated codebase to TypeScript, adding type definitions and improving code qualityCompared performance, developer experience, and code maintainability between JS and TS versionsThis project solidified my understanding of TypeScript's benefits and gave me practical experience in migrating existing codebases to adopt type safety.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "photography-portfolio",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "photography-portfolio",
-              "title": "Photography Collection",
-              "status": "ongoing",
-              "category": "creative-work"
-            },
-            "children": [
-              {
-                "id": "photography-techniques",
-                "type": "research",
-                "primitive": "Branch",
-                "props": {
-                  "type": "study",
-                  "id": "photography-techniques",
-                  "status": "ongoing"
-                },
-                "children": [],
-                "content": "Continuous learning about composition, lighting, post-processing, and different photographic styles to improve technical and artistic skills.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "snorkeling-photography",
-                "type": "project",
-                "primitive": "Branch",
-                "props": {
-                  "type": "project",
-                  "id": "snorkeling-photography",
-                  "title": "Underwater Photography",
-                  "status": "active",
-                  "category": "specialty-photography"
-                },
-                "children": [
-                  {
-                    "id": "underwater-photography-presents-unique-challenges:-990ff38e",
-                    "type": "note",
-                    "primitive": "Leaf",
-                    "props": {
-                      "type": "note",
-                      "title": "Technical Challenges"
-                    },
-                    "children": [],
-                    "content": "Underwater photography presents unique challenges: limited light, water refraction, marine life behavior, and equipment protection - similar to debugging complex systems!",
-                    "resolvedRefs": []
-                  },
-                  {
-                    "id": "skill-238d629b",
-                    "type": "skill",
-                    "primitive": "Meta",
-                    "props": {
-                      "metaType": "skill",
-                      "name": "Underwater Photography",
-                      "level": "intermediate"
-                    },
-                    "children": [],
-                    "content": "",
-                    "resolvedRefs": []
-                  },
-                  {
-                    "id": "skill-ddb5d51d",
-                    "type": "skill",
-                    "primitive": "Meta",
-                    "props": {
-                      "metaType": "skill",
-                      "name": "Marine Life Documentation",
-                      "level": "beginner"
-                    },
-                    "children": [],
-                    "content": "",
-                    "resolvedRefs": []
-                  }
-                ],
-                "content": "Specialized focus on underwater photography while snorkeling, capturing marine life and underwater landscapes. This challenging environment requires special techniques and equipment considerations.Underwater photography presents unique challenges: limited light, water refraction, marine life behavior, and equipment protection - similar to debugging complex systems!",
-                "resolvedRefs": []
-              },
-              {
-                "id": "portfolio-curation",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "portfolio-curation",
-                  "title": "Portfolio Curation",
-                  "priority": "medium",
-                  "status": "ongoing"
-                },
-                "children": [],
-                "content": "Select and organize best photographs into cohesive collections for online portfolio",
-                "resolvedRefs": []
-              },
-              {
-                "id": "social-media-presence",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "social-media-presence",
-                  "title": "Photography Social Media",
-                  "priority": "low",
-                  "status": "active"
-                },
-                "children": [],
-                "content": "Share photography work on Instagram and other platforms to build an audience and get feedback",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-dc98fdb7",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Photography",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-f4ed6801",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Photo Editing",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-2e204816",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Visual Composition",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-e1ace292",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Portfolio Curation",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-4f59fdf8",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "photography"
-                },
-                "children": [],
-                "content": "photography",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-9c4c9d7d",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "creative-expression"
-                },
-                "children": [],
-                "content": "creative-expression",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-e7e4f40d",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "visual-arts"
-                },
-                "children": [],
-                "content": "visual-arts",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-14d4e769",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "nature"
-                },
-                "children": [],
-                "content": "nature",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "A curated collection of photography work spanning landscapes, street photography, and experimental compositions. This creative pursuit complements my technical work and provides a different lens for seeing and documenting the world.Continuous learning about composition, lighting, post-processing, and different photographic styles to improve technical and artistic skills.Specialized focus on underwater photography while snorkeling, capturing marine life and underwater landscapes. This challenging environment requires special techniques and equipment considerations.Underwater photography presents unique challenges: limited light, water refraction, marine life behavior, and equipment protection - similar to debugging complex systems!Select and organize best photographs into cohesive collections for online portfolioShare photography work on Instagram and other platforms to build an audience and get feedback",
-            "resolvedRefs": []
-          },
-          {
-            "id": "badminton-coaching",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "badminton-coaching",
-              "title": "Badminton Coaching Leadership",
-              "status": "completed",
-              "category": "leadership-development"
-            },
-            "children": [
-              {
-                "id": "coaching-methodologies",
-                "type": "research",
-                "primitive": "Branch",
-                "props": {
-                  "type": "study",
-                  "id": "coaching-methodologies",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Studied effective coaching and teaching methodologies, sports psychology, and team motivation techniques to become a more effective leader.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "team-management",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "team-management",
-                  "title": "Multiple Team Management",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Successfully managed and coordinated practice schedules, competitions, and development plans for 8 teams",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-development-programs",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "skill-development-programs",
-                  "title": "Individual Skill Development",
-                  "priority": "high",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Created personalized training programs for players at different skill levels and tracked progress",
-                "resolvedRefs": []
-              },
-              {
-                "id": "competitive-strategy",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "competitive-strategy",
-                  "title": "Competitive Strategy Development",
-                  "priority": "medium",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Developed game strategies, analyzed opponent patterns, and prepared teams for high-level competition",
-                "resolvedRefs": []
-              },
-              {
-                "id": "led-teams-to-compete-successfully-at-the-highest-l-2578a573",
-                "type": "achievement",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "achievement",
-                  "title": "City-Level Competition Success"
-                },
-                "children": [],
-                "content": "Led teams to compete successfully at the highest level in local city competitions, with several teams achieving top placements.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-28a90136",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Leadership",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-9bb86632",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Team Management",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-4b625d7c",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Performance Analysis",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-1416f146",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Mentoring",
-                  "level": "advanced"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "the-leadership-and-analytical-skills-developed-in-b792ee45",
-                "type": "note",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "note",
-                  "title": "Cross-Discipline Learning"
-                },
-                "children": [],
-                "content": "The leadership and analytical skills developed in sports coaching directly apply to software development team leadership and code review processes.",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-d644ce59",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "leadership"
-                },
-                "children": [],
-                "content": "leadership",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-13ea5f72",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "coaching"
-                },
-                "children": [],
-                "content": "coaching",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-c755b1a4",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "team-development"
-                },
-                "children": [],
-                "content": "team-development",
-                "resolvedRefs": []
-              },
-              {
-                "id": "tag-21fd8586",
-                "type": "tag",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "tag",
-                  "value": "sports"
-                },
-                "children": [],
-                "content": "sports",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "Led coaching for 8 different badminton teams at competitive city level, developing leadership skills, teaching abilities, and team management experience that directly translates to software development team dynamics.Studied effective coaching and teaching methodologies, sports psychology, and team motivation techniques to become a more effective leader.Successfully managed and coordinated practice schedules, competitions, and development plans for 8 teamsCreated personalized training programs for players at different skill levels and tracked progressDeveloped game strategies, analyzed opponent patterns, and prepared teams for high-level competitionLed teams to compete successfully at the highest level in local city competitions, with several teams achieving top placements.The leadership and analytical skills developed in sports coaching directly apply to software development team leadership and code review processes.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "portfolio-reflection",
-            "type": "essay",
-            "primitive": "Branch",
-            "props": {
-              "type": "essay",
-              "id": "portfolio-reflection",
-              "title": "Lessons from Building"
-            },
-            "children": [],
-            "content": "Looking across this portfolio of projects, several themes emerge that have shaped my approach to software development and creative work:Iteration and Learning: Nearly every project has gone through multiple versions, redesigns, or pivots. This isn't failure - it's the natural process of learning and improving. Each iteration teaches something new about the problem space, user needs, or technical constraints.Cross-Pollination: Skills learned in one domain consistently apply to others. Leadership from coaching translates to software team dynamics. Visual composition from photography improves UI design. Game development networking knowledge applies to web API design.Community and Open Source: The projects that have had the most impact are those that solve problems for others, not just myself. Open source contributions and community resources create value that extends far beyond the initial effort.Balance of Technical and Creative: The most fulfilling projects combine technical challenges with creative expression or meaningful impact. Pure technical exercises are valuable for learning, but projects with purpose and personality are what I remember and continue to develop.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "future-directions",
-            "type": "project",
-            "primitive": "Branch",
-            "props": {
-              "type": "project",
-              "id": "future-directions",
-              "title": "Future Project Directions",
-              "status": "planning"
-            },
-            "children": [
-              {
-                "id": "ai-integration-exploration",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "ai-integration-exploration",
-                  "title": "AI Integration Projects",
-                  "priority": "medium",
-                  "status": "planned"
-                },
-                "children": [],
-                "content": "Explore how AI tools can enhance development workflows and create new possibilities for creative and productivity applications",
-                "resolvedRefs": []
-              },
-              {
-                "id": "sustainable-tech",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "sustainable-tech",
-                  "title": "Environmental Impact Projects",
-                  "priority": "medium",
-                  "status": "planned"
-                },
-                "children": [],
-                "content": "Develop projects that have positive environmental impact or help others make more sustainable technology choices",
-                "resolvedRefs": []
-              },
-              {
-                "id": "education-tools",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "education-tools",
-                  "title": "Developer Education Tools",
-                  "priority": "high",
-                  "status": "planned"
-                },
-                "children": [],
-                "content": "Create resources and tools that help other developers learn and grow, building on my experience with documentation and teaching",
-                "resolvedRefs": []
-              },
-              {
-                "id": "future-projects-will-prioritize:-meaningful-impact-058459a3",
-                "type": "note",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "note",
-                  "title": "Guiding Principles"
-                },
-                "children": [],
-                "content": "Future projects will prioritize: meaningful impact, technical excellence, community value, and personal growth. The goal is to build things that matter, not just things that work.",
-                "resolvedRefs": []
-              }
-            ],
-            "content": "Explore how AI tools can enhance development workflows and create new possibilities for creative and productivity applicationsDevelop projects that have positive environmental impact or help others make more sustainable technology choicesCreate resources and tools that help other developers learn and grow, building on my experience with documentation and teachingFuture projects will prioritize: meaningful impact, technical excellence, community value, and personal growth. The goal is to build things that matter, not just things that work.",
-            "resolvedRefs": []
-          },
-          {
-            "id": "tag-9fd555ad",
-            "type": "tag",
-            "primitive": "Meta",
-            "props": {
-              "metaType": "tag",
-              "value": "portfolio"
-            },
-            "children": [],
-            "content": "portfolio",
-            "resolvedRefs": []
-          },
-          {
-            "id": "tag-429699e9",
-            "type": "tag",
-            "primitive": "Meta",
-            "props": {
-              "metaType": "tag",
-              "value": "software-development"
-            },
-            "children": [],
-            "content": "software-development",
-            "resolvedRefs": []
-          },
-          {
-            "id": "tag-b790fb31",
-            "type": "tag",
-            "primitive": "Meta",
-            "props": {
-              "metaType": "tag",
-              "value": "full-stack"
-            },
-            "children": [],
-            "content": "full-stack",
-            "resolvedRefs": []
-          },
-          {
-            "id": "tag-d2057f3c",
-            "type": "tag",
-            "primitive": "Meta",
-            "props": {
-              "metaType": "tag",
-              "value": "open-source"
-            },
-            "children": [],
-            "content": "open-source",
-            "resolvedRefs": []
-          },
-          {
-            "id": "tag-8de89dac",
-            "type": "tag",
-            "primitive": "Meta",
-            "props": {
-              "metaType": "tag",
-              "value": "creativity"
-            },
-            "children": [],
-            "content": "creativity",
-            "resolvedRefs": []
-          },
-          {
-            "id": "tag-9af3ddc3",
-            "type": "tag",
-            "primitive": "Meta",
-            "props": {
-              "metaType": "tag",
-              "value": "leadership"
-            },
-            "children": [],
-            "content": "leadership",
-            "resolvedRefs": []
-          },
-          {
-            "id": "time-spent-curating-and-documenting-this-comprehen-6bd0dc8a",
-            "type": "date",
-            "primitive": "Meta",
-            "props": {
-              "metaType": "date",
-              "value": "2024-01-20",
-              "duration": "360"
-            },
-            "children": [],
-            "content": "Time spent curating and documenting this comprehensive project portfolio",
-            "resolvedRefs": []
-          }
-        ],
-        "content": "A comprehensive showcase of projects spanning game development, web applications, developer tools, and creative platforms. Each project represents a milestone in my programming journey and demonstrates different aspects of software development.Active ProjectsGenerate daily & weekly reports of political sittings and distribute them to a user base via a website experience & optional emails.Chamber aims to make political information more accessible by automatically generating digestible reports from parliamentary proceedings and delivering them directly to citizens who want to stay informed about their government's activities.Researched various sources for parliamentary data, including official government APIs, web scraping opportunities, and data availability across different jurisdictions.Build the core system that processes parliamentary data and generates human-readable reportsImplement email subscription system with personalized report deliveryCreate user-friendly web interface for browsing reports and managing subscriptionsThis project represents my belief that technology should be used to increase civic engagement and make democracy more accessible to everyday people.Blog site for all things on my creative side - a platform where I explore photography, painting, music, and other artistic endeavors alongside my technical work.This project serves as a creative outlet and demonstrates my ability to build content management systems while exploring the intersection of technology and art.Exploring how programming and artistic expression can complement and enhance each other. Many of the same principles that make good code also make good art: composition, balance, iteration, and attention to detail.Built a responsive gallery system for showcasing photography work with metadata and taggingIntegrate music player for original compositions and coversDocumenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually building more complex skills on top of fundamental techniques.Game Development ProjectsA fast-paced multiplayer 1v1 capture the flag game built with GameMaker and Java backend. This project combines my game development roots with my backend programming skills to create a competitive multiplayer experience.Studied various multiplayer game architectures, latency compensation techniques, and anti-cheat systems to inform the design decisions.Built the game client in GameMaker with smooth movement, responsive controls, and network communicationImplemented authoritative game server in Java with player synchronization and match managementDesign and implement skill-based matchmaking for balanced competitive matchesBuilding multiplayer games presents unique challenges around network synchronization, latency compensation, and maintaining game state consistency across clients.Developer Tools & LibrariesAn open-source framework for interfacing between Java servers and GameMaker: Studio game clients. This project solved a real problem I faced when building multiplayer games and has helped other developers in the GameMaker community.Deep dive into GameMaker's networking capabilities, socket implementations, and communication protocols to design an optimal interface layer.Built the foundational library with robust client-server communication protocolsCreated comprehensive documentation with code examples and getting-started guidesProvide ongoing support to developers using the library and maintain compatibilityThe library has been adopted by multiple independent game developers and has received positive feedback from the GameMaker community.This project taught me valuable lessons about API design, documentation, backwards compatibility, and maintaining open source projects.Web Applications & PlatformsA hyper-minimalistic project and task management tool designed specifically for developers. After multiple iterations and redesigns, I'm currently working on a streamlined version that focuses on simplicity and developer workflow integration.Researching how developers currently manage projects and tasks, what tools they use, and where existing solutions fall short of their needs.Exploring why developers often prefer simple, focused tools over feature-heavy alternatives. Sometimes the best tool is the one that gets out of your way and lets you focus on the work.Narrowed down to core features: project creation, task management, and simple time trackingBuilding a clean, distraction-free interface that prioritizes function over formIntegrate with git repositories, development tools, and common developer workflowsThe goal is to create a tool so simple and intuitive that it becomes invisible - helping developers stay organized without adding cognitive overhead.Backend & Infrastructure ProjectsStack setup for a golang API with bun testing, postgres database, and S3 storage for local & production environments. This project serves as a template and learning resource for other developers looking to set up similar infrastructure.Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and deployment strategies to identify best practices and optimal tool combinations.Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)Integrated Drizzle ORM for type-safe database operations with migrations and schema managementConfigured end-to-end testing pipeline using Bun for fast, reliable test executionCreated comprehensive documentation for deploying the stack to production environmentsThe repository has helped several developers bootstrap their Go API projects and serves as a reference for modern Go development practices.This project demonstrates current best practices in API development, including containerization, type safety, comprehensive testing, and clear documentation.Experimental & Learning ProjectsA project specifically designed to explore the transition from JavaScript to TypeScript and experiment with different approaches to state management and task organization.Documented the process of migrating a JavaScript project to TypeScript, including challenges faced, benefits realized, and lessons learned about type safety.Reflecting on the transition from dynamic to static typing, the initial resistance, the gradual appreciation, and ultimately the realization that TypeScript makes JavaScript development more enjoyable and productive.Built initial version in vanilla JavaScript to establish baseline functionalitySystematically migrated codebase to TypeScript, adding type definitions and improving code qualityCompared performance, developer experience, and code maintainability between JS and TS versionsThis project solidified my understanding of TypeScript's benefits and gave me practical experience in migrating existing codebases to adopt type safety.Creative & Artistic ProjectsA curated collection of photography work spanning landscapes, street photography, and experimental compositions. This creative pursuit complements my technical work and provides a different lens for seeing and documenting the world.Continuous learning about composition, lighting, post-processing, and different photographic styles to improve technical and artistic skills.Specialized focus on underwater photography while snorkeling, capturing marine life and underwater landscapes. This challenging environment requires special techniques and equipment considerations.Underwater photography presents unique challenges: limited light, water refraction, marine life behavior, and equipment protection - similar to debugging complex systems!Select and organize best photographs into cohesive collections for online portfolioShare photography work on Instagram and other platforms to build an audience and get feedbackProfessional DevelopmentLed coaching for 8 different badminton teams at competitive city level, developing leadership skills, teaching abilities, and team management experience that directly translates to software development team dynamics.Studied effective coaching and teaching methodologies, sports psychology, and team motivation techniques to become a more effective leader.Successfully managed and coordinated practice schedules, competitions, and development plans for 8 teamsCreated personalized training programs for players at different skill levels and tracked progressDeveloped game strategies, analyzed opponent patterns, and prepared teams for high-level competitionLed teams to compete successfully at the highest level in local city competitions, with several teams achieving top placements.The leadership and analytical skills developed in sports coaching directly apply to software development team leadership and code review processes.Reflection & Future DirectionsLooking across this portfolio of projects, several themes emerge that have shaped my approach to software development and creative work:Iteration and Learning: Nearly every project has gone through multiple versions, redesigns, or pivots. This isn't failure - it's the natural process of learning and improving. Each iteration teaches something new about the problem space, user needs, or technical constraints.Cross-Pollination: Skills learned in one domain consistently apply to others. Leadership from coaching translates to software team dynamics. Visual composition from photography improves UI design. Game development networking knowledge applies to web API design.Community and Open Source: The projects that have had the most impact are those that solve problems for others, not just myself. Open source contributions and community resources create value that extends far beyond the initial effort.Balance of Technical and Creative: The most fulfilling projects combine technical challenges with creative expression or meaningful impact. Pure technical exercises are valuable for learning, but projects with purpose and personality are what I remember and continue to develop.Explore how AI tools can enhance development workflows and create new possibilities for creative and productivity applicationsDevelop projects that have positive environmental impact or help others make more sustainable technology choicesCreate resources and tools that help other developers learn and grow, building on my experience with documentation and teachingFuture projects will prioritize: meaningful impact, technical excellence, community value, and personal growth. The goal is to build things that matter, not just things that work.Time spent curating and documenting this comprehensive project portfolio",
+        "children": [],
+        "content": "portfolio showcase",
         "resolvedRefs": []
       },
       {
@@ -1979,7 +46,7 @@
         },
         "children": [
           {
-            "id": "skill-6a341d0a",
+            "id": "skill-9f091af8",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -1992,7 +59,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-56fe7305",
+            "id": "skill-8c6a47d7",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2005,7 +72,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-a58afc99",
+            "id": "skill-7474ec0f",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2018,7 +85,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "this-was-where-i-first-discovered-the-magic-of-mak-f59efc8d",
+            "id": "this-was-where-i-first-discovered-the-magic-of-mak-c4911c5e",
             "type": "note",
             "primitive": "Leaf",
             "props": {
@@ -2030,7 +97,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-4508a23e",
+            "id": "skill-6fd82f0c",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2043,7 +110,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-ec6f69ea",
+            "id": "skill-c98b0afc",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2056,7 +123,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-9a602089",
+            "id": "skill-ae9708bf",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2069,7 +136,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "i-spent-these-years-creating-little-games-for-my-f-efd3f8b7",
+            "id": "i-spent-these-years-creating-little-games-for-my-f-5d73160e",
             "type": "achievement",
             "primitive": "Leaf",
             "props": {
@@ -2081,7 +148,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-d02ab0c0",
+            "id": "skill-5732f1dc",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2094,7 +161,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-b04f2acc",
+            "id": "skill-162ef912",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2107,7 +174,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-ecc948a8",
+            "id": "skill-4a5f1bc8",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2120,7 +187,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-71980184",
+            "id": "skill-4b2a95d2",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2148,7 +215,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "one-of-my-early-gamemaker-games-reached-50000-pla-7764e182",
+            "id": "one-of-my-early-gamemaker-games-reached-50000-pla-25eb9d92",
             "type": "achievement",
             "primitive": "Leaf",
             "props": {
@@ -2160,7 +227,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-a6f6accd",
+            "id": "skill-0f4a3402",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2173,7 +240,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-434e8780",
+            "id": "skill-72909082",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2186,7 +253,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-7797ac17",
+            "id": "skill-9ec9174f",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2199,7 +266,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "while-i-suffered-from-\"shiny-object-syndrome\"-and-b9ff67b8",
+            "id": "while-i-suffered-from-\"shiny-object-syndrome\"-and-24729b5f",
             "type": "note",
             "primitive": "Leaf",
             "props": {
@@ -2211,7 +278,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-72f546a4",
+            "id": "skill-caf97880",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2224,7 +291,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-7a10cb37",
+            "id": "skill-6594f24b",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2237,7 +304,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-1c66bf39",
+            "id": "skill-a4060a1c",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2250,7 +317,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-a847c6b6",
+            "id": "skill-c0e35492",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2263,7 +330,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "advanced-to-crew-trainer-role-with-professional-de-17013919",
+            "id": "advanced-to-crew-trainer-role-with-professional-de-2390e328",
             "type": "achievement",
             "primitive": "Leaf",
             "props": {
@@ -2275,7 +342,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-5da573f2",
+            "id": "skill-906a805d",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2288,7 +355,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-c0746c5d",
+            "id": "skill-75f41823",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2301,7 +368,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-fdbe68cc",
+            "id": "skill-8af0a3ed",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2314,7 +381,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-5969938d",
+            "id": "skill-43e5b610",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2327,7 +394,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "my-father-already-working-in-the-tech-field-prov-8749258e",
+            "id": "my-father-already-working-in-the-tech-field-prov-130f6ad7",
             "type": "note",
             "primitive": "Leaf",
             "props": {
@@ -2339,7 +406,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-a17d5f0c",
+            "id": "skill-6ac75d67",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2352,7 +419,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-07749e45",
+            "id": "skill-d7ed0de8",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2365,7 +432,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-ecbb1f51",
+            "id": "skill-9245b198",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2378,7 +445,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-4eae018b",
+            "id": "skill-4ab84bca",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2391,7 +458,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-24fef8a3",
+            "id": "skill-d81d54f9",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2404,7 +471,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-7dc855d8",
+            "id": "skill-b25bfd15",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2417,7 +484,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-22baf215",
+            "id": "skill-183161a8",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2430,7 +497,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-ea3e1e7f",
+            "id": "skill-0928b6c2",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2443,7 +510,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-6c32d7de",
+            "id": "skill-5a2f299c",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2456,7 +523,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "skill-75d0cd27",
+            "id": "skill-48010e63",
             "type": "skill",
             "primitive": "Meta",
             "props": {
@@ -2469,7 +536,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "learned-php-from-scratch-in-2-weeks-and-deployed-p-8006b3b3",
+            "id": "learned-php-from-scratch-in-2-weeks-and-deployed-p-11bdbcf8",
             "type": "achievement",
             "primitive": "Leaf",
             "props": {
@@ -2481,7 +548,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "working-without-frameworks-taught-me-to-appreciate-d69fde80",
+            "id": "working-without-frameworks-taught-me-to-appreciate-71007928",
             "type": "note",
             "primitive": "Leaf",
             "props": {
@@ -2507,7 +574,7 @@
             },
             "children": [
               {
-                "id": "skill-2089f156",
+                "id": "skill-4930fe6d",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2520,7 +587,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-b893740a",
+                "id": "skill-96825c9a",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2533,7 +600,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-3d7ae31e",
+                "id": "skill-28e15577",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2546,7 +613,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-c2a5ed51",
+                "id": "skill-680d9af0",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2559,7 +626,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-e56802aa",
+                "id": "skill-c097c4cd",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2572,7 +639,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "collaborator-fc8743a5",
+                "id": "collaborator-905acac6",
                 "type": "collaborator",
                 "primitive": "Link",
                 "props": {
@@ -2586,7 +653,7 @@
                     "id": "tom-materne",
                     "type": "person",
                     "primitive": "Leaf",
-                    "title": "Full-stack developer with expertise in web development, game development, and system design. Passionate about building tools that solve real problems and make developers' lives easier.",
+                    "title": "Software Engineer currently studying Computer Science at the University of Adelaide. Passionate about web development, game development, and building tools that solve real problems.Started programming at age 10 with Scratch and have been on an incredible journey of learning and building ever since. Currently working as a Software Developer while completing my degree.",
                     "exists": true
                   }
                 ]
@@ -2596,7 +663,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "looking-back-on-this-journey-i'm-amazed-at-how-ea-6bd4f970",
+            "id": "looking-back-on-this-journey-i'm-amazed-at-how-ea-97b479ff",
             "type": "note",
             "primitive": "Leaf",
             "props": {
@@ -2608,7 +675,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-f6aaf782",
+            "id": "tag-ae828de1",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -2620,7 +687,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-44267336",
+            "id": "tag-0dc1859e",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -2632,7 +699,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-2c9b028d",
+            "id": "tag-1c39b552",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -2644,7 +711,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-4e1f12b0",
+            "id": "tag-874002d4",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -2656,7 +723,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "time-spent-documenting-and-reflecting-on-this-incr-de9c19d1",
+            "id": "time-spent-documenting-and-reflecting-on-this-incr-017ca087",
             "type": "date",
             "primitive": "Meta",
             "props": {
@@ -2785,7 +852,7 @@
             },
             "children": [
               {
-                "id": "arrays-linked-lists-stacks-queues-trees-graph-605534d9",
+                "id": "arrays-linked-lists-stacks-queues-trees-graph-cb42b53f",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2798,7 +865,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "sorting-searching-graph-traversal-dynamic-progr-3cb4f595",
+                "id": "sorting-searching-graph-traversal-dynamic-progr-e5103f5c",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2811,7 +878,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "design-patterns-software-architecture-testing-me-ac361877",
+                "id": "design-patterns-software-architecture-testing-me-fe17ced2",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2854,7 +921,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-1e674b6e",
+                "id": "tag-12d270cd",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -2866,7 +933,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-ddb185ea",
+                "id": "tag-7a5c3f05",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -2878,7 +945,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-2636f45d",
+                "id": "tag-e1fa80c5",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -2906,7 +973,7 @@
             },
             "children": [
               {
-                "id": "modern-html5-features-semantic-markup-accessibil-fec17d62",
+                "id": "modern-html5-features-semantic-markup-accessibil-feca69ea",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2919,7 +986,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "css-grid-flexbox-animations-responsive-design-3c606c19",
+                "id": "css-grid-flexbox-animations-responsive-design-f0d79914",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2932,7 +999,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "modern-javascript-(es6+)-asynchronous-programming-38f85122",
+                "id": "modern-javascript-(es6+)-asynchronous-programming-d121d215",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2945,7 +1012,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "react-next.js-state-management-(redux-zustand)-b373b8a9",
+                "id": "react-next.js-state-management-(redux-zustand)-41e1bdf9",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -2958,7 +1025,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "node.js-express-api-design-database-integration-660087ab",
+                "id": "node.js-express-api-design-database-integration-75125555",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3001,7 +1068,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-4a04e9db",
+                "id": "tag-593f53c2",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3013,7 +1080,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-283d2abc",
+                "id": "tag-ec54be74",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3025,7 +1092,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-99e36595",
+                "id": "tag-83e2952c",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3037,7 +1104,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-b89c5121",
+                "id": "tag-371192dd",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3049,7 +1116,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-2f832b92",
+                "id": "tag-64f54392",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3076,7 +1143,7 @@
             },
             "children": [
               {
-                "id": "docker-containers-docker-compose-multi-stage-bui-3bdf5164",
+                "id": "docker-containers-docker-compose-multi-stage-bui-fb65b80e",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3089,7 +1156,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "experience-with-aws-google-cloud-and-cloudflare-74128a5f",
+                "id": "experience-with-aws-google-cloud-and-cloudflare-b470d096",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3102,7 +1169,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "github-actions-automated-testing-deployment-pipe-77994e19",
+                "id": "github-actions-automated-testing-deployment-pipe-b1536623",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3130,7 +1197,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-ff70f544",
+                "id": "tag-2088d5fb",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3142,7 +1209,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-d9638480",
+                "id": "tag-f3c2767b",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3154,7 +1221,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-619f0a56",
+                "id": "tag-5bdd080d",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3166,7 +1233,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-ba1b3d84",
+                "id": "tag-99729a92",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3194,7 +1261,7 @@
             },
             "children": [
               {
-                "id": "gamemaker-language-(gml)-game-design-patterns-sp-a460ca8f",
+                "id": "gamemaker-language-(gml)-game-design-patterns-sp-90b5068e",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3207,7 +1274,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "java-based-game-servers-network-synchronization-ea35ea69",
+                "id": "java-based-game-servers-network-synchronization-32037e82",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3220,7 +1287,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "player-psychology-game-balance-progression-syste-1624385d",
+                "id": "player-psychology-game-balance-progression-syste-f2cee70b",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3263,7 +1330,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-59345602",
+                "id": "tag-098313d0",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3275,7 +1342,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-bec7e6bc",
+                "id": "tag-1be28068",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3287,7 +1354,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-e5e5aa14",
+                "id": "tag-e4a819b1",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3299,7 +1366,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-a749934c",
+                "id": "tag-05af82b8",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3326,7 +1393,7 @@
             },
             "children": [
               {
-                "id": "postgresql-mysql-database-design-query-optimiza-c3e05aac",
+                "id": "postgresql-mysql-database-design-query-optimiza-b14431d2",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3339,7 +1406,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "drizzle-orm-prisma-and-various-query-builders-fo-72a59066",
+                "id": "drizzle-orm-prisma-and-various-query-builders-fo-a535326e",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3352,7 +1419,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "mongodb-redis-and-other-nosql-solutions-for-spec-3cf1b17a",
+                "id": "mongodb-redis-and-other-nosql-solutions-for-spec-da071cce",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3380,7 +1447,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-32ef0fd8",
+                "id": "tag-ff1f6fa6",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3392,7 +1459,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-e251a6d5",
+                "id": "tag-4590838c",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3404,7 +1471,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-7486c945",
+                "id": "tag-560778d4",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3416,7 +1483,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-e0a43095",
+                "id": "tag-20e9f3f5",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3444,7 +1511,7 @@
             },
             "children": [
               {
-                "id": "code-review-mentoring-junior-developers-architec-0dd73aea",
+                "id": "code-review-mentoring-junior-developers-architec-2e75efd3",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3457,7 +1524,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "writing-clear-documentation-giving-technical-pres-87f92580",
+                "id": "writing-clear-documentation-giving-technical-pres-3bda99dd",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3470,7 +1537,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "agile-methodologies-sprint-planning-stakeholder-42dbbdb5",
+                "id": "agile-methodologies-sprint-planning-stakeholder-98549b2b",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3483,7 +1550,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "systematic-approach-to-debugging-root-cause-analy-5ea8d3a2",
+                "id": "systematic-approach-to-debugging-root-cause-analy-868219ba",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -3526,7 +1593,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-83c3a844",
+                "id": "tag-a67316a1",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3538,7 +1605,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-9d9a70cb",
+                "id": "tag-e27c97b1",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3550,7 +1617,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-6c9d4d20",
+                "id": "tag-f7792048",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3562,7 +1629,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-6ab2c9dc",
+                "id": "tag-16d0cc84",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3615,7 +1682,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "regularly-revisiting-concepts-and-technologies-pre-c9e9daf2",
+                "id": "regularly-revisiting-concepts-and-technologies-pre-89d931f0",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -3627,7 +1694,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "participating-in-developer-communities-forums-an-5c27830a",
+                "id": "participating-in-developer-communities-forums-an-a0c241a1",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -3639,7 +1706,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "maintained-a-regular-learning-schedule-for-over-3-ee684f13",
+                "id": "maintained-a-regular-learning-schedule-for-over-3-21b4d04a",
                 "type": "achievement",
                 "primitive": "Leaf",
                 "props": {
@@ -3651,7 +1718,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-a1fe0a10",
+                "id": "tag-07af40cf",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3663,7 +1730,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-1e764901",
+                "id": "tag-394eff57",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3675,7 +1742,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-311d92e8",
+                "id": "tag-4efe3c61",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3785,7 +1852,7 @@
                 },
                 "children": [
                   {
-                    "id": "different-platforms-excel-at-different-types-of-le-d67fc4be",
+                    "id": "different-platforms-excel-at-different-types-of-le-896ec788",
                     "type": "note",
                     "primitive": "Leaf",
                     "props": {
@@ -3815,7 +1882,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-f44f2015",
+                "id": "tag-68f9633f",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3827,7 +1894,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-530e836b",
+                "id": "tag-9e31c9bb",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3839,7 +1906,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-80d6e732",
+                "id": "tag-f0e4595a",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3851,7 +1918,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-68c74cf0",
+                "id": "tag-9531410e",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -3946,7 +2013,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "focus-on-fundamentals-that-transfer-across-technol-626325ba",
+                "id": "focus-on-fundamentals-that-transfer-across-technol-01d202af",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -3962,7 +2029,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-32089126",
+            "id": "tag-320bdf4d",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -3974,7 +2041,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-1c341c1d",
+            "id": "tag-aeedeed8",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -3986,7 +2053,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-f36fd611",
+            "id": "tag-47c7bc80",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -3998,7 +2065,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-847739f4",
+            "id": "tag-19c4c155",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -4010,7 +2077,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-90fbe264",
+            "id": "tag-ba035daf",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -4022,7 +2089,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "time-spent-organizing-and-documenting-learning-res-48c78e44",
+            "id": "time-spent-organizing-and-documenting-learning-res-73c897bc",
             "type": "date",
             "primitive": "Meta",
             "props": {
@@ -4047,7 +2114,7 @@
         ]
       },
       {
-        "id": "understanding-data-structures-deeply-has-improved-4a39f011",
+        "id": "understanding-data-structures-deeply-has-improved-3401afa4",
         "type": "note",
         "primitive": "Leaf",
         "props": {
@@ -4059,7 +2126,7 @@
         "resolvedRefs": []
       },
       {
-        "id": "consistently-able-to-solve-complex-algorithmic-pro-28cb27bd",
+        "id": "consistently-able-to-solve-complex-algorithmic-pro-669cec68",
         "type": "achievement",
         "primitive": "Leaf",
         "props": {
@@ -4112,7 +2179,7 @@
         "resolvedRefs": []
       },
       {
-        "id": "successfully-convinced-multiple-teams-to-adopt-typ-64aedd14",
+        "id": "successfully-convinced-multiple-teams-to-adopt-typ-82d391af",
         "type": "achievement",
         "primitive": "Leaf",
         "props": {
@@ -4180,7 +2247,7 @@
         "resolvedRefs": []
       },
       {
-        "id": "successfully-implemented-automated-deployment-pipe-28bbae72",
+        "id": "successfully-implemented-automated-deployment-pipe-78068c91",
         "type": "achievement",
         "primitive": "Leaf",
         "props": {
@@ -4192,7 +2259,7 @@
         "resolvedRefs": []
       },
       {
-        "id": "published-games-that-achieved-over-50000-combined-bd827ea9",
+        "id": "published-games-that-achieved-over-50000-combined-44091994",
         "type": "achievement",
         "primitive": "Leaf",
         "props": {
@@ -4219,7 +2286,7 @@
         "resolvedRefs": []
       },
       {
-        "id": "game-design-principles-like-user-feedback-loops-p-6102209e",
+        "id": "game-design-principles-like-user-feedback-loops-p-73531a0d",
         "type": "note",
         "primitive": "Leaf",
         "props": {
@@ -4259,7 +2326,7 @@
         "resolvedRefs": []
       },
       {
-        "id": "mentored-multiple-junior-developers-who-successful-83062c05",
+        "id": "mentored-multiple-junior-developers-who-successful-27ed1b2c",
         "type": "achievement",
         "primitive": "Leaf",
         "props": {
@@ -4299,7 +2366,7 @@
         "resolvedRefs": []
       },
       {
-        "id": "the-best-debuggers-aren't-those-who-fix-problems-f-ddc34a69",
+        "id": "the-best-debuggers-aren't-those-who-fix-problems-f-5ae12e70",
         "type": "note",
         "primitive": "Leaf",
         "props": {
@@ -4409,7 +2476,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-tutorial-has-helped-numerous-developers-set-u-2ac913be",
+                "id": "this-tutorial-has-helped-numerous-developers-set-u-c26aa6b2",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -4421,7 +2488,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-f758c2eb",
+                "id": "skill-653b8073",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4434,7 +2501,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-cfe553fe",
+                "id": "skill-74f5750c",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4447,7 +2514,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-2a393440",
+                "id": "skill-13cd2cb8",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4460,7 +2527,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-67a17117",
+                "id": "skill-f7b3dd52",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4473,7 +2540,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-ee3ad7e7",
+                "id": "tag-4e27b943",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4485,7 +2552,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-dacd049c",
+                "id": "tag-b6d7b452",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4497,7 +2564,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-cec6602f",
+                "id": "tag-d481e23a",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4509,7 +2576,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-318fa960",
+                "id": "tag-a9f396c8",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4581,7 +2648,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-post-has-saved-many-developers-hours-of-debug-7d96b754",
+                "id": "this-post-has-saved-many-developers-hours-of-debug-906fcf0e",
                 "type": "achievement",
                 "primitive": "Leaf",
                 "props": {
@@ -4593,7 +2660,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-b89c0152",
+                "id": "skill-40ce48d5",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4606,7 +2673,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-8d044826",
+                "id": "skill-62802565",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4619,7 +2686,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-fa9e3e8a",
+                "id": "skill-49d3aa1d",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4632,7 +2699,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-383aaad9",
+                "id": "skill-eac9f995",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4645,7 +2712,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "sometimes-the-most-valuable-blog-posts-are-simple-ed03c2ac",
+                "id": "sometimes-the-most-valuable-blog-posts-are-simple-defea1ee",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -4657,7 +2724,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-c7810dd8",
+                "id": "tag-15f395ca",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4669,7 +2736,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-86890993",
+                "id": "tag-6eb5e6bf",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4681,7 +2748,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-a2057aa4",
+                "id": "tag-31a0ac66",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4693,7 +2760,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-62514e7f",
+                "id": "tag-02230afe",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4710,104 +2777,92 @@
           },
           {
             "id": "golang-api-stack",
-            "type": "project",
+            "type": "essay",
             "primitive": "Branch",
             "props": {
-              "type": "project",
+              "type": "essay",
               "id": "golang-api-stack",
-              "title": "Go API Stack Example",
-              "status": "completed",
-              "category": "development-template",
-              "githubUrl": "https://github.com/f0rbit/golang-stack-example"
+              "title": "Stack setup for a golang API with bun testing, postgres database, and S3 storage",
+              "publishedDate": "2023-12-20",
+              "category": "architecture",
+              "status": "published"
             },
             "children": [
               {
-                "id": "go-ecosystem-study",
+                "id": "go-ecosystem-analysis",
                 "type": "research",
                 "primitive": "Branch",
                 "props": {
                   "type": "investigation",
-                  "id": "go-ecosystem-study",
+                  "id": "go-ecosystem-analysis",
                   "status": "completed"
                 },
                 "children": [],
-                "content": "Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and deployment strategies to identify best practices and optimal tool combinations.",
+                "content": "Comprehensive analysis of the Go ecosystem for web APIs, comparing frameworks, ORMs, testing tools, and deployment strategies to identify optimal combinations.",
                 "resolvedRefs": []
               },
               {
-                "id": "docker-containerization",
+                "id": "stack-justification",
                 "type": "task",
                 "primitive": "Leaf",
                 "props": {
                   "type": "task",
-                  "id": "docker-containerization",
-                  "title": "Docker Development Environment",
+                  "id": "stack-justification",
+                  "title": "Technology Choice Justification",
                   "priority": "high",
                   "status": "completed"
                 },
                 "children": [],
-                "content": "Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)",
+                "content": "Documented the reasoning behind each technology choice, including alternatives considered and trade-offs evaluated",
                 "resolvedRefs": []
               },
               {
-                "id": "database-integration",
+                "id": "testing-strategy",
                 "type": "task",
                 "primitive": "Leaf",
                 "props": {
                   "type": "task",
-                  "id": "database-integration",
-                  "title": "Drizzle ORM Integration",
+                  "id": "testing-strategy",
+                  "title": "End-to-End Testing Strategy",
                   "priority": "high",
                   "status": "completed"
                 },
                 "children": [],
-                "content": "Integrated Drizzle ORM for type-safe database operations with migrations and schema management",
+                "content": "Developed comprehensive testing approach using Bun for fast test execution and reliable CI/CD integration",
                 "resolvedRefs": []
               },
               {
-                "id": "testing-framework",
+                "id": "production-readiness",
                 "type": "task",
                 "primitive": "Leaf",
                 "props": {
                   "type": "task",
-                  "id": "testing-framework",
-                  "title": "Testing Setup with Bun",
-                  "priority": "medium",
-                  "status": "completed"
-                },
-                "children": [],
-                "content": "Configured end-to-end testing pipeline using Bun for fast, reliable test execution",
-                "resolvedRefs": []
-              },
-              {
-                "id": "deployment-guide",
-                "type": "task",
-                "primitive": "Leaf",
-                "props": {
-                  "type": "task",
-                  "id": "deployment-guide",
+                  "id": "production-readiness",
                   "title": "Production Deployment Guide",
                   "priority": "medium",
                   "status": "completed"
                 },
                 "children": [],
-                "content": "Created comprehensive documentation for deploying the stack to production environments",
+                "content": "Created guidance for taking the development stack to production, including security considerations and performance optimizations",
                 "resolvedRefs": []
               },
               {
-                "id": "the-repository-has-helped-several-developers-boots-6079f1d2",
-                "type": "achievement",
-                "primitive": "Leaf",
+                "id": "example-repository",
+                "type": "project",
+                "primitive": "Branch",
                 "props": {
-                  "type": "achievement",
-                  "title": "Community Resource"
+                  "type": "project",
+                  "id": "example-repository",
+                  "title": "Complete Example Repository",
+                  "status": "completed",
+                  "category": "code-example"
                 },
                 "children": [],
-                "content": "The repository has helped several developers bootstrap their Go API projects and serves as a reference for modern Go development practices.",
+                "content": "Full working example with Docker setup, comprehensive tests, and deployment scripts that developers can use as a starting point for their own projects.",
                 "resolvedRefs": []
               },
               {
-                "id": "skill-588aaf33",
+                "id": "skill-f3a0a1a0",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -4820,12 +2875,12 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-df4268ec",
+                "id": "skill-5cb4dce0",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
                   "metaType": "skill",
-                  "name": "Docker",
+                  "name": "System Architecture",
                   "level": "intermediate"
                 },
                 "children": [],
@@ -4833,38 +2888,12 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-e6195840",
+                "id": "skill-90e527c8",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
                   "metaType": "skill",
-                  "name": "PostgreSQL",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-ea8597d0",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Infrastructure as Code",
-                  "level": "intermediate"
-                },
-                "children": [],
-                "content": "",
-                "resolvedRefs": []
-              },
-              {
-                "id": "skill-955e9eae",
-                "type": "skill",
-                "primitive": "Meta",
-                "props": {
-                  "metaType": "skill",
-                  "name": "Technical Writing",
+                  "name": "Testing Strategy",
                   "level": "advanced"
                 },
                 "children": [],
@@ -4872,19 +2901,32 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-project-demonstrates-current-best-practices-i-7ffcb6d8",
+                "id": "skill-ac225273",
+                "type": "skill",
+                "primitive": "Meta",
+                "props": {
+                  "metaType": "skill",
+                  "name": "Technical Documentation",
+                  "level": "advanced"
+                },
+                "children": [],
+                "content": "",
+                "resolvedRefs": []
+              },
+              {
+                "id": "providing-complete-working-examples-is-often-more-c013a812",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
                   "type": "note",
-                  "title": "Modern Development Practices"
+                  "title": "Teaching Through Example"
                 },
                 "children": [],
-                "content": "This project demonstrates current best practices in API development, including containerization, type safety, comprehensive testing, and clear documentation.",
+                "content": "Providing complete, working examples is often more valuable than theoretical explanations. Developers can learn by running, modifying, and extending real code.",
                 "resolvedRefs": []
               },
               {
-                "id": "tag-21a3ad26",
+                "id": "tag-9b318d5a",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4896,7 +2938,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-241df8ff",
+                "id": "tag-dfe1cc6c",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -4908,31 +2950,31 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-b837db81",
+                "id": "tag-d0daae59",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
                   "metaType": "tag",
-                  "value": "developer-resources"
+                  "value": "testing"
                 },
                 "children": [],
-                "content": "developer-resources",
+                "content": "testing",
                 "resolvedRefs": []
               },
               {
-                "id": "tag-e7fc7712",
+                "id": "tag-e4ac2334",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
                   "metaType": "tag",
-                  "value": "best-practices"
+                  "value": "architecture"
                 },
                 "children": [],
-                "content": "best-practices",
+                "content": "architecture",
                 "resolvedRefs": []
               }
             ],
-            "content": "Stack setup for a golang API with bun testing, postgres database, and S3 storage for local & production environments. This project serves as a template and learning resource for other developers looking to set up similar infrastructure.Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and deployment strategies to identify best practices and optimal tool combinations.Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)Integrated Drizzle ORM for type-safe database operations with migrations and schema managementConfigured end-to-end testing pipeline using Bun for fast, reliable test executionCreated comprehensive documentation for deploying the stack to production environmentsThe repository has helped several developers bootstrap their Go API projects and serves as a reference for modern Go development practices.This project demonstrates current best practices in API development, including containerization, type safety, comprehensive testing, and clear documentation.",
+            "content": "I've made an example stack for easy setup using golang, drizzle, minio, and bun for end-to-end testing. I walkthrough some of the decisions I made and the reasoning behind them in this post.This comprehensive guide goes beyond just showing how to set up the stack - it explains the architectural decisions, trade-offs, and reasoning behind each technology choice.Comprehensive analysis of the Go ecosystem for web APIs, comparing frameworks, ORMs, testing tools, and deployment strategies to identify optimal combinations.Documented the reasoning behind each technology choice, including alternatives considered and trade-offs evaluatedDeveloped comprehensive testing approach using Bun for fast test execution and reliable CI/CD integrationCreated guidance for taking the development stack to production, including security considerations and performance optimizationsFull working example with Docker setup, comprehensive tests, and deployment scripts that developers can use as a starting point for their own projects.Providing complete, working examples is often more valuable than theoretical explanations. Developers can learn by running, modifying, and extending real code.",
             "resolvedRefs": []
           },
           {
@@ -5008,7 +3050,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-solution-has-been-widely-shared-in-developer-be55f628",
+                "id": "this-solution-has-been-widely-shared-in-developer-170e5e10",
                 "type": "achievement",
                 "primitive": "Leaf",
                 "props": {
@@ -5020,7 +3062,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-8565e92b",
+                "id": "skill-7ab32ca2",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5033,7 +3075,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-556b1ad0",
+                "id": "skill-2d5a5e73",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5046,7 +3088,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-3e1954b3",
+                "id": "skill-2117e5e0",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5059,7 +3101,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-1be4aa39",
+                "id": "skill-10e19b10",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5072,7 +3114,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "while-it's-tempting-to-ignore-safari-given-its-sma-9572c375",
+                "id": "while-it's-tempting-to-ignore-safari-given-its-sma-11369d1e",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -5084,7 +3126,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-6cfafcba",
+                "id": "tag-8a7aa037",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5096,7 +3138,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-b317de69",
+                "id": "tag-35aa7e3b",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5108,7 +3150,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-926d9a64",
+                "id": "tag-91cbbff8",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5120,7 +3162,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-5bca27bc",
+                "id": "tag-b98cd112",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5228,7 +3270,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "this-post-gained-significant-traction-in-the-devel-6afa5e97",
+                "id": "this-post-gained-significant-traction-in-the-devel-6619c9ae",
                 "type": "achievement",
                 "primitive": "Leaf",
                 "props": {
@@ -5240,7 +3282,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-ba744d04",
+                "id": "skill-2aa91077",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5253,7 +3295,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-a6a86e8f",
+                "id": "skill-17eca969",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5266,7 +3308,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-90fdd7e4",
+                "id": "skill-5834c7bc",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5279,7 +3321,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "some-of-the-most-valuable-content-comes-from-hones-6a56737e",
+                "id": "some-of-the-most-valuable-content-comes-from-hones-43acf096",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -5291,7 +3333,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-ec5f0445",
+                "id": "tag-d6c571d5",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5303,7 +3345,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-a6b33c52",
+                "id": "tag-a6259b99",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5315,7 +3357,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-31968b1a",
+                "id": "tag-c62829b5",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5327,7 +3369,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-d0fdbab1",
+                "id": "tag-bcc3b89e",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5397,7 +3439,7 @@
                     "resolvedRefs": []
                   },
                   {
-                    "id": "regular-development-updates-help-maintain-accounta-dbd93e4c",
+                    "id": "regular-development-updates-help-maintain-accounta-19bab3f6",
                     "type": "note",
                     "primitive": "Leaf",
                     "props": {
@@ -5453,7 +3495,7 @@
                     "resolvedRefs": []
                   },
                   {
-                    "id": "sometimes-taking-a-break-from-a-project-provides-v-c0a1f64f",
+                    "id": "sometimes-taking-a-break-from-a-project-provides-v-5043ed02",
                     "type": "note",
                     "primitive": "Leaf",
                     "props": {
@@ -5509,7 +3551,7 @@
                     "resolvedRefs": []
                   },
                   {
-                    "id": "sometimes-the-simplest-solution-is-the-best-soluti-b5f441d7",
+                    "id": "sometimes-the-simplest-solution-is-the-best-soluti-fb386fb6",
                     "type": "note",
                     "primitive": "Leaf",
                     "props": {
@@ -5525,7 +3567,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-10197c6b",
+                "id": "tag-0785b372",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5537,7 +3579,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-9237b1f0",
+                "id": "tag-cd06afd2",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5549,7 +3591,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-1c373193",
+                "id": "tag-49106f25",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5561,7 +3603,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-397d39e5",
+                "id": "tag-b823bdfe",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5629,7 +3671,7 @@
                     "resolvedRefs": []
                   },
                   {
-                    "id": "building-without-frameworks-forces-you-to-understa-848d6f60",
+                    "id": "building-without-frameworks-forces-you-to-understa-9f83da34",
                     "type": "note",
                     "primitive": "Leaf",
                     "props": {
@@ -5685,7 +3727,7 @@
                     "resolvedRefs": []
                   },
                   {
-                    "id": "the-migration-caught-several-potential-bugs-and-ma-3c6bade4",
+                    "id": "the-migration-caught-several-potential-bugs-and-ma-c9792933",
                     "type": "achievement",
                     "primitive": "Leaf",
                     "props": {
@@ -5697,7 +3739,7 @@
                     "resolvedRefs": []
                   },
                   {
-                    "id": "the-transition-to-typescript-was-smoother-than-exp-1ae72434",
+                    "id": "the-transition-to-typescript-was-smoother-than-exp-e39f3e4f",
                     "type": "note",
                     "primitive": "Leaf",
                     "props": {
@@ -5713,7 +3755,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-cc3b86e1",
+                "id": "tag-c9a91753",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5725,7 +3767,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-51d56693",
+                "id": "tag-e4539a85",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5737,7 +3779,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-b308c855",
+                "id": "tag-4f671ae0",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5749,7 +3791,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-9351a780",
+                "id": "tag-e17b3bb2",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5805,7 +3847,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "learning-to-say-\"no\"-to-features-and-focus-on-the-261a19ba",
+                "id": "learning-to-say-\"no\"-to-features-and-focus-on-the-a36f48dc",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -5817,7 +3859,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-670a35ef",
+                "id": "tag-6e39ea14",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5829,7 +3871,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-a8b5755c",
+                "id": "tag-974eb539",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5841,7 +3883,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "tag-7e4cb3a6",
+                "id": "tag-a99c0fcd",
                 "type": "tag",
                 "primitive": "Meta",
                 "props": {
@@ -5880,7 +3922,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "good-documentation-should-be-treated-with-the-same-1fcc5d51",
+                "id": "good-documentation-should-be-treated-with-the-same-912c2e4a",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -5892,7 +3934,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "the-most-satisfying-blog-posts-are-those-that-solv-53fec6d8",
+                "id": "the-most-satisfying-blog-posts-are-those-that-solv-d953bd84",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -5904,7 +3946,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-cd34d80c",
+                "id": "skill-552dd0b8",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5917,7 +3959,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-721c1c73",
+                "id": "skill-e4d61ad1",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5930,7 +3972,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-c80a4a34",
+                "id": "skill-9d865192",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -5943,7 +3985,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "skill-34f2ff90",
+                "id": "skill-d2c97d35",
                 "type": "skill",
                 "primitive": "Meta",
                 "props": {
@@ -6016,7 +4058,7 @@
                 "resolvedRefs": []
               },
               {
-                "id": "future-content-will-continue-to-focus-on-practical-bd22e10d",
+                "id": "future-content-will-continue-to-focus-on-practical-1fee7579",
                 "type": "note",
                 "primitive": "Leaf",
                 "props": {
@@ -6032,7 +4074,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-a7ad32d5",
+            "id": "tag-5a085ab2",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -6044,7 +4086,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-c30d84b6",
+            "id": "tag-662b7a5f",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -6056,7 +4098,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-784852fc",
+            "id": "tag-d5d70917",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -6068,7 +4110,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-20f7d6ab",
+            "id": "tag-f3828a2d",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -6080,7 +4122,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "tag-0412a965",
+            "id": "tag-5351aaaa",
             "type": "tag",
             "primitive": "Meta",
             "props": {
@@ -6092,7 +4134,7 @@
             "resolvedRefs": []
           },
           {
-            "id": "time-spent-organizing-and-documenting-blog-content-e0bcfd19",
+            "id": "time-spent-organizing-and-documenting-blog-content-cd45aa29",
             "type": "date",
             "primitive": "Meta",
             "props": {
@@ -6267,7 +4309,7 @@
     "resolvedRefs": []
   },
   "meta": {
-    "totalNodes": 556,
+    "totalNodes": 465,
     "unresolvedRefs": [],
     "warnings": []
   }

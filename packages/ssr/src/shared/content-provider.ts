@@ -1,10 +1,58 @@
 import { readFile, stat } from 'fs/promises';
 import { join, relative, parse, sep } from 'path';
-import * as glob from 'fast-glob';
-import * as matter from 'gray-matter';
+import { glob } from 'fast-glob';
+const matter = require('gray-matter');
 // File watcher removed for now to avoid bundling issues
 import { markdown } from '@mycelia/parser';
 import type { MyceliaConfig, ParsedContent, ContentCacheEntry, ContentProvider } from '../types';
+
+/**
+ * Convert a string to a URL-friendly slug
+ */
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+/**
+ * Transform a node ID to a hierarchical URL path
+ */
+function nodeIdToPath(nodeId: string, node?: any): string {
+  if (!node) return nodeId;
+  
+  const type = node.type;
+  if (!type) return nodeId;
+
+  // Extract clean ID (remove type prefix if present)
+  let cleanId = nodeId;
+  if (nodeId.startsWith(`${type}-`)) {
+    cleanId = nodeId.substring(type.length + 1);
+  }
+
+  // For tags/skills, try to use the value/name for better URLs
+  if (type === 'tag' && node.attributes?.value) {
+    cleanId = slugify(String(node.attributes.value));
+  } else if (type === 'skill' && node.attributes?.name) {
+    cleanId = slugify(String(node.attributes.name));
+  } else if (type === 'project' && node.attributes?.title) {
+    cleanId = slugify(String(node.attributes.title));
+  }
+
+  return `/${type}/${cleanId}`;
+}
+
+/**
+ * Extract hierarchical path components from a URL path
+ */
+function parseHierarchicalPath(path: string): { type: string; id: string } | null {
+  const segments = path.replace(/^\/+/, '').split('/');
+  if (segments.length === 2 && segments[0] && segments[1]) {
+    return { type: segments[0], id: segments[1] };
+  }
+  return null;
+}
 
 /**
  * Shared content provider that handles MDX file discovery, parsing, and caching
@@ -148,6 +196,349 @@ export class MyceliaContentProvider implements ContentProvider {
   async getAllSlugs(): Promise<string[]> {
     const content = await this.getAllContent();
     return content.map(c => c.slug);
+  }
+
+  /**
+   * Get all graph nodes for page generation
+   */
+  async getAllGraphNodes(): Promise<string[]> {
+    const content = await this.getAllContent();
+    const allNodeIds = new Set<string>();
+    
+    // Collect all node IDs from all content graphs
+    content.forEach(item => {
+      Object.keys(item.graph.nodes).forEach(nodeId => {
+        allNodeIds.add(nodeId);
+      });
+    });
+    
+    return Array.from(allNodeIds).sort();
+  }
+
+  /**
+   * Get all hierarchical routes for static generation
+   * Returns both individual node routes and type index routes
+   */
+  async getAllHierarchicalRoutes(): Promise<string[]> {
+    const nodesByType = await this.getNodesByType();
+    const routes: string[] = [];
+
+    // Add type index routes (e.g., /project, /tag, /skill)
+    for (const type of Object.keys(nodesByType)) {
+      routes.push(`/${type}`);
+    }
+
+    // Add individual node routes (e.g., /project/devpad, /tag/civic-tech)
+    for (const [type, nodes] of Object.entries(nodesByType)) {
+      for (const node of nodes) {
+        if (node.hierarchicalPath) {
+          routes.push(node.hierarchicalPath);
+        }
+      }
+    }
+
+    return routes.sort();
+  }
+
+  /**
+   * Get breadcrumb trail for a node by walking up containment edges
+   */
+  async getBreadcrumbs(nodeId: string): Promise<Array<{ id: string; title: string; path: string }>> {
+    const allContent = await this.getAllContent();
+    const breadcrumbs: Array<{ id: string; title: string; path: string }> = [];
+    
+    // Find all containment edges that point to this node
+    const findParents = (currentNodeId: string, visited = new Set<string>()): string[] => {
+      if (visited.has(currentNodeId)) return []; // Prevent cycles
+      visited.add(currentNodeId);
+      
+      const parents: string[] = [];
+      
+      for (const content of allContent) {
+        for (const edge of content.graph.edges) {
+          if (edge.to === currentNodeId && edge.type === 'contains') {
+            parents.push(edge.from);
+            // Recursively find parents of parents
+            parents.push(...findParents(edge.from, visited));
+          }
+        }
+      }
+      
+      return parents;
+    };
+
+    // Get all parent nodes
+    const parentIds = findParents(nodeId);
+    const allNodeIds = [nodeId, ...parentIds];
+    
+    // Get node details and build breadcrumb trail
+    const nodeDetails: Record<string, { title: string; path: string; type: string }> = {};
+    
+    for (const content of allContent) {
+      for (const currentNodeId of allNodeIds) {
+        if (content.graph.nodes[currentNodeId]) {
+          const node = content.graph.nodes[currentNodeId];
+          const title = node.attributes?.title || node.attributes?.name || currentNodeId;
+          const path = nodeIdToPath(currentNodeId, node);
+          
+          nodeDetails[currentNodeId] = {
+            title: String(title),
+            path,
+            type: node.type || 'unknown'
+          };
+        }
+      }
+    }
+
+    // Build breadcrumb trail (from root to current)
+    const visited = new Set<string>();
+    const buildTrail = (currentId: string): void => {
+      if (visited.has(currentId) || !nodeDetails[currentId]) return;
+      visited.add(currentId);
+      
+      // Find immediate parent
+      let immediateParent: string | null = null;
+      for (const content of allContent) {
+        if (content.graph.edges) {
+          for (const edge of content.graph.edges) {
+            if (edge.to === currentId && edge.type === 'contains') {
+              immediateParent = edge.from;
+              break;
+            }
+          }
+        }
+        if (immediateParent) break;
+      }
+      
+      // Recursively build parent trail first
+      if (immediateParent && nodeDetails[immediateParent]) {
+        buildTrail(immediateParent);
+      }
+      
+      // Add current node to breadcrumbs
+      breadcrumbs.push({
+        id: currentId,
+        title: nodeDetails[currentId].title,
+        path: nodeDetails[currentId].path
+      });
+    };
+
+    buildTrail(nodeId);
+
+    // Add home breadcrumb if we're not already there
+    if (breadcrumbs.length > 0 && breadcrumbs[0] && breadcrumbs[0].path !== '/') {
+      breadcrumbs.unshift({
+        id: 'home',
+        title: 'Home',
+        path: '/'
+      });
+    }
+
+    return breadcrumbs;
+  }
+
+  /**
+   * Find all nodes that reference this node (backlinks)
+   */
+  async getBacklinks(nodeId: string): Promise<Array<{ id: string; title: string; path: string; type: string; relation: string }>> {
+    const allContent = await this.getAllContent();
+    const backlinks: Array<{ id: string; title: string; path: string; type: string; relation: string }> = [];
+    
+    // Look for edges that point TO this node
+    for (const content of allContent) {
+      if (content.graph.edges) {
+        for (const edge of content.graph.edges) {
+          if (edge.to === nodeId && edge.from !== nodeId) { // Avoid self-references
+            // Find the source node details
+            let sourceNode = null;
+            for (const contentItem of allContent) {
+              if (contentItem.graph.nodes[edge.from]) {
+                sourceNode = contentItem.graph.nodes[edge.from];
+                break;
+              }
+            }
+            
+            if (sourceNode) {
+              const title = sourceNode.attributes?.title || sourceNode.attributes?.name || edge.from;
+              const path = nodeIdToPath(edge.from, sourceNode);
+              
+              backlinks.push({
+                id: edge.from,
+                title: String(title),
+                path,
+                type: sourceNode.type || 'unknown',
+                relation: edge.type || 'references'
+              });
+            }
+          }
+        }
+      }
+    }
+
+    // Remove duplicates and sort by type then title
+    const uniqueBacklinks = backlinks.filter((link, index, array) => 
+      array.findIndex(l => l.id === link.id) === index
+    );
+
+    return uniqueBacklinks.sort((a, b) => {
+      if (a.type !== b.type) {
+        return a.type.localeCompare(b.type);
+      }
+      return a.title.localeCompare(b.title);
+    });
+  }
+
+  /**
+   * Get content by node ID (creates virtual content for individual graph nodes)
+   * Supports both hierarchical paths (e.g., /project/devpad) and direct node IDs
+   */
+  async getContentByNodeId(nodeId: string): Promise<ParsedContent | null> {
+    try {
+      const allContent = await this.getAllContent();
+      
+      // Try to parse as hierarchical path first
+      const hierarchical = parseHierarchicalPath(nodeId);
+      let actualNodeId = nodeId;
+      
+      if (hierarchical) {
+        // Find node by type and clean ID
+        const foundNodeId = await this.findNodeIdByTypeAndCleanId(hierarchical.type, hierarchical.id, allContent);
+        if (!foundNodeId) {
+          return null;
+        }
+        actualNodeId = foundNodeId;
+      }
+      
+      // Find the content that contains this node
+      let sourceContent: ParsedContent | null = null;
+      let targetNode: any = null;
+      
+      for (const content of allContent) {
+        if (content.graph.nodes[actualNodeId]) {
+          sourceContent = content;
+          targetNode = content.graph.nodes[actualNodeId];
+          break;
+        }
+      }
+      
+      if (!sourceContent || !targetNode) {
+        return null;
+      }
+
+      // Use hierarchical path as slug if available, otherwise use node ID
+      const slug = hierarchical ? nodeId : nodeIdToPath(actualNodeId, targetNode);
+
+      // Create virtual content for this node
+      const nodeContent: ParsedContent = {
+        filePath: sourceContent.filePath,
+        slug,
+        frontmatter: {
+          title: targetNode.attributes?.title || targetNode.attributes?.name || actualNodeId,
+          type: targetNode.type,
+          ...targetNode.attributes
+        },
+        content: targetNode.value || targetNode.content || '',
+        graph: sourceContent.graph,
+        renderTree: {
+          root: {
+            id: actualNodeId,
+            type: targetNode.type,
+            primitive: targetNode.primitive,
+            props: targetNode.attributes || {},
+            children: [],
+            content: targetNode.value || targetNode.content || 'No content available.',
+            resolvedRefs: []
+          },
+          meta: {
+            totalNodes: 1,
+            unresolvedRefs: [],
+            warnings: []
+          }
+        },
+        mtime: sourceContent.mtime
+      };
+      
+      return nodeContent;
+    } catch (error) {
+      console.error('Error in getContentByNodeId:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Find a node ID by type and clean ID (used for hierarchical URL resolution)
+   */
+  private async findNodeIdByTypeAndCleanId(type: string, cleanId: string, allContent?: ParsedContent[]): Promise<string | null> {
+    if (!allContent) {
+      allContent = await this.getAllContent();
+    }
+
+    for (const content of allContent) {
+      for (const [nodeId, node] of Object.entries(content.graph.nodes)) {
+        if (node.type !== type) continue;
+
+        // Try exact match first
+        if (nodeId === cleanId || nodeId === `${type}-${cleanId}`) {
+          return nodeId;
+        }
+
+        // Try matching by slugified attributes
+        if (type === 'tag' && node.attributes?.value) {
+          if (slugify(String(node.attributes.value)) === cleanId) {
+            return nodeId;
+          }
+        } else if (type === 'skill' && node.attributes?.name) {
+          if (slugify(String(node.attributes.name)) === cleanId) {
+            return nodeId;
+          }
+        } else if (type === 'project' && node.attributes?.title) {
+          if (slugify(String(node.attributes.title)) === cleanId) {
+            return nodeId;
+          }
+        }
+      }
+    }
+
+    return null;
+  }
+
+  /**
+   * Get all nodes grouped by type
+   */
+  async getNodesByType(): Promise<Record<string, any[]>> {
+    const allContent = await this.getAllContent();
+    const nodesByType: Record<string, any[]> = {};
+
+    for (const content of allContent) {
+      for (const [nodeId, node] of Object.entries(content.graph.nodes)) {
+        if (!node.type) continue;
+
+        if (!nodesByType[node.type]) {
+          nodesByType[node.type] = [];
+        }
+
+        const nodeArray = nodesByType[node.type];
+        if (nodeArray) {
+          nodeArray.push({
+            ...node,
+            hierarchicalPath: nodeIdToPath(nodeId, node)
+          });
+        }
+      }
+    }
+
+    // Sort nodes within each type
+    for (const type in nodesByType) {
+      if (nodesByType[type]) {
+        nodesByType[type].sort((a, b) => {
+          const titleA = a.attributes?.title || a.attributes?.name || a.id;
+          const titleB = b.attributes?.title || b.attributes?.name || b.id;
+          return String(titleA).localeCompare(String(titleB));
+        });
+      }
+    }
+
+    return nodesByType;
   }
 
   /**

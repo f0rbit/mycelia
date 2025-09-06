@@ -39,28 +39,47 @@ export function getMyceliaProvider(): MyceliaContentProvider {
 
 /**
  * Generate static params for Next.js static generation
+ * Includes both file-based content and hierarchical node routes
  * Excludes 'index' since it's handled by the dedicated home page
  */
 export async function generateMyceliaStaticParams(): Promise<NextJS.StaticParams[]> {
   const provider = getMyceliaProvider();
-  const slugs = await provider.getAllSlugs();
   
-  // Filter out 'index' since it's handled by the home page
-  const filteredSlugs = slugs.filter(slug => slug !== 'index');
+  // Get both file-based slugs and hierarchical routes
+  const [fileSlugs, hierarchicalRoutes] = await Promise.all([
+    provider.getAllSlugs(),
+    provider.getAllHierarchicalRoutes()
+  ]);
   
-  return filteredSlugs.map(slug => ({
-    slug: slug.split('/'),
+  // Combine all routes, but filter out 'index' since it's handled by the home page
+  const allRoutes = [...fileSlugs, ...hierarchicalRoutes].filter(route => route !== 'index');
+  
+  return allRoutes.map(route => ({
+    slug: route.replace(/^\/+/, '').split('/'),
   }));
 }
 
 /**
  * Get content by slug for Next.js page rendering
+ * Handles both file-based content and individual graph nodes
  */
 export async function getMyceliaContent(slug?: string[]) {
   const provider = getMyceliaProvider();
-  const slugStr = slug?.join('/') || 'index';
+  const routeStr = slug?.join('/') || 'index';
   
-  return await provider.getContentBySlug(slugStr);
+  try {
+    // First try to get file-based content
+    const fileContent = await provider.getContentBySlug(routeStr);
+    if (fileContent) {
+      return fileContent;
+    }
+    
+    // If not found, try to get node-based content
+    return await provider.getContentByNodeId(routeStr);
+  } catch (error) {
+    console.error('Error in getMyceliaContent for route:', routeStr, error);
+    return null;
+  }
 }
 
 /**
