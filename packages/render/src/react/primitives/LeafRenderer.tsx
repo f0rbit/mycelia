@@ -14,20 +14,26 @@ export function LeafRenderer({ node, className = '', style }: BaseRenderProps) {
     }
   };
 
+  // Clean styling - no backgrounds, just border and clean colors
   const baseStyles: React.CSSProperties = {
     display: 'inline-flex',
     alignItems: 'center',
     gap: theme.spacing.sm,
-    padding: `${theme.spacing.sm} ${theme.spacing.md}`,
-    backgroundColor: theme.colors.surface,
-    border: `1px solid ${theme.colors.border}`,
-    borderRadius: theme.borderRadius.md,
+    padding: `4px 12px`,
+    border: '1px solid #cbd5e1', // slate-300
+    borderRadius: '6px',
     fontSize: theme.typography.fontSize.sm,
     fontFamily: theme.typography.fontFamily,
-    color: theme.colors.text,
+    color: '#1e40af', // blue-700
     cursor: onNodeClick ? 'pointer' : 'default',
     transition: 'all 0.2s ease',
+    backgroundColor: 'transparent',
     ...style,
+  };
+
+  const hoverStyles: React.CSSProperties = {
+    backgroundColor: '#f8fafc', // slate-50
+    borderColor: '#94a3b8', // slate-400
   };
 
   // Get display content
@@ -37,47 +43,54 @@ export function LeafRenderer({ node, className = '', style }: BaseRenderProps) {
                         node.props.value || 
                         node.id;
 
-  // Determine icon based on node type
-  const getNodeIcon = () => {
-    switch (node.type) {
-      case 'person': return '👤';
-      case 'collaborator': return '🤝';
-      case 'song': return '🎵';
-      case 'track': return '🎶';
-      case 'task': return '✅';
-      case 'note': return '📝';
-      case 'book': return '📖';
-      case 'film': return '🎬';
-      case 'skill': return '🔧';
-      case 'tag': return '🏷️';
-      default: return '•';
-    }
-  };
-
   return (
     <span
       className={`mycelia-leaf mycelia-leaf--${node.type} ${className}`}
       style={baseStyles}
       onClick={handleClick}
       title={`${node.type}: ${displayContent}`}
+      onMouseEnter={(e) => {
+        Object.assign(e.currentTarget.style, hoverStyles);
+      }}
+      onMouseLeave={(e) => {
+        Object.assign(e.currentTarget.style, baseStyles);
+      }}
     >
-      <span className="mycelia-leaf__icon">{getNodeIcon()}</span>
-      <span className="mycelia-leaf__content">{displayContent}</span>
+      <span className="mycelia-leaf__content" style={{ fontWeight: '500' }}>
+        {displayContent}
+      </span>
       {node.props.status && (
+        <CleanStatusBadge status={node.props.status} />
+      )}
+      {node.props.level && (
         <span 
-          className="mycelia-leaf__status"
           style={{
             fontSize: theme.typography.fontSize.xs,
-            color: theme.colors.textSecondary,
-            backgroundColor: theme.colors.accent,
-            padding: `2px ${theme.spacing.xs}`,
-            borderRadius: theme.borderRadius.sm,
+            color: '#64748b', // slate-500
             marginLeft: theme.spacing.xs,
           }}
         >
-          {node.props.status}
+          ({node.props.level})
         </span>
       )}
+    </span>
+  );
+}
+
+/**
+ * Clean status badge for leaf nodes
+ */
+function CleanStatusBadge({ status }: { status: string }) {
+  return (
+    <span style={{
+      fontSize: '0.625rem',
+      padding: '2px 6px',
+      backgroundColor: '#1d4ed8',
+      color: 'white',
+      borderRadius: '9999px',
+      marginLeft: '4px',
+    }}>
+      {status}
     </span>
   );
 }

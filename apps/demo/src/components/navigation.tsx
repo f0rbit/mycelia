@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import { getNodeTypes } from '@/lib/content'
 
-export function Navigation() {
+export async function Navigation() {
+  const nodeTypes = await getNodeTypes()
+  const totalNodes = nodeTypes.reduce((sum, { count }) => sum + count, 0)
+
   return (
     <nav className="border-b border-gray-200 bg-white">
       <div className="max-w-6xl mx-auto px-6 flex h-16 items-center justify-between">
@@ -26,7 +30,7 @@ export function Navigation() {
         </div>
 
         <div className="text-xs text-gray-500 font-mono">
-          317 nodes • 11 types
+          {totalNodes} nodes • {nodeTypes.length} types
         </div>
       </div>
     </nav>

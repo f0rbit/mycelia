@@ -14,14 +14,12 @@ export function BranchRenderer({ node, children, className = '', style }: Contai
     }
   };
 
+  // Clean container styling - no backgrounds, cards, or shadows
   const containerStyles: React.CSSProperties = {
     display: 'block',
-    margin: `${theme.spacing.md} 0`,
-    padding: theme.spacing.md,
-    backgroundColor: theme.colors.background,
-    border: `1px solid ${theme.colors.border}`,
-    borderRadius: theme.borderRadius.md,
-    boxShadow: theme.shadows.sm,
+    margin: `${theme.spacing.lg} 0`,
+    paddingLeft: theme.spacing.lg,
+    borderLeft: `4px solid #dbeafe`, // blue-100
     fontFamily: theme.typography.fontFamily,
     ...style,
   };
@@ -29,38 +27,41 @@ export function BranchRenderer({ node, children, className = '', style }: Contai
   const headerStyles: React.CSSProperties = {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: theme.spacing.md,
-    paddingBottom: theme.spacing.sm,
-    borderBottom: `1px solid ${theme.colors.border}`,
+    gap: theme.spacing.sm,
+    marginBottom: theme.spacing.sm,
     cursor: onNodeClick ? 'pointer' : 'default',
   };
 
   const titleStyles: React.CSSProperties = {
-    fontSize: theme.typography.fontSize.lg,
+    fontSize: '1.5rem', // text-2xl equivalent
     fontWeight: theme.typography.fontWeight.bold,
-    color: theme.colors.text,
+    color: '#111827', // gray-900
     margin: 0,
+    textDecoration: onNodeClick ? 'none' : 'none',
+    cursor: onNodeClick ? 'pointer' : 'default',
   };
 
-  const metaStyles: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: theme.spacing.sm,
-    fontSize: theme.typography.fontSize.xs,
-    color: theme.colors.textSecondary,
-  };
+
+
+
 
   const contentStyles: React.CSSProperties = {
-    fontSize: theme.typography.fontSize.md,
-    color: theme.colors.text,
-    lineHeight: '1.6',
-    marginBottom: children ? theme.spacing.md : 0,
+    fontSize: '1.125rem', // text-lg
+    color: '#374151', // gray-700
+    lineHeight: '1.75', // leading-relaxed
+    marginBottom: children ? theme.spacing.lg : 0,
   };
 
   const childrenContainerStyles: React.CSSProperties = {
-    paddingLeft: theme.spacing.md,
-    borderLeft: `2px solid ${theme.colors.border}`,
+    marginLeft: theme.spacing.lg,
+    marginTop: theme.spacing.md,
+  };
+
+  const childrenHeaderStyles: React.CSSProperties = {
+    fontSize: '1.125rem', // text-lg
+    fontWeight: '600', // font-semibold
+    color: '#1f2937', // gray-800
+    marginBottom: theme.spacing.sm,
   };
 
   // Get display title
@@ -69,73 +70,59 @@ export function BranchRenderer({ node, children, className = '', style }: Contai
                       node.content?.split('\n')[0] || 
                       node.id;
 
-  // Get node icon
-  const getNodeIcon = () => {
-    switch (node.type) {
-      case 'project': return '🚀';
-      case 'portfolio': return '💼';
-      case 'essay': return '📄';
-      case 'research': return '🔬';
-      case 'investigation': return '🕵️';
-      case 'collection': return '📚';
-      case 'experience': return '⚡';
-      default: return '📦';
-    }
-  };
-
   return (
-    <div
+    <article
       className={`mycelia-branch mycelia-branch--${node.type} ${className}`}
       style={containerStyles}
     >
       {/* Header with title and metadata */}
-      <header
-        className="mycelia-branch__header"
-        style={headerStyles}
-        onClick={handleHeaderClick}
-      >
-        <h3 style={titleStyles}>
-          <span className="mycelia-branch__icon">{getNodeIcon()}</span>
-          {' '}
-          {displayTitle}
-        </h3>
-        
-        <div className="mycelia-branch__meta" style={metaStyles}>
-          {node.props.status && (
-            <span 
-              className="mycelia-branch__status"
-              style={{
-                backgroundColor: getStatusColor(node.props.status, theme),
-                color: theme.colors.background,
-                padding: `2px ${theme.spacing.xs}`,
-                borderRadius: theme.borderRadius.sm,
-                fontSize: theme.typography.fontSize.xs,
-                fontWeight: theme.typography.fontWeight.medium,
-              }}
-            >
-              {node.props.status}
-            </span>
-          )}
+      <header className="mycelia-branch__header" style={{ marginBottom: theme.spacing.sm }}>
+        <div style={headerStyles}>
+          <h3 style={titleStyles} onClick={handleHeaderClick}>
+            {displayTitle}
+          </h3>
           
-          {node.children.length > 0 && (
-            <span className="mycelia-branch__child-count">
-              {node.children.length} items
-            </span>
+          {node.props.status && (
+            <CleanStatusBadge status={node.props.status} />
           )}
         </div>
+        
+        {node.props.category && (
+          <p style={{
+            fontSize: theme.typography.fontSize.sm,
+            color: '#4b5563', // gray-600
+            fontWeight: theme.typography.fontWeight.medium,
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
+            margin: 0,
+          }}>
+            {node.props.category.replace(/-/g, ' ')}
+          </p>
+        )}
       </header>
 
       {/* Content */}
-      {node.content && (
+      {node.content && node.children.length === 0 && (
         <div className="mycelia-branch__content" style={contentStyles}>
-          {node.content}
+          {node.content.split('\n\n').slice(0, 2).map((paragraph: string, i: number) => (
+            paragraph.trim() && (
+              <p key={i} style={{ marginBottom: '1rem' }}>
+                {paragraph.trim()}
+              </p>
+            )
+          ))}
         </div>
       )}
 
       {/* Children */}
       {children && (
         <div className="mycelia-branch__children" style={childrenContainerStyles}>
-          {children}
+          <h4 style={childrenHeaderStyles}>
+            {node.type === 'project' ? 'Components' : 'Items'}
+          </h4>
+          <div style={{ display: 'grid', gap: theme.spacing.sm }}>
+            {children}
+          </div>
         </div>
       )}
 
@@ -157,11 +144,10 @@ export function BranchRenderer({ node, children, className = '', style }: Contai
                 className="mycelia-branch__reference"
                 style={{
                   fontSize: theme.typography.fontSize.xs,
-                  color: ref.exists ? theme.colors.primary : theme.colors.textSecondary,
-                  backgroundColor: theme.colors.surface,
+                  color: ref.exists ? '#2563eb' : theme.colors.textSecondary,
+                  border: '1px solid #d1d5db',
                   padding: `2px ${theme.spacing.xs}`,
                   borderRadius: theme.borderRadius.sm,
-                  border: `1px solid ${theme.colors.border}`,
                   cursor: ref.exists ? 'pointer' : 'default',
                 }}
                 onClick={() => {
@@ -178,28 +164,47 @@ export function BranchRenderer({ node, children, className = '', style }: Contai
           </div>
         </div>
       )}
-    </div>
+    </article>
   );
 }
 
 /**
- * Get color for status badge
+ * Clean status badge component without background
  */
-function getStatusColor(status: string, theme: any): string {
-  switch (status.toLowerCase()) {
-    case 'active':
-    case 'published':
-      return '#16a34a'; // green
-    case 'wip':
-    case 'draft':
-      return '#ca8a04'; // yellow
-    case 'archived':
-    case 'completed':
-      return '#6b7280'; // gray
-    case 'blocked':
-    case 'error':
-      return '#dc2626'; // red
-    default:
-      return theme.colors.secondary;
-  }
+function CleanStatusBadge({ status }: { status: string }) {
+  const getStatusStyle = (status: string): React.CSSProperties => {
+    const baseStyle: React.CSSProperties = {
+      padding: '2px 8px',
+      borderRadius: '9999px',
+      fontSize: '0.75rem',
+      fontWeight: '500',
+      border: '1px solid',
+      display: 'inline-flex',
+      alignItems: 'center',
+    };
+
+    switch (status.toLowerCase()) {
+      case 'active':
+      case 'published':
+      case 'completed':
+        return { ...baseStyle, color: '#15803d', borderColor: '#bbf7d0' };
+      case 'wip':
+      case 'development':
+      case 'in-progress':
+        return { ...baseStyle, color: '#a16207', borderColor: '#fde68a' };
+      case 'planned':
+      case 'draft':
+        return { ...baseStyle, color: '#1d4ed8', borderColor: '#bfdbfe' };
+      case 'archived':
+        return { ...baseStyle, color: '#374151', borderColor: '#d1d5db' };
+      default:
+        return { ...baseStyle, color: '#374151', borderColor: '#d1d5db' };
+    }
+  };
+  
+  return (
+    <span style={getStatusStyle(status)}>
+      {status}
+    </span>
+  );
 }

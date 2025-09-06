@@ -122,9 +122,9 @@ export async function loadNode(nodeId: string) {
 }
 
 /**
- * Load the complete render tree
+ * Load the complete render tree from cache
  */
-async function loadRenderTree() {
+export async function loadRenderTree() {
   if (cachedRenderTree) return cachedRenderTree
 
   // Try loading from pre-generated renderable.json
@@ -134,32 +134,30 @@ async function loadRenderTree() {
     return cachedRenderTree!
   }
 
-  // Fallback: parse all examples
-  const exampleFiles = [
-    'developer-journey.mdx',
-    'portfolio-showcase.mdx', 
-    'blog-content.mdx',
-    'learning-resources.mdx'
-  ].map(f => path.join(EXAMPLES_DIR, f))
-
-  const result = await markdown.parse(exampleFiles)
-  cachedRenderTree = result.renderTree
-  return cachedRenderTree!
+  return null
 }
 
 /**
- * Recursively find a node in the render tree
+ * Find a specific node in the render tree and return it as a tree
  */
-function findNodeInRenderTree(tree: any, nodeId: string): any {
-  if (tree.id === nodeId) {
-    return tree
+export async function loadNodeAsRenderTree(nodeId: string) {
+  const renderTree = await loadRenderTree()
+  if (!renderTree) return null
+
+  function findNodeInTree(tree: any, targetId: string): any {
+    if (tree.id === targetId) return tree
+    if (tree.children) {
+      for (const child of tree.children) {
+        const found = findNodeInTree(child, targetId)
+        if (found) return found
+      }
+    }
+    return null
   }
   
-  if (tree.children) {
-    for (const child of tree.children) {
-      const found = findNodeInRenderTree(child, nodeId)
-      if (found) return found
-    }
+  const nodeTree = findNodeInTree(renderTree.root, nodeId)
+  if (nodeTree) {
+    return { root: nodeTree, meta: renderTree.meta }
   }
   
   return null
@@ -245,29 +243,8 @@ export async function searchNodes(query: string, nodeType?: string) {
 }
 
 /**
- * Legacy function for backwards compatibility
+ * Get list of main example content sections
  */
-export async function loadExample(filename: string) {
-  const filePath = path.join(EXAMPLES_DIR, `${filename}.mdx`)
-  const content = fs.readFileSync(filePath, 'utf8')
-  
-  const result = await markdown.parse(filePath)
-  
-  return {
-    content,
-    graph: result.graph,
-    renderTree: result.renderTree,
-    errors: result.errors,
-    warnings: result.warnings,
-    stats: {
-      nodeCount: Object.keys(result.graph.nodes).length,
-      edgeCount: result.graph.edges.length,
-      warningCount: result.warnings.length,
-      errorCount: result.errors.length
-    }
-  }
-}
-
 export function getExamplesList() {
   return [
     {

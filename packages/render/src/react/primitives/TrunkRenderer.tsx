@@ -14,46 +14,33 @@ export function TrunkRenderer({ node, children, className = '', style }: Contain
     }
   };
 
+  // Clean trunk styling - simple space separation without cards
   const containerStyles: React.CSSProperties = {
     display: 'block',
     margin: `${theme.spacing.lg} 0`,
-    padding: theme.spacing.lg,
-    backgroundColor: theme.colors.surface,
-    border: `2px solid ${theme.colors.border}`,
-    borderRadius: theme.borderRadius.lg,
-    boxShadow: theme.shadows.md,
     fontFamily: theme.typography.fontFamily,
     ...style,
   };
 
-  const headerStyles: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: theme.spacing.lg,
-    paddingBottom: theme.spacing.md,
-    borderBottom: `2px solid ${theme.colors.border}`,
+  const titleStyles: React.CSSProperties = {
+    fontSize: '1.875rem', // text-3xl
+    fontWeight: theme.typography.fontWeight.bold,
+    color: '#111827', // gray-900
+    margin: `0 0 ${theme.spacing.md} 0`,
     cursor: onNodeClick ? 'pointer' : 'default',
   };
 
-  const titleStyles: React.CSSProperties = {
-    fontSize: theme.typography.fontSize.xl,
-    fontWeight: theme.typography.fontWeight.bold,
-    color: theme.colors.text,
-    margin: 0,
-  };
-
   const descriptionStyles: React.CSSProperties = {
-    fontSize: theme.typography.fontSize.md,
-    color: theme.colors.textSecondary,
-    lineHeight: '1.6',
+    fontSize: '1.125rem', // text-lg
+    color: '#6b7280', // gray-500
+    lineHeight: '1.75',
     marginBottom: children ? theme.spacing.lg : 0,
-    fontStyle: 'italic',
   };
 
   const childrenContainerStyles: React.CSSProperties = {
     display: 'grid',
-    gap: theme.spacing.md,
+    gap: theme.spacing.lg,
+    marginTop: theme.spacing.lg,
   };
 
   // Get display title
@@ -66,48 +53,25 @@ export function TrunkRenderer({ node, children, className = '', style }: Contain
   const description = node.props.description || 
                      (node.content && node.content !== displayTitle ? node.content : undefined);
 
-  // Get node icon
-  const getNodeIcon = () => {
-    switch (node.type) {
-      case 'document': return '📄';
-      case 'collection': return '📁';
-      case 'workspace': return '🏠';
-      case 'root': return '🌳';
-      default: return '🗂️';
-    }
-  };
-
   return (
     <div
       className={`mycelia-trunk mycelia-trunk--${node.type} ${className}`}
       style={containerStyles}
     >
-      {/* Header */}
-      <header
-        className="mycelia-trunk__header"
-        style={headerStyles}
-        onClick={handleHeaderClick}
-      >
-        <h2 style={titleStyles}>
-          <span className="mycelia-trunk__icon">{getNodeIcon()}</span>
-          {' '}
+      {/* Clean header without decorations */}
+      <header className="mycelia-trunk__header">
+        <h2 style={titleStyles} onClick={handleHeaderClick}>
           {displayTitle}
         </h2>
         
         {node.children.length > 0 && (
-          <span 
-            className="mycelia-trunk__summary"
-            style={{
-              fontSize: theme.typography.fontSize.sm,
-              color: theme.colors.textSecondary,
-              backgroundColor: theme.colors.background,
-              padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
-              borderRadius: theme.borderRadius.md,
-              border: `1px solid ${theme.colors.border}`,
-            }}
-          >
+          <p style={{
+            fontSize: theme.typography.fontSize.sm,
+            color: '#6b7280', // gray-500
+            margin: `0 0 ${theme.spacing.sm} 0`,
+          }}>
             {node.children.length} items
-          </span>
+          </p>
         )}
       </header>
 

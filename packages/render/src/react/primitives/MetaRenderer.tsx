@@ -9,16 +9,19 @@ export function MetaRenderer({ node, className = '', style }: BaseRenderProps) {
 
   const metaType = node.props.metaType || 'annotation';
 
+  // Clean styling - no solid backgrounds, just borders
   const baseStyles: React.CSSProperties = {
     display: 'inline-flex',
     alignItems: 'center',
-    gap: theme.spacing.xs,
-    padding: `2px ${theme.spacing.xs}`,
+    gap: '4px',
+    padding: '2px 8px',
     fontSize: theme.typography.fontSize.xs,
     fontFamily: theme.typography.fontFamily,
-    borderRadius: theme.borderRadius.sm,
+    borderRadius: '9999px', // rounded-full
     fontWeight: theme.typography.fontWeight.medium,
-    ...getMetaTypeStyles(metaType, theme),
+    border: '1px solid',
+    backgroundColor: 'transparent',
+    ...getCleanMetaTypeStyles(metaType),
     ...style,
   };
 
@@ -30,21 +33,6 @@ export function MetaRenderer({ node, className = '', style }: BaseRenderProps) {
                         node.id;
   
   const skillLevel = node.props.level;
-
-  // Get meta icon
-  const getMetaIcon = () => {
-    switch (metaType) {
-      case 'tag': return '🏷️';
-      case 'date': return '📅';
-      case 'status': return '📊';
-      case 'priority': return '⚡';
-      case 'note': return '📝';
-      case 'comment': return '💬';
-      case 'category': return '📂';
-      case 'skill': return '🔧';
-      default: return '💭';
-    }
-  };
 
   // Format date if it's a date type
   const formatContent = () => {
@@ -65,14 +53,13 @@ export function MetaRenderer({ node, className = '', style }: BaseRenderProps) {
       style={baseStyles}
       title={`${metaType}: ${displayContent}${skillLevel ? ` (${skillLevel})` : ''}`}
     >
-      <span className="mycelia-meta__icon">{getMetaIcon()}</span>
       <span className="mycelia-meta__content">{formatContent()}</span>
-      {skillLevel && metaType === 'skill' && (
+      {skillLevel && (
         <span 
           className="mycelia-meta__level"
           style={{
             fontSize: '0.7rem',
-            opacity: 0.7,
+            opacity: 0.8,
             marginLeft: '4px',
           }}
         >
@@ -84,58 +71,50 @@ export function MetaRenderer({ node, className = '', style }: BaseRenderProps) {
 }
 
 /**
- * Get styles based on meta type
+ * Get clean styles based on meta type (border-only, no solid backgrounds)
  */
-function getMetaTypeStyles(metaType: string, theme: any): React.CSSProperties {
+function getCleanMetaTypeStyles(metaType: string): React.CSSProperties {
   switch (metaType) {
     case 'tag':
       return {
-        backgroundColor: '#3b82f6',
-        color: '#ffffff',
-        border: 'none',
+        color: '#1d4ed8', // blue-700
+        borderColor: '#bfdbfe', // blue-200
       };
     case 'date':
       return {
-        backgroundColor: '#10b981',
-        color: '#ffffff',
-        border: 'none',
+        color: '#047857', // green-700
+        borderColor: '#a7f3d0', // green-200
       };
     case 'status':
       return {
-        backgroundColor: '#f59e0b',
-        color: '#ffffff',
-        border: 'none',
+        color: '#b45309', // amber-700
+        borderColor: '#fde68a', // amber-200
       };
     case 'priority':
       return {
-        backgroundColor: '#ef4444',
-        color: '#ffffff',
-        border: 'none',
+        color: '#dc2626', // red-600
+        borderColor: '#fecaca', // red-200
       };
     case 'note':
     case 'comment':
       return {
-        backgroundColor: theme.colors.surface,
-        color: theme.colors.textSecondary,
-        border: `1px solid ${theme.colors.border}`,
+        color: '#64748b', // slate-500
+        borderColor: '#cbd5e1', // slate-300
       };
     case 'category':
       return {
-        backgroundColor: '#8b5cf6',
-        color: '#ffffff',
-        border: 'none',
+        color: '#7c3aed', // violet-600
+        borderColor: '#ddd6fe', // violet-200
       };
     case 'skill':
       return {
-        backgroundColor: '#059669',
-        color: '#ffffff',
-        border: 'none',
+        color: '#059669', // green-600
+        borderColor: '#bbf7d0', // green-200
       };
     default:
       return {
-        backgroundColor: theme.colors.surface,
-        color: theme.colors.textSecondary,
-        border: `1px solid ${theme.colors.border}`,
+        color: '#64748b', // slate-500
+        borderColor: '#cbd5e1', // slate-300
       };
   }
 }

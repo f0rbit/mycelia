@@ -18,14 +18,16 @@ export function LinkRenderer({ node, className = '', style }: BaseRenderProps) {
   const targetRef = node.resolvedRefs.find(ref => ref.id === node.props.target);
   const isResolved = Boolean(targetRef?.exists);
 
+  // Clean link styling - border only, no solid backgrounds
   const baseStyles: React.CSSProperties = {
     display: 'inline-flex',
     alignItems: 'center',
     gap: theme.spacing.xs,
-    padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
-    backgroundColor: isResolved ? theme.colors.primary : theme.colors.surface,
-    color: isResolved ? theme.colors.background : theme.colors.textSecondary,
-    border: `1px solid ${isResolved ? theme.colors.primary : theme.colors.border}`,
+    padding: '2px 8px',
+    backgroundColor: 'transparent',
+    color: isResolved ? '#2563eb' : '#64748b', // blue-600 or slate-500
+    border: '1px solid',
+    borderColor: isResolved ? '#bfdbfe' : '#d1d5db', // blue-200 or slate-300
     borderRadius: theme.borderRadius.sm,
     fontSize: theme.typography.fontSize.sm,
     fontFamily: theme.typography.fontFamily,
@@ -34,19 +36,6 @@ export function LinkRenderer({ node, className = '', style }: BaseRenderProps) {
     opacity: isResolved ? 1 : 0.7,
     transition: 'all 0.2s ease',
     ...style,
-  };
-
-  // Get link type icon
-  const getLinkIcon = () => {
-    const linkType = node.props.linkType || 'references';
-    switch (linkType) {
-      case 'collaborates': return '🤝';
-      case 'references': return '🔗';
-      case 'mentions': return '💬';
-      case 'derives': return '🔄';
-      case 'tags': return '🏷️';
-      default: return '➡️';
-    }
   };
 
   // Get display text
@@ -65,7 +54,6 @@ export function LinkRenderer({ node, className = '', style }: BaseRenderProps) {
         : `Unresolved link: ${node.props.target}`
       }
     >
-      <span className="mycelia-link__icon">{getLinkIcon()}</span>
       <span className="mycelia-link__text">{displayText}</span>
       {!isResolved && (
         <span 
@@ -73,6 +61,7 @@ export function LinkRenderer({ node, className = '', style }: BaseRenderProps) {
           style={{
             fontSize: theme.typography.fontSize.xs,
             color: '#dc2626',
+            marginLeft: '4px',
           }}
         >
           ❌
