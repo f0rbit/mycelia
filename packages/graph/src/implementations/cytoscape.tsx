@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import * as cytoscape from 'cytoscape'
+// @ts-ignore
+import cytoscape from 'cytoscape'
 // @ts-ignore - no types available
 import dagre from 'cytoscape-dagre'
 // @ts-ignore - no types available
@@ -10,8 +11,10 @@ import type { MyceliaGraph } from '@mycelia/core'
 import type { GraphViewerProps } from '../types'
 
 // Register layout extensions
-cytoscape.use(dagre)
-cytoscape.use(coseBilkent)
+if (typeof window !== 'undefined') {
+  cytoscape.use(dagre)
+  cytoscape.use(coseBilkent)
+}
 
 interface CytoscapeGraphProps extends GraphViewerProps {
   layout?: 'dagre' | 'cose-bilkent' | 'circle' | 'grid' | 'breadthfirst'
@@ -33,7 +36,7 @@ export function CytoscapeGraph({
   onNodeClick
 }: CytoscapeGraphProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const cyRef = useRef<cytoscape.Core | null>(null)
+  const cyRef = useRef<any>(null) // Cytoscape instance
   const [graph, setGraph] = useState<MyceliaGraph | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -81,7 +84,7 @@ export function CytoscapeGraph({
     if (!containerRef.current || !graph) return
 
     // Convert Mycelia graph to Cytoscape format
-    const elements: cytoscape.ElementDefinition[] = []
+    const elements: any[] = []
     
     // Add nodes
     Object.values(graph.nodes).forEach(node => {
@@ -243,7 +246,7 @@ export function CytoscapeGraph({
   }, [selectedTypes, layout])
 
   // Layout configuration
-  function getLayoutConfig(layoutName: string): cytoscape.LayoutOptions {
+  function getLayoutConfig(layoutName: string): any {
     switch (layoutName) {
       case 'dagre':
         return {
