@@ -191,8 +191,18 @@ export async function MyceliaPage({ params, content: customContent }: MyceliaPag
 
       {/* Main Content */}
       <div className="mt-8 space-y-8">
-        {/* Main node content */}
-        {firstNodeId && content.graph.nodes[firstNodeId] && (() => {
+        {/* Render processed HTML content if available */}
+        {content.htmlContent && (
+          <div className="mycelia-content">
+            <div 
+              className="prose prose-lg max-w-none"
+              dangerouslySetInnerHTML={{ __html: content.htmlContent }}
+            />
+          </div>
+        )}
+        
+        {/* Fallback to raw content from main node if no HTML */}
+        {!content.htmlContent && firstNodeId && content.graph.nodes[firstNodeId] && (() => {
           const mainNode = content.graph.nodes[firstNodeId];
           return (
             <div className="mycelia-content">

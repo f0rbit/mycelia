@@ -13,8 +13,9 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  // Simple fallback to prevent build issues
-  return [];
+  // For now, return a single dummy param to satisfy Next.js
+  // In production, this would fetch all tags from the content
+  return [{ id: 'placeholder' }];
 }
 
 // Generate metadata for each page

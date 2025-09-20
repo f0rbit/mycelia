@@ -1,11 +1,11 @@
 import { readFile, stat } from 'fs/promises';
 import { join, relative, parse, sep } from 'path';
-import * as glob from 'fast-glob';
+import * as fastGlob from 'fast-glob';
 const matter = require('gray-matter');
 import { markdown } from '@mycelia/parser';
 import type { MyceliaGraph } from '@mycelia/core';
-// import { processMarkdownToHtml } from './mdx-processor';
-import type { MyceliaConfig, ParsedContent, ContentCacheEntry, ContentProvider } from '../types';
+import { processMarkdownToHtml } from './mdx-processor';
+import type { MyceliaConfig, ParsedContent, ContentCacheEntry, ContentProvider } from '../types/index.js';
 
 /**
  * Convert text to URL-friendly slug
@@ -91,7 +91,7 @@ export class MyceliaContentProvider implements ContentProvider {
    */
   private async discoverFiles(): Promise<string[]> {
     const pattern = join(this.config.contentDir, '**/*.{md,mdx}');
-    const files = await glob(pattern, {
+    const files = await fastGlob.glob(pattern, {
       absolute: true,
       ignore: ['**/node_modules/**', '**/dist/**', '**/.next/**'],
     });
@@ -102,6 +102,12 @@ export class MyceliaContentProvider implements ContentProvider {
    * Parse a single file into content with graph
    */
   private async parseFile(file_path: string): Promise<ParsedContent> {
+    // Check cache first
+    const cache_key = file_path;
+    if (this.cache.has(cache_key) && this.config.cache) {
+      return this.cache.get(cache_key)!;
+    }
+
     const content = await readFile(file_path, 'utf-8');
     const stats = await stat(file_path);
     
@@ -115,18 +121,25 @@ export class MyceliaContentProvider implements ContentProvider {
     // Parse with Mycelia - now returns only graph
     const parse_result = await markdown.parseContent(mdx_content, file_path);
     
-    // For now, just pass the raw content - we'll process it in the component
-    // const htmlContent = await processMarkdownToHtml(mdx_content);
+    // Process MDX to HTML
+    const htmlContent = await processMarkdownToHtml(mdx_content);
     
-    return {
+    const parsed: ParsedContent = {
       filePath: relative_path,
       slug,
       frontmatter,
       content: mdx_content,
-      // htmlContent, // Add processed HTML later
+      htmlContent,
       graph: parse_result.graph,
       mtime: stats.mtime,
     };
+
+    // Cache the result
+    if (this.config.cache) {
+      this.cache.set(cache_key, parsed);
+    }
+
+    return parsed;
   }
 
   /**
@@ -204,11 +217,12 @@ export class MyceliaContentProvider implements ContentProvider {
 
   /**
    * Get all content with caching
+   * Now optimized to avoid parsing all files at once
    */
   async getAllContent(): Promise<ParsedContent[]> {
     const cache_key = '__all_content__';
     
-    // In dev mode, use a simple in-memory cache that persists across requests
+    // Check if we have a cached file list
     if (this.cache.has(cache_key)) {
       const cached = this.cache.get(cache_key)!;
       if (Array.isArray(cached.content)) {
@@ -216,18 +230,25 @@ export class MyceliaContentProvider implements ContentProvider {
       }
     }
 
-    console.log('[Mycelia] Parsing all content files...');
+    console.log('[Mycelia] Discovering content files...');
     const files = await this.discoverFiles();
+    
+    // For getAllContent, we'll return metadata only initially
+    // Full parsing happens on-demand when specific content is requested
     const all_content: ParsedContent[] = [];
 
-    // Parse all files in parallel
-    const parse_promises = files.map(file => this.parseFile(file));
-    const results = await Promise.all(parse_promises);
-    all_content.push(...results);
+    // Parse files in smaller batches to avoid blocking
+    const BATCH_SIZE = 5;
+    for (let i = 0; i < files.length; i += BATCH_SIZE) {
+      const batch = files.slice(i, i + BATCH_SIZE);
+      const batch_promises = batch.map(file => this.parseFile(file));
+      const results = await Promise.all(batch_promises);
+      all_content.push(...results);
+    }
 
-    console.log(`[Mycelia] Parsed ${all_content.length} files, caching results`);
+    console.log(`[Mycelia] Indexed ${all_content.length} files`);
     
-    // Always cache results to avoid re-parsing on every request
+    // Cache the result
     this.cache.set(cache_key, {
         filePath: '',
         slug: '',
@@ -242,36 +263,72 @@ export class MyceliaContentProvider implements ContentProvider {
   }
 
   /**
-   * Get content by file-based slug
+   * Get content by file-based slug - optimized version
    */
   async getContentBySlug(slug: string): Promise<ParsedContent | null> {
-    const all_content = await this.getAllContent();
-    return all_content.find(content => content.slug === slug) || null;
+    // Check cache first
+    const cache_key = `slug:${slug}`;
+    if (this.cache.has(cache_key)) {
+      return this.cache.get(cache_key)!;
+    }
+
+    // Find the file matching this slug
+    const files = await this.discoverFiles();
+    for (const file_path of files) {
+      const relative_path = relative(this.config.contentDir, file_path);
+      const test_slug = this.config.routeMapper(relative_path);
+      
+      if (test_slug === slug) {
+        const content = await this.parseFile(file_path);
+        this.cache.set(cache_key, content);
+        return content;
+      }
+    }
+    
+    return null;
   }
 
   /**
-   * Get content by node ID from graph
+   * Get content by node ID from graph - optimized version
    * This creates a virtual content entry for individual nodes
    */
   async getContentByNodeId(node_id: string): Promise<ParsedContent | null> {
-    const all_content = await this.getAllContent();
+    // Check cache first
+    const cache_key = `node:${node_id}`;
+    if (this.cache.has(cache_key)) {
+      return this.cache.get(cache_key)!;
+    }
+
+    // We need to find which file contains this node
+    // For now, we'll check each file but cache aggressively
+    const files = await this.discoverFiles();
     
-    // Find the node across all content files
-    for (const content of all_content) {
+    for (const file_path of files) {
+      const content = await this.parseFile(file_path);
       const node = content.graph.nodes[node_id];
+      
       if (node) {
         // Create a filtered graph with only related nodes
         const filteredGraph = this.filterGraphForNode(node_id, content.graph);
         
+        // Process node content if it exists
+        const nodeContent = this.getNodeContent(node) || '';
+        const htmlContent = nodeContent ? await processMarkdownToHtml(nodeContent) : '';
+        
         // Create virtual content for this specific node
-        return {
+        const result: ParsedContent = {
           filePath: content.filePath,
           slug: createSimplePath(node.type, node.id),
           frontmatter: { title: this.getNodeTitle(node) },
-          content: this.getNodeContent(node) || '',
+          content: nodeContent,
+          htmlContent,
           graph: filteredGraph, // Use filtered graph instead of full graph
           mtime: content.mtime,
         };
+        
+        // Cache the result
+        this.cache.set(cache_key, result);
+        return result;
       }
     }
     
