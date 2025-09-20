@@ -51,7 +51,7 @@ export function SemanticNodeRenderer({
 }
 
 // Project Component - Portfolio style
-function ProjectRenderer({ node, childNodes, referencedNodes }: SemanticNodeRendererProps) {
+function ProjectRenderer({ node, childNodes, referencedNodes, htmlContent }: SemanticNodeRendererProps) {
   const skills = childNodes.filter(n => n.type === 'skill');
   const tasks = childNodes.filter(n => n.type === 'task');
   const collaborators = childNodes.filter(n => n.type === 'collaborator');
@@ -64,7 +64,9 @@ function ProjectRenderer({ node, childNodes, referencedNodes }: SemanticNodeRend
         <div className="flex items-start justify-between mb-4">
           <div>
             <h1 className="text-4xl font-bold mb-2">{node.attributes?.title || node.id}</h1>
-            <p className="text-xl text-gray-600">{node.attributes?.description}</p>
+            {node.attributes?.description && (
+              <p className="text-xl text-gray-600">{node.attributes.description}</p>
+            )}
           </div>
           <StatusBadge status={node.attributes?.status} />
         </div>
@@ -77,18 +79,36 @@ function ProjectRenderer({ node, childNodes, referencedNodes }: SemanticNodeRend
               {node.attributes?.endDate && ` - ${new Date(node.attributes.endDate).getFullYear()}`}
             </div>
           )}
-          {node.attributes?.url && (
-            <a href={node.attributes.url} className="text-sm text-blue-600 hover:underline">
+          {(node.attributes?.liveUrl || node.attributes?.url) && (
+            <a href={node.attributes.liveUrl || node.attributes.url} className="text-sm text-blue-600 hover:underline">
               🔗 View Project
             </a>
           )}
-          {node.attributes?.github && (
-            <a href={node.attributes.github} className="text-sm text-blue-600 hover:underline">
+          {(node.attributes?.githubUrl || node.attributes?.github) && (
+            <a href={node.attributes.githubUrl || node.attributes.github} className="text-sm text-blue-600 hover:underline">
               💻 Source Code
             </a>
           )}
         </div>
       </div>
+      
+      {/* Project Description/Content */}
+      {(htmlContent || node.content || node.value) && (
+        <Card className="mb-6">
+          <CardContent className="pt-6">
+            {htmlContent ? (
+              <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            ) : (
+              <div className="text-gray-700 space-y-3">
+                {/* Split content into paragraphs for better readability */}
+                {(node.content || node.value || '').split('.').filter((p: string) => p.trim()).slice(0, 3).map((paragraph: string, i: number) => (
+                  <p key={i}>{paragraph.trim()}.</p>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      )}
       
       {/* Tech Stack */}
       {skills.length > 0 && (
@@ -212,13 +232,15 @@ function PersonRenderer({ node, childNodes, backlinks }: SemanticNodeRendererPro
       </div>
       
       {/* Bio */}
-      {(node.attributes?.bio || node.content) && (
+      {(node.attributes?.bio || node.content || node.value) && (
         <Card className="mb-6">
           <CardHeader>
             <CardTitle>About</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-700">{node.attributes?.bio || node.content}</p>
+            <p className="text-gray-700 whitespace-pre-wrap">
+              {node.attributes?.bio || node.content || node.value}
+            </p>
           </CardContent>
         </Card>
       )}
@@ -476,8 +498,10 @@ function PortfolioRenderer({ node, childNodes }: SemanticNodeRendererProps) {
     <div className="max-w-6xl mx-auto py-8">
       <header className="text-center mb-12">
         <h1 className="text-5xl font-bold mb-4">{node.attributes?.title || node.id}</h1>
-        {node.attributes?.description && (
-          <p className="text-xl text-gray-600">{node.attributes.description}</p>
+        {(node.attributes?.description || node.content || node.value) && (
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {node.attributes?.description || node.content || node.value}
+          </p>
         )}
         <StatusBadge status={node.attributes?.status} className="mt-4" />
       </header>
