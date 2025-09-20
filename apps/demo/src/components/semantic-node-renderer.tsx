@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from './ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Breadcrumbs } from './breadcrumbs';
+import { StatusBadge, PriorityBadge, TaskStatusIcon, ProficiencyBar } from './node-renderer-helpers';
 
 interface SemanticNodeRendererProps {
   node: any;
@@ -700,31 +701,7 @@ function GenericRenderer({ node, nodeId, childNodes, referencedNodes, htmlConten
   );
 }
 
-// Helper Components
-function StatusBadge({ status, className = "" }: { status?: string; className?: string }) {
-  if (!status) return null;
-  
-  const getVariant = () => {
-    switch (status?.toLowerCase()) {
-      case 'active':
-      case 'completed':
-      case 'published':
-        return 'default';
-      case 'development':
-      case 'wip':
-      case 'in-progress':
-        return 'secondary';
-      case 'planned':
-      case 'draft':
-        return 'outline';
-      default:
-        return 'outline';
-    }
-  };
-  
-  return <Badge variant={getVariant()} className={className}>{status}</Badge>;
-}
-
+// Additional Helper Components not in node-renderer-helpers
 function SkillLevel({ level, size = "normal" }: { level: string; size?: "normal" | "large" }) {
   const levels = ['beginner', 'intermediate', 'advanced', 'expert'];
   const currentIndex = levels.indexOf(level.toLowerCase());
@@ -739,35 +716,5 @@ function SkillLevel({ level, size = "normal" }: { level: string; size?: "normal"
         />
       ))}
     </div>
-  );
-}
-
-function TaskStatusIcon({ status }: { status?: string }) {
-  switch (status?.toLowerCase()) {
-    case 'completed':
-      return <span className="text-green-500">✓</span>;
-    case 'in-progress':
-      return <span className="text-blue-500">●</span>;
-    case 'blocked':
-      return <span className="text-red-500">✕</span>;
-    default:
-      return <span className="text-gray-400">○</span>;
-  }
-}
-
-function PriorityBadge({ priority }: { priority: string }) {
-  const getColor = () => {
-    switch (priority?.toLowerCase()) {
-      case 'high': return 'text-red-600 bg-red-50 border-red-200';
-      case 'medium': return 'text-yellow-600 bg-yellow-50 border-yellow-200';
-      case 'low': return 'text-green-600 bg-green-50 border-green-200';
-      default: return 'text-gray-600 bg-gray-50 border-gray-200';
-    }
-  };
-  
-  return (
-    <span className={`px-2 py-1 rounded-full text-sm border ${getColor()}`}>
-      {priority}
-    </span>
   );
 }

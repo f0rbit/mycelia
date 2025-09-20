@@ -10,14 +10,11 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "bun run build:packages",
-    "build:packages": "bun --filter='@mycelia/*' run build",
-    "dev": "bun --filter='@mycelia/*' run dev",
-    "demo:dev": "cd apps/demo && bun run dev",
-    "demo:build": "bun run build:packages && cd apps/demo && bun run build",
-    "demo:export": "bun run demo:build",
+    "build": "bun --filter='@mycelia/*' run build",
+    "dev": "cd apps/demo && bun run dev",
+    "export": "bun run build && cd apps/demo && bun run build",
     "test": "bun test",
-    "clean": "bun --filter='@mycelia/*' run clean"
+    "clean": "find . -name 'dist' -o -name '.next' -o -name 'out' -o -name '*.tsbuildinfo' | grep -v node_modules | xargs rm -rf"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -26,8 +23,6 @@
   "author": "Tom",
   "license": "MIT",
   "dependencies": {
-    "chokidar": "^4.0.3",
-    "fast-glob": "^3.3.3",
-    "gray-matter": "^4.0.3"
+    "fast-glob": "^3.3.3"
   }
 }
