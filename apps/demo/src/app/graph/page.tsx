@@ -1,18 +1,7 @@
-'use client';
-
-import { useState, lazy, Suspense } from 'react';
-import { MyceliaGraphViewer as ForceGraph } from '@mycelia/graph';
-
-// Lazy load Cytoscape to avoid SSR issues
-const CytoscapeGraph = lazy(() => 
-  import('@mycelia/graph').then(mod => ({ default: mod.CytoscapeGraph }))
-);
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
+import { MyceliaGraphViewer } from '@mycelia/graph'
+import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card'
 
 export default function GraphPage() {
-  const [implementation, setImplementation] = useState<'force' | 'cytoscape'>('cytoscape');
-  const [layout, setLayout] = useState<'cose-bilkent' | 'dagre' | 'circle' | 'breadthfirst'>('cose-bilkent');
-
   return (
     <div className="max-w-7xl mx-auto py-8 px-6">
       {/* Header */}
@@ -23,157 +12,15 @@ export default function GraphPage() {
         </p>
       </div>
 
-      {/* Controls */}
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>Visualization Settings</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {/* Implementation Selector */}
-            <div>
-              <label className="text-sm font-medium text-gray-700 block mb-2">
-                Visualization Library
-              </label>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setImplementation('cytoscape')}
-                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                    implementation === 'cytoscape'
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  Cytoscape (Advanced)
-                </button>
-                <button
-                  onClick={() => setImplementation('force')}
-                  className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                    implementation === 'force'
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  Force Graph (Simple)
-                </button>
-              </div>
-            </div>
-
-            {/* Layout Selector (Cytoscape only) */}
-            {implementation === 'cytoscape' && (
-              <div>
-                <label className="text-sm font-medium text-gray-700 block mb-2">
-                  Layout Algorithm
-                </label>
-                <div className="flex gap-2 flex-wrap">
-                  {(['cose-bilkent', 'dagre', 'circle', 'breadthfirst'] as const).map(l => (
-                    <button
-                      key={l}
-                      onClick={() => setLayout(l)}
-                      className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-                        layout === l
-                          ? 'bg-blue-600 text-white'
-                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                      }`}
-                    >
-                      {l.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase())}
-                    </button>
-                  ))}
-                </div>
-                <p className="text-xs text-gray-500 mt-2">
-                  {layout === 'cose-bilkent' && 'Force-directed layout with edge bundling'}
-                  {layout === 'dagre' && 'Hierarchical layout for directed graphs'}
-                  {layout === 'circle' && 'Nodes arranged in a circle'}
-                  {layout === 'breadthfirst' && 'Tree-like hierarchical layout'}
-                </p>
-              </div>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
       {/* Graph Visualization */}
       <Card>
         <CardContent className="p-6">
-          {implementation === 'cytoscape' ? (
-            <Suspense fallback={
-              <div className="flex items-center justify-center h-[600px]">
-                <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-                  <p className="text-sm text-gray-600">Loading Cytoscape...</p>
-                </div>
-              </div>
-            }>
-              <CytoscapeGraph
-                width={typeof window !== 'undefined' ? window.innerWidth - 100 : 1200}
-                height={600}
-                layout={layout}
-                interactive={true}
-              />
-            </Suspense>
-          ) : (
-            <ForceGraph
-              width={typeof window !== 'undefined' ? window.innerWidth - 100 : 1200}
-              height={600}
-            />
-          )}
+          <MyceliaGraphViewer
+            width={typeof window !== 'undefined' ? window.innerWidth - 100 : 1200}
+            height={600}
+          />
         </CardContent>
       </Card>
-
-      {/* Features */}
-      <div className="grid md:grid-cols-2 gap-6 mt-8">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Cytoscape Features</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Advanced layout algorithms (hierarchical, force-directed, circular)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>High performance with large graphs</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Compound nodes and edge bundling</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Professional graph analysis tools</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Force Graph Features</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Simple and intuitive physics-based layout</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Smooth animations and transitions</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Canvas-based rendering for performance</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-500">✓</span>
-                <span>Lightweight and easy to use</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
 
       {/* Instructions */}
       <Card className="mt-8">
@@ -197,7 +44,7 @@ export default function GraphPage() {
                 <li>• Use type filters to show/hide node categories</li>
                 <li>• Connected nodes remain visible when filtering</li>
                 <li>• Clear filters to show all nodes</li>
-                <li>• Layout automatically adjusts after filtering</li>
+                <li>• Larger nodes represent more important content</li>
               </ul>
             </div>
           </div>

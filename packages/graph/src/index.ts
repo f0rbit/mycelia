@@ -1,8 +1,5 @@
-// Default export for backward compatibility
-export { MyceliaGraphViewer, MyceliaGraphViewer as ForceGraph } from './MyceliaGraphViewer'
-
-// Cytoscape implementation
-export { CytoscapeGraph } from './implementations/cytoscape'
+// Main export
+export { MyceliaGraphViewer } from './MyceliaGraphViewer'
 
 // Types
 export type { GraphViewerProps, GraphNode, GraphLink, GraphData } from './types'
