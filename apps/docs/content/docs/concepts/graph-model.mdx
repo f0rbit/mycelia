@@ -1,0 +1,450 @@
+---
+title: Graph Model
+description: Understanding Mycelia's knowledge graph architecture
+---
+
+# Graph Model
+
+Mycelia transforms your content into a queryable knowledge graph. This graph structure enables powerful navigation, discovery, and relationship mapping across your entire knowledge base.
+
+## Graph Architecture
+
+### Core Components
+
+```typescript
+interface MyceliaGraph {
+  nodes: Map<string, MyceliaNode>;
+  edges: MyceliaEdge[];
+  indexes: {
+    byType: Map<string, Set<string>>;
+    byTag: Map<string, Set<string>>;
+    byDate: Map<string, Set<string>>;
+  };
+  metadata: {
+    version: string;
+    created: Date;
+    nodeCount: number;
+    edgeCount: number;
+  };
+}
+```
+
+## Nodes
+
+Each piece of content becomes a node in the graph:
+
+### Node Structure
+
+```typescript
+interface MyceliaNode {
+  id: string;              // Unique identifier
+  type: string;            // Node type (person, project, etc.)
+  primitive: 'leaf' | 'branch' | 'trunk';
+  properties: {
+    title?: string;
+    name?: string;
+    content?: string;
+    [key: string]: any;   // Custom properties
+  };
+  metadata: {
+    created: Date;
+    updated: Date;
+    source: string;       // Source file path
+    hash: string;         // Content hash
+  };
+}
+```
+
+### Node Types
+
+Nodes are categorized by their primitive type:
+
+| Primitive | Types | Purpose |
+|-----------|-------|---------|
+| **Trunk** | person, organization, theme | Core entities that anchor the graph |
+| **Branch** | project, research, collection | Groupings that organize content |
+| **Leaf** | post, note, task, link | Individual content pieces |
+
+### Node Examples
+
+```javascript
+// Person node (Trunk)
+{
+  id: "jane-smith",
+  type: "person",
+  primitive: "trunk",
+  properties: {
+    name: "Jane Smith",
+    role: "Senior Engineer",
+    email: "jane@example.com"
+  }
+}
+
+// Project node (Branch)
+{
+  id: "knowledge-graph",
+  type: "project",
+  primitive: "branch",
+  properties: {
+    title: "Knowledge Graph Builder",
+    status: "in-progress",
+    priority: "high"
+  }
+}
+
+// Note node (Leaf)
+{
+  id: "meeting-notes-2024-01-15",
+  type: "note",
+  primitive: "leaf",
+  properties: {
+    content: "Discussed project timeline...",
+    date: "2024-01-15",
+    type: "meeting"
+  }
+}
+```
+
+## Edges
+
+Edges represent relationships between nodes:
+
+### Edge Structure
+
+```typescript
+interface MyceliaEdge {
+  id: string;
+  from: string;        // Source node ID
+  to: string;          // Target node ID
+  type: EdgeType;      // Relationship type
+  properties?: {
+    weight?: number;   // Relationship strength
+    label?: string;    // Custom label
+    [key: string]: any;
+  };
+}
+
+enum EdgeType {
+  CONTAINS = 'contains',     // Parent-child
+  REFERENCES = 'references', // Explicit reference
+  RELATES = 'relates',       // Implicit connection
+  AUTHORED = 'authored',     // Authorship
+  TAGGED = 'tagged'          // Tag association
+}
+```
+
+### Relationship Types
+
+#### Contains (Parent → Child)
+Hierarchical relationships from nesting:
+
+```mdx
+<Project>              <!-- Parent -->
+  <Task />            <!-- Child -->
+</Project>
+
+// Creates edge:
+{ from: "project-id", to: "task-id", type: "contains" }
+```
+
+#### References (Node → Node)
+Explicit connections between content:
+
+```mdx
+<Post>
+  Written by <Person name="Jane" />
+</Post>
+
+// Creates edge:
+{ from: "post-id", to: "jane", type: "references" }
+```
+
+#### Relates (Node ↔ Node)
+Implicit connections through shared attributes:
+
+```mdx
+<Post><Tag>ml</Tag></Post>
+<Project><Tag>ml</Tag></Project>
+
+// Both relate through the "ml" tag
+```
+
+## Indexes
+
+Indexes enable fast lookups and queries:
+
+### Type Index
+Groups nodes by their type:
+
+```javascript
+indexes.byType = {
+  'person': Set(['jane-smith', 'john-doe']),
+  'project': Set(['project-alpha', 'project-beta']),
+  'task': Set(['task-1', 'task-2', 'task-3'])
+}
+
+// Query: Get all people
+const people = indexes.byType.get('person');
+```
+
+### Tag Index
+Groups nodes by tags:
+
+```javascript
+indexes.byTag = {
+  'machine-learning': Set(['post-1', 'project-ml']),
+  'productivity': Set(['post-2', 'task-mgmt'])
+}
+
+// Query: Get all ML-related content
+const mlContent = indexes.byTag.get('machine-learning');
+```
+
+### Temporal Index
+Groups nodes by date:
+
+```javascript
+indexes.byDate = {
+  '2024-01': Set(['post-jan-1', 'note-jan-15']),
+  '2024-02': Set(['post-feb-1', 'task-feb-10'])
+}
+
+// Query: Get January 2024 content
+const janContent = indexes.byDate.get('2024-01');
+```
+
+## Graph Operations
+
+### Traversal
+
+Navigate the graph to discover connections:
+
+```typescript
+// Find all tasks in a project
+function getProjectTasks(projectId: string): MyceliaNode[] {
+  return edges
+    .filter(e => e.from === projectId && e.type === 'contains')
+    .map(e => nodes.get(e.to))
+    .filter(n => n?.type === 'task');
+}
+
+// Find all projects for a person
+function getPersonProjects(personId: string): MyceliaNode[] {
+  return edges
+    .filter(e => e.to === personId && e.type === 'references')
+    .map(e => nodes.get(e.from))
+    .filter(n => n?.type === 'project');
+}
+```
+
+### Path Finding
+
+Find connections between nodes:
+
+```typescript
+// Find shortest path between two nodes
+function findPath(startId: string, endId: string): string[] {
+  const visited = new Set();
+  const queue = [[startId]];
+  
+  while (queue.length > 0) {
+    const path = queue.shift();
+    const current = path[path.length - 1];
+    
+    if (current === endId) return path;
+    if (visited.has(current)) continue;
+    
+    visited.add(current);
+    
+    // Get neighbors
+    const neighbors = edges
+      .filter(e => e.from === current || e.to === current)
+      .map(e => e.from === current ? e.to : e.from);
+    
+    for (const neighbor of neighbors) {
+      queue.push([...path, neighbor]);
+    }
+  }
+  
+  return null; // No path found
+}
+```
+
+### Clustering
+
+Identify related content clusters:
+
+```typescript
+// Find nodes related by tags
+function findRelatedByTags(nodeId: string): MyceliaNode[] {
+  const node = nodes.get(nodeId);
+  const nodeTags = node.properties.tags || [];
+  
+  const related = new Map();
+  
+  for (const tag of nodeTags) {
+    const tagged = indexes.byTag.get(tag) || new Set();
+    
+    for (const id of tagged) {
+      if (id !== nodeId) {
+        const count = related.get(id) || 0;
+        related.set(id, count + 1);
+      }
+    }
+  }
+  
+  // Sort by number of shared tags
+  return Array.from(related.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([id]) => nodes.get(id));
+}
+```
+
+## Query Patterns
+
+### Type Queries
+
+```typescript
+// Get all people
+graph.indexes.byType.get('person')
+
+// Get all active projects
+Array.from(graph.indexes.byType.get('project'))
+  .map(id => graph.nodes.get(id))
+  .filter(n => n.properties.status === 'active')
+```
+
+### Relationship Queries
+
+```typescript
+// Get all content authored by someone
+graph.edges
+  .filter(e => e.type === 'authored' && e.from === 'jane-smith')
+  .map(e => graph.nodes.get(e.to))
+
+// Get project collaborators
+graph.edges
+  .filter(e => e.to === 'project-id' && e.type === 'references')
+  .map(e => graph.nodes.get(e.from))
+  .filter(n => n.type === 'person')
+```
+
+### Complex Queries
+
+```typescript
+// Find people with specific skills working on ML projects
+function findMLExperts() {
+  const mlProjects = Array.from(
+    graph.indexes.byTag.get('machine-learning') || []
+  ).filter(id => graph.nodes.get(id)?.type === 'project');
+  
+  const people = new Set();
+  
+  for (const projectId of mlProjects) {
+    graph.edges
+      .filter(e => e.to === projectId && e.type === 'references')
+      .forEach(e => {
+        const node = graph.nodes.get(e.from);
+        if (node?.type === 'person') {
+          people.add(node);
+        }
+      });
+  }
+  
+  return Array.from(people);
+}
+```
+
+## Visualization
+
+The graph can be visualized using force-directed layouts:
+
+```typescript
+// Convert to D3-compatible format
+function toD3Format() {
+  return {
+    nodes: Array.from(graph.nodes.values()).map(n => ({
+      id: n.id,
+      group: n.primitive,
+      label: n.properties.name || n.properties.title,
+      ...n.properties
+    })),
+    links: graph.edges.map(e => ({
+      source: e.from,
+      target: e.to,
+      value: e.properties?.weight || 1,
+      type: e.type
+    }))
+  };
+}
+```
+
+## Performance Optimization
+
+### Lazy Loading
+
+Load graph data on demand:
+
+```typescript
+class LazyGraph {
+  private nodeCache = new Map();
+  
+  async getNode(id: string) {
+    if (!this.nodeCache.has(id)) {
+      const node = await fetchNode(id);
+      this.nodeCache.set(id, node);
+    }
+    return this.nodeCache.get(id);
+  }
+}
+```
+
+### Incremental Updates
+
+Update graph without full rebuild:
+
+```typescript
+function updateNode(id: string, updates: Partial<MyceliaNode>) {
+  const node = graph.nodes.get(id);
+  if (node) {
+    Object.assign(node.properties, updates);
+    node.metadata.updated = new Date();
+    updateIndexes(node);
+  }
+}
+```
+
+### Caching Strategies
+
+Cache common queries:
+
+```typescript
+const queryCache = new Map();
+
+function cachedQuery(key: string, query: () => any) {
+  if (!queryCache.has(key)) {
+    queryCache.set(key, query());
+  }
+  return queryCache.get(key);
+}
+
+// Usage
+const people = cachedQuery('all-people', 
+  () => Array.from(graph.indexes.byType.get('person'))
+);
+```
+
+## Best Practices
+
+1. **Keep nodes focused**: One concept per node
+2. **Use consistent IDs**: Predictable ID generation
+3. **Index strategically**: Only index queryable fields
+4. **Minimize edge types**: Use standard relationships
+5. **Cache aggressively**: Graph queries can be expensive
+
+## Next Steps
+
+- Learn about [Parser](/docs/parser/overview) internals
+- Explore [Graph Visualization](/docs/components/graph)
+- Optimize [Performance](/docs/advanced/performance)
+- Build [Custom Queries](/docs/api/core)

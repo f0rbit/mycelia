@@ -1,0 +1,430 @@
+---
+title: Custom Tags Reference
+description: Complete guide to all Mycelia custom tags and their usage
+---
+
+# Custom Tags Reference
+
+Mycelia extends MDX with custom tags designed for knowledge management. Each tag maps to a semantic primitive and automatically creates nodes in your knowledge graph.
+
+## Tag Categories
+
+### 📝 Content Tags
+For articles, notes, and written content
+
+### 👥 Entity Tags  
+For people, organizations, and actors
+
+### 📁 Collection Tags
+For projects, research, and groupings  
+
+### 🔧 Utility Tags
+For tasks, dates, and metadata
+
+## Complete Tag Reference
+
+### Person
+Represents individuals in your network.
+
+```mdx
+<Person 
+  name="Jane Smith"
+  role="Senior Engineer"
+  email="jane@example.com"
+  twitter="@janesmith"
+>
+  Expert in distributed systems and cloud architecture.
+  <Skill level="expert">Kubernetes</Skill>
+  <Skill level="intermediate">React</Skill>
+</Person>
+```
+
+**Attributes:**
+- `name` (required): Person's full name
+- `role`: Professional role or title
+- `email`: Email address
+- `twitter`: Twitter handle
+- `linkedin`: LinkedIn profile
+- `github`: GitHub username
+
+### Project
+Defines projects and initiatives.
+
+```mdx
+<Project
+  title="Knowledge Graph Builder"
+  status="in-progress"
+  startDate="2024-01-01"
+  endDate="2024-06-01"
+  priority="high"
+>
+  Building a visual knowledge graph from markdown files.
+  
+  <Task status="completed">Design graph schema</Task>
+  <Task status="in-progress">Implement parser</Task>
+  <Task>Create visualization</Task>
+</Project>
+```
+
+**Attributes:**
+- `title` (required): Project name
+- `status`: `planning` | `in-progress` | `completed` | `on-hold`
+- `startDate`: ISO date string
+- `endDate`: ISO date string  
+- `priority`: `low` | `medium` | `high`
+- `budget`: Budget amount
+- `client`: Client name
+
+### Task
+Individual action items and todos.
+
+```mdx
+<Task
+  name="Write documentation"
+  status="in-progress"
+  assignee="John Doe"
+  due="2024-02-01"
+  priority="high"
+>
+  Create comprehensive API documentation
+</Task>
+```
+
+**Attributes:**
+- `name` (required): Task description
+- `status`: `todo` | `in-progress` | `completed` | `blocked`
+- `assignee`: Person responsible
+- `due`: Due date (ISO format)
+- `priority`: `low` | `medium` | `high`
+- `estimate`: Time estimate (e.g., "2h", "3d")
+
+### Skill
+Technical skills and competencies.
+
+```mdx
+<Skill 
+  name="TypeScript"
+  level="expert"
+  years="5"
+  category="programming"
+>
+  Extensive experience with TypeScript in production
+</Skill>
+```
+
+**Attributes:**
+- `name` (required): Skill name
+- `level`: `beginner` | `intermediate` | `advanced` | `expert`
+- `years`: Years of experience
+- `category`: Skill category
+- `verified`: Boolean for verified skills
+
+### Tag
+Categorical labels for organization.
+
+```mdx
+<Tag name="machine-learning" />
+<Tag name="productivity" color="blue" />
+<Tag category="topic">artificial-intelligence</Tag>
+```
+
+**Attributes:**
+- `name` (required): Tag name
+- `category`: Tag category
+- `color`: Display color
+- `icon`: Icon identifier
+
+### Date
+Temporal markers and events.
+
+```mdx
+<Date 
+  value="2024-01-15"
+  type="deadline"
+  recurring="monthly"
+>
+  Project milestone review
+</Date>
+```
+
+**Attributes:**
+- `value` (required): ISO date string
+- `type`: `deadline` | `milestone` | `event` | `reminder`
+- `recurring`: `daily` | `weekly` | `monthly` | `yearly`
+- `time`: Time in HH:MM format
+
+### Research
+Research topics and investigations.
+
+```mdx
+<Research
+  topic="Quantum Computing"
+  status="active"
+  field="Computer Science"
+>
+  Exploring quantum algorithms for optimization
+  
+  <Paper title="Quantum Supremacy" author="John Preskill" />
+  <Experiment name="Shor's Algorithm Implementation" />
+</Research>
+```
+
+**Attributes:**
+- `topic` (required): Research topic
+- `status`: `proposed` | `active` | `completed` | `archived`
+- `field`: Academic field
+- `funding`: Funding source
+- `institution`: Research institution
+
+### Essay
+Long-form written content.
+
+```mdx
+<Essay
+  title="The Future of Knowledge Management"
+  wordCount="2500"
+  readingTime="10 min"
+  published="2024-01-15"
+>
+  # Introduction
+  
+  Knowledge management is evolving...
+</Essay>
+```
+
+**Attributes:**
+- `title` (required): Essay title
+- `wordCount`: Word count
+- `readingTime`: Estimated reading time
+- `published`: Publication date
+- `updated`: Last update date
+- `author`: Author name
+
+### Note
+Quick notes and observations.
+
+```mdx
+<Note
+  type="meeting"
+  date="2024-01-15"
+  attendees="John, Jane, Bob"
+>
+  Discussed project timeline and deliverables
+</Note>
+```
+
+**Attributes:**
+- `type`: `meeting` | `idea` | `observation` | `reminder`
+- `date`: Note date
+- `attendees`: For meeting notes
+- `location`: Where the note was taken
+- `tags`: Comma-separated tags
+
+### Link
+External references and resources.
+
+```mdx
+<Link
+  url="https://arxiv.org/paper"
+  title="Attention Is All You Need"
+  type="paper"
+  description="Transformer architecture paper"
+/>
+```
+
+**Attributes:**
+- `url` (required): URL
+- `title`: Link title
+- `type`: `article` | `paper` | `video` | `tool` | `documentation`
+- `description`: Brief description
+- `archived`: Boolean for archived links
+
+### Organization
+Companies, institutions, and groups.
+
+```mdx
+<Organization
+  name="Acme Corp"
+  type="company"
+  industry="Technology"
+  size="1000-5000"
+>
+  Leading provider of cloud solutions
+  
+  <Person role="CTO">Jane Smith</Person>
+  <Project>Cloud Migration Platform</Project>
+</Organization>
+```
+
+**Attributes:**
+- `name` (required): Organization name
+- `type`: `company` | `nonprofit` | `institution` | `community`
+- `industry`: Industry sector
+- `size`: Organization size
+- `founded`: Founding year
+- `website`: Organization website
+
+## Advanced Usage
+
+### Nesting Tags
+
+Tags can be nested to create relationships:
+
+```mdx
+<Project title="Blog Redesign">
+  <Person role="Designer">Sarah Chen</Person>
+  <Task assignee="Sarah Chen">Create mockups</Task>
+  <Tag>design</Tag>
+  <Tag>frontend</Tag>
+</Project>
+```
+
+### Cross-References
+
+Reference other nodes using attributes:
+
+```mdx
+<Post>
+  Written by <Person name="John Doe" />
+  Part of <Project title="Content Strategy" />
+</Post>
+```
+
+### Computed Properties
+
+Some properties are automatically computed:
+
+```mdx
+<Project title="My Project">
+  <!-- Progress computed from task statuses -->
+  <Task status="completed">Task 1</Task>
+  <Task status="in-progress">Task 2</Task>
+  <Task status="todo">Task 3</Task>
+</Project>
+<!-- Progress: 33% -->
+```
+
+### Custom Attributes
+
+All tags accept custom attributes:
+
+```mdx
+<Person 
+  name="Alice"
+  customField="value"
+  dataScore="95"
+>
+  Custom attributes are preserved in the graph
+</Person>
+```
+
+## ID Generation
+
+Mycelia automatically generates unique IDs for each tag:
+
+1. **Explicit ID**: Use `id` attribute
+   ```mdx
+   <Project id="project-alpha" title="Alpha Project" />
+   ```
+
+2. **Name-based**: From `name` or `title` attributes
+   ```mdx
+   <Person name="Jane Smith" />
+   <!-- ID: "jane-smith" -->
+   ```
+
+3. **Content-based**: From text content
+   ```mdx
+   <Note>Meeting notes from standup</Note>
+   <!-- ID: "meeting-notes-from-standup" -->
+   ```
+
+4. **Auto-generated**: Hash-based fallback
+   ```mdx
+   <Task>Generic task</Task>
+   <!-- ID: "task-a1b2c3d4" -->
+   ```
+
+## Type Mapping
+
+Tags map to primitive types:
+
+| Tag | Primitive Type | Graph Node Type |
+|-----|---------------|-----------------|
+| Person | Trunk | person |
+| Organization | Trunk | organization |
+| Project | Branch | project |
+| Research | Branch | research |
+| Essay | Leaf | essay |
+| Note | Leaf | note |
+| Task | Leaf | task |
+| Tag | Meta | tag |
+| Skill | Meta | skill |
+| Date | Meta | date |
+
+## Styling & Rendering
+
+Each tag has a default renderer that can be customized:
+
+```tsx
+// Custom renderer for Person tags
+function PersonRenderer({ node }) {
+  return (
+    <div className="person-card">
+      <h3>{node.properties.name}</h3>
+      <p>{node.properties.role}</p>
+      <SkillList skills={node.children} />
+    </div>
+  );
+}
+```
+
+## Best Practices
+
+1. **Use semantic tags**: Choose tags that match content meaning
+2. **Be consistent**: Use the same attributes across similar content
+3. **Add descriptions**: Include text content for context
+4. **Link liberally**: Create connections between nodes
+5. **Tag thoughtfully**: Don't over-tag, but don't under-tag either
+
+## Common Patterns
+
+### Project Documentation
+```mdx
+<Project title="API Redesign">
+  <Person role="Lead">Alice</Person>
+  <Task status="done">Design API schema</Task>
+  <Task>Implement endpoints</Task>
+  <Link url="https://docs.api.com">API Docs</Link>
+  <Tag>backend</Tag>
+</Project>
+```
+
+### Person Profile
+```mdx
+<Person name="Bob Smith">
+  Senior Developer at Acme Corp
+  <Skill level="expert">Python</Skill>
+  <Skill level="advanced">Docker</Skill>
+  <Project role="Lead">Microservices Migration</Project>
+</Person>
+```
+
+### Research Notes
+```mdx
+<Research topic="Graph Databases">
+  <Note date="2024-01-15">
+    Compared Neo4j vs ArangoDB performance
+  </Note>
+  <Link url="https://neo4j.com">Neo4j</Link>
+  <Tag>database</Tag>
+  <Tag>graphs</Tag>
+</Research>
+```
+
+## Next Steps
+
+- Learn about the [Graph Model](/docs/concepts/graph-model)
+- See tags in action with [Examples](/docs/content/examples)
+- Understand [Parser](/docs/parser/overview) internals
+- Customize [Semantic Renderers](/docs/components/semantic-renderers)

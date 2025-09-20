@@ -1,0 +1,132 @@
+---
+title: Quick Start
+description: Get started with Mycelia in under 5 minutes
+---
+
+# Quick Start
+
+Get up and running with Mycelia in just a few minutes. This guide will walk you through creating your first digital garden.
+
+## Installation
+
+Install Mycelia using your preferred package manager:
+
+```bash
+# Using Bun (recommended)
+bun add @mycelia/core @mycelia/parser @mycelia/ssr
+
+# Using npm
+npm install @mycelia/core @mycelia/parser @mycelia/ssr
+
+# Using yarn
+yarn add @mycelia/core @mycelia/parser @mycelia/ssr
+```
+
+## Create Your First Content
+
+Create a new MDX file with Mycelia's custom tags:
+
+```mdx filename="content/my-first-post.mdx"
+---
+title: My First Mycelia Post
+date: 2024-01-01
+---
+
+# Building My Digital Garden
+
+<Person name="Jane Doe" role="Developer">
+  Passionate about creating interconnected knowledge systems.
+</Person>
+
+<Project title="Knowledge Base" status="in-progress">
+  Building a personal knowledge management system using Mycelia.
+  
+  <Task name="Setup" status="completed">
+    Initial project setup and configuration
+  </Task>
+  
+  <Task name="Content Migration" status="in-progress">
+    Migrating existing notes and documentation
+  </Task>
+</Project>
+
+<Tag name="digital-garden" />
+<Tag name="knowledge-management" />
+```
+
+## Setup Next.js Integration
+
+Create a Next.js app with Mycelia:
+
+```typescript filename="app/[...slug]/page.tsx"
+import { MyceliaProvider } from '@mycelia/ssr/nextjs';
+import { MarkdownParser } from '@mycelia/parser';
+
+const provider = new MyceliaProvider({
+  contentDir: './content',
+  parser: new MarkdownParser()
+});
+
+export default async function Page({ 
+  params 
+}: { 
+  params: { slug: string[] } 
+}) {
+  const content = await provider.getContent(
+    params.slug.join('/')
+  );
+  
+  if (!content) {
+    return notFound();
+  }
+  
+  return (
+    <article>
+      {content.render()}
+    </article>
+  );
+}
+
+export async function generateStaticParams() {
+  const paths = await provider.getAllPaths();
+  return paths.map(path => ({
+    slug: path.split('/')
+  }));
+}
+```
+
+## Run Your Site
+
+Start the development server:
+
+```bash
+# Using Bun
+bun run dev
+
+# Using npm
+npm run dev
+```
+
+Visit `http://localhost:3000` to see your Mycelia-powered site!
+
+## What's Next?
+
+- Learn about [Content Structure](/docs/concepts/content-structure) and the forest metaphor
+- Explore all available [Custom Tags](/docs/concepts/custom-tags)
+- See complete [Examples](/docs/content/examples) of Mycelia in action
+- Set up [Static Site Generation](/docs/nextjs/static-generation)
+
+## Example Sites
+
+Check out these examples to see Mycelia in action:
+
+- **Blog**: A personal blog with tags and categories
+- **Portfolio**: Project showcase with skills matrix
+- **Knowledge Base**: Research notes with graph visualization
+- **Documentation**: Technical documentation with API references
+
+## Need Help?
+
+- Join our [GitHub Discussions](https://github.com/sst/opencode/issues)
+- Read the comprehensive [documentation](/docs)
+- Check out [example projects](https://github.com/mycelia/examples)

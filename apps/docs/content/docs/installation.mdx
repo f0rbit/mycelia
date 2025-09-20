@@ -1,0 +1,256 @@
+---
+title: Installation
+description: Detailed installation guide for Mycelia
+---
+
+# Installation
+
+This guide covers everything you need to know about installing and setting up Mycelia.
+
+## System Requirements
+
+- **Node.js**: 18.0 or higher
+- **Package Manager**: Bun (recommended), npm, or yarn
+- **Operating System**: macOS, Linux, or Windows
+- **Git**: For version control
+
+## Package Installation
+
+Mycelia is distributed as a set of modular packages:
+
+### Core Packages
+
+```bash
+# Essential packages for any Mycelia project
+bun add @mycelia/core @mycelia/parser
+```
+
+- **@mycelia/core**: Core types and graph structures
+- **@mycelia/parser**: MDX parser with custom tag support
+
+### Framework Integration
+
+For Next.js projects:
+
+```bash
+bun add @mycelia/ssr @mycelia/render
+```
+
+- **@mycelia/ssr**: Server-side rendering utilities
+- **@mycelia/render**: React components for rendering
+
+### Optional Packages
+
+```bash
+# Graph visualization
+bun add @mycelia/graph
+
+# CLI tools
+bun add -D @mycelia/cli
+```
+
+## Project Setup
+
+### 1. Create a New Project
+
+```bash
+# Create new Next.js project
+bunx create-next-app@latest my-mycelia-garden
+cd my-mycelia-garden
+
+# Install Mycelia
+bun add @mycelia/core @mycelia/parser @mycelia/ssr
+```
+
+### 2. Configure TypeScript
+
+Update your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@mycelia/*": ["./node_modules/@mycelia/*"]
+    }
+  }
+}
+```
+
+### 3. Setup Content Directory
+
+Create your content structure:
+
+```bash
+mkdir -p content/{posts,projects,people}
+touch content/index.mdx
+```
+
+### 4. Configure Next.js
+
+Create `next.config.mjs`:
+
+```javascript
+import { createMDX } from 'fumadocs-mdx/next';
+
+const withMDX = createMDX();
+
+/** @type {import('next').NextConfig} */
+const config = {
+  reactStrictMode: true,
+  transpilePackages: ['@mycelia/core', '@mycelia/parser', '@mycelia/ssr']
+};
+
+export default withMDX(config);
+```
+
+## Monorepo Setup
+
+For larger projects, use a monorepo structure:
+
+```bash
+# Create monorepo structure
+mkdir my-mycelia-monorepo
+cd my-mycelia-monorepo
+bun init
+
+# Setup workspace
+cat > package.json << 'EOF'
+{
+  "name": "my-mycelia-monorepo",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"]
+}
+EOF
+
+# Create app
+mkdir -p apps/web
+cd apps/web
+bunx create-next-app@latest . --typescript --tailwind --app
+```
+
+### Workspace Configuration
+
+Root `package.json`:
+
+```json
+{
+  "name": "mycelia-workspace",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "bun run --filter='./apps/web' dev",
+    "build": "bun run --filter='./apps/web' build",
+    "lint": "bun run --filter='*' lint"
+  }
+}
+```
+
+## Environment Setup
+
+### Development Tools
+
+Install recommended VS Code extensions:
+
+```json
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "unifiedjs.vscode-mdx"
+  ]
+}
+```
+
+### Git Configuration
+
+Add `.gitignore`:
+
+```text
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production
+/build
+/dist
+/.next
+/out
+
+# Cache
+.turbo
+.cache
+*.tsbuildinfo
+
+# Misc
+.DS_Store
+*.pem
+.env*.local
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+```
+
+## Verification
+
+Verify your installation:
+
+```bash
+# Check versions
+bun --version
+node --version
+
+# Test Mycelia imports
+bun run -e "import { MarkdownParser } from '@mycelia/parser'; console.log('✓ Mycelia installed')"
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**Module Resolution Errors**
+```bash
+# Clear cache and reinstall
+rm -rf node_modules bun.lockb
+bun install
+```
+
+**TypeScript Errors**
+```bash
+# Rebuild TypeScript definitions
+bun run tsc --noEmit
+```
+
+**Build Failures**
+```bash
+# Check for peer dependencies
+bun install --peer
+```
+
+### Platform-Specific Issues
+
+**Windows**: Use WSL2 for best compatibility
+**macOS**: Ensure Xcode Command Line Tools are installed
+**Linux**: Install build-essential packages
+
+## Next Steps
+
+Now that Mycelia is installed:
+
+1. Follow the [Quick Start](/docs/quick-start) guide
+2. Learn about [Content Structure](/docs/concepts/content-structure)
+3. Explore [Custom Tags](/docs/concepts/custom-tags)
+4. Set up [Next.js Integration](/docs/nextjs/setup)
+
+## Getting Help
+
+- [GitHub Issues](https://github.com/sst/opencode/issues)
+- [Documentation](/docs)
+- [Examples](https://github.com/mycelia/examples)

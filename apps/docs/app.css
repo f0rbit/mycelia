@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+/* Configure content sources */
+@source "./src/**/*.{js,ts,jsx,tsx,mdx}";
+@source "./content/**/*.{js,ts,jsx,tsx,mdx}";
+@source "./node_modules/fumadocs-ui/dist/**/*.js";

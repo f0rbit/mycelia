@@ -1,0 +1,265 @@
+---
+title: Content Structure
+description: Understanding Mycelia's forest metaphor for knowledge organization
+---
+
+# Content Structure
+
+Mycelia uses a forest metaphor to organize and connect your knowledge. This organic structure allows for natural growth and interconnection of ideas.
+
+## The Forest Metaphor
+
+Your knowledge base is structured like a living forest:
+
+```
+🌲 Forest (Your entire knowledge base)
+├── 🌳 Trunks (Core entities: People, Organizations)
+├── 🌿 Branches (Collections: Projects, Research areas)
+└── 🍃 Leafs (Individual pieces: Posts, Notes, Tasks)
+```
+
+## Core Primitives
+
+### Leafs 🍃
+Individual pieces of content that form the foundation of your knowledge:
+
+- **Posts**: Blog articles, essays, thoughts
+- **Notes**: Quick observations, meeting notes
+- **Tasks**: Action items, todo items
+- **References**: Links, citations, bookmarks
+
+```mdx
+<Post title="Understanding Neural Networks">
+  My exploration into deep learning fundamentals...
+</Post>
+
+<Note>
+  Remember to review the paper on attention mechanisms
+</Note>
+```
+
+### Branches 🌿
+Collections that group and organize related content:
+
+- **Projects**: Work projects, personal initiatives
+- **Research**: Study topics, investigation areas
+- **Collections**: Curated lists, galleries
+
+```mdx
+<Project title="AI Research Assistant" status="active">
+  Building an AI-powered research tool
+  
+  <Task>Implement vector search</Task>
+  <Task>Add citation management</Task>
+</Project>
+```
+
+### Trunks 🌳
+Core entities that everything else connects to:
+
+- **People**: Individuals, collaborators, authors
+- **Organizations**: Companies, institutions, groups
+- **Themes**: Major topics, life areas
+
+```mdx
+<Person name="Jane Smith" role="ML Engineer">
+  Expert in transformer architectures
+  <Skill>PyTorch</Skill>
+  <Skill>NLP</Skill>
+</Person>
+```
+
+## Relationships & Connections
+
+Mycelia automatically creates three types of relationships:
+
+### 1. Contains
+Parent-child relationships within the content tree:
+
+```mdx
+<Project> <!-- Parent -->
+  <Task>...</Task> <!-- Child -->
+  <Note>...</Note> <!-- Child -->
+</Project>
+```
+
+### 2. References
+Explicit connections between nodes:
+
+```mdx
+<Post>
+  Inspired by <Person name="Jane Smith" />
+  Related to <Project title="AI Research" />
+</Post>
+```
+
+### 3. Relates
+Implicit connections through shared tags or attributes:
+
+```mdx
+<!-- These will be automatically related -->
+<Post><Tag>machine-learning</Tag></Post>
+<Project><Tag>machine-learning</Tag></Project>
+```
+
+## Content Organization
+
+### Directory Structure
+
+Organize your content files logically:
+
+```
+content/
+├── posts/
+│   ├── 2024-01-15-neural-networks.mdx
+│   └── 2024-02-01-attention-mechanism.mdx
+├── projects/
+│   ├── ai-assistant.mdx
+│   └── knowledge-graph.mdx
+├── people/
+│   ├── collaborators.mdx
+│   └── mentors.mdx
+└── index.mdx
+```
+
+### Metadata & Frontmatter
+
+Use frontmatter for document-level metadata:
+
+```mdx
+---
+title: Building a Second Brain
+date: 2024-01-15
+author: John Doe
+tags: [productivity, knowledge-management]
+status: published
+---
+
+# Content starts here...
+```
+
+### Nesting & Hierarchy
+
+Create natural hierarchies through nesting:
+
+```mdx
+<Research topic="Machine Learning">
+  <Paper title="Attention Is All You Need">
+    <Note>Transformer architecture breakthrough</Note>
+    <Note>Self-attention mechanism</Note>
+  </Paper>
+  
+  <Experiment name="Fine-tuning BERT">
+    <Result>85% accuracy on sentiment analysis</Result>
+  </Experiment>
+</Research>
+```
+
+## Graph Structure
+
+Mycelia builds a knowledge graph from your content:
+
+### Nodes
+Each tag becomes a node with:
+- Unique ID (auto-generated)
+- Type (leaf, branch, trunk)
+- Properties (from attributes)
+- Content (nested text/MDX)
+
+### Edges
+Connections between nodes:
+- From node ID
+- To node ID
+- Relationship type
+- Weight/strength
+
+### Indexes
+Fast lookups by:
+- Type (all projects, all people)
+- Tag (all items with #ml)
+- Date (temporal navigation)
+- Relationship (who knows whom)
+
+## Best Practices
+
+### 1. Start with Trunks
+Define your core entities first:
+- Key people in your network
+- Main projects or areas
+- Central themes
+
+### 2. Grow Branches Naturally
+Let collections emerge from your content:
+- Group related posts into projects
+- Collect research notes by topic
+- Organize tasks by goal
+
+### 3. Connect Everything
+Make relationships explicit:
+- Tag liberally but consistently
+- Reference people and projects
+- Link related content
+
+### 4. Maintain Balance
+- Don't over-nest (3-4 levels max)
+- Keep individual files focused
+- Split large topics into sub-topics
+
+## Example: Personal Knowledge Base
+
+```mdx
+<!-- content/index.mdx -->
+<Forest name="My Digital Garden">
+  <Person name="Me" role="Knowledge Gardener">
+    <Skill>Writing</Skill>
+    <Skill>Programming</Skill>
+  </Person>
+  
+  <Project title="Learning AI" status="ongoing">
+    <Task status="done">Complete CS231n</Task>
+    <Task>Build first neural network</Task>
+    <Resource url="https://arxiv.org/">Papers</Resource>
+  </Project>
+  
+  <Collection name="Reading List">
+    <Book title="Thinking, Fast and Slow" author="Kahneman" />
+    <Book title="The Pragmatic Programmer" />
+  </Collection>
+</Forest>
+```
+
+## Advanced Patterns
+
+### Cross-References
+Create rich interconnections:
+
+```mdx
+<Post id="post-1">
+  See also <Post idref="post-2" />
+</Post>
+```
+
+### Temporal Organization
+Track evolution over time:
+
+```mdx
+<Project>
+  <Phase date="2024-Q1">Planning</Phase>
+  <Phase date="2024-Q2">Implementation</Phase>
+</Project>
+```
+
+### Hierarchical Tags
+Organize tags taxonomically:
+
+```mdx
+<Tag>programming</Tag>
+<Tag>programming/python</Tag>
+<Tag>programming/python/django</Tag>
+```
+
+## Next Steps
+
+- Explore [Custom Tags](/docs/concepts/custom-tags) in detail
+- Learn about the [Graph Model](/docs/concepts/graph-model)
+- See practical [Examples](/docs/content/examples)
