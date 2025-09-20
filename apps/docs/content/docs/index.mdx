@@ -1,0 +1,54 @@
+---
+title: Introduction to Mycelia
+description: A markdown-based engine for creating deeply-linked digital gardens
+---
+
+# Mycelia Documentation
+
+Welcome to the Mycelia documentation! Mycelia is a powerful markdown-based engine for creating deeply-linked project websites, also known as digital gardens.
+
+## What is Mycelia?
+
+Mycelia transforms your markdown content with custom tags into a fully interconnected knowledge graph. It's designed for:
+
+- **Digital Gardens**: Create rich, interconnected knowledge bases
+- **Project Documentation**: Document complex projects with deep relationships
+- **Portfolio Sites**: Showcase work with semantic relationships
+- **Research Notes**: Organize research with cross-references
+
+## Core Concepts
+
+Mycelia uses a forest metaphor to organize content:
+
+- **🍃 Leafs**: Individual pieces of content (blog posts, notes, essays)
+- **🌿 Branches**: Collections that contain leafs (projects, topics)
+- **🌳 Trunks**: Main entities (people, organizations)
+- **🌲 Forest**: The complete interconnected knowledge graph
+
+## Quick Example
+
+```mdx
+<Project name="My Project" status="active">
+  <Skill>TypeScript</Skill>
+  <Task status="completed">Build parser</Task>
+  
+  Built with <Person id="john">John Doe</Person>
+  
+  <Tag>open-source</Tag>
+</Project>
+```
+
+This creates nodes for the project, skill, task, person, and tag - all automatically linked in the knowledge graph!
+
+## Getting Started
+
+Ready to build your own digital garden? Check out the [Quick Start Guide](/docs/quick-start) to get up and running in minutes.
+
+## Features
+
+- 📝 **MDX Support**: Use React components in markdown
+- 🏷️ **Custom Tags**: Define relationships with semantic tags
+- 📊 **Graph Visualization**: Interactive knowledge graph
+- 🚀 **Static Generation**: Export as static site
+- 🔍 **Smart Linking**: Automatic cross-references
+- 🎨 **Type-Specific Rendering**: Custom layouts per content type
