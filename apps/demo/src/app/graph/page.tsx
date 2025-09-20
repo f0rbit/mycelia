@@ -1,7 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { MyceliaGraphViewer as ForceGraph, CytoscapeGraph } from '@mycelia/graph';
+import { useState, lazy, Suspense } from 'react';
+import { MyceliaGraphViewer as ForceGraph } from '@mycelia/graph';
+
+// Lazy load Cytoscape to avoid SSR issues
+const CytoscapeGraph = lazy(() => 
+  import('@mycelia/graph').then(mod => ({ default: mod.CytoscapeGraph }))
+);
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 
 export default function GraphPage() {
@@ -91,12 +96,21 @@ export default function GraphPage() {
       <Card>
         <CardContent className="p-6">
           {implementation === 'cytoscape' ? (
-            <CytoscapeGraph
-              width={typeof window !== 'undefined' ? window.innerWidth - 100 : 1200}
-              height={600}
-              layout={layout}
-              interactive={true}
-            />
+            <Suspense fallback={
+              <div className="flex items-center justify-center h-[600px]">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+                  <p className="text-sm text-gray-600">Loading Cytoscape...</p>
+                </div>
+              </div>
+            }>
+              <CytoscapeGraph
+                width={typeof window !== 'undefined' ? window.innerWidth - 100 : 1200}
+                height={600}
+                layout={layout}
+                interactive={true}
+              />
+            </Suspense>
           ) : (
             <ForceGraph
               width={typeof window !== 'undefined' ? window.innerWidth - 100 : 1200}
