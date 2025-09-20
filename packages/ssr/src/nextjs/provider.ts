@@ -75,7 +75,15 @@ export async function getMyceliaContent(slug?: string[]) {
     }
     
     // If not found, try to get node-based content
-    return await provider.getContentByNodeId(routeStr);
+    // For routes like /project/burning-blends, try the ID part (burning-blends)
+    if (provider.getContentByNodeId) {
+      const nodeId = slug && slug.length > 1 ? slug[slug.length - 1] : routeStr;
+      if (nodeId) {
+        return await provider.getContentByNodeId(nodeId);
+      }
+    }
+    
+    return null;
   } catch (error) {
     console.error('Error in getMyceliaContent for route:', routeStr, error);
     return null;

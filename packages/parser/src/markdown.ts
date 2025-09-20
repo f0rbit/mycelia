@@ -3,15 +3,10 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkMdx from 'remark-mdx';
 import { visit } from 'unist-util-visit';
-import { toString } from 'mdast-util-to-string';
+
 import glob from 'fast-glob';
 
-import type { 
-  MyceliaGraph, 
-  MyceliaNode,
-  RenderableTree,
-  RenderableNode
-} from '@mycelia/core';
+import type { MyceliaGraph } from '@mycelia/core';
 
 import { createRegistry } from '@mycelia/core';
 
@@ -72,9 +67,6 @@ export class MarkdownParser implements Parser {
       }
     }
 
-    // Create renderable tree
-    const renderTree = this.createRenderableTree(graph);
-
     // Build indexes and update stats AFTER all processing is complete  
     this.buildIndexes(graph);
 
@@ -89,7 +81,6 @@ export class MarkdownParser implements Parser {
     
     return {
       graph,
-      renderTree,
       errors,
       warnings
     };
@@ -125,7 +116,8 @@ export class MarkdownParser implements Parser {
           const tagName = node.name;
           if (!tagName) return;
 
-          const mapping = registry[tagName];
+          // Look up mapping with case-insensitive tag name
+          const mapping = registry[tagName.toLowerCase()];
           if (!mapping) {
             warnings.push(`Unknown tag '${tagName}' in ${filename}`);
             return;
@@ -156,11 +148,11 @@ export class MarkdownParser implements Parser {
           );
 
           // Add timestamps if available
-          if (attributes.createdAt) {
-            myceliaNode.createdAt = normalizeDate(attributes.createdAt);
+          if (attributes.created_at || attributes.createdAt) {
+            myceliaNode.created_at = normalizeDate(attributes.created_at || attributes.createdAt);
           }
-          if (attributes.updatedAt) {
-            myceliaNode.updatedAt = normalizeDate(attributes.updatedAt);
+          if (attributes.updated_at || attributes.updatedAt) {
+            myceliaNode.updated_at = normalizeDate(attributes.updated_at || attributes.updatedAt);
           }
 
           graph.nodes[nodeId] = myceliaNode;
@@ -243,7 +235,7 @@ export class MarkdownParser implements Parser {
       });
     }
 
-    const renderTree = this.createRenderableTree(graph);
+
 
     // Build indexes and update stats AFTER all processing is complete
     this.buildIndexes(graph);
@@ -259,7 +251,6 @@ export class MarkdownParser implements Parser {
 
     return {
       graph,
-      renderTree,
       errors,
       warnings
     };
@@ -348,91 +339,9 @@ export class MarkdownParser implements Parser {
     }
   }
 
-  private createRenderableTree(graph: MyceliaGraph): RenderableTree {
-    // Find root nodes (nodes with no inbound 'contains' edges)
-    const rootNodes = Object.keys(graph.nodes).filter(nodeId => {
-      const containsEdges = graph.edges.filter(e => 
-        e.to === nodeId && e.type === 'contains'
-      );
-      return containsEdges.length === 0;
-    });
 
-    // For now, create a virtual root that contains all root nodes
-    const root: RenderableNode = {
-      id: '__root__',
-      type: 'root',
-      primitive: 'Trunk',
-      props: {},
-      children: rootNodes.map(id => this.nodeToRenderable(id, graph)),
-      resolvedRefs: []
-    };
 
-    return {
-      root,
-      meta: {
-        totalNodes: Object.keys(graph.nodes).length,
-        unresolvedRefs: [],
-        warnings: []
-      }
-    };
-  }
 
-  private nodeToRenderable(nodeId: string, graph: MyceliaGraph): RenderableNode {
-    const node = graph.nodes[nodeId];
-    if (!node) {
-      return {
-        id: nodeId,
-        type: 'missing',
-        primitive: 'Leaf',
-        props: {},
-        children: [],
-        content: `Missing node: ${nodeId}`,
-        resolvedRefs: []
-      };
-    }
-
-    const children = ('children' in node) ? 
-      node.children.map(childId => this.nodeToRenderable(childId, graph)) : 
-      [];
-
-    const content = ('content' in node) ? node.content : 
-                   ('value' in node) ? node.value : 
-                   ('description' in node) ? node.description : undefined;
-
-    // Resolve references
-    const resolvedRefs = graph.edges
-      .filter(e => e.from === nodeId && e.type === 'references')
-      .map(e => {
-        const target = graph.nodes[e.to];
-        return {
-          id: e.to,
-          type: target?.type || 'unknown',
-          primitive: target?.primitive || 'Leaf',
-          title: this.getNodeTitle(target),
-          exists: !!target
-        };
-      });
-
-    return {
-      id: nodeId,
-      type: node.type,
-      primitive: node.primitive,
-      props: node.attributes || {},
-      children,
-      content,
-      resolvedRefs
-    };
-  }
-
-  private getNodeTitle(node?: MyceliaNode): string {
-    if (!node) return 'Unknown';
-    
-    if ('title' in node && node.title) return node.title;
-    if ('value' in node && node.value) return node.value;
-    if ('name' in node.attributes && node.attributes.name) return node.attributes.name;
-    
-    return node.id;
-  }
 
   /**
    * Extract only the direct text content of a node, excluding text from nested semantic tags

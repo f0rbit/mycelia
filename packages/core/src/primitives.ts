@@ -1,21 +1,9 @@
 /**
- * Core structural primitives for the Mycelia system
- * All user-facing tags map to these primitives
+ * Simplified core primitives for the Mycelia system
+ * Reduced from 6 to 3 types for clarity and maintainability
  */
 
-export type NodePrimitive = 'Leaf' | 'Branch' | 'Trunk' | 'Link' | 'Meta' | 'List';
-
-/**
- * Base interface for all nodes in the Mycelia system
- */
-export interface BaseNode {
-  id: string;
-  type: string;
-  primitive: NodePrimitive;
-  createdAt?: string;
-  updatedAt?: string;
-  source: SourceReference;
-}
+export type NodePrimitive = 'Content' | 'Reference' | 'Meta';
 
 /**
  * Source file reference for tracking where content originated
@@ -33,69 +21,54 @@ export interface Position {
 }
 
 /**
- * Leaf - Atomic value, no children (e.g. Song, Date, Number)
+ * Base interface for all nodes in the Mycelia system
  */
-export interface LeafNode extends BaseNode {
-  primitive: 'Leaf';
-  value?: string;
-  attributes: Record<string, any>;
+export interface BaseNode {
+  id: string;
+  type: string;
+  primitive: NodePrimitive;
+  created_at?: string;
+  updated_at?: string;
+  source: SourceReference;
 }
 
 /**
- * Branch - Ordered or unordered collection of children (e.g. Project, Essay)
+ * Content - Any content-bearing node (projects, essays, skills, etc.)
+ * Replaces: Leaf, Branch, Trunk, List
  */
-export interface BranchNode extends BaseNode {
-  primitive: 'Branch';
+export interface ContentNode extends BaseNode {
+  primitive: 'Content';
   title?: string;
   content?: string;
+  value?: string; // For atomic values
   children: string[]; // IDs of child nodes
   attributes: Record<string, any>;
 }
 
 /**
- * Trunk - Container that establishes scope/context (e.g. Document, Collection)
+ * Reference - Link/pointer to another node
+ * Simplified from LinkNode
  */
-export interface TrunkNode extends BaseNode {
-  primitive: 'Trunk';
-  title?: string;
-  description?: string;
-  children: string[]; // IDs of child nodes
-  attributes: Record<string, any>;
-}
-
-/**
- * Link - Reference/pointer to another node
- */
-export interface LinkNode extends BaseNode {
-  primitive: 'Link';
+export interface ReferenceNode extends BaseNode {
+  primitive: 'Reference';
   target: string; // ID of target node
-  linkType: string; // Type of relationship
+  link_type: string; // Type of relationship
   attributes: Record<string, any>;
 }
 
 /**
- * Meta - Annotation about the parent node
+ * Meta - Annotation/tag about content
+ * Tags, notes, comments, etc.
  */
 export interface MetaNode extends BaseNode {
   primitive: 'Meta';
-  metaType: string; // e.g. 'tag', 'note', 'comment'
+  meta_type: string; // e.g. 'tag', 'note', 'comment'
   value: string;
   target?: string; // ID of node this annotates
   attributes: Record<string, any>;
 }
 
 /**
- * List - Curated collection of items (e.g. Portfolio, Reading List)
- */
-export interface ListNode extends BaseNode {
-  primitive: 'List';
-  title?: string;
-  description?: string;
-  children: string[]; // IDs of child nodes
-  attributes: Record<string, any>;
-}
-
-/**
  * Union type for all node types
  */
-export type MyceliaNode = LeafNode | BranchNode | TrunkNode | LinkNode | MetaNode | ListNode;
+export type MyceliaNode = ContentNode | ReferenceNode | MetaNode;

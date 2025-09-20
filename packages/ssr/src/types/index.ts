@@ -1,4 +1,4 @@
-import type { MyceliaGraph, RenderableTree } from '@mycelia/core';
+import type { MyceliaGraph } from '@mycelia/core';
 
 /**
  * Configuration for Mycelia SSR integration
@@ -17,7 +17,7 @@ export interface MyceliaConfig {
 }
 
 /**
- * Parsed content with metadata
+ * Simplified parsed content with metadata - graph only
  */
 export interface ParsedContent {
   /** File path relative to content directory */
@@ -28,44 +28,42 @@ export interface ParsedContent {
   frontmatter: Record<string, any>;
   /** Raw MDX content */
   content: string;
-  /** Parsed graph structure */
+  /** Processed HTML content for rendering */
+  htmlContent?: string;
+  /** Parsed graph structure - single data model */
   graph: MyceliaGraph;
-  /** Renderable tree for components */
-  renderTree: RenderableTree;
   /** File modification time */
   mtime: Date;
 }
 
 /**
- * Content cache entry
+ * Simplified content cache entry
  */
 export interface ContentCacheEntry extends ParsedContent {
-  /** Cache timestamp */
-  cachedAt: Date;
+  /** Cache timestamp - optional for flexibility */
+  cachedAt?: Date;
 }
 
 /**
- * Framework-agnostic content provider interface
+ * Simplified content provider interface
  */
 export interface ContentProvider {
   /** Get all available content */
   getAllContent(): Promise<ParsedContent[]>;
-  /** Get content by slug */
+  /** Get content by file-based slug */
   getContentBySlug(slug: string): Promise<ParsedContent | null>;
-  /** Get all available slugs */
+  /** Get all file-based slugs */
   getAllSlugs(): Promise<string[]>;
-  /** Get content by node ID (supports hierarchical paths) */
+  /** Get content by node ID with simple paths */
   getContentByNodeId?(nodeId: string): Promise<ParsedContent | null>;
-  /** Get all nodes grouped by type */
-  getNodesByType?(): Promise<Record<string, any[]>>;
-  /** Get all hierarchical routes for static generation */
+  /** Get all nodes of a specific type with paths */
+  getNodesByType?(nodeType: string): Promise<Array<{ node: any; path: string }>>;
+  /** Get all simple routes for static generation */
   getAllHierarchicalRoutes?(): Promise<string[]>;
-  /** Get breadcrumb trail for a node */
+  /** Get simple breadcrumb trail for a node */
   getBreadcrumbs?(nodeId: string): Promise<Array<{ id: string; title: string; path: string }>>;
   /** Find all nodes that reference this node */
-  getBacklinks?(nodeId: string): Promise<Array<{ id: string; title: string; path: string; type: string; relation: string }>>;
-  /** Watch for content changes (development mode) */
-  watch?(callback: (changed: ParsedContent[]) => void): () => void;
+  getBacklinks?(nodeId: string): Promise<Array<{ node: any; path: string }>>;
 }
 
 /**

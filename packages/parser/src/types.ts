@@ -1,22 +1,21 @@
-import type { MyceliaGraph, RenderableTree, TagRegistry } from '@mycelia/core';
+import type { MyceliaGraph, TagRegistry } from '@mycelia/core';
 
 /**
  * Parser configuration options
  */
 export interface ParserConfig {
   registry?: TagRegistry;
-  contentGlob?: string;
-  outputPath?: string;
-  generateIds?: boolean;
-  preserveSource?: boolean;
+  content_glob?: string;
+  output_path?: string;
+  generate_ids?: boolean;
+  preserve_source?: boolean;
 }
 
 /**
- * Result from parsing operation with dual outputs
+ * Simplified result from parsing operation - graph only
  */
 export interface ParseResult {
   graph: MyceliaGraph;
-  renderTree: RenderableTree;
   errors: ParseError[];
   warnings: string[];
 }

@@ -1,66 +1,67 @@
 import type { NodePrimitive } from './primitives.js';
 
 /**
- * Configuration for mapping user tags to primitives
+ * Tag mapping configuration for a specific user-facing tag
  */
 export interface TagMapping {
   primitive: NodePrimitive;
-  defaultProps?: Record<string, any>;
-  validator?: (props: Record<string, any>) => boolean;
-  description?: string;
+  attributes?: Record<string, any>;
+  validate?: (attributes: Record<string, any>) => boolean;
+  transform?: (attributes: Record<string, any>) => Record<string, any>;
 }
 
 /**
- * Registry for custom tag mappings
+ * Registry of all user-facing tags mapped to their primitives
  */
 export interface TagRegistry {
   [tagName: string]: TagMapping;
 }
 
 /**
- * Default tag mappings for common content types
+ * Default tag mappings for simplified primitives
  */
 export const DEFAULT_TAG_MAPPINGS: TagRegistry = {
-  // Project management  
-  'Project': { primitive: 'Branch', defaultProps: { type: 'project' } },
-  'Portfolio': { primitive: 'List', defaultProps: { type: 'portfolio' } },
-  'Task': { primitive: 'Leaf', defaultProps: { type: 'task' } },
+  // Content types - all content-bearing nodes
+  'skill': { primitive: 'Content' },
+  'project': { primitive: 'Content' },
+  'essay': { primitive: 'Content' },
+  'task': { primitive: 'Content' },
+  'note': { primitive: 'Content' },
+  'article': { primitive: 'Content' },
+  'section': { primitive: 'Content' },
+  'portfolio': { primitive: 'Content' },
+  'collection': { primitive: 'Content' },
+  'document': { primitive: 'Content' },
+  'reading-list': { primitive: 'Content' },
+  'playlist': { primitive: 'Content' },
+  'resources': { primitive: 'Content' },
+  'person': { primitive: 'Content' },
+  'book': { primitive: 'Content' },
+  'course': { primitive: 'Content' },
+  'company': { primitive: 'Content' },
+  'date': { primitive: 'Content' },
+  'song': { primitive: 'Content' },
+  'research': { primitive: 'Content' },
+  'achievement': { primitive: 'Content' },
+  'collaborator': { primitive: 'Content' },
   
-  // Content types
-  'Essay': { primitive: 'Branch', defaultProps: { type: 'essay' } },
-  'Research': { primitive: 'Branch', defaultProps: { type: 'research' } },
-  'Note': { primitive: 'Leaf', defaultProps: { type: 'note' } },
-  'Log': { primitive: 'Leaf', defaultProps: { type: 'log' } },
+  // Reference types - links between content
+  'link': { primitive: 'Reference' },
+  'reference': { primitive: 'Reference' },
   
-  // Media
-  'Song': { primitive: 'Leaf', defaultProps: { type: 'song' } },
-  'Track': { primitive: 'Leaf', defaultProps: { type: 'track' } },
-  'Book': { primitive: 'Leaf', defaultProps: { type: 'book' } },
-  'Film': { primitive: 'Leaf', defaultProps: { type: 'film' } },
-  
-  // People and relationships
-  'Person': { primitive: 'Leaf', defaultProps: { type: 'person' } },
-  'Collaborator': { primitive: 'Link', defaultProps: { linkType: 'collaborates' } },
-  
-  // Skills and achievements
-  'Skill': { primitive: 'Meta', defaultProps: { metaType: 'skill' } },
-  'Achievement': { primitive: 'Leaf', defaultProps: { type: 'achievement' } },
-  
-  // Metadata
-  'Tag': { primitive: 'Meta', defaultProps: { metaType: 'tag' } },
-  'Date': { primitive: 'Meta', defaultProps: { metaType: 'date' } },
-  'Status': { primitive: 'Meta', defaultProps: { metaType: 'status' } },
-  
-  // References
-  'Ref': { primitive: 'Link', defaultProps: { linkType: 'references' } },
-  'Link': { primitive: 'Link', defaultProps: { linkType: 'references' } },
+  // Meta types - annotations and tags
+  'tag': { primitive: 'Meta' },
+  'meta': { primitive: 'Meta' },
+  'comment': { primitive: 'Meta' },
+  'annotation': { primitive: 'Meta' },
 };
 
 /**
- * Create a new tag registry with default mappings
+ * Create the default tag registry with simplified primitive mappings
+ * Most content types map to 'Content' primitive
  */
-export function createRegistry(customMappings?: TagRegistry): TagRegistry {
-  return { ...DEFAULT_TAG_MAPPINGS, ...customMappings };
+export function createRegistry(): TagRegistry {
+  return { ...DEFAULT_TAG_MAPPINGS };
 }
 
 /**
@@ -68,10 +69,10 @@ export function createRegistry(customMappings?: TagRegistry): TagRegistry {
  */
 export function registerTag(
   registry: TagRegistry, 
-  tagName: string, 
+  tag_name: string, 
   mapping: TagMapping
 ): void {
-  registry[tagName] = mapping;
+  registry[tag_name] = mapping;
 }
 
 /**
@@ -79,7 +80,7 @@ export function registerTag(
  */
 export function getTagMapping(
   registry: TagRegistry, 
-  tagName: string
+  tag_name: string
 ): TagMapping | undefined {
-  return registry[tagName];
+  return registry[tag_name];
 }

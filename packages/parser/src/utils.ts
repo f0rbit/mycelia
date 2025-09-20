@@ -44,81 +44,54 @@ export function extractAttributes(attributes: any[] = []): Record<string, any> {
 }
 
 /**
- * Create a node based on tag mapping
+ * Create a node based on simplified tag mapping
+ * Pure function that maps tag data to node structure
  */
 export function createNodeFromMapping(
   id: string,
-  tagName: string,
+  tag_name: string,
   mapping: TagMapping,
   attributes: Record<string, any>,
   content: string,
   source: any
 ): MyceliaNode {
-  const baseProps = {
+  const base_props = {
     id,
-    type: attributes.type || mapping.defaultProps?.type || tagName.toLowerCase(),
+    type: attributes.type || tag_name.toLowerCase(),
     primitive: mapping.primitive,
     source,
-    ...mapping.defaultProps,
-    attributes: { ...mapping.defaultProps, ...attributes }
+    attributes: { ...(mapping.attributes || {}), ...attributes }
   };
 
   switch (mapping.primitive) {
-    case 'Leaf':
+    case 'Content':
       return {
-        ...baseProps,
-        primitive: 'Leaf',
-        value: content || attributes.value,
-        attributes: baseProps.attributes
-      };
-      
-    case 'Branch':
-      return {
-        ...baseProps,
-        primitive: 'Branch',
+        ...base_props,
+        primitive: 'Content',
         title: attributes.title || attributes.name || content.split('\n')[0] || id,
         content: content,
+        value: attributes.value, // For atomic values
         children: [],
-        attributes: baseProps.attributes
+        attributes: base_props.attributes
       };
       
-    case 'Trunk':
+    case 'Reference':
       return {
-        ...baseProps,
-        primitive: 'Trunk',
-        title: attributes.title || attributes.name || content.split('\n')[0] || id,
-        description: content,
-        children: [],
-        attributes: baseProps.attributes
-      };
-      
-    case 'Link':
-      return {
-        ...baseProps,
-        primitive: 'Link',
+        ...base_props,
+        primitive: 'Reference',
         target: attributes.to || attributes.target || '',
-        linkType: attributes.linkType || mapping.defaultProps?.linkType || 'references',
-        attributes: baseProps.attributes
+        link_type: attributes.link_type || 'references',
+        attributes: base_props.attributes
       };
       
     case 'Meta':
       return {
-        ...baseProps,
+        ...base_props,
         primitive: 'Meta',
-        metaType: attributes.metaType || mapping.defaultProps?.metaType || 'annotation',
+        meta_type: attributes.meta_type || 'tag',
         value: content || attributes.value || '',
         target: attributes.target,
-        attributes: baseProps.attributes
-      };
-
-    case 'List':
-      return {
-        ...baseProps,
-        primitive: 'List',
-        title: attributes.title || attributes.name || content.split('\n')[0] || id,
-        description: content,
-        children: [],
-        attributes: baseProps.attributes
+        attributes: base_props.attributes
       };
       
     default:

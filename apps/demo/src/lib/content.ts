@@ -1,15 +1,14 @@
 import fs from 'fs'
 import path from 'path'
 import { markdown } from '@mycelia/parser'
-import type { MyceliaGraph, RenderableTree } from '@mycelia/core'
+import type { MyceliaGraph } from '@mycelia/core'
 
 const EXAMPLES_DIR = path.join(process.cwd(), '../../examples')
 const GRAPH_CACHE_PATH = path.join(process.cwd(), '../../.mycelia/graph.json')
 const RENDER_CACHE_PATH = path.join(process.cwd(), '../../.mycelia/renderable.json')
 
-// Cache for the complete graph and render tree
+// Cache for the complete graph
 let cachedGraph: MyceliaGraph | null = null
-let cachedRenderTree: RenderableTree | null = null
 
 /**
  * Load the complete knowledge graph from all examples
@@ -124,44 +123,6 @@ export async function loadNode(nodeId: string) {
 /**
  * Load the complete render tree from cache
  */
-export async function loadRenderTree() {
-  if (cachedRenderTree) return cachedRenderTree
-
-  // Try loading from pre-generated renderable.json
-  if (fs.existsSync(RENDER_CACHE_PATH)) {
-    const renderData = JSON.parse(fs.readFileSync(RENDER_CACHE_PATH, 'utf8'))
-    cachedRenderTree = renderData
-    return cachedRenderTree!
-  }
-
-  return null
-}
-
-/**
- * Find a specific node in the render tree and return it as a tree
- */
-export async function loadNodeAsRenderTree(nodeId: string) {
-  const renderTree = await loadRenderTree()
-  if (!renderTree) return null
-
-  function findNodeInTree(tree: any, targetId: string): any {
-    if (tree.id === targetId) return tree
-    if (tree.children) {
-      for (const child of tree.children) {
-        const found = findNodeInTree(child, targetId)
-        if (found) return found
-      }
-    }
-    return null
-  }
-  
-  const nodeTree = findNodeInTree(renderTree.root, nodeId)
-  if (nodeTree) {
-    return { root: nodeTree, meta: renderTree.meta }
-  }
-  
-  return null
-}
 
 /**
  * Get all nodes of a specific type

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
-import { react } from '@mycelia/render';
+// import { react } from '@mycelia/render';
 import { getMyceliaContent, getMyceliaProvider } from './provider';
+import { NodeRenderer } from './node-renderer';
 import type { NextJS, ParsedContent } from '../types';
 
 /**
@@ -37,7 +38,7 @@ export function MyceliaBreadcrumb({ items }: MyceliaBreadcrumbProps) {
   );
 }
 
-const { RenderableTreeRenderer, RenderProvider } = react;
+// const { RenderableTreeRenderer, RenderProvider } = react;
 
 /**
  * Props for MyceliaPage component
@@ -68,7 +69,7 @@ export async function MyceliaPage({ params, content: customContent }: MyceliaPag
   // Get breadcrumbs and backlinks if we have a node ID
   const provider = getMyceliaProvider();
   let breadcrumbs: Array<{ id: string; title: string; path: string }> = [];
-  let backlinks: Array<{ id: string; title: string; path: string; type: string; relation: string }> = [];
+  let backlinks: Array<{ node: any; path: string }> = [];
   
   if (firstNodeId) {
     // Get breadcrumbs
@@ -190,12 +191,37 @@ export async function MyceliaPage({ params, content: customContent }: MyceliaPag
 
       {/* Main Content */}
       <div className="mt-8 space-y-8">
-        {/* Rendered content */}
-        <div className="mycelia-content prose prose-lg max-w-none">
-          <RenderProvider>
-            <RenderableTreeRenderer tree={content.renderTree} />
-          </RenderProvider>
-        </div>
+        {/* Main node content */}
+        {firstNodeId && content.graph.nodes[firstNodeId] && (() => {
+          const mainNode = content.graph.nodes[firstNodeId];
+          return (
+            <div className="mycelia-content">
+              <div className="prose prose-lg max-w-none">
+                {'content' in mainNode && mainNode.content && (
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <p className="text-lg">{mainNode.content}</p>
+                  </div>
+                )}
+                {'value' in mainNode && mainNode.value && (
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <p className="text-lg">{mainNode.value}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* Display related nodes only (excluding the main node) */}
+        {Object.keys(content.graph.nodes).length > 1 && (
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Related Content</h2>
+            <NodeRenderer 
+              nodes={content.graph.nodes} 
+              nodeIds={Object.keys(content.graph.nodes).filter(id => id !== firstNodeId)}
+            />
+          </div>
+        )}
 
         {/* Child nodes - nodes contained by this one */}
         <MyceliaChildNodes nodeId={firstNodeId} />
@@ -337,9 +363,9 @@ export async function MyceliaIndex({
   filter
 }: MyceliaIndexProps) {
   const provider = getMyceliaProvider();
-  const nodesByType = await provider.getNodesByType?.();
+  const nodesOfType = await provider.getNodesByType?.(nodeType);
   
-  if (!nodesByType || !nodesByType[nodeType]) {
+  if (!nodesOfType || nodesOfType.length === 0) {
     return (
       <div className="mycelia-index">
         <h1 className="text-3xl font-bold mb-6">
@@ -350,7 +376,7 @@ export async function MyceliaIndex({
     );
   }
 
-  let nodes = nodesByType[nodeType];
+  let nodes = nodesOfType.map(item => item.node);
 
   // Apply filter if provided
   if (filter) {
@@ -507,35 +533,41 @@ export async function MyceliaIndex({
 }
 
 /**
- * Backlinks component props
+ * Simplified backlinks component props
  */
 export interface MyceliaBacklinksProps {
-  /** Array of backlink items */
-  backlinks: Array<{ id: string; title: string; path: string; type: string; relation: string }>;
+  /** Array of backlink items with simplified format */
+  backlinks: Array<{ node: any; path: string }>;
 }
 
 /**
- * Backlinks component that shows which nodes reference this content
+ * Simplified backlinks component that shows which nodes reference this content
  */
 export function MyceliaBacklinks({ backlinks }: MyceliaBacklinksProps) {
   if (!backlinks || backlinks.length === 0) {
     return null;
   }
 
-  // Group backlinks by type
-  const groupedBacklinks = backlinks.reduce((acc, backlink) => {
-    if (!acc[backlink.type]) {
-      acc[backlink.type] = [];
+  // Group backlinks by node type
+  const groupedBacklinks = backlinks.reduce((acc, { node, path }) => {
+    const nodeType = node.type || 'unknown';
+    if (!acc[nodeType]) {
+      acc[nodeType] = [];
     }
-    const typeGroup = acc[backlink.type];
-    if (typeGroup) {
-      typeGroup.push(backlink);
-    }
+    acc[nodeType].push({ node, path });
     return acc;
-  }, {} as Record<string, typeof backlinks>);
+  }, {} as Record<string, Array<{ node: any; path: string }>>);
 
   const getTypeDisplayName = (type: string) => {
     return type.charAt(0).toUpperCase() + type.slice(1) + 's';
+  };
+
+  const getNodeTitle = (node: any) => {
+    if (node.primitive === 'Content' && node.title) return node.title;
+    if (node.primitive === 'Meta' && node.value) return node.value;
+    if (node.attributes?.title) return node.attributes.title;
+    if (node.attributes?.name) return node.attributes.name;
+    return node.id || 'Untitled';
   };
 
   return (
@@ -552,16 +584,16 @@ export function MyceliaBacklinks({ backlinks }: MyceliaBacklinksProps) {
             </h4>
             
             <ul className="space-y-2">
-              {links.map((link) => (
-                <li key={link.id} className="flex items-start gap-3">
+              {links.map(({ node, path }) => (
+                <li key={node.id} className="flex items-start gap-3">
                   <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full mt-0.5">
-                    {link.relation}
+                    {node.primitive}
                   </span>
                   <a 
-                    href={link.path}
+                    href={path}
                     className="text-blue-600 hover:text-blue-800 hover:underline text-sm flex-1"
                   >
-                    {link.title}
+                    {getNodeTitle(node)}
                   </a>
                 </li>
               ))}
