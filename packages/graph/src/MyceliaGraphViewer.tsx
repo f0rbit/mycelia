@@ -14,7 +14,7 @@ const ForceGraph2D = lazy(() =>
 )
 
 export function MyceliaGraphViewer({ 
-  graphUrl = '/.mycelia/graph.json',
+  graphUrl = '/data/graph.json',
   width = 1000,
   height = 600,
   className = ''
@@ -105,8 +105,8 @@ export function MyceliaGraphViewer({
 
   const handleNodeClick = useCallback((node: GraphNode) => {
     console.log('Node clicked:', node.id, node.node)
-    // Open node page in new tab
-    window.open(`/${node.id}`, '_blank')
+    // Open node page in same tab (for better static site navigation)
+    window.location.href = `/node/${node.id}/`
   }, [])
 
   const handleNodeHover = useCallback((node: GraphNode | null) => {

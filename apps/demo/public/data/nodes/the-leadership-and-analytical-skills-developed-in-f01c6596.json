@@ -1,0 +1,82 @@
+{
+  "node": {
+    "id": "the-leadership-and-analytical-skills-developed-in-f01c6596",
+    "type": "note",
+    "primitive": "Leaf",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 440,
+        "column": 5,
+        "offset": 19991
+      },
+      "end": {
+        "line": 443,
+        "column": 12,
+        "offset": 20203
+      }
+    },
+    "attributes": {
+      "type": "note",
+      "title": "Cross-Discipline Learning"
+    },
+    "value": "The leadership and analytical skills developed in sports coaching directly apply to\nsoftware development team leadership and code review processes."
+  },
+  "edges": [
+    {
+      "id": "badminton-coaching-contains-the-leadership-and-analytical-skills-developed-in-f01c6596",
+      "from": "badminton-coaching",
+      "to": "the-leadership-and-analytical-skills-developed-in-f01c6596",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "badminton-coaching": {
+      "id": "badminton-coaching",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 403,
+          "column": 3,
+          "offset": 18186
+        },
+        "end": {
+          "line": 449,
+          "column": 13,
+          "offset": 20345
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "badminton-coaching",
+        "title": "Badminton Coaching Leadership",
+        "status": "completed",
+        "category": "leadership-development"
+      },
+      "title": "Badminton Coaching Leadership",
+      "content": "Led coaching for 8 different badminton teams at competitive city level, developing\nleadership skills, teaching abilities, and team management experience that directly\ntranslates to software development team dynamics.Studied effective coaching and teaching methodologies, sports psychology, and\nteam motivation techniques to become a more effective leader.Successfully managed and coordinated practice schedules, competitions, and development plans for 8 teamsCreated personalized training programs for players at different skill levels and tracked progressDeveloped game strategies, analyzed opponent patterns, and prepared teams for high-level competitionLed teams to compete successfully at the highest level in local city competitions,\nwith several teams achieving top placements.The leadership and analytical skills developed in sports coaching directly apply to\nsoftware development team leadership and code review processes.",
+      "children": [
+        "coaching-methodologies",
+        "team-management",
+        "skill-development-programs",
+        "competitive-strategy",
+        "led-teams-to-compete-successfully-at-the-highest-l-0ff9016a",
+        "skill-56e36869",
+        "skill-9ead72d6",
+        "skill-32f296e2",
+        "skill-fc1512b5",
+        "the-leadership-and-analytical-skills-developed-in-f01c6596",
+        "tag-b6e476a2",
+        "tag-c993bcdd",
+        "tag-afa53553",
+        "tag-dd5d020a"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.534Z",
+    "nodeId": "the-leadership-and-analytical-skills-developed-in-f01c6596"
+  }
+}

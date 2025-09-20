@@ -1,0 +1,66 @@
+{
+  "node": {
+    "id": "tom-materne",
+    "type": "person",
+    "primitive": "Leaf",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 3,
+        "column": 1,
+        "offset": 21
+      },
+      "end": {
+        "line": 6,
+        "column": 10,
+        "offset": 292
+      }
+    },
+    "attributes": {
+      "type": "person",
+      "id": "tom-materne",
+      "name": "Tom Materne",
+      "role": "full-stack-developer"
+    },
+    "value": "Full-stack developer with expertise in web development, game development, and system design.\nPassionate about building tools that solve real problems and make developers' lives easier."
+  },
+  "edges": [
+    {
+      "id": "collaborator-84f9cede-references-tom-materne",
+      "from": "collaborator-84f9cede",
+      "to": "tom-materne",
+      "type": "references"
+    }
+  ],
+  "relatedNodes": {
+    "collaborator-84f9cede": {
+      "id": "collaborator-84f9cede",
+      "type": "collaborator",
+      "primitive": "Link",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 61,
+          "column": 5,
+          "offset": 2813
+        },
+        "end": {
+          "line": 61,
+          "column": 60,
+          "offset": 2868
+        }
+      },
+      "linkType": "collaborates",
+      "attributes": {
+        "linkType": "collaborates",
+        "to": "tom-materne",
+        "role": "lead-developer"
+      },
+      "target": "tom-materne"
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.523Z",
+    "nodeId": "tom-materne"
+  }
+}

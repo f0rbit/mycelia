@@ -1,0 +1,87 @@
+{
+  "node": {
+    "id": "skill-6c03f795",
+    "type": "skill",
+    "primitive": "Meta",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 286,
+        "column": 5,
+        "offset": 13054
+      },
+      "end": {
+        "line": 286,
+        "column": 53,
+        "offset": 13102
+      }
+    },
+    "metaType": "skill",
+    "attributes": {
+      "metaType": "skill",
+      "name": "Go Programming",
+      "level": "advanced"
+    },
+    "value": ""
+  },
+  "edges": [
+    {
+      "id": "golang-api-stack-contains-skill-6c03f795",
+      "from": "golang-api-stack",
+      "to": "skill-6c03f795",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "golang-api-stack": {
+      "id": "golang-api-stack",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 248,
+          "column": 3,
+          "offset": 11171
+        },
+        "end": {
+          "line": 301,
+          "column": 13,
+          "offset": 13716
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "golang-api-stack",
+        "title": "Go API Stack Example",
+        "status": "completed",
+        "category": "development-template",
+        "githubUrl": "https://github.com/f0rbit/golang-stack-example"
+      },
+      "title": "Go API Stack Example",
+      "content": "Stack setup for a golang API with bun testing, postgres database, and S3 storage for\nlocal & production environments. This project serves as a template and learning resource\nfor other developers looking to set up similar infrastructure.Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and\ndeployment strategies to identify best practices and optimal tool combinations.Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)Integrated Drizzle ORM for type-safe database operations with migrations and schema managementConfigured end-to-end testing pipeline using Bun for fast, reliable test executionCreated comprehensive documentation for deploying the stack to production environmentsThe repository has helped several developers bootstrap their Go API projects and serves\nas a reference for modern Go development practices.This project demonstrates current best practices in API development, including\ncontainerization, type safety, comprehensive testing, and clear documentation.",
+      "children": [
+        "go-ecosystem-study",
+        "docker-containerization",
+        "database-integration",
+        "testing-framework",
+        "deployment-guide",
+        "the-repository-has-helped-several-developers-boots-b649393a",
+        "skill-6c03f795",
+        "skill-3326505e",
+        "skill-5d64f1d1",
+        "skill-5deadf5f",
+        "skill-ea3ad0df",
+        "this-project-demonstrates-current-best-practices-i-dfbed54b",
+        "tag-df0cf54c",
+        "tag-67497d32",
+        "tag-86a74ab2",
+        "tag-49eecbb9"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.530Z",
+    "nodeId": "skill-6c03f795"
+  }
+}

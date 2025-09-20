@@ -1,0 +1,82 @@
+{
+  "node": {
+    "id": "skill-de476e78",
+    "type": "skill",
+    "primitive": "Meta",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 148,
+        "column": 5,
+        "offset": 6753
+      },
+      "end": {
+        "line": 148,
+        "column": 54,
+        "offset": 6802
+      }
+    },
+    "metaType": "skill",
+    "attributes": {
+      "metaType": "skill",
+      "name": "Game Design",
+      "level": "intermediate"
+    },
+    "value": ""
+  },
+  "edges": [
+    {
+      "id": "arena-game-contains-skill-de476e78",
+      "from": "arena-game",
+      "to": "skill-de476e78",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "arena-game": {
+      "id": "arena-game",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 117,
+          "column": 3,
+          "offset": 5172
+        },
+        "end": {
+          "line": 153,
+          "column": 13,
+          "offset": 6932
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "arena-game",
+        "title": "Arena",
+        "status": "paused",
+        "category": "multiplayer-game"
+      },
+      "title": "Arena",
+      "content": "A fast-paced multiplayer 1v1 capture the flag game built with GameMaker and Java backend.\nThis project combines my game development roots with my backend programming skills to\ncreate a competitive multiplayer experience.Studied various multiplayer game architectures, latency compensation techniques,\nand anti-cheat systems to inform the design decisions.Built the game client in GameMaker with smooth movement, responsive controls, and network communicationImplemented authoritative game server in Java with player synchronization and match managementDesign and implement skill-based matchmaking for balanced competitive matchesBuilding multiplayer games presents unique challenges around network synchronization,\nlatency compensation, and maintaining game state consistency across clients.",
+      "children": [
+        "multiplayer-architecture",
+        "game-client",
+        "java-server",
+        "matchmaking-system",
+        "building-multiplayer-games-presents-unique-challen-d289ee14",
+        "skill-07da874a",
+        "skill-43d1f407",
+        "skill-9ee92c42",
+        "skill-de476e78",
+        "tag-1a4d7de9",
+        "tag-a76bf13f",
+        "tag-534a859f"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.527Z",
+    "nodeId": "skill-de476e78"
+  }
+}

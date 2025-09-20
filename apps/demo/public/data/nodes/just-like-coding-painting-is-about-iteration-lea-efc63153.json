@@ -1,0 +1,69 @@
+{
+  "node": {
+    "id": "just-like-coding-painting-is-about-iteration-lea-efc63153",
+    "type": "note",
+    "primitive": "Leaf",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 99,
+        "column": 7,
+        "offset": 4564
+      },
+      "end": {
+        "line": 102,
+        "column": 14,
+        "offset": 4773
+      }
+    },
+    "attributes": {
+      "type": "note",
+      "title": "Learning Process"
+    },
+    "value": "Just like coding, painting is about iteration, learning from mistakes, and gradually\nbuilding more complex skills on top of fundamental techniques."
+  },
+  "edges": [
+    {
+      "id": "painting-documentation-contains-just-like-coding-painting-is-about-iteration-lea-efc63153",
+      "from": "painting-documentation",
+      "to": "just-like-coding-painting-is-about-iteration-lea-efc63153",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "painting-documentation": {
+      "id": "painting-documentation",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 95,
+          "column": 5,
+          "offset": 4327
+        },
+        "end": {
+          "line": 103,
+          "column": 15,
+          "offset": 4788
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "painting-documentation",
+        "title": "Painting Progress Documentation",
+        "status": "active",
+        "category": "art-project"
+      },
+      "title": "Painting Progress Documentation",
+      "content": "Documenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually\nbuilding more complex skills on top of fundamental techniques.",
+      "children": [
+        "just-like-coding-painting-is-about-iteration-lea-efc63153"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.526Z",
+    "nodeId": "just-like-coding-painting-is-about-iteration-lea-efc63153"
+  }
+}

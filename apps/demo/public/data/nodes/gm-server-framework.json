@@ -1,0 +1,538 @@
+{
+  "node": {
+    "id": "gm-server-framework",
+    "type": "project",
+    "primitive": "Branch",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 157,
+        "column": 3,
+        "offset": 6970
+      },
+      "end": {
+        "line": 200,
+        "column": 13,
+        "offset": 9043
+      }
+    },
+    "attributes": {
+      "type": "project",
+      "id": "gm-server-framework",
+      "title": "GM-Server Framework",
+      "status": "completed",
+      "category": "open-source-library",
+      "language": "java"
+    },
+    "title": "GM-Server Framework",
+    "content": "An open-source framework for interfacing between Java servers and GameMaker: Studio game clients.\nThis project solved a real problem I faced when building multiplayer games and has helped\nother developers in the GameMaker community.Deep dive into GameMaker's networking capabilities, socket implementations, and\ncommunication protocols to design an optimal interface layer.Built the foundational library with robust client-server communication protocolsCreated comprehensive documentation with code examples and getting-started guidesProvide ongoing support to developers using the library and maintain compatibilityThe library has been adopted by multiple independent game developers and has received\npositive feedback from the GameMaker community.This project taught me valuable lessons about API design, documentation, backwards\ncompatibility, and maintaining open source projects.",
+    "children": [
+      "gamemaker-networking",
+      "core-library",
+      "documentation-site",
+      "community-support",
+      "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+      "skill-22c19654",
+      "skill-4a7ac3d3",
+      "skill-0d11b4e9",
+      "skill-6173c5a4",
+      "this-project-taught-me-valuable-lessons-about-api-735f28a8",
+      "tag-6954c236",
+      "tag-c81ac582",
+      "tag-5a2ddd8a",
+      "tag-68f6ab33"
+    ]
+  },
+  "edges": [
+    {
+      "id": "portfolio-showcase-contains-gm-server-framework",
+      "from": "portfolio-showcase",
+      "to": "gm-server-framework",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-gamemaker-networking",
+      "from": "gm-server-framework",
+      "to": "gamemaker-networking",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-core-library",
+      "from": "gm-server-framework",
+      "to": "core-library",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-documentation-site",
+      "from": "gm-server-framework",
+      "to": "documentation-site",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-community-support",
+      "from": "gm-server-framework",
+      "to": "community-support",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+      "from": "gm-server-framework",
+      "to": "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-skill-22c19654",
+      "from": "gm-server-framework",
+      "to": "skill-22c19654",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-skill-4a7ac3d3",
+      "from": "gm-server-framework",
+      "to": "skill-4a7ac3d3",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-skill-0d11b4e9",
+      "from": "gm-server-framework",
+      "to": "skill-0d11b4e9",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-skill-6173c5a4",
+      "from": "gm-server-framework",
+      "to": "skill-6173c5a4",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-this-project-taught-me-valuable-lessons-about-api-735f28a8",
+      "from": "gm-server-framework",
+      "to": "this-project-taught-me-valuable-lessons-about-api-735f28a8",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-tag-6954c236",
+      "from": "gm-server-framework",
+      "to": "tag-6954c236",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-tag-c81ac582",
+      "from": "gm-server-framework",
+      "to": "tag-c81ac582",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-tag-5a2ddd8a",
+      "from": "gm-server-framework",
+      "to": "tag-5a2ddd8a",
+      "type": "contains"
+    },
+    {
+      "id": "gm-server-framework-contains-tag-68f6ab33",
+      "from": "gm-server-framework",
+      "to": "tag-68f6ab33",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "portfolio-showcase": {
+      "id": "portfolio-showcase",
+      "type": "portfolio",
+      "primitive": "List",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 8,
+          "column": 1,
+          "offset": 294
+        },
+        "end": {
+          "line": 513,
+          "column": 13,
+          "offset": 23236
+        }
+      },
+      "attributes": {
+        "type": "portfolio",
+        "id": "portfolio-showcase",
+        "title": "Tom's Project Portfolio",
+        "status": "active",
+        "owner": "tom-materne",
+        "category": "portfolio"
+      },
+      "title": "Tom's Project Portfolio",
+      "description": "A comprehensive showcase of projects spanning game development, web applications,\ndeveloper tools, and creative platforms. Each project represents a milestone in\nmy programming journey and demonstrates different aspects of software development.Active ProjectsGenerate daily & weekly reports of political sittings and distribute them to a user base\nvia a website experience & optional emails.Chamber aims to make political information more accessible by automatically generating\ndigestible reports from parliamentary proceedings and delivering them directly to citizens\nwho want to stay informed about their government's activities.Researched various sources for parliamentary data, including official government APIs,\nweb scraping opportunities, and data availability across different jurisdictions.Build the core system that processes parliamentary data and generates human-readable reportsImplement email subscription system with personalized report deliveryCreate user-friendly web interface for browsing reports and managing subscriptionsThis project represents my belief that technology should be used to increase civic\nengagement and make democracy more accessible to everyday people.Blog site for all things on my creative side - a platform where I explore photography,\npainting, music, and other artistic endeavors alongside my technical work.This project serves as a creative outlet and demonstrates my ability to build content\nmanagement systems while exploring the intersection of technology and art.Exploring how programming and artistic expression can complement and enhance each other.\nMany of the same principles that make good code also make good art: composition,\nbalance, iteration, and attention to detail.Built a responsive gallery system for showcasing photography work with metadata and taggingIntegrate music player for original compositions and coversDocumenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually\nbuilding more complex skills on top of fundamental techniques.Game Development ProjectsA fast-paced multiplayer 1v1 capture the flag game built with GameMaker and Java backend.\nThis project combines my game development roots with my backend programming skills to\ncreate a competitive multiplayer experience.Studied various multiplayer game architectures, latency compensation techniques,\nand anti-cheat systems to inform the design decisions.Built the game client in GameMaker with smooth movement, responsive controls, and network communicationImplemented authoritative game server in Java with player synchronization and match managementDesign and implement skill-based matchmaking for balanced competitive matchesBuilding multiplayer games presents unique challenges around network synchronization,\nlatency compensation, and maintaining game state consistency across clients.Developer Tools & LibrariesAn open-source framework for interfacing between Java servers and GameMaker: Studio game clients.\nThis project solved a real problem I faced when building multiplayer games and has helped\nother developers in the GameMaker community.Deep dive into GameMaker's networking capabilities, socket implementations, and\ncommunication protocols to design an optimal interface layer.Built the foundational library with robust client-server communication protocolsCreated comprehensive documentation with code examples and getting-started guidesProvide ongoing support to developers using the library and maintain compatibilityThe library has been adopted by multiple independent game developers and has received\npositive feedback from the GameMaker community.This project taught me valuable lessons about API design, documentation, backwards\ncompatibility, and maintaining open source projects.Web Applications & PlatformsA hyper-minimalistic project and task management tool designed specifically for developers.\nAfter multiple iterations and redesigns, I'm currently working on a streamlined version\nthat focuses on simplicity and developer workflow integration.Researching how developers currently manage projects and tasks, what tools they use,\nand where existing solutions fall short of their needs.Exploring why developers often prefer simple, focused tools over feature-heavy alternatives.\nSometimes the best tool is the one that gets out of your way and lets you focus on the work.Narrowed down to core features: project creation, task management, and simple time trackingBuilding a clean, distraction-free interface that prioritizes function over formIntegrate with git repositories, development tools, and common developer workflowsThe goal is to create a tool so simple and intuitive that it becomes invisible -\nhelping developers stay organized without adding cognitive overhead.Backend & Infrastructure ProjectsStack setup for a golang API with bun testing, postgres database, and S3 storage for\nlocal & production environments. This project serves as a template and learning resource\nfor other developers looking to set up similar infrastructure.Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and\ndeployment strategies to identify best practices and optimal tool combinations.Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)Integrated Drizzle ORM for type-safe database operations with migrations and schema managementConfigured end-to-end testing pipeline using Bun for fast, reliable test executionCreated comprehensive documentation for deploying the stack to production environmentsThe repository has helped several developers bootstrap their Go API projects and serves\nas a reference for modern Go development practices.This project demonstrates current best practices in API development, including\ncontainerization, type safety, comprehensive testing, and clear documentation.Experimental & Learning ProjectsA project specifically designed to explore the transition from JavaScript to TypeScript\nand experiment with different approaches to state management and task organization.Documented the process of migrating a JavaScript project to TypeScript, including\nchallenges faced, benefits realized, and lessons learned about type safety.Reflecting on the transition from dynamic to static typing, the initial resistance,\nthe gradual appreciation, and ultimately the realization that TypeScript makes\nJavaScript development more enjoyable and productive.Built initial version in vanilla JavaScript to establish baseline functionalitySystematically migrated codebase to TypeScript, adding type definitions and improving code qualityCompared performance, developer experience, and code maintainability between JS and TS versionsThis project solidified my understanding of TypeScript's benefits and gave me practical\nexperience in migrating existing codebases to adopt type safety.Creative & Artistic ProjectsA curated collection of photography work spanning landscapes, street photography,\nand experimental compositions. This creative pursuit complements my technical work\nand provides a different lens for seeing and documenting the world.Continuous learning about composition, lighting, post-processing, and different\nphotographic styles to improve technical and artistic skills.Specialized focus on underwater photography while snorkeling, capturing marine life\nand underwater landscapes. This challenging environment requires special techniques\nand equipment considerations.Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!Select and organize best photographs into cohesive collections for online portfolioShare photography work on Instagram and other platforms to build an audience and get feedbackProfessional DevelopmentLed coaching for 8 different badminton teams at competitive city level, developing\nleadership skills, teaching abilities, and team management experience that directly\ntranslates to software development team dynamics.Studied effective coaching and teaching methodologies, sports psychology, and\nteam motivation techniques to become a more effective leader.Successfully managed and coordinated practice schedules, competitions, and development plans for 8 teamsCreated personalized training programs for players at different skill levels and tracked progressDeveloped game strategies, analyzed opponent patterns, and prepared teams for high-level competitionLed teams to compete successfully at the highest level in local city competitions,\nwith several teams achieving top placements.The leadership and analytical skills developed in sports coaching directly apply to\nsoftware development team leadership and code review processes.Reflection & Future DirectionsLooking across this portfolio of projects, several themes emerge that have shaped my\napproach to software development and creative work:Iteration and Learning: Nearly every project has gone through multiple versions,\nredesigns, or pivots. This isn't failure - it's the natural process of learning and\nimproving. Each iteration teaches something new about the problem space, user needs,\nor technical constraints.Cross-Pollination: Skills learned in one domain consistently apply to others.\nLeadership from coaching translates to software team dynamics. Visual composition\nfrom photography improves UI design. Game development networking knowledge applies\nto web API design.Community and Open Source: The projects that have had the most impact are those\nthat solve problems for others, not just myself. Open source contributions and\ncommunity resources create value that extends far beyond the initial effort.Balance of Technical and Creative: The most fulfilling projects combine technical\nchallenges with creative expression or meaningful impact. Pure technical exercises\nare valuable for learning, but projects with purpose and personality are what I\nremember and continue to develop.Explore how AI tools can enhance development workflows and create new possibilities\nfor creative and productivity applicationsDevelop projects that have positive environmental impact or help others make more\nsustainable technology choicesCreate resources and tools that help other developers learn and grow, building on\nmy experience with documentation and teachingFuture projects will prioritize: meaningful impact, technical excellence, community value,\nand personal growth. The goal is to build things that matter, not just things that work.Time spent curating and documenting this comprehensive project portfolio",
+      "children": [
+        "chamber-project",
+        "burning-blends",
+        "arena-game",
+        "gm-server-framework",
+        "devpad-project",
+        "golang-api-stack",
+        "todo-tracker-evolution",
+        "photography-portfolio",
+        "badminton-coaching",
+        "portfolio-reflection",
+        "future-directions",
+        "tag-0f0b2e9d",
+        "tag-7fdc1bb8",
+        "tag-188ed460",
+        "tag-1553c5b4",
+        "tag-5fc3eeaf",
+        "tag-d63eb94f",
+        "time-spent-curating-and-documenting-this-comprehen-f00e4b7f"
+      ]
+    },
+    "gamemaker-networking": {
+      "id": "gamemaker-networking",
+      "type": "research",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 164,
+          "column": 5,
+          "offset": 7369
+        },
+        "end": {
+          "line": 167,
+          "column": 16,
+          "offset": 7613
+        }
+      },
+      "attributes": {
+        "type": "experiment",
+        "id": "gamemaker-networking",
+        "status": "completed"
+      },
+      "title": "Deep dive into GameMaker's networking capabilities, socket implementations, and",
+      "content": "Deep dive into GameMaker's networking capabilities, socket implementations, and\ncommunication protocols to design an optimal interface layer.",
+      "children": []
+    },
+    "core-library": {
+      "id": "core-library",
+      "type": "task",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 169,
+          "column": 5,
+          "offset": 7623
+        },
+        "end": {
+          "line": 171,
+          "column": 12,
+          "offset": 7814
+        }
+      },
+      "attributes": {
+        "type": "task",
+        "id": "core-library",
+        "title": "Core Library Development",
+        "priority": "high",
+        "status": "completed"
+      },
+      "value": "Built the foundational library with robust client-server communication protocols"
+    },
+    "documentation-site": {
+      "id": "documentation-site",
+      "type": "task",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 173,
+          "column": 5,
+          "offset": 7824
+        },
+        "end": {
+          "line": 175,
+          "column": 12,
+          "offset": 8022
+        }
+      },
+      "attributes": {
+        "type": "task",
+        "id": "documentation-site",
+        "title": "Documentation & Examples",
+        "priority": "high",
+        "status": "completed"
+      },
+      "value": "Created comprehensive documentation with code examples and getting-started guides"
+    },
+    "community-support": {
+      "id": "community-support",
+      "type": "task",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 177,
+          "column": 5,
+          "offset": 8032
+        },
+        "end": {
+          "line": 179,
+          "column": 12,
+          "offset": 8237
+        }
+      },
+      "attributes": {
+        "type": "task",
+        "id": "community-support",
+        "title": "Community Support & Maintenance",
+        "priority": "medium",
+        "status": "ongoing"
+      },
+      "value": "Provide ongoing support to developers using the library and maintain compatibility"
+    },
+    "the-library-has-been-adopted-by-multiple-independe-baba2f8f": {
+      "id": "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+      "type": "achievement",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 181,
+          "column": 5,
+          "offset": 8247
+        },
+        "end": {
+          "line": 184,
+          "column": 19,
+          "offset": 8454
+        }
+      },
+      "attributes": {
+        "type": "achievement",
+        "title": "Open Source Adoption"
+      },
+      "value": "The library has been adopted by multiple independent game developers and has received\npositive feedback from the GameMaker community."
+    },
+    "skill-22c19654": {
+      "id": "skill-22c19654",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 186,
+          "column": 5,
+          "offset": 8464
+        },
+        "end": {
+          "line": 186,
+          "column": 53,
+          "offset": 8512
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "Library Design",
+        "level": "advanced"
+      },
+      "value": ""
+    },
+    "skill-4a7ac3d3": {
+      "id": "skill-4a7ac3d3",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 187,
+          "column": 5,
+          "offset": 8517
+        },
+        "end": {
+          "line": 187,
+          "column": 54,
+          "offset": 8566
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "API Development",
+        "level": "advanced"
+      },
+      "value": ""
+    },
+    "skill-0d11b4e9": {
+      "id": "skill-0d11b4e9",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 188,
+          "column": 5,
+          "offset": 8571
+        },
+        "end": {
+          "line": 188,
+          "column": 62,
+          "offset": 8628
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "Technical Documentation",
+        "level": "advanced"
+      },
+      "value": ""
+    },
+    "skill-6173c5a4": {
+      "id": "skill-6173c5a4",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 189,
+          "column": 5,
+          "offset": 8633
+        },
+        "end": {
+          "line": 189,
+          "column": 63,
+          "offset": 8691
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "Community Management",
+        "level": "intermediate"
+      },
+      "value": ""
+    },
+    "this-project-taught-me-valuable-lessons-about-api-735f28a8": {
+      "id": "this-project-taught-me-valuable-lessons-about-api-735f28a8",
+      "type": "note",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 191,
+          "column": 5,
+          "offset": 8701
+        },
+        "end": {
+          "line": 194,
+          "column": 12,
+          "offset": 8896
+        }
+      },
+      "attributes": {
+        "type": "note",
+        "title": "Open Source Learning"
+      },
+      "value": "This project taught me valuable lessons about API design, documentation, backwards\ncompatibility, and maintaining open source projects."
+    },
+    "tag-6954c236": {
+      "id": "tag-6954c236",
+      "type": "tag",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 196,
+          "column": 5,
+          "offset": 8906
+        },
+        "end": {
+          "line": 196,
+          "column": 32,
+          "offset": 8933
+        }
+      },
+      "metaType": "tag",
+      "attributes": {
+        "metaType": "tag",
+        "value": "open-source"
+      },
+      "value": "open-source"
+    },
+    "tag-c81ac582": {
+      "id": "tag-c81ac582",
+      "type": "tag",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 197,
+          "column": 5,
+          "offset": 8938
+        },
+        "end": {
+          "line": 197,
+          "column": 30,
+          "offset": 8963
+        }
+      },
+      "metaType": "tag",
+      "attributes": {
+        "metaType": "tag",
+        "value": "gamemaker"
+      },
+      "value": "gamemaker"
+    },
+    "tag-5a2ddd8a": {
+      "id": "tag-5a2ddd8a",
+      "type": "tag",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 198,
+          "column": 5,
+          "offset": 8968
+        },
+        "end": {
+          "line": 198,
+          "column": 31,
+          "offset": 8994
+        }
+      },
+      "metaType": "tag",
+      "attributes": {
+        "metaType": "tag",
+        "value": "networking"
+      },
+      "value": "networking"
+    },
+    "tag-68f6ab33": {
+      "id": "tag-68f6ab33",
+      "type": "tag",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 199,
+          "column": 5,
+          "offset": 8999
+        },
+        "end": {
+          "line": 199,
+          "column": 36,
+          "offset": 9030
+        }
+      },
+      "metaType": "tag",
+      "attributes": {
+        "metaType": "tag",
+        "value": "developer-tools"
+      },
+      "value": "developer-tools"
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.527Z",
+    "nodeId": "gm-server-framework"
+  }
+}

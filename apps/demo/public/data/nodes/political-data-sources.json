@@ -1,0 +1,89 @@
+{
+  "node": {
+    "id": "political-data-sources",
+    "type": "research",
+    "primitive": "Branch",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 29,
+        "column": 5,
+        "offset": 1353
+      },
+      "end": {
+        "line": 32,
+        "column": 16,
+        "offset": 1628
+      }
+    },
+    "attributes": {
+      "type": "investigation",
+      "id": "political-data-sources",
+      "status": "completed"
+    },
+    "title": "Researched various sources for parliamentary data, including official government APIs,",
+    "content": "Researched various sources for parliamentary data, including official government APIs,\nweb scraping opportunities, and data availability across different jurisdictions.",
+    "children": []
+  },
+  "edges": [
+    {
+      "id": "chamber-project-contains-political-data-sources",
+      "from": "chamber-project",
+      "to": "political-data-sources",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "chamber-project": {
+      "id": "chamber-project",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 17,
+          "column": 3,
+          "offset": 713
+        },
+        "end": {
+          "line": 66,
+          "column": 13,
+          "offset": 2988
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "chamber-project",
+        "title": "Chamber",
+        "status": "development",
+        "category": "web-application",
+        "priority": "high",
+        "githubUrl": "https://github.com/f0rbit/chamber",
+        "liveUrl": "https://chamber.net.au"
+      },
+      "title": "Chamber",
+      "content": "Generate daily & weekly reports of political sittings and distribute them to a user base\nvia a website experience & optional emails.Chamber aims to make political information more accessible by automatically generating\ndigestible reports from parliamentary proceedings and delivering them directly to citizens\nwho want to stay informed about their government's activities.Researched various sources for parliamentary data, including official government APIs,\nweb scraping opportunities, and data availability across different jurisdictions.Build the core system that processes parliamentary data and generates human-readable reportsImplement email subscription system with personalized report deliveryCreate user-friendly web interface for browsing reports and managing subscriptionsThis project represents my belief that technology should be used to increase civic\nengagement and make democracy more accessible to everyday people.",
+      "children": [
+        "political-data-sources",
+        "report-generation-system",
+        "email-distribution",
+        "web-interface",
+        "skill-16c3ade1",
+        "skill-dc2395cb",
+        "skill-7fae8c78",
+        "skill-79824f1e",
+        "skill-f30817ac",
+        "skill-228b3685",
+        "this-project-represents-my-belief-that-technology-d9486abe",
+        "collaborator-84f9cede",
+        "tag-a8860d85",
+        "tag-4ca7ab6a",
+        "tag-d3170190"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.524Z",
+    "nodeId": "political-data-sources"
+  }
+}

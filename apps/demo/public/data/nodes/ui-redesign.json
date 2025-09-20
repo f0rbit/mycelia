@@ -1,0 +1,83 @@
+{
+  "node": {
+    "id": "ui-redesign",
+    "type": "task",
+    "primitive": "Leaf",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 224,
+        "column": 5,
+        "offset": 10207
+      },
+      "end": {
+        "line": 226,
+        "column": 12,
+        "offset": 10400
+      }
+    },
+    "attributes": {
+      "type": "task",
+      "id": "ui-redesign",
+      "title": "Minimal UI Implementation",
+      "priority": "high",
+      "status": "in-progress"
+    },
+    "value": "Building a clean, distraction-free interface that prioritizes function over form"
+  },
+  "edges": [
+    {
+      "id": "devpad-project-contains-ui-redesign",
+      "from": "devpad-project",
+      "to": "ui-redesign",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "devpad-project": {
+      "id": "devpad-project",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 204,
+          "column": 3,
+          "offset": 9082
+        },
+        "end": {
+          "line": 244,
+          "column": 13,
+          "offset": 11127
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "devpad-project",
+        "title": "DevPad",
+        "status": "redesigning",
+        "category": "productivity-tool"
+      },
+      "title": "DevPad",
+      "content": "A hyper-minimalistic project and task management tool designed specifically for developers.\nAfter multiple iterations and redesigns, I'm currently working on a streamlined version\nthat focuses on simplicity and developer workflow integration.Researching how developers currently manage projects and tasks, what tools they use,\nand where existing solutions fall short of their needs.Exploring why developers often prefer simple, focused tools over feature-heavy alternatives.\nSometimes the best tool is the one that gets out of your way and lets you focus on the work.Narrowed down to core features: project creation, task management, and simple time trackingBuilding a clean, distraction-free interface that prioritizes function over formIntegrate with git repositories, development tools, and common developer workflowsThe goal is to create a tool so simple and intuitive that it becomes invisible -\nhelping developers stay organized without adding cognitive overhead.",
+      "children": [
+        "developer-productivity",
+        "minimalism-in-tools",
+        "mvp-definition",
+        "ui-redesign",
+        "developer-workflow-integration",
+        "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+        "skill-ce82db49",
+        "skill-d4d2b68f",
+        "skill-57b8db17",
+        "tag-ba6dd4b1",
+        "tag-294445d7",
+        "tag-d7b6fa57"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.529Z",
+    "nodeId": "ui-redesign"
+  }
+}

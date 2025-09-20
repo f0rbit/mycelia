@@ -1,0 +1,74 @@
+{
+  "node": {
+    "id": "sustainable-tech",
+    "type": "task",
+    "primitive": "Leaf",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 485,
+        "column": 5,
+        "offset": 22129
+      },
+      "end": {
+        "line": 489,
+        "column": 12,
+        "offset": 22378
+      }
+    },
+    "attributes": {
+      "type": "task",
+      "id": "sustainable-tech",
+      "title": "Environmental Impact Projects",
+      "priority": "medium",
+      "status": "planned"
+    },
+    "value": "Develop projects that have positive environmental impact or help others make more\nsustainable technology choices"
+  },
+  "edges": [
+    {
+      "id": "future-directions-contains-sustainable-tech",
+      "from": "future-directions",
+      "to": "sustainable-tech",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "future-directions": {
+      "id": "future-directions",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 477,
+          "column": 3,
+          "offset": 21758
+        },
+        "end": {
+          "line": 501,
+          "column": 13,
+          "offset": 22905
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "future-directions",
+        "title": "Future Project Directions",
+        "status": "planning"
+      },
+      "title": "Future Project Directions",
+      "content": "Explore how AI tools can enhance development workflows and create new possibilities\nfor creative and productivity applicationsDevelop projects that have positive environmental impact or help others make more\nsustainable technology choicesCreate resources and tools that help other developers learn and grow, building on\nmy experience with documentation and teachingFuture projects will prioritize: meaningful impact, technical excellence, community value,\nand personal growth. The goal is to build things that matter, not just things that work.",
+      "children": [
+        "ai-integration-exploration",
+        "sustainable-tech",
+        "education-tools",
+        "future-projects-will-prioritize:-meaningful-impact-476a2cad"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.535Z",
+    "nodeId": "sustainable-tech"
+  }
+}

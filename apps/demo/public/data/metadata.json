@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2025-09-20T11:27:31.536Z",
+  "nodeCount": 146,
+  "edgeCount": 145,
+  "types": [
+    "person",
+    "portfolio",
+    "project",
+    "research",
+    "task",
+    "skill",
+    "note",
+    "collaborator",
+    "tag",
+    "essay",
+    "achievement",
+    "date"
+  ],
+  "stats": {
+    "nodeCount": 146,
+    "edgeCount": 145,
+    "typeBreakdown": {
+      "person": 1,
+      "portfolio": 1,
+      "project": 12,
+      "research": 8,
+      "task": 29,
+      "skill": 39,
+      "note": 10,
+      "collaborator": 1,
+      "tag": 37,
+      "essay": 4,
+      "achievement": 3,
+      "date": 1
+    }
+  }
+}

@@ -1,0 +1,477 @@
+{
+  "node": {
+    "id": "devpad-project",
+    "type": "project",
+    "primitive": "Branch",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 204,
+        "column": 3,
+        "offset": 9082
+      },
+      "end": {
+        "line": 244,
+        "column": 13,
+        "offset": 11127
+      }
+    },
+    "attributes": {
+      "type": "project",
+      "id": "devpad-project",
+      "title": "DevPad",
+      "status": "redesigning",
+      "category": "productivity-tool"
+    },
+    "title": "DevPad",
+    "content": "A hyper-minimalistic project and task management tool designed specifically for developers.\nAfter multiple iterations and redesigns, I'm currently working on a streamlined version\nthat focuses on simplicity and developer workflow integration.Researching how developers currently manage projects and tasks, what tools they use,\nand where existing solutions fall short of their needs.Exploring why developers often prefer simple, focused tools over feature-heavy alternatives.\nSometimes the best tool is the one that gets out of your way and lets you focus on the work.Narrowed down to core features: project creation, task management, and simple time trackingBuilding a clean, distraction-free interface that prioritizes function over formIntegrate with git repositories, development tools, and common developer workflowsThe goal is to create a tool so simple and intuitive that it becomes invisible -\nhelping developers stay organized without adding cognitive overhead.",
+    "children": [
+      "developer-productivity",
+      "minimalism-in-tools",
+      "mvp-definition",
+      "ui-redesign",
+      "developer-workflow-integration",
+      "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+      "skill-ce82db49",
+      "skill-d4d2b68f",
+      "skill-57b8db17",
+      "tag-ba6dd4b1",
+      "tag-294445d7",
+      "tag-d7b6fa57"
+    ]
+  },
+  "edges": [
+    {
+      "id": "portfolio-showcase-contains-devpad-project",
+      "from": "portfolio-showcase",
+      "to": "devpad-project",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-developer-productivity",
+      "from": "devpad-project",
+      "to": "developer-productivity",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-minimalism-in-tools",
+      "from": "devpad-project",
+      "to": "minimalism-in-tools",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-mvp-definition",
+      "from": "devpad-project",
+      "to": "mvp-definition",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-ui-redesign",
+      "from": "devpad-project",
+      "to": "ui-redesign",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-developer-workflow-integration",
+      "from": "devpad-project",
+      "to": "developer-workflow-integration",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+      "from": "devpad-project",
+      "to": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-skill-ce82db49",
+      "from": "devpad-project",
+      "to": "skill-ce82db49",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-skill-d4d2b68f",
+      "from": "devpad-project",
+      "to": "skill-d4d2b68f",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-skill-57b8db17",
+      "from": "devpad-project",
+      "to": "skill-57b8db17",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-tag-ba6dd4b1",
+      "from": "devpad-project",
+      "to": "tag-ba6dd4b1",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-tag-294445d7",
+      "from": "devpad-project",
+      "to": "tag-294445d7",
+      "type": "contains"
+    },
+    {
+      "id": "devpad-project-contains-tag-d7b6fa57",
+      "from": "devpad-project",
+      "to": "tag-d7b6fa57",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "portfolio-showcase": {
+      "id": "portfolio-showcase",
+      "type": "portfolio",
+      "primitive": "List",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 8,
+          "column": 1,
+          "offset": 294
+        },
+        "end": {
+          "line": 513,
+          "column": 13,
+          "offset": 23236
+        }
+      },
+      "attributes": {
+        "type": "portfolio",
+        "id": "portfolio-showcase",
+        "title": "Tom's Project Portfolio",
+        "status": "active",
+        "owner": "tom-materne",
+        "category": "portfolio"
+      },
+      "title": "Tom's Project Portfolio",
+      "description": "A comprehensive showcase of projects spanning game development, web applications,\ndeveloper tools, and creative platforms. Each project represents a milestone in\nmy programming journey and demonstrates different aspects of software development.Active ProjectsGenerate daily & weekly reports of political sittings and distribute them to a user base\nvia a website experience & optional emails.Chamber aims to make political information more accessible by automatically generating\ndigestible reports from parliamentary proceedings and delivering them directly to citizens\nwho want to stay informed about their government's activities.Researched various sources for parliamentary data, including official government APIs,\nweb scraping opportunities, and data availability across different jurisdictions.Build the core system that processes parliamentary data and generates human-readable reportsImplement email subscription system with personalized report deliveryCreate user-friendly web interface for browsing reports and managing subscriptionsThis project represents my belief that technology should be used to increase civic\nengagement and make democracy more accessible to everyday people.Blog site for all things on my creative side - a platform where I explore photography,\npainting, music, and other artistic endeavors alongside my technical work.This project serves as a creative outlet and demonstrates my ability to build content\nmanagement systems while exploring the intersection of technology and art.Exploring how programming and artistic expression can complement and enhance each other.\nMany of the same principles that make good code also make good art: composition,\nbalance, iteration, and attention to detail.Built a responsive gallery system for showcasing photography work with metadata and taggingIntegrate music player for original compositions and coversDocumenting my painting journey with progress photos, technique notes, and reflections.Just like coding, painting is about iteration, learning from mistakes, and gradually\nbuilding more complex skills on top of fundamental techniques.Game Development ProjectsA fast-paced multiplayer 1v1 capture the flag game built with GameMaker and Java backend.\nThis project combines my game development roots with my backend programming skills to\ncreate a competitive multiplayer experience.Studied various multiplayer game architectures, latency compensation techniques,\nand anti-cheat systems to inform the design decisions.Built the game client in GameMaker with smooth movement, responsive controls, and network communicationImplemented authoritative game server in Java with player synchronization and match managementDesign and implement skill-based matchmaking for balanced competitive matchesBuilding multiplayer games presents unique challenges around network synchronization,\nlatency compensation, and maintaining game state consistency across clients.Developer Tools & LibrariesAn open-source framework for interfacing between Java servers and GameMaker: Studio game clients.\nThis project solved a real problem I faced when building multiplayer games and has helped\nother developers in the GameMaker community.Deep dive into GameMaker's networking capabilities, socket implementations, and\ncommunication protocols to design an optimal interface layer.Built the foundational library with robust client-server communication protocolsCreated comprehensive documentation with code examples and getting-started guidesProvide ongoing support to developers using the library and maintain compatibilityThe library has been adopted by multiple independent game developers and has received\npositive feedback from the GameMaker community.This project taught me valuable lessons about API design, documentation, backwards\ncompatibility, and maintaining open source projects.Web Applications & PlatformsA hyper-minimalistic project and task management tool designed specifically for developers.\nAfter multiple iterations and redesigns, I'm currently working on a streamlined version\nthat focuses on simplicity and developer workflow integration.Researching how developers currently manage projects and tasks, what tools they use,\nand where existing solutions fall short of their needs.Exploring why developers often prefer simple, focused tools over feature-heavy alternatives.\nSometimes the best tool is the one that gets out of your way and lets you focus on the work.Narrowed down to core features: project creation, task management, and simple time trackingBuilding a clean, distraction-free interface that prioritizes function over formIntegrate with git repositories, development tools, and common developer workflowsThe goal is to create a tool so simple and intuitive that it becomes invisible -\nhelping developers stay organized without adding cognitive overhead.Backend & Infrastructure ProjectsStack setup for a golang API with bun testing, postgres database, and S3 storage for\nlocal & production environments. This project serves as a template and learning resource\nfor other developers looking to set up similar infrastructure.Comprehensive study of the Go ecosystem, comparing different frameworks, ORMs, and\ndeployment strategies to identify best practices and optimal tool combinations.Set up complete docker-compose environment with Go app, PostgreSQL, and MinIO (S3 compatible storage)Integrated Drizzle ORM for type-safe database operations with migrations and schema managementConfigured end-to-end testing pipeline using Bun for fast, reliable test executionCreated comprehensive documentation for deploying the stack to production environmentsThe repository has helped several developers bootstrap their Go API projects and serves\nas a reference for modern Go development practices.This project demonstrates current best practices in API development, including\ncontainerization, type safety, comprehensive testing, and clear documentation.Experimental & Learning ProjectsA project specifically designed to explore the transition from JavaScript to TypeScript\nand experiment with different approaches to state management and task organization.Documented the process of migrating a JavaScript project to TypeScript, including\nchallenges faced, benefits realized, and lessons learned about type safety.Reflecting on the transition from dynamic to static typing, the initial resistance,\nthe gradual appreciation, and ultimately the realization that TypeScript makes\nJavaScript development more enjoyable and productive.Built initial version in vanilla JavaScript to establish baseline functionalitySystematically migrated codebase to TypeScript, adding type definitions and improving code qualityCompared performance, developer experience, and code maintainability between JS and TS versionsThis project solidified my understanding of TypeScript's benefits and gave me practical\nexperience in migrating existing codebases to adopt type safety.Creative & Artistic ProjectsA curated collection of photography work spanning landscapes, street photography,\nand experimental compositions. This creative pursuit complements my technical work\nand provides a different lens for seeing and documenting the world.Continuous learning about composition, lighting, post-processing, and different\nphotographic styles to improve technical and artistic skills.Specialized focus on underwater photography while snorkeling, capturing marine life\nand underwater landscapes. This challenging environment requires special techniques\nand equipment considerations.Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!Select and organize best photographs into cohesive collections for online portfolioShare photography work on Instagram and other platforms to build an audience and get feedbackProfessional DevelopmentLed coaching for 8 different badminton teams at competitive city level, developing\nleadership skills, teaching abilities, and team management experience that directly\ntranslates to software development team dynamics.Studied effective coaching and teaching methodologies, sports psychology, and\nteam motivation techniques to become a more effective leader.Successfully managed and coordinated practice schedules, competitions, and development plans for 8 teamsCreated personalized training programs for players at different skill levels and tracked progressDeveloped game strategies, analyzed opponent patterns, and prepared teams for high-level competitionLed teams to compete successfully at the highest level in local city competitions,\nwith several teams achieving top placements.The leadership and analytical skills developed in sports coaching directly apply to\nsoftware development team leadership and code review processes.Reflection & Future DirectionsLooking across this portfolio of projects, several themes emerge that have shaped my\napproach to software development and creative work:Iteration and Learning: Nearly every project has gone through multiple versions,\nredesigns, or pivots. This isn't failure - it's the natural process of learning and\nimproving. Each iteration teaches something new about the problem space, user needs,\nor technical constraints.Cross-Pollination: Skills learned in one domain consistently apply to others.\nLeadership from coaching translates to software team dynamics. Visual composition\nfrom photography improves UI design. Game development networking knowledge applies\nto web API design.Community and Open Source: The projects that have had the most impact are those\nthat solve problems for others, not just myself. Open source contributions and\ncommunity resources create value that extends far beyond the initial effort.Balance of Technical and Creative: The most fulfilling projects combine technical\nchallenges with creative expression or meaningful impact. Pure technical exercises\nare valuable for learning, but projects with purpose and personality are what I\nremember and continue to develop.Explore how AI tools can enhance development workflows and create new possibilities\nfor creative and productivity applicationsDevelop projects that have positive environmental impact or help others make more\nsustainable technology choicesCreate resources and tools that help other developers learn and grow, building on\nmy experience with documentation and teachingFuture projects will prioritize: meaningful impact, technical excellence, community value,\nand personal growth. The goal is to build things that matter, not just things that work.Time spent curating and documenting this comprehensive project portfolio",
+      "children": [
+        "chamber-project",
+        "burning-blends",
+        "arena-game",
+        "gm-server-framework",
+        "devpad-project",
+        "golang-api-stack",
+        "todo-tracker-evolution",
+        "photography-portfolio",
+        "badminton-coaching",
+        "portfolio-reflection",
+        "future-directions",
+        "tag-0f0b2e9d",
+        "tag-7fdc1bb8",
+        "tag-188ed460",
+        "tag-1553c5b4",
+        "tag-5fc3eeaf",
+        "tag-d63eb94f",
+        "time-spent-curating-and-documenting-this-comprehen-f00e4b7f"
+      ]
+    },
+    "developer-productivity": {
+      "id": "developer-productivity",
+      "type": "research",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 210,
+          "column": 5,
+          "offset": 9446
+        },
+        "end": {
+          "line": 213,
+          "column": 16,
+          "offset": 9683
+        }
+      },
+      "attributes": {
+        "type": "study",
+        "id": "developer-productivity",
+        "status": "ongoing"
+      },
+      "title": "Researching how developers currently manage projects and tasks, what tools they use,",
+      "content": "Researching how developers currently manage projects and tasks, what tools they use,\nand where existing solutions fall short of their needs.",
+      "children": []
+    },
+    "minimalism-in-tools": {
+      "id": "minimalism-in-tools",
+      "type": "essay",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 215,
+          "column": 5,
+          "offset": 9693
+        },
+        "end": {
+          "line": 218,
+          "column": 13,
+          "offset": 9988
+        }
+      },
+      "attributes": {
+        "type": "essay",
+        "id": "minimalism-in-tools",
+        "title": "The Case for Minimalistic Development Tools"
+      },
+      "title": "The Case for Minimalistic Development Tools",
+      "content": "Exploring why developers often prefer simple, focused tools over feature-heavy alternatives.\nSometimes the best tool is the one that gets out of your way and lets you focus on the work.",
+      "children": []
+    },
+    "mvp-definition": {
+      "id": "mvp-definition",
+      "type": "task",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 220,
+          "column": 5,
+          "offset": 9998
+        },
+        "end": {
+          "line": 222,
+          "column": 12,
+          "offset": 10197
+        }
+      },
+      "attributes": {
+        "type": "task",
+        "id": "mvp-definition",
+        "title": "Define MVP Features",
+        "priority": "high",
+        "status": "completed"
+      },
+      "value": "Narrowed down to core features: project creation, task management, and simple time tracking"
+    },
+    "ui-redesign": {
+      "id": "ui-redesign",
+      "type": "task",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 224,
+          "column": 5,
+          "offset": 10207
+        },
+        "end": {
+          "line": 226,
+          "column": 12,
+          "offset": 10400
+        }
+      },
+      "attributes": {
+        "type": "task",
+        "id": "ui-redesign",
+        "title": "Minimal UI Implementation",
+        "priority": "high",
+        "status": "in-progress"
+      },
+      "value": "Building a clean, distraction-free interface that prioritizes function over form"
+    },
+    "developer-workflow-integration": {
+      "id": "developer-workflow-integration",
+      "type": "task",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 228,
+          "column": 5,
+          "offset": 10410
+        },
+        "end": {
+          "line": 230,
+          "column": 12,
+          "offset": 10617
+        }
+      },
+      "attributes": {
+        "type": "task",
+        "id": "developer-workflow-integration",
+        "title": "Workflow Integration",
+        "priority": "medium",
+        "status": "planned"
+      },
+      "value": "Integrate with git repositories, development tools, and common developer workflows"
+    },
+    "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3": {
+      "id": "the-goal-is-to-create-a-tool-so-simple-and-intuiti-183092b3",
+      "type": "note",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 232,
+          "column": 5,
+          "offset": 10627
+        },
+        "end": {
+          "line": 235,
+          "column": 12,
+          "offset": 10833
+        }
+      },
+      "attributes": {
+        "type": "note",
+        "title": "Design Philosophy"
+      },
+      "value": "The goal is to create a tool so simple and intuitive that it becomes invisible -\nhelping developers stay organized without adding cognitive overhead."
+    },
+    "skill-ce82db49": {
+      "id": "skill-ce82db49",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 237,
+          "column": 5,
+          "offset": 10843
+        },
+        "end": {
+          "line": 237,
+          "column": 57,
+          "offset": 10895
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "Product Design",
+        "level": "intermediate"
+      },
+      "value": ""
+    },
+    "skill-d4d2b68f": {
+      "id": "skill-d4d2b68f",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 238,
+          "column": 5,
+          "offset": 10900
+        },
+        "end": {
+          "line": 238,
+          "column": 58,
+          "offset": 10953
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "User Experience",
+        "level": "intermediate"
+      },
+      "value": ""
+    },
+    "skill-57b8db17": {
+      "id": "skill-57b8db17",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 239,
+          "column": 5,
+          "offset": 10958
+        },
+        "end": {
+          "line": 239,
+          "column": 56,
+          "offset": 11009
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "Minimalist Design",
+        "level": "advanced"
+      },
+      "value": ""
+    },
+    "tag-ba6dd4b1": {
+      "id": "tag-ba6dd4b1",
+      "type": "tag",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 241,
+          "column": 5,
+          "offset": 11019
+        },
+        "end": {
+          "line": 241,
+          "column": 33,
+          "offset": 11047
+        }
+      },
+      "metaType": "tag",
+      "attributes": {
+        "metaType": "tag",
+        "value": "productivity"
+      },
+      "value": "productivity"
+    },
+    "tag-294445d7": {
+      "id": "tag-294445d7",
+      "type": "tag",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 242,
+          "column": 5,
+          "offset": 11052
+        },
+        "end": {
+          "line": 242,
+          "column": 36,
+          "offset": 11083
+        }
+      },
+      "metaType": "tag",
+      "attributes": {
+        "metaType": "tag",
+        "value": "developer-tools"
+      },
+      "value": "developer-tools"
+    },
+    "tag-d7b6fa57": {
+      "id": "tag-d7b6fa57",
+      "type": "tag",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 243,
+          "column": 5,
+          "offset": 11088
+        },
+        "end": {
+          "line": 243,
+          "column": 31,
+          "offset": 11114
+        }
+      },
+      "metaType": "tag",
+      "attributes": {
+        "metaType": "tag",
+        "value": "minimalism"
+      },
+      "value": "minimalism"
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.528Z",
+    "nodeId": "devpad-project"
+  }
+}

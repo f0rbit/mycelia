@@ -1,0 +1,86 @@
+{
+  "node": {
+    "id": "gamemaker-networking",
+    "type": "research",
+    "primitive": "Branch",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 164,
+        "column": 5,
+        "offset": 7369
+      },
+      "end": {
+        "line": 167,
+        "column": 16,
+        "offset": 7613
+      }
+    },
+    "attributes": {
+      "type": "experiment",
+      "id": "gamemaker-networking",
+      "status": "completed"
+    },
+    "title": "Deep dive into GameMaker's networking capabilities, socket implementations, and",
+    "content": "Deep dive into GameMaker's networking capabilities, socket implementations, and\ncommunication protocols to design an optimal interface layer.",
+    "children": []
+  },
+  "edges": [
+    {
+      "id": "gm-server-framework-contains-gamemaker-networking",
+      "from": "gm-server-framework",
+      "to": "gamemaker-networking",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "gm-server-framework": {
+      "id": "gm-server-framework",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 157,
+          "column": 3,
+          "offset": 6970
+        },
+        "end": {
+          "line": 200,
+          "column": 13,
+          "offset": 9043
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "gm-server-framework",
+        "title": "GM-Server Framework",
+        "status": "completed",
+        "category": "open-source-library",
+        "language": "java"
+      },
+      "title": "GM-Server Framework",
+      "content": "An open-source framework for interfacing between Java servers and GameMaker: Studio game clients.\nThis project solved a real problem I faced when building multiplayer games and has helped\nother developers in the GameMaker community.Deep dive into GameMaker's networking capabilities, socket implementations, and\ncommunication protocols to design an optimal interface layer.Built the foundational library with robust client-server communication protocolsCreated comprehensive documentation with code examples and getting-started guidesProvide ongoing support to developers using the library and maintain compatibilityThe library has been adopted by multiple independent game developers and has received\npositive feedback from the GameMaker community.This project taught me valuable lessons about API design, documentation, backwards\ncompatibility, and maintaining open source projects.",
+      "children": [
+        "gamemaker-networking",
+        "core-library",
+        "documentation-site",
+        "community-support",
+        "the-library-has-been-adopted-by-multiple-independe-baba2f8f",
+        "skill-22c19654",
+        "skill-4a7ac3d3",
+        "skill-0d11b4e9",
+        "skill-6173c5a4",
+        "this-project-taught-me-valuable-lessons-about-api-735f28a8",
+        "tag-6954c236",
+        "tag-c81ac582",
+        "tag-5a2ddd8a",
+        "tag-68f6ab33"
+      ]
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.527Z",
+    "nodeId": "gamemaker-networking"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "node": {
+    "id": "snorkeling-photography",
+    "type": "project",
+    "primitive": "Branch",
+    "source": {
+      "file": "examples/project-portfolio.mdx",
+      "start": {
+        "line": 365,
+        "column": 5,
+        "offset": 16568
+      },
+      "end": {
+        "line": 378,
+        "column": 15,
+        "offset": 17320
+      }
+    },
+    "attributes": {
+      "type": "project",
+      "id": "snorkeling-photography",
+      "title": "Underwater Photography",
+      "status": "active",
+      "category": "specialty-photography"
+    },
+    "title": "Underwater Photography",
+    "content": "Specialized focus on underwater photography while snorkeling, capturing marine life\nand underwater landscapes. This challenging environment requires special techniques\nand equipment considerations.Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!",
+    "children": [
+      "underwater-photography-presents-unique-challenges:-4107da1a",
+      "skill-865e2515",
+      "skill-46f4dfa2"
+    ]
+  },
+  "edges": [
+    {
+      "id": "photography-portfolio-contains-snorkeling-photography",
+      "from": "photography-portfolio",
+      "to": "snorkeling-photography",
+      "type": "contains"
+    },
+    {
+      "id": "snorkeling-photography-contains-underwater-photography-presents-unique-challenges:-4107da1a",
+      "from": "snorkeling-photography",
+      "to": "underwater-photography-presents-unique-challenges:-4107da1a",
+      "type": "contains"
+    },
+    {
+      "id": "snorkeling-photography-contains-skill-865e2515",
+      "from": "snorkeling-photography",
+      "to": "skill-865e2515",
+      "type": "contains"
+    },
+    {
+      "id": "snorkeling-photography-contains-skill-46f4dfa2",
+      "from": "snorkeling-photography",
+      "to": "skill-46f4dfa2",
+      "type": "contains"
+    }
+  ],
+  "relatedNodes": {
+    "photography-portfolio": {
+      "id": "photography-portfolio",
+      "type": "project",
+      "primitive": "Branch",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 353,
+          "column": 3,
+          "offset": 15940
+        },
+        "end": {
+          "line": 399,
+          "column": 13,
+          "offset": 18151
+        }
+      },
+      "attributes": {
+        "type": "project",
+        "id": "photography-portfolio",
+        "title": "Photography Collection",
+        "status": "ongoing",
+        "category": "creative-work"
+      },
+      "title": "Photography Collection",
+      "content": "A curated collection of photography work spanning landscapes, street photography,\nand experimental compositions. This creative pursuit complements my technical work\nand provides a different lens for seeing and documenting the world.Continuous learning about composition, lighting, post-processing, and different\nphotographic styles to improve technical and artistic skills.Specialized focus on underwater photography while snorkeling, capturing marine life\nand underwater landscapes. This challenging environment requires special techniques\nand equipment considerations.Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!Select and organize best photographs into cohesive collections for online portfolioShare photography work on Instagram and other platforms to build an audience and get feedback",
+      "children": [
+        "photography-techniques",
+        "snorkeling-photography",
+        "portfolio-curation",
+        "social-media-presence",
+        "skill-43ff3315",
+        "skill-7c454d6b",
+        "skill-78f32ff3",
+        "skill-9d1a70fa",
+        "tag-b51e6fc3",
+        "tag-fe25725b",
+        "tag-93ef5385",
+        "tag-c0910f33"
+      ]
+    },
+    "underwater-photography-presents-unique-challenges:-4107da1a": {
+      "id": "underwater-photography-presents-unique-challenges:-4107da1a",
+      "type": "note",
+      "primitive": "Leaf",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 371,
+          "column": 7,
+          "offset": 16929
+        },
+        "end": {
+          "line": 374,
+          "column": 14,
+          "offset": 17165
+        }
+      },
+      "attributes": {
+        "type": "note",
+        "title": "Technical Challenges"
+      },
+      "value": "Underwater photography presents unique challenges: limited light, water refraction,\nmarine life behavior, and equipment protection - similar to debugging complex systems!"
+    },
+    "skill-865e2515": {
+      "id": "skill-865e2515",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 376,
+          "column": 7,
+          "offset": 17179
+        },
+        "end": {
+          "line": 376,
+          "column": 67,
+          "offset": 17239
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "Underwater Photography",
+        "level": "intermediate"
+      },
+      "value": ""
+    },
+    "skill-46f4dfa2": {
+      "id": "skill-46f4dfa2",
+      "type": "skill",
+      "primitive": "Meta",
+      "source": {
+        "file": "examples/project-portfolio.mdx",
+        "start": {
+          "line": 377,
+          "column": 7,
+          "offset": 17246
+        },
+        "end": {
+          "line": 377,
+          "column": 66,
+          "offset": 17305
+        }
+      },
+      "metaType": "skill",
+      "attributes": {
+        "metaType": "skill",
+        "name": "Marine Life Documentation",
+        "level": "beginner"
+      },
+      "value": ""
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-09-20T11:27:31.532Z",
+    "nodeId": "snorkeling-photography"
+  }
+}
