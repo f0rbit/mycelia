@@ -354,10 +354,10 @@ export class MarkdownParser implements Parser {
     const collectDirectText = (currentNode: any) => {
       if (currentNode.type === 'text') {
         textParts.push(currentNode.value);
-      } else if (currentNode.type === 'mdxJsxTextElement') {
+      } else if (currentNode.type === 'mdxJsxFlowElement' || currentNode.type === 'mdxJsxTextElement') {
         // Skip semantic tags - don't include their text content
         const tagName = currentNode.name;
-        if (registry.has(tagName)) {
+        if (tagName && registry[tagName.toLowerCase()]) {
           return; // Skip this entire subtree
         }
         // For non-semantic tags, continue processing children

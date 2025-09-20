@@ -3,6 +3,7 @@
 import React from 'react';
 import { Badge } from './ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { Breadcrumbs } from './breadcrumbs';
 
 interface SemanticNodeRendererProps {
   node: any;
@@ -51,14 +52,19 @@ export function SemanticNodeRenderer({
 }
 
 // Project Component - Portfolio style
-function ProjectRenderer({ node, childNodes, referencedNodes, htmlContent }: SemanticNodeRendererProps) {
+function ProjectRenderer({ node, nodeId, childNodes, referencedNodes, htmlContent }: SemanticNodeRendererProps) {
   const skills = childNodes.filter(n => n.type === 'skill');
   const tasks = childNodes.filter(n => n.type === 'task');
   const collaborators = childNodes.filter(n => n.type === 'collaborator');
   const tags = childNodes.filter(n => n.type === 'tag');
   
+  const nodeName = node.attributes?.title || node.attributes?.name || nodeId;
+  
   return (
     <div className="max-w-4xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-start justify-between mb-4">
@@ -200,12 +206,17 @@ function ProjectRenderer({ node, childNodes, referencedNodes, htmlContent }: Sem
 }
 
 // Person Component - Profile style
-function PersonRenderer({ node, childNodes, backlinks }: SemanticNodeRendererProps) {
+function PersonRenderer({ node, nodeId, childNodes, backlinks }: SemanticNodeRendererProps) {
   const projects = backlinks.filter(b => b.node.type === 'project');
   const skills = childNodes.filter(n => n.type === 'skill');
   
+  const nodeName = node.attributes?.name || node.attributes?.title || nodeId;
+  
   return (
     <div className="max-w-4xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       {/* Profile Header */}
       <div className="flex items-start gap-6 mb-8">
         <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
@@ -292,12 +303,17 @@ function PersonRenderer({ node, childNodes, backlinks }: SemanticNodeRendererPro
 }
 
 // Skill Component - Focused display
-function SkillRenderer({ node, backlinks }: SemanticNodeRendererProps) {
+function SkillRenderer({ node, nodeId, backlinks }: SemanticNodeRendererProps) {
   const projects = backlinks.filter(b => b.node.type === 'project');
   const people = backlinks.filter(b => b.node.type === 'person');
   
+  const nodeName = node.attributes?.name || node.attributes?.title || nodeId;
+  
   return (
     <div className="max-w-4xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-2">{node.attributes?.name || node.id}</h1>
         {node.attributes?.level && (
@@ -356,9 +372,14 @@ function SkillRenderer({ node, backlinks }: SemanticNodeRendererProps) {
 }
 
 // Task Component
-function TaskRenderer({ node }: SemanticNodeRendererProps) {
+function TaskRenderer({ node, nodeId }: SemanticNodeRendererProps) {
+  const nodeName = node.attributes?.title || node.attributes?.name || nodeId;
+  
   return (
     <div className="max-w-4xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       <div className="mb-6">
         <div className="flex items-start justify-between">
           <h1 className="text-3xl font-bold">{node.attributes?.title || node.id}</h1>
@@ -402,9 +423,14 @@ function TaskRenderer({ node }: SemanticNodeRendererProps) {
 }
 
 // Essay/Article Component
-function EssayRenderer({ node, htmlContent }: SemanticNodeRendererProps) {
+function EssayRenderer({ node, nodeId, htmlContent }: SemanticNodeRendererProps) {
+  const nodeName = node.attributes?.title || node.attributes?.name || nodeId;
+  
   return (
     <article className="max-w-3xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{node.attributes?.title || node.id}</h1>
         {node.attributes?.date && (
@@ -427,9 +453,14 @@ function EssayRenderer({ node, htmlContent }: SemanticNodeRendererProps) {
 }
 
 // Research Component
-function ResearchRenderer({ node, childNodes }: SemanticNodeRendererProps) {
+function ResearchRenderer({ node, nodeId, childNodes }: SemanticNodeRendererProps) {
+  const nodeName = node.attributes?.title || node.attributes?.name || nodeId;
+  
   return (
     <div className="max-w-4xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       <div className="mb-6">
         <h1 className="text-3xl font-bold mb-2">{node.attributes?.title || node.id}</h1>
         <div className="flex gap-4 text-sm text-gray-600">
@@ -470,9 +501,14 @@ function ResearchRenderer({ node, childNodes }: SemanticNodeRendererProps) {
 }
 
 // Note Component - Simple card
-function NoteRenderer({ node }: SemanticNodeRendererProps) {
+function NoteRenderer({ node, nodeId }: SemanticNodeRendererProps) {
+  const nodeName = node.attributes?.title || node.attributes?.name || nodeId;
+  
   return (
     <div className="max-w-2xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       <Card>
         <CardHeader>
           <CardTitle>{node.attributes?.title || 'Note'}</CardTitle>
@@ -491,11 +527,15 @@ function NoteRenderer({ node }: SemanticNodeRendererProps) {
 }
 
 // Portfolio Component
-function PortfolioRenderer({ node, childNodes }: SemanticNodeRendererProps) {
+function PortfolioRenderer({ node, nodeId, childNodes }: SemanticNodeRendererProps) {
   const projects = childNodes.filter(n => n.type === 'project');
+  const nodeName = node.attributes?.title || node.attributes?.name || nodeId;
   
   return (
     <div className="max-w-6xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       <header className="text-center mb-12">
         <h1 className="text-5xl font-bold mb-4">{node.attributes?.title || node.id}</h1>
         {(node.attributes?.description || node.content || node.value) && (
@@ -529,9 +569,14 @@ function PortfolioRenderer({ node, childNodes }: SemanticNodeRendererProps) {
 }
 
 // Tag Component
-function TagRenderer({ node, backlinks }: SemanticNodeRendererProps) {
+function TagRenderer({ node, nodeId, backlinks }: SemanticNodeRendererProps) {
+  const nodeName = node.attributes?.value || node.attributes?.name || nodeId;
+  
   return (
     <div className="max-w-4xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={nodeName} nodeId={nodeId} />
+      
       <div className="text-center mb-8">
         <Badge variant="outline" className="text-2xl px-4 py-2">
           #{node.attributes?.value || node.id}
@@ -570,6 +615,9 @@ function GenericRenderer({ node, nodeId, childNodes, referencedNodes, htmlConten
   
   return (
     <div className="max-w-4xl mx-auto py-8">
+      {/* Breadcrumb Navigation */}
+      <Breadcrumbs nodeType={node.type} nodeName={title} nodeId={nodeId} />
+      
       <div className="mb-8">
         <Badge variant="outline" className="mb-2">{node.type}</Badge>
         <h1 className="text-3xl font-bold">{title}</h1>

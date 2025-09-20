@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import myceliaConfig from '../../mycelia.json'
 
 export function Navigation() {
   return (
@@ -10,15 +11,15 @@ export function Navigation() {
           </Link>
           
           <div className="hidden md:flex items-center space-x-6 text-sm">
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900 hover:underline">
-              Blog
-            </Link>
-            <Link href="/project" className="text-gray-600 hover:text-gray-900 hover:underline">
-              Projects
-            </Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900 hover:underline">
-              About
-            </Link>
+            {myceliaConfig.routes.types.map(route => (
+              <Link 
+                key={route.path} 
+                href={`/type${route.path}`} 
+                className="text-gray-600 hover:text-gray-900 hover:underline"
+              >
+                {route.title}
+              </Link>
+            ))}
             <Link href="/graph" className="text-gray-600 hover:text-gray-900 hover:underline">
               Graph
             </Link>

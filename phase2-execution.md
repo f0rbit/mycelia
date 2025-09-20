@@ -111,6 +111,55 @@ const SEMANTIC_RENDERERS = {
 - **Advanced Features**: Node filtering, hover effects, interactive controls
 - **Result**: Professional graph visualization with multiple options
 
+## 🧹 CLEANUP SPRINT (Phase 2.5)
+
+### **Sprint 6: Fix Remaining Issues**
+#### Goals
+- Fix parser content concatenation bug where child nodes merge with parent content
+- Create type-based index pages for better navigation
+- Add breadcrumb navigation for context awareness
+- Configuration-driven routing via mycelia.json
+
+#### Tasks
+
+**1. Fix Parser Content Concatenation** 🐛 CRITICAL
+- **Problem**: Parser incorrectly merges child node content with parent nodes
+- **Solution**: Update parser to maintain proper content boundaries
+- **Files to modify**:
+  - `/packages/parser/src/markdown.ts`
+  - `/packages/parser/src/utils.ts`
+
+**2. Create mycelia.json Configuration** 📋
+- **Location**: `/apps/demo/mycelia.json`
+- **Structure**:
+```json
+{
+  "routes": {
+    "types": [
+      { "path": "/people", "type": "person", "title": "People" },
+      { "path": "/projects", "type": "project", "title": "Projects" },
+      { "path": "/skills", "type": "skill", "title": "Skills" }
+    ]
+  },
+  "navigation": {
+    "showBreadcrumbs": true,
+    "showTypeLinks": true
+  }
+}
+```
+
+**3. Implement Type Index Pages** 📚
+- Create `/apps/demo/src/app/type/[typeId]/page.tsx`
+- Generate pages for /people, /projects, /skills based on mycelia.json
+- Display grid/list of all nodes of that type
+- Add filtering and sorting capabilities
+
+**4. Add Breadcrumb Navigation** 🍞
+- Create `/apps/demo/src/components/breadcrumbs.tsx`
+- Show hierarchy: Home > Type > Node Name
+- Make each segment clickable for navigation
+- Integrate into node pages layout
+
 ## 🎉 PHASE 2 COMPLETE!
 
 ### **Achievements**
