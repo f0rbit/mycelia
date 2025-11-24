@@ -9,41 +9,22 @@ Mycelia uses a forest metaphor to organize and connect your knowledge. This orga
 
 ## The Forest Metaphor
 
-Your knowledge base is structured like a living forest:
+Your knowledge base is structured like a living forest, organized by node types and relationships.
 
-```
-🌲 Forest (Your entire knowledge base)
-├── 🌳 Trunks (Core entities: People, Organizations)
-├── 🌿 Branches (Collections: Projects, Research areas)
-└── 🍃 Leafs (Individual pieces: Posts, Notes, Tasks)
-```
+## Node Primitives
 
-## Core Primitives
+Mycelia uses three core primitive types:
 
-### Leafs 🍃
-Individual pieces of content that form the foundation of your knowledge:
-
-- **Posts**: Blog articles, essays, thoughts
-- **Notes**: Quick observations, meeting notes
-- **Tasks**: Action items, todo items
-- **References**: Links, citations, bookmarks
-
-```mdx
-<Post title="Understanding Neural Networks">
-  My exploration into deep learning fundamentals...
-</Post>
-
-<Note>
-  Remember to review the paper on attention mechanisms
-</Note>
-```
-
-### Branches 🌿
-Collections that group and organize related content:
+### Content Nodes
+Content-bearing nodes that can have children and nested structure:
 
 - **Projects**: Work projects, personal initiatives
+- **People**: Individuals, collaborators, authors  
+- **Organizations**: Companies, institutions, groups
+- **Posts**: Blog articles, essays, thoughts
 - **Research**: Study topics, investigation areas
-- **Collections**: Curated lists, galleries
+- **Skills**: Competencies and expertise
+- **Tasks**: Action items, todo items
 
 ```mdx
 <Project title="AI Research Assistant" status="active">
@@ -52,16 +33,7 @@ Collections that group and organize related content:
   <Task>Implement vector search</Task>
   <Task>Add citation management</Task>
 </Project>
-```
 
-### Trunks 🌳
-Core entities that everything else connects to:
-
-- **People**: Individuals, collaborators, authors
-- **Organizations**: Companies, institutions, groups
-- **Themes**: Major topics, life areas
-
-```mdx
 <Person name="Jane Smith" role="ML Engineer">
   Expert in transformer architectures
   <Skill>PyTorch</Skill>
@@ -69,38 +41,73 @@ Core entities that everything else connects to:
 </Person>
 ```
 
-## Relationships & Connections
-
-Mycelia automatically creates three types of relationships:
-
-### 1. Contains
-Parent-child relationships within the content tree:
+### Reference Nodes
+Links and pointers to other nodes:
 
 ```mdx
-<Project> <!-- Parent -->
+<Post>
+  Inspired by <Person name="Jane Smith" />
+</Post>
+```
+
+### Meta Nodes
+Annotations and tags about content:
+
+```mdx
+<Project>
+  <Tag>machine-learning</Tag>
+  <Tag>productivity</Tag>
+</Project>
+```
+
+## Relationships & Connections
+
+Mycelia automatically creates edges (relationships) between nodes:
+
+### 1. Contains
+Parent-child relationships within nested content:
+
+```mdx
+<Project id="proj-1"> <!-- Parent -->
   <Task>...</Task> <!-- Child -->
   <Note>...</Note> <!-- Child -->
 </Project>
 ```
 
+Creates edges: `{ from: "proj-1", to: "task-id", type: "contains" }`
+
 ### 2. References
 Explicit connections between nodes:
 
 ```mdx
-<Post>
+<Post id="post-1">
   Inspired by <Person name="Jane Smith" />
   Related to <Project title="AI Research" />
 </Post>
 ```
 
-### 3. Relates
-Implicit connections through shared tags or attributes:
+Creates edges with `type: "references"`
+
+### 3. Mentions
+When content mentions other entities:
 
 ```mdx
-<!-- These will be automatically related -->
+<Essay>
+  This essay discusses <Person name="Alan Kay" />
+</Essay>
+```
+
+Creates edges with `type: "mentions"`
+
+### 4. Tags
+Connections through tag associations:
+
+```mdx
 <Post><Tag>machine-learning</Tag></Post>
 <Project><Tag>machine-learning</Tag></Project>
 ```
+
+Creates edges with `type: "tags"`
 
 ## Content Organization
 
@@ -157,53 +164,77 @@ Create natural hierarchies through nesting:
 
 ## Graph Structure
 
-Mycelia builds a knowledge graph from your content:
+Mycelia builds a knowledge graph stored as JSON:
 
 ### Nodes
 Each tag becomes a node with:
-- Unique ID (auto-generated)
-- Type (leaf, branch, trunk)
-- Properties (from attributes)
+- Unique ID (auto-generated or explicit)
+- Type (person, project, task, etc.)
+- Primitive (Content, Reference, or Meta)
+- Attributes (from tag attributes)
 - Content (nested text/MDX)
+- Children (IDs of nested nodes)
+
+```typescript
+interface ContentNode {
+  id: string;
+  type: string;
+  primitive: 'Content';
+  title?: string;
+  content?: string;
+  children: string[];
+  attributes: Record<string, any>;
+}
+```
 
 ### Edges
 Connections between nodes:
 - From node ID
 - To node ID
-- Relationship type
-- Weight/strength
+- Edge type (contains, references, mentions, tags)
+- Optional attributes
+
+```typescript
+interface MyceliaEdge {
+  id: string;
+  from: string;
+  to: string;
+  type: 'contains' | 'references' | 'mentions' | 'tags' | 'collaborates';
+  attributes?: Record<string, any>;
+}
+```
 
 ### Indexes
 Fast lookups by:
-- Type (all projects, all people)
-- Tag (all items with #ml)
-- Date (temporal navigation)
-- Relationship (who knows whom)
+- Type: `indexes.byType['person']` → list of person node IDs
+- Tag: `indexes.byTag['ml']` → nodes tagged with 'ml'
+- Primitive: `indexes.byPrimitive['Content']` → all content nodes
+- Source file: `indexes.bySource['content/blog.mdx']` → nodes from file
 
 ## Best Practices
 
-### 1. Start with Trunks
-Define your core entities first:
+### 1. Start with Core Entities
+Define your main entities first:
 - Key people in your network
 - Main projects or areas
-- Central themes
+- Organizations you work with
 
-### 2. Grow Branches Naturally
-Let collections emerge from your content:
-- Group related posts into projects
-- Collect research notes by topic
-- Organize tasks by goal
+### 2. Build Natural Hierarchies
+Let structure emerge from your content:
+- Nest tasks within projects
+- Group skills within people
+- Organize content by topic
 
 ### 3. Connect Everything
 Make relationships explicit:
-- Tag liberally but consistently
-- Reference people and projects
-- Link related content
+- Tag consistently for discoverability
+- Reference people and projects explicitly
+- Link related content together
 
 ### 4. Maintain Balance
 - Don't over-nest (3-4 levels max)
 - Keep individual files focused
-- Split large topics into sub-topics
+- Split large documents into smaller ones
 
 ## Example: Personal Knowledge Base
 

@@ -250,11 +250,14 @@ Content Creation
 3. Component documentation
 4. CLI usage
 
-### Phase 3 (Later)
+### Phase 3 (Future Roadmap)
 1. Advanced topics
 2. Full API reference
 3. Migration guides
 4. Video tutorials
+5. Multi-parser support (Typst, etc.)
+6. Multi-framework renderers (Vue, Svelte)
+7. Advanced query API layer
 
 ## 🚀 Implementation Steps
 

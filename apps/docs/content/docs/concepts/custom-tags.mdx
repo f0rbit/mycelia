@@ -351,29 +351,37 @@ Tags map to primitive types:
 
 | Tag | Primitive Type | Graph Node Type |
 |-----|---------------|-----------------|
-| Person | Trunk | person |
-| Organization | Trunk | organization |
-| Project | Branch | project |
-| Research | Branch | research |
-| Essay | Leaf | essay |
-| Note | Leaf | note |
-| Task | Leaf | task |
+| Person | Content | person |
+| Organization | Content | organization |
+| Project | Content | project |
+| Research | Content | research |
+| Essay | Content | essay |
+| Post | Content | post |
+| Note | Content | note |
+| Task | Content | task |
+| Skill | Content | skill |
 | Tag | Meta | tag |
-| Skill | Meta | skill |
 | Date | Meta | date |
+| Link | Reference | link |
 
 ## Styling & Rendering
 
-Each tag has a default renderer that can be customized:
+Each tag type can have a custom React renderer:
 
 ```tsx
-// Custom renderer for Person tags
-function PersonRenderer({ node }) {
+// Custom renderer for Person nodes
+import type { ContentNode } from '@mycelia/core';
+
+function PersonRenderer({ node }: { node: ContentNode }) {
   return (
     <div className="person-card">
-      <h3>{node.properties.name}</h3>
-      <p>{node.properties.role}</p>
-      <SkillList skills={node.children} />
+      <h3>{node.title || node.attributes.name}</h3>
+      <p>{node.attributes.role}</p>
+      {node.children.length > 0 && (
+        <div className="skills">
+          {/* Render child skill nodes */}
+        </div>
+      )}
     </div>
   );
 }

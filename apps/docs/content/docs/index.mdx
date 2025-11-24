@@ -79,29 +79,35 @@ Skills: Python, Docker, Kubernetes
 
 ### 2. Automatic Relationships
 
-Mycelia detects and creates three types of relationships:
+Mycelia detects and creates relationships between nodes:
 
 - **Contains**: Parent-child hierarchies
 - **References**: Explicit connections between nodes
-- **Relates**: Implicit connections through shared attributes
+- **Mentions**: Content that mentions other entities
+- **Tags**: Connections through shared tags
 
 ### 3. Knowledge Graph
 
-Your content becomes a queryable graph:
+Your content becomes a graph structure stored as JSON:
 
 ```typescript
-// Find all projects by a person
-graph.query()
-  .from('person', 'jane-smith')
-  .through('authored')
-  .to('project')
-  .execute()
+interface MyceliaGraph {
+  nodes: Record<string, MyceliaNode>;
+  edges: MyceliaEdge[];
+  indexes: {
+    byType: Record<string, string[]>;
+    byTag: Record<string, string[]>;
+    // ... more indexes
+  };
+}
 
-// Find related content by tags
-graph.query()
-  .tagged('machine-learning')
-  .type('project', 'research')
-  .execute()
+// Access nodes by type
+const people = graph.indexes.byType['person'].map(id => graph.nodes[id]);
+
+// Navigate relationships via edges
+const projectTasks = graph.edges
+  .filter(e => e.from === projectId && e.type === 'contains')
+  .map(e => graph.nodes[e.to]);
 ```
 
 ## Use Cases
