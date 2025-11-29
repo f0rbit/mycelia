@@ -1,0 +1,128 @@
+# Practical Examples
+
+This page shows practical examples of how to use Mycelia in different scenarios.
+
+## Example 1: Project Management
+
+<Project id="website-redesign" title="Website Redesign" status="in-progress">
+  Redesigning the company website with modern technologies and improved UX.
+  
+  <Task id="research" priority="high" status="completed">
+    Research modern web frameworks and design trends
+  </Task>
+  
+  <Task id="wireframes" priority="high" status="in-progress">
+    Create wireframes for key pages
+  </Task>
+  
+  <Task id="prototype" priority="medium" status="pending">
+    Build interactive prototype
+  </Task>
+  
+  <Task id="implementation" priority="medium" status="pending">
+    Implement final design in production
+  </Task>
+</Project>
+
+## Example 2: Learning Path
+
+<Essay id="learning-path" title="Learning Modern Web Development">
+  A structured path for learning modern web development.
+
+  ### Phase 1: Fundamentals
+  Master the basics before moving to advanced topics.
+  
+  <Skill id="html-css" proficiency="beginner">
+    HTML & CSS - The building blocks of the web
+  </Skill>
+  
+  <Skill id="javascript" proficiency="intermediate">
+    JavaScript - Making websites interactive
+  </Skill>
+
+  ### Phase 2: Frameworks
+  Once you have the fundamentals, explore modern frameworks.
+  
+  <Skill id="react-basics" proficiency="intermediate">
+    React - Building component-based UIs
+  </Skill>
+  
+  <Skill id="next-js" proficiency="beginner">
+    Next.js - React framework for production
+  </Skill>
+
+  ### Phase 3: Advanced Topics
+  Deep dive into advanced concepts and tools.
+  
+  <Skill id="typescript-advanced" proficiency="advanced">
+    Advanced TypeScript - Type systems and patterns
+  </Skill>
+
+  Check out the <Link target="getting-started">Getting Started guide</Link> to apply these skills with Mycelia.
+</Essay>
+
+## Example 3: Team Directory
+
+<Person id="alice" name="Alice Johnson" role="Senior Developer">
+  Alice is a full-stack developer specializing in React and Node.js.
+  
+  <Skill id="alice-react" proficiency="expert">React</Skill>
+  <Skill id="alice-node" proficiency="advanced">Node.js</Skill>
+  <Skill id="alice-graphql" proficiency="intermediate">GraphQL</Skill>
+</Person>
+
+<Person id="bob" name="Bob Smith" role="Designer">
+  Bob leads design efforts with a focus on user experience and accessibility.
+  
+  <Skill id="bob-figma" proficiency="expert">Figma</Skill>
+  <Skill id="bob-ux" proficiency="advanced">UX Research</Skill>
+  <Skill id="bob-accessibility" proficiency="advanced">Accessibility</Skill>
+</Person>
+
+## Example 4: Documentation
+
+<Essay id="api-guide" title="API Integration Guide">
+  Learn how to integrate with external APIs in your Mycelia project.
+
+  ### REST APIs
+  Most web services expose REST APIs for data access.
+
+  ```typescript
+  const response = await fetch('https://api.example.com/data')
+  const data = await response.json()
+  ```
+
+  ### GraphQL APIs
+  GraphQL provides a flexible query language for APIs.
+
+  ```typescript
+  const query = `
+    query {
+      user(id: "123") {
+        name
+        email
+      }
+    }
+  `
+  ```
+
+  ### Best Practices
+  - Cache responses when possible
+  - Handle errors gracefully
+  - Use TypeScript for type safety
+  - Implement retry logic for failed requests
+
+  For more patterns, see the <Link target="advanced-features">Advanced Features guide</Link>.
+</Essay>
+
+## Try It Yourself
+
+These examples are just the beginning. You can:
+
+- Create your own project with tasks
+- Build a personal knowledge base
+- Document your learning journey
+- Create a team directory
+- Write technical documentation
+
+Everything becomes interconnected, searchable, and explorable. Start with the <Link target="hello-world">Hello World project</Link> and build from there!

@@ -81,20 +81,18 @@ export const TabsTrigger = React.forwardRef<
 TabsTrigger.displayName = 'TabsTrigger';
 
 export function Tabs({
-  ref,
-  className,
   items,
   label,
   defaultIndex = 0,
-  defaultValue = items ? escapeValue(items[defaultIndex]) : undefined,
+  defaultValue = items ? escapeValue(items[defaultIndex] ?? '') : undefined,
+  className,
   ...props
 }: TabsProps) {
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValue] = useState(defaultValue ?? '');
   const collection = useMemo<CollectionKey[]>(() => [], []);
 
   return (
     <Unstyled.Tabs
-      ref={ref}
       className={cn(
         'flex flex-col overflow-hidden rounded-xl border bg-fd-secondary my-4',
         className,

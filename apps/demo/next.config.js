@@ -1,20 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Force static export for production builds
-  output: 'export',
+  // Use 'export' for production builds, but allow dynamic routes in dev
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
+  basePath: process.env.NODE_ENV === 'production' ? '/mycelia/demo' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/mycelia/demo' : '',
+  reactStrictMode: true,
+  transpilePackages: ['@mycelia/render', '@mycelia/parser', '@mycelia/core'],
   images: {
-    unoptimized: true
+    unoptimized: true, // Required for static export
   },
-  // Remove basePath for now to simplify static deployment
-  // basePath: process.env.NODE_ENV === 'production' ? '/mycelia' : '',
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '/mycelia/' : '',
-  transpilePackages: ['@mycelia/core', '@mycelia/parser', '@mycelia/render'],
-  trailingSlash: true,
-  // Optimize build performance
-  experimental: {
-    workerThreads: false,
-    cpus: 1
-  }
 }
 
-export default nextConfig
+module.exports = nextConfig

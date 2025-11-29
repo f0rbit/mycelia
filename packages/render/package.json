@@ -1,11 +1,17 @@
 {
   "name": "@mycelia/render",
   "version": "0.1.0",
-  "description": "Unified renderer package for Mycelia with React, Vue, and Svelte support",
+  "description": "React and Next.js rendering utilities for Mycelia knowledge graphs",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./nextjs": "./src/nextjs/index.ts",
+    "./nextjs/*": "./src/nextjs/*.ts",
+    "./shared/*": "./src/shared/*.ts"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "bun --watch src/index.ts",
@@ -16,13 +22,27 @@
   ],
   "dependencies": {
     "@mycelia/core": "workspace:*",
-    "react": "^18.2.0"
+    "@mycelia/parser": "workspace:*",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
+    "react": "^18.2.0",
+    "rehype-highlight": "^7.0.2",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-html": "^16.0.1",
+    "remark-mdx": "^3.1.1",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "typescript": "^5"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    "next": ">=14.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   }
 }

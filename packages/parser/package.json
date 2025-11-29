@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "bun --watch src/index.ts",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "bun test"
   },
   "files": [
     "dist"

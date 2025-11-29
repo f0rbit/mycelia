@@ -1,0 +1,119 @@
+# Advanced Features
+
+<Essay id="advanced-features" title="Advanced Features Guide">
+  Once you understand the basics, Mycelia offers powerful features for building sophisticated knowledge graphs.
+
+  ## Custom Node Types
+
+  Beyond the built-in types, you can define your own semantic tags:
+
+  ```typescript
+  import { registerNodeType } from '@mycelia/core'
+  
+  registerNodeType('Course', {
+    attributes: ['id', 'title', 'difficulty', 'duration'],
+    canContain: ['Lesson', 'Assignment']
+  })
+  ```
+
+  Now use it in your content:
+
+  ```mdx
+  <Course id="intro-mycelia" title="Intro to Mycelia" difficulty="beginner" duration="2 hours">
+    <Lesson id="lesson-1">Understanding Semantic Tags</Lesson>
+    <Lesson id="lesson-2">Building Your First Graph</Lesson>
+  </Course>
+  ```
+
+  ## Graph Queries
+
+  Query your knowledge graph programmatically:
+
+  ```typescript
+  // Find all high-priority tasks
+  const urgentTasks = graph.queryByType('Task')
+    .filter(task => task.attributes.priority === 'high')
+  
+  // Find all projects with a specific status
+  const activeProjects = graph.queryByType('Project')
+    .filter(project => project.attributes.status === 'active')
+  
+  // Get all children of a node
+  const projectTasks = graph.getChildren('my-project')
+  ```
+
+  ## Custom Renderers
+
+  Create custom React components for your node types:
+
+  ```typescript
+  import { registerRenderer } from '@mycelia/render'
+  
+  registerRenderer('Course', ({ node, children }) => (
+    <div className="course">
+      <h2>{node.attributes.title}</h2>
+      <span className="difficulty">{node.attributes.difficulty}</span>
+      <span className="duration">{node.attributes.duration}</span>
+      <div className="lessons">{children}</div>
+    </div>
+  ))
+  ```
+
+  ## Bidirectional Links
+
+  Links automatically create bidirectional relationships:
+
+  ```mdx
+  <!-- In file-a.mdx -->
+  <Essay id="essay-a">
+    See also <Link target="essay-b">Related Essay</Link>
+  </Essay>
+  
+  <!-- In file-b.mdx -->
+  <Essay id="essay-b">
+    This essay is automatically linked from Essay A!
+  </Essay>
+  ```
+
+  The graph tracks both outgoing and incoming references.
+
+  ## Graph Navigation
+
+  Navigate the graph programmatically:
+
+  ```typescript
+  // Get a specific node
+  const node = graph.getNode('hello-world')
+  
+  // Get its parent
+  const parent = graph.getParent(node.id)
+  
+  // Get all references to this node
+  const references = graph.getReferences(node.id)
+  
+  // Get all nodes this one references
+  const outgoing = graph.getOutgoingLinks(node.id)
+  ```
+
+  ## Static Site Generation
+
+  Export your entire graph as a static site:
+
+  ```typescript
+  // next.config.js
+  module.exports = {
+    output: 'export',  // Enable static export
+  }
+  ```
+
+  ```bash
+  bun run build
+  # Generates static HTML for all pages
+  ```
+
+  ## Real-World Example
+
+  Check out the <Link target="hello-world">Hello World project</Link> to see these features in action, or explore how the <Link target="demo-author">Mycelia team</Link> uses these patterns.
+
+  For a comprehensive example with nearly 1000 pages, see the portfolio app in this repository.
+</Essay>

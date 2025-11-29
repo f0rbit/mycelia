@@ -6,6 +6,9 @@ out
 dist
 *.tgz
 
+# portfolio app (not deployed)
+apps/portfolio
+
 # code coverage
 coverage
 *.lcov

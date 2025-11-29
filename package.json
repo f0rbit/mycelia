@@ -11,8 +11,15 @@
   ],
   "scripts": {
     "build": "bun --filter='@mycelia/*' run build",
-    "dev": "cd apps/demo && bun run dev",
-    "export": "bun run build && cd apps/demo && bun run build",
+    "dev": "cd apps/portfolio && bun run dev",
+    "dev:demo": "cd apps/demo && bun run dev",
+    "dev:portfolio": "cd apps/portfolio && bun run dev",
+    "dev:docs": "cd apps/docs && bun run dev",
+    "build:demo": "cd apps/demo && bun run build",
+    "build:portfolio": "cd apps/portfolio && bun run build",
+    "build:docs": "cd apps/docs && bun run build",
+    "export": "bun run build && cd apps/portfolio && bun run build",
+    "export:portfolio": "bun run build && cd apps/portfolio && bun run build",
     "test": "bun test",
     "clean": "find . -name 'dist' -o -name '.next' -o -name 'out' -o -name '*.tsbuildinfo' | grep -v node_modules | xargs rm -rf"
   },

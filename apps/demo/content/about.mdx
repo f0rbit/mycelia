@@ -1,0 +1,56 @@
+# About This Demo
+
+<Person id="demo-author" name="Mycelia Team">
+  This demo was created by the Mycelia team to showcase the basics of building interconnected knowledge graphs from markdown content.
+  
+  We believe documentation, notes, and content should be more than static files - they should be explorable networks of knowledge.
+  
+  <Skill id="typescript" proficiency="expert">
+    TypeScript - The foundation of type-safe Mycelia development
+  </Skill>
+  
+  <Skill id="react" proficiency="advanced">
+    React - Powering the rendering layer for beautiful content display
+  </Skill>
+  
+  <Skill id="markdown" proficiency="expert">
+    MDX - Combining the simplicity of Markdown with the power of components
+  </Skill>
+</Person>
+
+## What This Demo Shows
+
+This simple demo includes roughly 15-20 pages of interconnected content demonstrating:
+
+### Core Features
+- **Semantic tag parsing** - `<Project>`, `<Task>`, `<Person>`, `<Essay>`, `<Skill>` and more
+- **Automatic graph generation** - Your content becomes a queryable knowledge graph
+- **Parent-child relationships** - Nested tags create automatic hierarchies
+- **Cross-references** - Link between nodes anywhere in your content
+- **Type-based organization** - Filter and navigate by content type
+
+### Why Mycelia?
+
+Traditional content management treats each page as isolated. Mycelia recognizes that knowledge is interconnected:
+
+- A **Project** contains **Tasks**
+- A **Person** has **Skills** 
+- An **Essay** references other **Essays**
+- Everything links together naturally
+
+## Learn More
+
+- Start with the <Link target="getting-started">Getting Started Guide</Link>
+- Try the <Link target="hello-world">Hello World example</Link>
+- Explore <Link target="advanced-features">Advanced Features</Link>
+- Visit the [GitHub repository](https://github.com/mycelia) for full documentation
+
+## Architecture
+
+Mycelia is built with three core packages:
+
+- `@mycelia/parser` - Parses MDX files into a knowledge graph
+- `@mycelia/core` - Graph data structures and utilities
+- `@mycelia/render` - React components for rendering content
+
+All working together to make your content come alive.

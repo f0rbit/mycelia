@@ -13,14 +13,16 @@ Install Mycelia using your preferred package manager:
 
 ```bash
 # Using Bun (recommended)
-bun add @mycelia/core @mycelia/parser @mycelia/ssr
+bun add @mycelia/core @mycelia/parser @mycelia/render
 
 # Using npm
-npm install @mycelia/core @mycelia/parser @mycelia/ssr
+npm install @mycelia/core @mycelia/parser @mycelia/render
 
 # Using yarn
-yarn add @mycelia/core @mycelia/parser @mycelia/ssr
+yarn add @mycelia/core @mycelia/parser @mycelia/render
 ```
+
+> **Note**: `@mycelia/ssr` was merged into `@mycelia/render`. Use `@mycelia/render/nextjs` for SSR functionality.
 
 ## Create Your First Content
 
@@ -59,7 +61,7 @@ date: 2024-01-01
 Create a Next.js app with Mycelia:
 
 ```typescript filename="app/[...slug]/page.tsx"
-import { MyceliaProvider } from '@mycelia/ssr/nextjs';
+import { MyceliaProvider } from '@mycelia/render/nextjs';
 import { MarkdownParser } from '@mycelia/parser';
 
 const provider = new MyceliaProvider({

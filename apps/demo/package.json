@@ -1,42 +1,31 @@
 {
   "name": "@mycelia/demo",
   "version": "0.1.0",
-  "type": "module",
+  "description": "Simple demo showcasing Mycelia basics",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 9000",
-    "prebuild": "node scripts/generate-static-data.mjs",
-    "build": "next build",
-    "start": "next start -p 9000",
-    "lint": "next lint",
-    "export": "npm run build",
-    "serve-static": "npx serve out -p 5000"
+    "dev": "next dev -p 3001",
+    "build": "NODE_ENV=production next build",
+    "start": "next start",
+    "export": "NODE_ENV=production next build"
   },
   "dependencies": {
     "@mycelia/core": "workspace:*",
-    "@mycelia/graph": "workspace:*",
+    "@mycelia/parser": "workspace:*",
     "@mycelia/render": "workspace:*",
-    "@mycelia/ssr": "workspace:*",
-    "@radix-ui/react-navigation-menu": "^1.2.2",
-    "@radix-ui/react-slot": "^1.1.1",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.460.0",
-    "next": "15.5.2",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "glob": "^11.0.0",
+    "next": "^15.5.2",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
-    "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.17.0",
-    "eslint-config-next": "15.5.2",
-    "postcss": "^8.5.1",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5.7.2",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8",
+    "autoprefixer": "^10"
   }
 }

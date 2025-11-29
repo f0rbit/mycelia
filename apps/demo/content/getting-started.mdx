@@ -1,0 +1,63 @@
+# Getting Started with Mycelia
+
+<Essay id="getting-started" title="Getting Started Guide">
+  Mycelia turns your markdown content into an interconnected knowledge graph. Instead of isolated documents, your content becomes a living network of ideas, projects, people, and tasks.
+
+  ## Installation
+
+  ```bash
+  bun add @mycelia/parser @mycelia/render @mycelia/core
+  ```
+
+  ## Basic Usage
+
+  ### 1. Write Content with Semantic Tags
+
+  Use built-in tags like `<Project>`, `<Task>`, `<Person>`, `<Essay>`, and more:
+
+  ```mdx
+  <Project id="my-project" title="My First Project">
+    This is a project description.
+    
+    <Task id="first-task" priority="high">
+      Complete the getting started guide
+    </Task>
+  </Project>
+  ```
+
+  ### 2. Parse Into a Graph
+
+  ```typescript
+  import { parse } from '@mycelia/parser'
+  
+  const files = ['content/**/*.mdx']
+  const { graph } = await parse(files)
+  ```
+
+  ### 3. Render with React
+
+  ```typescript
+  import { MyceliaProvider } from '@mycelia/render'
+  
+  <MyceliaProvider graph={graph}>
+    <YourApp />
+  </MyceliaProvider>
+  ```
+
+  ## Key Concepts
+
+  ### Semantic Tags
+  Tags like `<Project>`, `<Person>`, `<Task>` create typed nodes in your graph. Each tag has attributes (like `id`, `title`, `status`) that structure your data.
+
+  ### Parent-Child Relationships
+  Nesting tags creates automatic relationships. The Task above becomes a child of the Project.
+
+  ### Cross-References
+  Use `<Link target="node-id">` to create connections between nodes across different files.
+
+  ## Next Steps
+
+  - Explore the <Link target="hello-world">Hello World project</Link>
+  - Learn about <Link target="demo-author">the team behind this demo</Link>
+  - Check out the <Link target="advanced-features">Advanced Features guide</Link>
+</Essay>

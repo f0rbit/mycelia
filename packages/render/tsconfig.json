@@ -15,5 +15,11 @@
     "verbatimModuleSyntax": false
   },
   "include": ["src/**/*"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": [
+    "dist", 
+    "node_modules",
+    "src/shared/types.ts",
+    "src/shared/theme.ts",
+    "src/shared/context.tsx"
+  ]
 }

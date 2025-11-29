@@ -33,11 +33,12 @@ bun add @mycelia/core @mycelia/parser
 For Next.js projects:
 
 ```bash
-bun add @mycelia/ssr @mycelia/render
+bun add @mycelia/render
 ```
 
-- **@mycelia/ssr**: Server-side rendering utilities
-- **@mycelia/render**: React components for rendering
+- **@mycelia/render**: React components and Next.js SSR utilities
+
+> **Note**: `@mycelia/ssr` was merged into `@mycelia/render`. Use `@mycelia/render/nextjs` for SSR functionality.
 
 ### Optional Packages
 
@@ -59,7 +60,7 @@ bunx create-next-app@latest my-mycelia-garden
 cd my-mycelia-garden
 
 # Install Mycelia
-bun add @mycelia/core @mycelia/parser @mycelia/ssr
+bun add @mycelia/core @mycelia/parser @mycelia/render
 ```
 
 ### 2. Configure TypeScript
@@ -101,7 +102,7 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-  transpilePackages: ['@mycelia/core', '@mycelia/parser', '@mycelia/ssr']
+  transpilePackages: ['@mycelia/core', '@mycelia/parser', '@mycelia/render']
 };
 
 export default withMDX(config);

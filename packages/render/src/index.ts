@@ -1,10 +1,15 @@
-// React renderer (main export)
-export * as react from './react/index.js';
+// Next.js SSR utilities (main exports)
+export * as nextjs from './nextjs/index';
+export { initializeMycelia, getMyceliaProvider, generateMyceliaStaticParams, getMyceliaContent, getAllMyceliaContent } from './nextjs/provider';
+export { MyceliaPage, MyceliaList, MyceliaIndex, MyceliaBreadcrumb, MyceliaBacklinks, StatusBadge, MyceliaChildNodes, MyceliaRelatedNodes } from './nextjs/components';
+export { generateContentMetadata, getContentSummary, sortByDate, sortByTitle, filterByCategory, filterByTag, filterPublished, getCategories, getTags } from './nextjs/utils';
+export { NodeRenderer } from './nextjs/node-renderer';
 
-// Shared types and utilities
-export type { RenderTheme, ComponentRegistry, BaseRenderProps, ContainerRenderProps } from './shared/types.js';
-export { defaultTheme } from './shared/theme.js';
+// Shared utilities
+export { MyceliaContentProvider } from './shared/content-provider';
+export { processMarkdownToHtml, extractTextFromMdx, getReadingTime } from './shared/mdx-processor';
 
-// Future framework exports (placeholders)
-// export * as vue from './vue/index';
-// export * as svelte from './svelte/index';
+// Types
+export type { MyceliaConfig, ParsedContent, ContentCacheEntry, ContentProvider } from './types/index';
+export type { MyceliaPageProps, MyceliaListProps, MyceliaIndexProps, MyceliaBreadcrumbProps, MyceliaBacklinksProps, StatusBadgeProps, MyceliaChildNodesProps, MyceliaRelatedNodesProps } from './nextjs/components';
+export type { NextJS } from './types/index';

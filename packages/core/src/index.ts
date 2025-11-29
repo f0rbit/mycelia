@@ -6,3 +6,6 @@ export * from './graph.js';
 
 // Tag registry system
 export * from './registry.js';
+
+// Utility functions
+export * from './utils.js';
